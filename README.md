@@ -1,2 +1,2 @@
-# Tubes-2-OOP-YuGiOH
+# Tubes-2-OOP-CardGame
 semangat
