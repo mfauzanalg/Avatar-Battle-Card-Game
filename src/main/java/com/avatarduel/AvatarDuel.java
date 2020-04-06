@@ -6,6 +6,7 @@ import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Objects;
 
+import com.avatarduel.component.Player;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -35,7 +36,6 @@ public class AvatarDuel extends Application {
     try{
       Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("window.fxml")));
       Scene scene = new Scene(root);
-
       stage.setTitle("Avatar Duel Kelompok 9");
       stage.setScene(scene);
       stage.show();
@@ -46,6 +46,9 @@ public class AvatarDuel extends Application {
   }
 
   public static void main(String[] args) {
+    Player P1 = new Player();
+    Player P2 = new Player();
+
     launch();
   }
 }
