@@ -33,14 +33,14 @@ public class AvatarDuel extends Application {
   public void start(Stage stage) throws IOException {
 
     try{
-      Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("sample.fxml")));
+      Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("window.fxml")));
       Scene scene = new Scene(root);
 
-      stage.setTitle("Avatar Duel");
+      stage.setTitle("Avatar Duel Kelompok 9");
       stage.setScene(scene);
       stage.show();
     } catch (IOException e){
-      throw new IllegalStateException("fauzan " + e);
+      throw new IllegalStateException("Fauzan Keren" + e);
     }
 
   }
