@@ -37,7 +37,7 @@
          <font>
             <Font size="16.0" />
          </font></TextField>
-      <Button layoutX="49.0" layoutY="492.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="41.0" prefWidth="126.0" text="Start Game" textOverrun="CLIP">
+      <Button layoutX="49.0" layoutY="492.0" mnemonicParsing="false" onAction="#startGameButton" prefHeight="41.0" prefWidth="126.0" text="Start Game" textOverrun="CLIP">
          <font>
             <Font name="Tw Cen MT Condensed Extra Bold" size="21.0" />
          </font></Button>

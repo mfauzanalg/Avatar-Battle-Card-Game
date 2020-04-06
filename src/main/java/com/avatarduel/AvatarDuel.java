@@ -35,10 +35,8 @@ public class AvatarDuel extends Application {
   public void start(Stage stage) throws IOException {
 
     try{
-      Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("window.fxml")));
+      Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("window.fxml"));
       Scene scene = new Scene(root);
-      Parent gameLayout = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("gameLayout.fxml")));
-      Scene scene2 = new Scene(gameLayout);
 
       stage.setTitle("Avatar Duel Kelompok 9");
       stage.setScene(scene);
