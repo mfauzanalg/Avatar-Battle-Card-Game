@@ -4,13 +4,12 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
+import java.util.Objects;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import com.avatarduel.model.Element;
@@ -31,14 +30,19 @@ public class AvatarDuel extends Application {
   }
 
   @Override
-  public void start(Stage stage) {
+  public void start(Stage stage) throws IOException {
 
-    Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-    Scene scene = new Scene(root, 1280, 720);
+    try{
+      Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("sample.fxml")));
+      Scene scene = new Scene(root);
 
-    stage.setTitle("Avatar Duel");
-    stage.setScene(scene);
-    stage.show();
+      stage.setTitle("Avatar Duel");
+      stage.setScene(scene);
+      stage.show();
+    } catch (IOException e){
+      throw new IllegalStateException("fauzan " + e);
+    }
+
   }
 
   public static void main(String[] args) {
