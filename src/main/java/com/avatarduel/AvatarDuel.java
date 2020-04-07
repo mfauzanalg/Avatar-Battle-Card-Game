@@ -7,6 +7,7 @@ import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Objects;
 
+import com.avatarduel.component.AuraSkillCard;
 import com.avatarduel.component.CharacterCard;
 import com.avatarduel.component.LandCard;
 import com.avatarduel.component.Player;
@@ -42,7 +43,7 @@ public class AvatarDuel extends Application {
     File charCSVFile = new File(getClass().getResource(CHAR_CSV_FILE_PATH).toURI());
     CSVReader charReader = new CSVReader(charCSVFile, "\t");
     charReader.setSkipHeader(true);
-    List<String[] > charRows = charReader.read();
+    List<String[]> charRows = charReader.read();
     for (String[] row : charRows) {
       //charCard constructor
       CharacterCard cc = new CharacterCard(Integer.parseInt(row[0]), row[1], row[2], row[3], row[4], Integer.parseInt(row[5]), Integer.parseInt(row[6]), Integer.parseInt(row[7]));
@@ -50,7 +51,14 @@ public class AvatarDuel extends Application {
   }
 
   public void loadAuraCards() throws IOException, URISyntaxException{
-    
+    File auraCSVFile = new File(getClass().getResource(AURA_CSV_FILE_PATH).toURI());
+    CSVReader auraReader = new CSVReader(auraCSVFile, "\t");
+    auraReader.setSkipHeader(true);
+    List<String[]> auraRows = auraReader.read();
+    for (String[] row : auraRows) {
+      //auraCard constructor
+      AuraSkillCard ac = new AuraSkillCard(Integer.parseInt(row[0]), row[1], row[2], row[3], row[4], Integer.parseInt(row[6]), Integer.parseInt(row[7]), Integer.parseInt(row[5]));
+    }
   }
 
 
