@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 
@@ -8,10 +10,61 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="white" height="282.0" layoutX="19.0" layoutY="27.0" stroke="BLACK" strokeType="INSIDE" width="205.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="white" height="282.0" layoutX="18.0" layoutY="339.0" stroke="BLACK" strokeType="INSIDE" width="205.0" />
       <Pane fx:id="borderPane" layoutX="230.0" layoutY="1.0" prefHeight="324.0" prefWidth="810.0">
-
+         <children>
+            <GridPane prefHeight="135.0" prefWidth="700.0">
+                <padding>
+                    <Insets bottom="10" />
+                </padding>
+                <Button prefHeight="120" prefWidth="96" text="Card One" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Button prefHeight="120" prefWidth="96" text="Card Two" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                <Button prefHeight="120" prefWidth="96" text="Card Three" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                <Button prefHeight="120" prefWidth="96" text="Card Four" GridPane.columnIndex="4" GridPane.rowIndex="0" />
+                <Button prefHeight="120" prefWidth="96" text="Card Five" GridPane.columnIndex="5" GridPane.rowIndex="0" />
+                <Button prefHeight="120" prefWidth="96" text="Card Six" GridPane.columnIndex="6" GridPane.rowIndex="0" />
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+         </children>
       </Pane>
-      <Pane layoutX="230.0" layoutY="325.0" prefHeight="294.0" prefWidth="810.0">
 
+      <Pane layoutX="230.0" layoutY="325.0" prefHeight="294.0" prefWidth="810.0">
+         <children>
+            <GridPane alignment="BOTTOM_CENTER" layoutY="166.0" prefHeight="135.0" prefWidth="700.0">
+                <padding>
+                    <Insets bottom="10" />
+                </padding>
+                <Button prefHeight="120" prefWidth="96" text="Card One" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Button prefHeight="120" prefWidth="96" text="Card Two" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                <Button prefHeight="120" prefWidth="96" text="Card Three" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                <Button prefHeight="120" prefWidth="96" text="Card Four" GridPane.columnIndex="4" GridPane.rowIndex="0" />
+                <Button prefHeight="120" prefWidth="96" text="Card Five" GridPane.columnIndex="5" GridPane.rowIndex="0" />
+                <Button prefHeight="120" prefWidth="96" text="Card Six" GridPane.columnIndex="6" GridPane.rowIndex="0" />
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+         </children>
       </Pane>
    </children>
 </Pane>
