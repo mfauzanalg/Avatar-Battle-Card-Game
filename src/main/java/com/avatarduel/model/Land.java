@@ -16,4 +16,19 @@ public class Land {
     this.description = description;
     this.element = element;
   }
+
+  public String getName()
+  {
+    return this.name;
+  }
+
+  public String getDescription()
+  {
+    return this.description;
+  }
+
+  public Element getElement()
+  {
+    return this.element;
+  }
 }
