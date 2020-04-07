@@ -4,14 +4,14 @@
 package com.avatarduel.component;
 
 public class DestroySkillCard extends SkillCard implements IHandCard {
-    ISummoned target;
+    SummonedCharacter target;
 
     public DestroySkillCard(int _id, String _name, String ele, String desc, String path){
-        super("destroy", _id, _name, ele, desc, path);
+        super(_id, _name, ele, desc, path,"destroy");
     }
 
     // Semua kode dibawah komen ini agak ragu, alasannya sama dengan yang ada di LandCard.java
-    public void setTarget(ISummoned _target){
+    public void setTarget(SummonedCharacter _target){
         target = _target;
     }
 

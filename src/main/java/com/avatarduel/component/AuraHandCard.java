@@ -12,7 +12,7 @@ public class AuraHandCard implements IHandCard, IDestructible {
     }
 
     public void setTarget(ISummoned _target){
-        target = _target;
+        target = (SummonedCharacter) _target;
     }
 
     public void play(){

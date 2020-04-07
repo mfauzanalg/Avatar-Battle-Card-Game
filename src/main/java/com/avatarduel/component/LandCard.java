@@ -15,7 +15,7 @@ public class LandCard extends Card implements IHandCard {
         target = _target;
     }
     
-    public play(){
+    public void play(){
         // Tambah power player sesuai elemen kartu land
         // Tunggu implementasi player
         System.out.println("blm diimplemen");
