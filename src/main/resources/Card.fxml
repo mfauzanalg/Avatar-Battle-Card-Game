@@ -1,14 +1,12 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
+<?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.text.Font?>
-<GridPane fx:controller="com.avatarduel.gui.cardController"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-    <Label text="Action" textFill="green">
-        <font>
-            <Font  name="Times New Roman bold" size="14"/>
-        </font>
-    </Label>
-</GridPane>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<Pane prefHeight="283.0" prefWidth="235.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="30.0" layoutX="17.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="110.0" layoutX="17.0" layoutY="152.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+      <Line endX="100.0" layoutX="117.0" layoutY="230.0" startX="-100.0" />
+   </children>
+</Pane>
