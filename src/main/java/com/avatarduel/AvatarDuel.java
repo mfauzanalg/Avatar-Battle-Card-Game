@@ -68,8 +68,6 @@ public class AvatarDuel extends Application {
       this.loadLandCards();
       this.loadAuraCards();
       this.loadCharCards();
-      Player P1 = new Player("fauzan", 80);
-      Player P2 = new Player("fauzan2", 90);
       Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("window.fxml"));
       Scene scene = new Scene(root);
       stage.setTitle("Avatar Duel Kelompok 9");

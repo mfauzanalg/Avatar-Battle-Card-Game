@@ -10,11 +10,6 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class windowController {
-    public void buttonClicked()
-    {
-        System.out.println("Wow bisa loh");
-    }
-
     public void startGameButton(javafx.event.ActionEvent actionEvent) throws IOException {
         Parent layoutParent = FXMLLoader.load(getClass().getClassLoader().getResource("arena.fxml"));
         Scene layoutScene = new Scene(layoutParent);
