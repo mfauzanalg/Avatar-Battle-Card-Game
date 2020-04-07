@@ -11,7 +11,6 @@ import com.avatarduel.component.AuraSkillCard;
 import com.avatarduel.component.CharacterCard;
 import com.avatarduel.component.LandCard;
 import com.avatarduel.component.Player;
-import com.sun.jndi.toolkit.url.Uri;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -67,8 +66,10 @@ public class AvatarDuel extends Application {
 
     try{
       this.loadLandCards();
-      Player P1 = new Player();
-      Player P2 = new Player();
+      this.loadAuraCards();
+      this.loadCharCards();
+      Player P1 = new Player("fauzan", 80);
+      Player P2 = new Player("fauzan2", 90);
       Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("window.fxml"));
       Scene scene = new Scene(root);
       stage.setTitle("Avatar Duel Kelompok 9");

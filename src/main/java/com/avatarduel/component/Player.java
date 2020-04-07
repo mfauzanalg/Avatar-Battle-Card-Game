@@ -5,16 +5,16 @@ public class Player{
     private String name;
     private int health;
     private Stack<Card> deck;
-    private List<IHandCard> hand;
-    private List<ISummoned> board;
+    private List<Card> hand;
+    private List<Card> board;
 
     public Player(String name, int health)
     {
         this.name = name;
         this.health = health;
         this.deck = new Stack<Card>();
-        this.hand = new List<IHandCard>();
-        this.board = new List<ISummoned>();
+        this.hand = new ArrayList<Card>();
+        this.board = new ArrayList<Card>();
     }
 
     public void setName(String name)
