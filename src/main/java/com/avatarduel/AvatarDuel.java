@@ -7,7 +7,10 @@ import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Objects;
 
+import com.avatarduel.component.CharacterCard;
+import com.avatarduel.component.LandCard;
 import com.avatarduel.component.Player;
+import com.sun.jndi.toolkit.url.Uri;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -29,15 +32,35 @@ public class AvatarDuel extends Application {
     landReader.setSkipHeader(true);
     List<String[]> landRows = landReader.read();
     for (String[] row : landRows) {
-      Land l = new Land(row[1], row[3], Element.valueOf(row[2]));
+      //landCard constructor
+      //Land l = new Land(row[1], row[3], Element.valueOf(row[2]));
+      LandCard lc = new LandCard(Integer.parseInt(row[0]), row[1], row[2], row[3], row[4]);
     }
   }
+
+  public void loadCharCards() throws  IOException, URISyntaxException{
+    File charCSVFile = new File(getClass().getResource(CHAR_CSV_FILE_PATH).toURI());
+    CSVReader charReader = new CSVReader(charCSVFile, "\t");
+    charReader.setSkipHeader(true);
+    List<String[] > charRows = charReader.read();
+    for (String[] row : charRows) {
+      //charCard constructor
+      CharacterCard cc = new CharacterCard(Integer.parseInt(row[0]), row[1], row[2], row[3], row[4], Integer.parseInt(row[5]), Integer.parseInt(row[6]), Integer.parseInt(row[7]));
+    }
+  }
+
+  public void loadAuraCards() throws IOException, URISyntaxException{
+    
+  }
+
 
   @Override
   public void start(Stage stage) throws IOException {
 
     try{
       this.loadLandCards();
+      Player P1 = new Player();
+      Player P2 = new Player();
       Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("window.fxml"));
       Scene scene = new Scene(root);
       stage.setTitle("Avatar Duel Kelompok 9");
@@ -51,10 +74,6 @@ public class AvatarDuel extends Application {
 
 
   public static void main(String[] args) {
-    Player P1 = new Player();
-    Player P2 = new Player();
-
-
     launch();
   }
 }
