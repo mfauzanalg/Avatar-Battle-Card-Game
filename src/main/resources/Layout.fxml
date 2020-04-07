@@ -5,38 +5,38 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="640.0" prefWidth="1040.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Layout">
+<AnchorPane prefHeight="640.0" prefWidth="1229.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Layout">
    <children>
-      <HBox prefHeight="640.0" prefWidth="294.0" style="-fx-border-color: red;" />
-      <VBox layoutX="294.0" layoutY="98.0" prefHeight="443.0" prefWidth="752.0">
+      <HBox prefHeight="640.0" prefWidth="238.0" style="-fx-border-color: red;" />
+      <VBox layoutX="233.0" layoutY="98.0" prefHeight="443.0" prefWidth="932.0">
          <children>
-            <HBox prefHeight="220.0" prefWidth="752.0" style="-fx-border-color: black;">
+            <HBox prefHeight="220.0" prefWidth="757.0" style="-fx-border-color: black;">
                <children>
                   <VBox prefHeight="218.0" prefWidth="118.0" style="-fx-border-color: red;" />
-                  <VBox layoutX="11.0" layoutY="11.0" prefHeight="218.0" prefWidth="632.0" style="-fx-border-color: red;">
+                  <VBox layoutX="11.0" layoutY="11.0" prefHeight="218.0" prefWidth="812.0" style="-fx-border-color: red;">
                      <children>
                         <HBox prefHeight="110.0" prefWidth="200.0" style="-fx-border-color: black;">
                            <children>
-                              <Pane prefHeight="106.0" prefWidth="84.0" style="-fx-border-color: Yellow;" />
-                              <Pane prefHeight="106.0" prefWidth="84.0" style="-fx-border-color: Yellow;" />
-                              <Pane prefHeight="106.0" prefWidth="84.0" style="-fx-border-color: Yellow;" />
-                              <Pane prefHeight="106.0" prefWidth="84.0" style="-fx-border-color: Yellow;" />
-                              <Pane prefHeight="106.0" prefWidth="84.0" style="-fx-border-color: Yellow;" />
-                              <Pane prefHeight="106.0" prefWidth="84.0" style="-fx-border-color: Yellow;" />
-                              <Pane prefHeight="106.0" prefWidth="84.0" style="-fx-border-color: Yellow;" />
-                              <Pane prefHeight="106.0" prefWidth="84.0" style="-fx-border-color: Yellow;" />
+                              <Pane prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: Yellow;" />
+                              <Pane prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: Yellow;" />
+                              <Pane prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: Yellow;" />
+                              <Pane prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: Yellow;" />
+                              <Pane prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: Yellow;" />
+                              <Pane prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: Yellow;" />
+                              <Pane prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: Yellow;" />
+                              <Pane prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: Yellow;" />
                            </children>
                         </HBox>
                         <HBox layoutX="11.0" layoutY="11.0" prefHeight="110.0" prefWidth="200.0" style="-fx-border-color: black;">
                            <children>
-                              <Pane prefHeight="200.0" prefWidth="84.0" style="-fx-border-color: Green;" />
-                              <Pane prefHeight="200.0" prefWidth="84.0" style="-fx-border-color: Green;" />
-                              <Pane prefHeight="200.0" prefWidth="84.0" style="-fx-border-color: Green;" />
-                              <Pane prefHeight="200.0" prefWidth="84.0" style="-fx-border-color: Green;" />
-                              <Pane prefHeight="200.0" prefWidth="84.0" style="-fx-border-color: Green;" />
-                              <Pane prefHeight="200.0" prefWidth="84.0" style="-fx-border-color: Green;" />
-                              <Pane prefHeight="200.0" prefWidth="84.0" style="-fx-border-color: Green;" />
-                              <Pane prefHeight="200.0" prefWidth="84.0" style="-fx-border-color: Green;" />
+                              <Pane prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: Green;" />
+                              <Pane prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: Green;" />
+                              <Pane prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: Green;" />
+                              <Pane prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: Green;" />
+                              <Pane prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: Green;" />
+                              <Pane prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: Green;" />
+                              <Pane prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: Green;" />
+                              <Pane prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: Green;" />
                            </children></HBox>
                      </children>
                   </VBox>
@@ -44,37 +44,39 @@
             </HBox>
             <HBox layoutX="10.0" layoutY="10.0" prefHeight="220.0" prefWidth="752.0" style="-fx-border-color: black;">
                <children>
-                  <VBox prefHeight="218.0" prefWidth="652.0" style="-fx-border-color: red;">
+                  <VBox prefHeight="218.0" prefWidth="801.0" style="-fx-border-color: red;">
                      <children>
                         <HBox prefHeight="110.0" prefWidth="200.0" style="-fx-border-color: black;">
                            <children>
-                              <Pane prefHeight="106.0" prefWidth="92.0" style="-fx-border-color: Green;" />
-                              <Pane prefHeight="106.0" prefWidth="92.0" style="-fx-border-color: Green;" />
-                              <Pane prefHeight="106.0" prefWidth="92.0" style="-fx-border-color: Green;" />
-                              <Pane prefHeight="106.0" prefWidth="92.0" style="-fx-border-color: Green;" />
-                              <Pane prefHeight="106.0" prefWidth="92.0" style="-fx-border-color: Green;" />
-                              <Pane prefHeight="106.0" prefWidth="92.0" style="-fx-border-color: Green;" />
-                              <Pane prefHeight="106.0" prefWidth="92.0" style="-fx-border-color: Green;" />
-                              <Pane prefHeight="106.0" prefWidth="92.0" style="-fx-border-color: Green;" />
+                              <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Green;" />
+                              <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Green;" />
+                              <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Green;" />
+                              <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Green;" />
+                              <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Green;" />
+                              <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Green;" />
+                              <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Green;" />
+                              <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Green;" />
                            </children></HBox>
                         <HBox layoutX="11.0" layoutY="11.0" prefHeight="110.0" prefWidth="200.0" style="-fx-border-color: black;">
                            <children>
-                              <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;" />
-                              <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;" />
-                              <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;" />
-                              <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;" />
-                              <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;" />
-                              <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;" />
-                              <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;" />
-                              <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;" />
+                              <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Yellow;" />
+                              <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Yellow;" />
+                              <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Yellow;" />
+                              <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Yellow;" />
+                              <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Yellow;" />
+                              <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Yellow;" />
+                              <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Yellow;" />
+                              <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Yellow;" />
                            </children></HBox>
                      </children></VBox>
                   <VBox layoutX="11.0" layoutY="11.0" prefHeight="218.0" prefWidth="129.0" style="-fx-border-color: red;" />
                </children>
             </HBox>
          </children></VBox>
-      <HBox layoutX="294.0" prefHeight="100.0" prefWidth="752.0">
+      <HBox layoutX="233.0" prefHeight="100.0" prefWidth="932.0">
          <children>
+            <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;" />
+            <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;" />
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;" />
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;" />
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;" />
@@ -86,9 +88,11 @@
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;" />
          </children>
       </HBox>
-      <HBox layoutX="295.0" layoutY="537.0" prefHeight="103.0" prefWidth="751.0">
+      <HBox layoutX="234.0" layoutY="537.0" prefHeight="103.0" prefWidth="932.0">
          <children>
             <Pane prefHeight="100.0" prefWidth="83.0" />
+            <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;" />
+            <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;" />
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;" />
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;" />
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;" />
