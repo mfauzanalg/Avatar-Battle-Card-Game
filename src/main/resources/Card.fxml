@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Font?>
 <GridPane fx:controller="com.avatarduel.gui.cardController"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-    <Label text="Welcome to JavaFX!" textFill="green">
+    <Label text="Action" textFill="green">
         <font>
             <Font  name="Times New Roman bold" size="14"/>
         </font>

@@ -15,12 +15,12 @@
                 <Insets bottom="10" top="10" left="250"/>
             </padding>
             <Button prefHeight="120" prefWidth="96" text="Card One" GridPane.columnIndex="0" GridPane.rowIndex="0" onAction="#handleButtonAction"/>
-            <Button prefHeight="120" prefWidth="96" text="Card Two" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-            <Button prefHeight="120" prefWidth="96" text="Card Three" GridPane.columnIndex="2" GridPane.rowIndex="0" />
-            <Button prefHeight="120" prefWidth="96" text="Card Four" GridPane.columnIndex="3" GridPane.rowIndex="0" />
-            <Button prefHeight="120" prefWidth="96" text="Card Five" GridPane.columnIndex="4" GridPane.rowIndex="0" />
-            <Button prefHeight="120" prefWidth="96" text="Card Six" GridPane.columnIndex="5" GridPane.rowIndex="0" />
-            <Button prefHeight="120" prefWidth="96" text="Card Seven" GridPane.columnIndex="6" GridPane.rowIndex="0" />
+            <Button prefHeight="120" prefWidth="96" text="Card Two" GridPane.columnIndex="1" GridPane.rowIndex="0" onAction="#handleButtonAction"/>
+            <Button prefHeight="120" prefWidth="96" text="Card Three" GridPane.columnIndex="2" GridPane.rowIndex="0" onAction="#handleButtonAction"/>
+            <Button prefHeight="120" prefWidth="96" text="Card Four" GridPane.columnIndex="3" GridPane.rowIndex="0" onAction="#handleButtonAction"/>
+            <Button prefHeight="120" prefWidth="96" text="Card Five" GridPane.columnIndex="4" GridPane.rowIndex="0" onAction="#handleButtonAction"/>
+            <Button prefHeight="120" prefWidth="96" text="Card Six" GridPane.columnIndex="5" GridPane.rowIndex="0" onAction="#handleButtonAction"/>
+            <Button prefHeight="120" prefWidth="96" text="Card Seven" GridPane.columnIndex="6" GridPane.rowIndex="0" onAction="#handleButtonAction"/>
          <columnConstraints>
             <ColumnConstraints />
             <ColumnConstraints />
@@ -98,13 +98,13 @@
             <padding>
                 <Insets bottom="10" top="10" left="250"/>
             </padding>
-            <Button prefHeight="120" prefWidth="96" text="Card One" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <Button prefHeight="120" prefWidth="96" text="Card Two" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-            <Button prefHeight="120" prefWidth="96" text="Card Three" GridPane.columnIndex="2" GridPane.rowIndex="0" />
-            <Button prefHeight="120" prefWidth="96" text="Card Four" GridPane.columnIndex="3" GridPane.rowIndex="0" />
-            <Button prefHeight="120" prefWidth="96" text="Card Five" GridPane.columnIndex="4" GridPane.rowIndex="0" />
-            <Button prefHeight="120" prefWidth="96" text="Card Six" GridPane.columnIndex="5" GridPane.rowIndex="0" />
-            <Button prefHeight="120" prefWidth="96" text="Card Seven" GridPane.columnIndex="6" GridPane.rowIndex="0" />
+            <Button prefHeight="120" prefWidth="96" text="Card One" GridPane.columnIndex="0" GridPane.rowIndex="0" onAction="#handleButtonAction"/>
+            <Button prefHeight="120" prefWidth="96" text="Card Two" GridPane.columnIndex="1" GridPane.rowIndex="0" onAction="#handleButtonAction"/>
+            <Button prefHeight="120" prefWidth="96" text="Card Three" GridPane.columnIndex="2" GridPane.rowIndex="0" onAction="#handleButtonAction"/>
+            <Button prefHeight="120" prefWidth="96" text="Card Four" GridPane.columnIndex="3" GridPane.rowIndex="0" onAction="#handleButtonAction"/>
+            <Button prefHeight="120" prefWidth="96" text="Card Five" GridPane.columnIndex="4" GridPane.rowIndex="0" onAction="#handleButtonAction"/>
+            <Button prefHeight="120" prefWidth="96" text="Card Six" GridPane.columnIndex="5" GridPane.rowIndex="0" onAction="#handleButtonAction"/>
+            <Button prefHeight="120" prefWidth="96" text="Card Seven" GridPane.columnIndex="6" GridPane.rowIndex="0" onAction="#handleButtonAction"/>
          <columnConstraints>
             <ColumnConstraints />
             <ColumnConstraints />
