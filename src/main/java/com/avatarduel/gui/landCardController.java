@@ -3,34 +3,20 @@ package com.avatarduel.gui;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 
 
 public class landCardController {
-    @FXML
-    private Pane card;
-    @FXML
-    private Text desc;
-    @FXML
-    private Text name;
-    @FXML
-    private Text attrib;
-    @FXML
-    private Text element;
-    @FXML
-    private ImageView img;
+    @FXML private Text name;
 
-    public void setDesc(Text desc){this.desc = desc;}
-    public void setName(Text name){this.name = name;}
-    public void setAttrib(Text attrib){this.attrib = attrib;}
-    public void setElement(Text element){this.element = element;}
-    public void setImg(ImageView img){this.img = img;}
+    public void setMiaw(){
+        System.out.println("ha");
+//        name.setText("miaw");
+    }
 
-    public Pane getCard(){return this.card;}
-    public Text getDesc(){return this.desc;}
-    public Text getName(){return this.name;}
-    public Text getAttrib(){return this.attrib;}
-    public Text getElement(){return this.element;}
-    public ImageView getImage(){return this.img;}
+    public void changeName(MouseEvent mouseEvent) {
+        this.setMiaw();
+    }
 }

@@ -68,7 +68,9 @@ public class AvatarDuel extends Application {
       this.loadLandCards();
       this.loadAuraCards();
       this.loadCharCards();
-      Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("window.fxml"));
+      Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Coba yuk.fxml"));
+
+
       Scene scene = new Scene(root);
       stage.setTitle("Avatar Duel Kelompok 9");
       stage.setScene(scene);
