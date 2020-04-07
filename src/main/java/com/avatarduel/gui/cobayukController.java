@@ -13,12 +13,14 @@ public class cobayukController {
     @FXML private Button btn;
     @FXML private Text teks;
     @FXML private landCardController secondController;
+    @FXML private landCardController firstController;
 
 
     public void buttonClikced(MouseEvent mouseEvent) {
         System.out.println("Ya Allah bantu Hamba");
         btn.setText("Nangis");
-        secondController.setMiaw();
+        secondController.loadCard();
+        firstController.loadCard();
     }
 
     public void textClicked(MouseEvent mouseEvent) {

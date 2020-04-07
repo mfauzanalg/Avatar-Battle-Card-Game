@@ -7,20 +7,20 @@
 
 <Pane fx:id="mainPane" prefHeight="100.0" prefWidth="80.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.avatarduel.gui.landCardController">
    <children>
-      <ImageView fx:id="pict" onMouseClicked="#changeName" fitHeight="59.0" fitWidth="62.0" layoutX="11.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" />
-      <Text fx:id="attrib" layoutX="10.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="59.079742431640625">
+      <ImageView fx:id="pict" fitHeight="59.0" fitWidth="62.0" layoutX="10.0" layoutY="17.0" onMouseClicked="#changeName" pickOnBounds="true" preserveRatio="true" />
+      <Text fx:id="attrib" layoutX="10.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="59.079742431640625">
          <font>
-            <Font size="5.0" />
+            <Font size="7.0" />
          </font>
       </Text>
-      <Text fx:id="name" layoutX="11.0" layoutY="11.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="46.05696105957031">
+      <Text fx:id="name" layoutX="10.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="46.05696105957031">
          <font>
-            <Font size="5.0" />
+            <Font size="10.0" />
          </font>
       </Text>
-      <Text fx:id="elmt" layoutX="58.0" layoutY="11.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="11.890289306640625">
+      <Text fx:id="elmt" layoutX="58.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="11.890289306640625">
          <font>
-            <Font size="5.0" />
+            <Font size="10.0" />
          </font>
       </Text>
    </children>
