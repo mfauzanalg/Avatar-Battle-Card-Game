@@ -1,6 +1,8 @@
 // File : DestroySkillCard.java
 // Handles the behaviour of Destroy Skill Card when played
 
+package com.avatarduel.component;
+
 public class DestroySkillCard extends SkillCard implements IHandCard {
     ISummoned target;
 

@@ -1,5 +1,6 @@
 // File : ISummoned.java
 // Handles the behaviour of Summoned Cards
+package com.avatarduel.component;
 
 public interface ISummoned {
     // mengubah keadaan kartu dari tertutup jadi terbuka dan mengembalikan true

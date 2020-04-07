@@ -1,6 +1,8 @@
 // File : SkillCard.java
 // Menyimpan informasi kartu skill 
 
+package com.avatarduel.component;
+
 public class SkillCard extends Card {
     String effect;
 

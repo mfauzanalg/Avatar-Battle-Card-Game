@@ -1,10 +1,12 @@
 // File : PowerUpSkillCard.java
 // Handles the behaviour of Power Up Card when played
 
+package com.avatarduel.component;
+
 public class PowerUpSkillCard extends SkillCard implements IHandCard, IDestructible {
     ISummoned target;
 
-    public DestroySkillCard(int _id, String _name, String ele, String desc, String path){
+    public PowerUpSkillCard(int _id, String _name, String ele, String desc, String path){
         super("powerup", _id, _name, ele, desc, path);
     }
 

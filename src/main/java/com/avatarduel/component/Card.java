@@ -1,6 +1,8 @@
 //File : Card.java
 // Menyimpan informasi umum kartu
 
+package com.avatarduel.component;
+
 public class Card {
     private String type;
     private int id;

@@ -1,6 +1,8 @@
 // File : CharacterCard.java
 // Menyimpan informasi khusus character card
 
+package com.avatarduel.component;
+
 public class CharacterCard extends Card {
     private int attack;
     private int defense;

@@ -1,3 +1,5 @@
+package com.avatarduel.component;
+
 // File : SummonedCharacter.java
 // Handles the behaviour of summoned characters
 import java.util.List;

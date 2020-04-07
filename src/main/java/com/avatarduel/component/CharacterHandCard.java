@@ -1,6 +1,8 @@
 // File : CharacterHandCard.java
 // Handles how the character card is summoned
 
+package com.avatarduel.component;
+
 public class CharacterHandCard implements IHandCard {
     CharacterCard kar;
 

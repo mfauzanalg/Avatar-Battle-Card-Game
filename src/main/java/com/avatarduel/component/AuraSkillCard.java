@@ -1,6 +1,8 @@
 // File : AuraSkillCard.java
 // Menyimpan informasi khusus kartu aura 
 
+package com.avatarduel.component;
+
 public class AuraSkillCard extends SkillCard {
     private int attack;
     private int defense;

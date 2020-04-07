@@ -1,5 +1,6 @@
 // File : LandCard.java
 // Menambahkan power Player sesuai elemen kartu
+package com.avatarduel.component;
 
 public class LandCard extends Card implements IHandCard {
     Player target;
@@ -17,5 +18,6 @@ public class LandCard extends Card implements IHandCard {
     public play(){
         // Tambah power player sesuai elemen kartu land
         // Tunggu implementasi player
+        System.out.println("blm diimplemen");
     }
 }

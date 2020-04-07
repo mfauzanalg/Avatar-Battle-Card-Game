@@ -1,6 +1,8 @@
 // File : AuraHandCard.java
 // Handles the behaviour of Aura cards
 
+package com.avatarduel.component;
+
 public class AuraHandCard implements IHandCard, IDestructible {
     SummonedCharacter target;
     AuraSkillCard skill;
