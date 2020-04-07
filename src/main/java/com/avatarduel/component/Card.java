@@ -43,7 +43,4 @@ public class Card {
     public String getImagePath(){
         return imagepath;
     }
-
-    // Entah kenapa merasa ini sebaiknya dipisah biar Single Responsibility Principle terpenuhi tapi belum kepikiran gimana misahinnya
-    //abstract public void play();
 }
