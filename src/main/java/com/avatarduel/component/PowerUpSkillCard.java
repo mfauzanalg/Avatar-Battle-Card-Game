@@ -20,6 +20,7 @@ public class PowerUpSkillCard extends SkillCard implements IHandCard, IDestructi
     }
 
     public void destroy(){
+        target.setPowerUp(false);
         // remove this card from the board
     }
 }
