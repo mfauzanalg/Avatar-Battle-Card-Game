@@ -1,5 +1,6 @@
 package com.avatarduel.gui;
 
+import com.avatarduel.AvatarDuel;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -17,7 +18,7 @@ public class landCardController {
     @FXML private ImageView pict;
     @FXML private Text elmt;
 
-    public void loadCard(){
+    public void dummyLoad(){
         File file = new File ("src/main/resources/com/avatarduel/card/image/land/Spirit Oasis.png");
         Image image = new Image(file.toURI().toString());
         name.setText("Siapa ya");
@@ -25,12 +26,13 @@ public class landCardController {
         pict.setImage(image);
     }
 
-    public void setMiaw(){
-        System.out.println("ha");
-        name.setText("miaw");
+    public void loadCard(){
+        File file = new File ("src/main/resources/com/avatarduel/card/image/land/Spirit Oasis.png");
+        Image image = new Image(file.toURI().toString());
+        pict.setImage(image);
+        name.setText(AvatarDuel.landData.get(5).getName());
+        attrib.setText("Males masukin nanti aja ya");
+        System.out.println(AvatarDuel.landData.get(5).getName());
     }
 
-    public void changeName(MouseEvent mouseEvent) {
-        this.loadCard();
-    }
 }
