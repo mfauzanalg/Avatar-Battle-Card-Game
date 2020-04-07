@@ -10,7 +10,8 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class windowController {
-    public void buttonClicked(){
+    public void buttonClicked()
+    {
         System.out.println("Wow bisa loh");
     }
 
