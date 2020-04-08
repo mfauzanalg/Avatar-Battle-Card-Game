@@ -30,6 +30,7 @@ public class windowController {
         Scene layoutScene = new Scene(layoutParent);
 
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        window.setResizable(false);
         window.setScene(layoutScene);
         window.show();
     }
