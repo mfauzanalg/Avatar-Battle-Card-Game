@@ -1,6 +1,5 @@
 package com.avatarduel.component;
 import java.util.*;
-import com.avatarduel.model;
 
 public class Player{
     private String name;
@@ -72,7 +71,7 @@ public class Player{
                 return this.maxAir;
             default:
                 System.out.println("No Match");
-                return;
+                return 0;
 		}
 	}
 
@@ -103,7 +102,7 @@ public class Player{
                 return this.currentAir;
             default:
                 System.out.println("No Match");
-                return;
+                return 0;
 		}
 	}
 
