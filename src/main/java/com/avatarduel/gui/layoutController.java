@@ -2,13 +2,18 @@ package com.avatarduel.gui;
 
 import com.avatarduel.AvatarDuel;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.fxml.Initializable;
+import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -38,7 +43,13 @@ public class layoutController implements Initializable{
         detailText.setText(AvatarDuel.landData.get(AvatarDuel.a).getDescription());
     }
 
-
+//    public void actionBox(MouseEvent mouseEvent) throws IOException {
+//        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("actionBox.fxml"));
+//        Parent root1 = (Parent) fxmlLoader.load();
+//        Stage stage = new Stage();
+//        stage.setScene(new Scene(root1));
+//        stage.show();
+//    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
