@@ -41,7 +41,7 @@ abstract public class BoardCard implements ISummoned, IDestructible {
 
     abstract public Card getCardInstance();
 
-    abstract public destroy();
+    abstract public void destroy();
 
     public boolean getPowerUp(){
         return isPoweredUp;

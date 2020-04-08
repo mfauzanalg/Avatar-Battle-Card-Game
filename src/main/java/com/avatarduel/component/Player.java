@@ -39,7 +39,7 @@ public class Player{
     public void draw(){
         //pop card dari deck
         Card top = deck.pop();
-        HandCard factory = HandCardFactory.getFactory(top, this); // Gunakan factory method untuk menentukan factory yang akan digunakan
+        HandCard factory = HandCardFactory.getFactory(top); // Gunakan factory method untuk menentukan factory yang akan digunakan
         hand.add(factory.createHandCard(top, this)); // tambahkan IHandCard yang dibuat factory ke hand
 	}
 

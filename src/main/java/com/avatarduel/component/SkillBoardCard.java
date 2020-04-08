@@ -20,5 +20,5 @@ abstract public class SkillBoardCard extends BoardCard {
         return card;
     }
 
-    abstract public destroy();
+    abstract public void destroy();
 }

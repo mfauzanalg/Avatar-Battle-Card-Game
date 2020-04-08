@@ -15,6 +15,9 @@ public class SummonedCharacter extends BoardCard {
         return (attackPos) ? summon.getAttack() : summon.getDefense();
     }
 
+    public Card getCardInstance(){
+        return summon;
+    }
     /*public void render(){
         System.out.print("Character " + summon.getName() + " dalam keadaan ");
         if (isOpen){

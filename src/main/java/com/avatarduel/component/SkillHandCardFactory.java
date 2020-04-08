@@ -5,15 +5,15 @@ package com.avatarduel.component;
 
 public class SkillHandCardFactory {
 
-    public static HandCard getSkillFactory(SkillCard card, Player owner){
+    public static HandCard getSkillFactory(SkillCard card){
         if (card.getEffect().equals("aura")){
-            return new AuraHandCardFactory(card, owner);
+            return new AuraHandCardFactory();
         }
         else if (card.getEffect().equals("destroy")){
-            return new DestroyHandCardFactory(card, owner);
+            return new DestroyHandCardFactory();
         }
         else if (card.getEffect().equals("powerup")){
-            return new PowerUpHandCardFactory(card, owner);
+            return new PowerUpHandCardFactory();
         }
     }
 }
