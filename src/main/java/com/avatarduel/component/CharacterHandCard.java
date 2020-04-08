@@ -5,18 +5,24 @@ package com.avatarduel.component;
 
 public class CharacterHandCard implements IHandCard {
     CharacterCard kar;
+    Player target;
 
-    public CharacterHandCard(CharacterCard card){
+    public CharacterHandCard(CharacterCard card, Player _target){
         kar = card;
+        target = target;
     }
 
-    public CharacterCard getCharacterCard(){
+    public Card getCardInstance(){
         return kar;
+    }
+
+    public Player getOwner(){
+        return target;
     }
 
     public void play(){
         // Buat SummonedChar dengan objek ini sebagai parameter
-        // Lalu tambahkan SummonedChar tersebut ke board 
+        // Lalu tambahkan SummonedChar tersebut ke board milik player
         // Jangan lupa cek pilihan user apakah dia memilih posisi att/def dan apakah kartu dibuka / ditutup
     }
 }

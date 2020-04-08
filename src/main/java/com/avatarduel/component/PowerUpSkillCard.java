@@ -3,24 +3,9 @@
 
 package com.avatarduel.component;
 
-public class PowerUpSkillCard extends SkillCard implements IHandCard, IDestructible {
-    SummonedCharacter target;
+public class PowerUpSkillCard extends SkillCard {
 
     public PowerUpSkillCard(int _id, String _name, String ele, String desc, String path){
         super(_id, _name, ele, desc, path, "powerup");
-    }
-
-    // Semua kode dibawah komen ini agak ragu, alasannya sama dengan yang ada di LandCard.java
-    public void setTarget(SummonedCharacter _target){
-        target = _target;
-    }
-
-    public void play(){
-        target.setPowerUp(true);
-    }
-
-    public void destroy(){
-        target.setPowerUp(false);
-        // remove this card from the board
     }
 }

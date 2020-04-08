@@ -5,4 +5,8 @@ package com.avatarduel.component;
 interface IHandCard {
     
     void play();
+
+    Card getCardInstance();
+
+    Player getOwner();
 }

@@ -15,6 +15,5 @@ public interface ISummoned {
     // Tambahkan juga perubahan status dari skill card aura jika ada
     int getPositionValue();
 
-    // menggambar kartu ke layar
-    void render();
+    Card getCardInstance();
 }
