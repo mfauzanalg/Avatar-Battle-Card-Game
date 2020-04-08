@@ -258,8 +258,6 @@
                            </VBox.margin></ImageView>
                      </children>
                   </VBox>
-                        <Button fx:id="btn" mnemonicParsing="false" onMouseClicked="#button" text="Button" />
-                     </children></VBox>
                </children>
             </HBox>
          </children></VBox>
@@ -357,6 +355,6 @@
       <Text fx:id="p2name" layoutX="1078.0" layoutY="577.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
       <Text fx:id="p2health" layoutX="1079.0" layoutY="604.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
       <Text fx:id="p1health" layoutX="1075.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Button fx:id="btn" layoutX="1149.0" layoutY="236.0" mnemonicParsing="false" onMouseClicked="#drawCard" text="Button" />
+      <Button fx:id="btn" layoutX="1149.0" layoutY="236.0" mnemonicParsing="false" onMouseClicked="#button" text="Button" />
    </children>
 </AnchorPane>
