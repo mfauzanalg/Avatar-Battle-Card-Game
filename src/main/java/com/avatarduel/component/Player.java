@@ -115,34 +115,27 @@ public class Player{
         hand.add(factory.createHandCard(top, this)); // tambahkan IHandCard yang dibuat factory ke hand
 	}
 
-    public void play(){
-        //play kartu di tangan yang dipilih Player
-        //cara tahu kartu yang dipilih player gimana???
-        // Hand kan list, kalo bisa play ini nerima index yang didaoet dari GUI,
-        // Trus jalanin play punya IHandCard yang ada di index tsb
+    public void play(int idx){
         System.out.println("belum diimplementasi");
-        //play card from hand
-        //remove card from hand
-        //add card to board
+        IHandCard card = hand.remove(idx);
+        card.play();
+        //TODO, ubah IHandCard jadi BoardCard/skillBoardCard lalu put ke boar/skillBoard
 	}
 
-    public void rotate(){
-        //rotate kartu di board yang dipilih Player
-        //cara tahu kartu yang dipilih player gimana???
-        // Kayaknya sama dengan play bedanya yang di klik board doang
-        System.out.println("belum diimplementasi");
+    public void rotate(int idx){
+        board.get(idx).rotate();
 	}
 
-    public void attack(){
+    public void attack(int idx){
         //menyerang player/character musuh menggunakan character di board
-        //cara tahu kartu yang dipilih player gimana???
-        // Mirip dengan rotate
         System.out.println("belum diimplementasi");
+        //yang ngehandle attack board atau player?
+        //buat interface targetable buat attack??
 	}
 
-    public void destroy(){
+    public void destroy(int idx){
         //membuang kartu skill di board;
-        //cara tahu kartu yang dipilih player gimana???
         System.out.println("belum diimplementasi");
+        //yang bisa didestroy kan skill sm character, cara tahunya gimana?
 	}
 }
