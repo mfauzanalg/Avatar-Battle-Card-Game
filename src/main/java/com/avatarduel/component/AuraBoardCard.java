@@ -4,14 +4,18 @@ package com.avatarduel.component;
 
 public class AuraBoardCard extends SkillBoardCard {
     BoardCard target;
+    int attackVal;
+    int defenseVal;
 
     public AuraBoardCard(BoardCard _target, AuraSkillCard card){
         super(_target, card);
         target = _target;
+        attackVal = card.getAttack();
+        defenseVal = card.getDefense();
     }
 
     public int getPositionValue(){
-        return (attackPos) ? (card.getAttack() + target.getPositionValue()) : (card.getDefense() + target.getPositionValue());
+        return (attackPos) ? (attackVal + target.getPositionValue()) : (defenseVal + target.getPositionValue());
     }    
 
     public void destroy(){
