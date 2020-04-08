@@ -1,5 +1,11 @@
 package com.avatarduel;
 
+import com.avatarduel.component.AuraSkillCard;
+import com.avatarduel.component.CharacterCard;
+import com.avatarduel.component.LandCard;
+import com.avatarduel.component.Player;
+
+import com.avatarduel.component.*;
 import com.avatarduel.gui.windowController;
 import java.awt.event.ActionEvent;
 import java.io.File;
@@ -9,10 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import com.avatarduel.component.AuraSkillCard;
-import com.avatarduel.component.CharacterCard;
-import com.avatarduel.component.LandCard;
-import com.avatarduel.component.Player;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -32,7 +34,6 @@ public class AvatarDuel extends Application {
   public static List<AuraSkillCard> AuraData;
   public static Player P1;
   public static Player P2;
-  public static int a;
 
   public void loadLandCards() throws IOException, URISyntaxException {
     File landCSVFile = new File(getClass().getResource(LAND_CSV_FILE_PATH).toURI());
@@ -42,7 +43,6 @@ public class AvatarDuel extends Application {
     landData = new ArrayList<LandCard>();
     for (String[] row : landRows) {
       //landCard constructor
-      //Land l = new Land(row[1], row[3], Element.valueOf(row[2]));
       LandCard lc = new LandCard(Integer.parseInt(row[0]), row[1], row[2], row[3], row[4]);
       landData.add(lc);
     }

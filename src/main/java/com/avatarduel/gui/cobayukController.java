@@ -17,8 +17,8 @@ public class cobayukController {
     public void buttonClikced(MouseEvent mouseEvent) {
         System.out.println("Ya Allah bantu Hamba");
         btn.setText("Nangis");
-        secondController.loadCard();
-        firstController.loadCard();
+//        secondController.loadCard();
+//        firstController.loadCard();
     }
 
     public void textClicked(MouseEvent mouseEvent) {

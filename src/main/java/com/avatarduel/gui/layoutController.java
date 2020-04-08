@@ -1,6 +1,7 @@
 package com.avatarduel.gui;
 
 import com.avatarduel.AvatarDuel;
+import com.avatarduel.component.Card;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -29,18 +30,27 @@ public class layoutController implements Initializable{
     @FXML private Text p1health;
     @FXML private Text p2health;
 
-    public void drawCard(MouseEvent mouseEvent) {
-        P1H1Controller.loadCard();
-//        P1H2Controller.loadCard();
-//        P1H3Controller.loadCard();
-//        P1H4Controller.loadCard();
+    public void button(MouseEvent mouseEvent) {
+        P1H1Controller.loadCard(AvatarDuel.landData.get(1));
+        Card.onP1H1 = AvatarDuel.landData.get(1);
+        P1H2Controller.loadCard(AvatarDuel.landData.get(2));
+        Card.onP1H2 = AvatarDuel.landData.get(2);
     }
 
     public void hoverP1H1(MouseEvent mouseEvent){
-        File file = new File (AvatarDuel.landData.get(AvatarDuel.a).getImagePath());
+        Card.cardHover = Card.onP1H1;
+        File file = new File (Card.cardHover.getImagePath());
         Image image = new Image(file.toURI().toString());
         detailPict.setImage(image);
-        detailText.setText(AvatarDuel.landData.get(AvatarDuel.a).getDescription());
+        detailText.setText(Card.cardHover.getDescription());
+    }
+
+    public void hoverP1H2(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP1H2;
+        File file = new File (Card.cardHover.getImagePath());
+        Image image = new Image(file.toURI().toString());
+        detailPict.setImage(image);
+        detailText.setText(Card.cardHover.getDescription());
     }
 
 //    public void actionBox(MouseEvent mouseEvent) throws IOException {

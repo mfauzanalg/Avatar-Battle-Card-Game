@@ -258,6 +258,8 @@
                            </VBox.margin></ImageView>
                      </children>
                   </VBox>
+                        <Button fx:id="btn" mnemonicParsing="false" onMouseClicked="#button" text="Button" />
+                     </children></VBox>
                </children>
             </HBox>
          </children></VBox>
@@ -325,7 +327,7 @@
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include fx:id="P1H2" source="TCard.fxml" />
+                  <fx:include fx:id="P1H2" onMouseEntered="#hoverP1H2" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
