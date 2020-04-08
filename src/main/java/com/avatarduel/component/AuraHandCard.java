@@ -3,32 +3,25 @@
 
 package com.avatarduel.component;
 
-public class AuraHandCard implements IHandCard, IDestructible {
-    private SummonedCharacter target;
+public class AuraHandCard implements IHandCard {
     private AuraSkillCard skill;
+    private Player target;
 
-    public AuraHandCard(AuraSkillCard card){
+    public AuraHandCard(AuraSkillCard card, Player _target){
         skill = card;
-    }
-
-    public void setTarget(SummonedCharacter _target){
         target = _target;
     }
 
-    public void play(){
-        // Add this card to board
-
-        // Add this card to list of card that powers up target
-        target.addSkillCard(this);
-        target.setAuraAttack(target.getAuraAttack() + skill.getAttack());
-        target.setAuraDefense(target.getAuraDefense() + skill.getDefense());
+    public Card getCardInstance(){
+        return skill;
     }
 
-    public void destroy(){
-        // Remove the aura attack and defense from this card
-        target.setAuraAttack(target.getAuraAttack() - skill.getAttack());
-        target.setAuraDefense(target.getAuraDefense() - skill.getDefense());
-        // remove card from board
+    public Player getOwner(){
+        return target;
+    }
 
+    public void play(){
+        // Create a AuraBoardCard as a Decorator to Summoned Character
+        // Add this card to Player's board
     }
 }
