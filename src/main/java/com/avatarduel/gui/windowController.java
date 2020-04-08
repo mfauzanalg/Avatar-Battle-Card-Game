@@ -23,11 +23,8 @@ public class windowController {
 
     @FXML
     public void startGameButton(javafx.event.ActionEvent actionEvent) throws IOException {
-        AvatarDuel.player1name = (player1.getText());
-        AvatarDuel.player2name = (player2.getText());
-
-        Player P1 = new Player(AvatarDuel.player1name, 80);
-        Player P2 = new Player(AvatarDuel.player2name, 80);
+        AvatarDuel.P1 = new Player(player1.getText(), 80);
+        AvatarDuel.P2 = new Player(player2.getText(), 80);
 
         Parent layoutParent = FXMLLoader.load(getClass().getClassLoader().getResource("Layout.fxml"));
         Scene layoutScene = new Scene(layoutParent);

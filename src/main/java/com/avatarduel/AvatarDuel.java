@@ -30,8 +30,8 @@ public class AvatarDuel extends Application {
   public static List<LandCard> landData;
   public static List<CharacterCard> CharData;
   public static List<AuraSkillCard> AuraData;
-  public static String player1name;
-  public static String player2name;
+  public static Player P1;
+  public static Player P2;
   public static int a;
 
   public void loadLandCards() throws IOException, URISyntaxException {
