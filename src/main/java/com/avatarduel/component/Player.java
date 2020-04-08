@@ -111,12 +111,15 @@ public class Player{
         //pop card dari deck
         Card top = deck.pop();
         HandCard factory = HandCardFactory.getFactory(top); // Gunakan factory method untuk menentukan factory yang akan digunakan
+        // TODO, kasih exception kalo factory = null
         hand.add(factory.createHandCard(top, this)); // tambahkan IHandCard yang dibuat factory ke hand
 	}
 
     public void play(){
         //play kartu di tangan yang dipilih Player
         //cara tahu kartu yang dipilih player gimana???
+        // Hand kan list, kalo bisa play ini nerima index yang didaoet dari GUI,
+        // Trus jalanin play punya IHandCard yang ada di index tsb
         System.out.println("belum diimplementasi");
         //play card from hand
         //remove card from hand
@@ -126,12 +129,14 @@ public class Player{
     public void rotate(){
         //rotate kartu di board yang dipilih Player
         //cara tahu kartu yang dipilih player gimana???
+        // Kayaknya sama dengan play bedanya yang di klik board doang
         System.out.println("belum diimplementasi");
 	}
 
     public void attack(){
         //menyerang player/character musuh menggunakan character di board
         //cara tahu kartu yang dipilih player gimana???
+        // Mirip dengan rotate
         System.out.println("belum diimplementasi");
 	}
 
