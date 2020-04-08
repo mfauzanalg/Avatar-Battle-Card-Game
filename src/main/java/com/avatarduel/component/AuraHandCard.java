@@ -6,10 +6,12 @@ package com.avatarduel.component;
 public class AuraHandCard implements IHandCard {
     private AuraSkillCard skill;
     private Player target;
+    private boolean isOpen;
 
     public AuraHandCard(AuraSkillCard card, Player _target){
         skill = card;
         target = _target;
+        isOpen = true;
     }
 
     public Card getCardInstance(){
@@ -18,6 +20,14 @@ public class AuraHandCard implements IHandCard {
 
     public Player getOwner(){
         return target;
+    }
+
+    public void flip(){
+        isOpen = !isOpen;
+    }
+
+    public boolean getIsOpen(){
+        return isOpen;
     }
 
     public void play(){

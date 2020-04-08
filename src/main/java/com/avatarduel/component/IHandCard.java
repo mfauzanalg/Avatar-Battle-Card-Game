@@ -9,4 +9,8 @@ interface IHandCard {
     Card getCardInstance();
 
     Player getOwner();
+
+    void flip();
+
+    boolean getIsOpen();
 }

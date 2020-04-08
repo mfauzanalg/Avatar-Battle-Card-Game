@@ -6,8 +6,8 @@ package com.avatarduel.component;
 public class SummonedCharacter extends BoardCard {
     CharacterCard summon;
 
-    public SummonedCharacter(Player owner, CharacterCard m, boolean open, boolean attack){
-        super(owner, open, attack);
+    public SummonedCharacter(Player owner, CharacterCard m, boolean attack){
+        super(owner, attack);
         summon = m;
     }
 

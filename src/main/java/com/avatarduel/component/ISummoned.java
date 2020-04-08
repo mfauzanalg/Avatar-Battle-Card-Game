@@ -3,9 +3,6 @@
 package com.avatarduel.component;
 
 public interface ISummoned {
-    // mengubah keadaan kartu dari tertutup jadi terbuka dan mengembalikan true
-    // bila kartu sudah terbuka, tidak lakukan apa-apa dan kembalikan false
-    boolean flip();
 
     // mengubah posisi karakter dari menyerang jadi bertahan, atau sebaliknya
     void rotate();

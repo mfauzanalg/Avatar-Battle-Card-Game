@@ -7,10 +7,12 @@ public class PowerUpHandCard implements IHandCard {
     PowerUpSkillCard power;
     SummonedCharacter target;
     Player owner;
+    boolean isOpen;
 
     public PowerUpHandCard(PowerUpSkillCard pow, Player _owner){
         power = pow;
         owner = _owner;
+        isOpen = true;
     }
 
     public void setTarget(SummonedCharacter _target){
@@ -23,6 +25,14 @@ public class PowerUpHandCard implements IHandCard {
 
     public Player getOwner(){
         return owner;
+    }
+
+    public void flip(){
+        isOpen = !isOpen;
+    }
+
+    public boolean getIsOpen(){
+        return isOpen;
     }
     
     public void play(){

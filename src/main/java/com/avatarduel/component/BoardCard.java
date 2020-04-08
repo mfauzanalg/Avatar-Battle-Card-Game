@@ -9,35 +9,25 @@ import java.util.ArrayList;
 abstract public class BoardCard implements ISummoned, IDestructible {
     protected List<SkillCard> skills = new ArrayList<SkillCard>();
     protected Player owner;
-    protected boolean isOpen;
     protected boolean attackPos;
     protected boolean isPoweredUp;
 
     public BoardCard(Player _owner){
         owner = _owner;
-        isOpen = true;
         attackPos = true;
         isPoweredUp = false;
     }
 
-    public BoardCard(Player _owner, boolean open, boolean attack){
+    public BoardCard(Player _owner, boolean attack){
         owner = _owner;
-        isOpen = open;
         attackPos = attack;
         isPoweredUp = false;
     }
 
-    public BoardCard(Player _owner, boolean open, boolean attack, boolean power){
+    public BoardCard(Player _owner, boolean attack, boolean power){
         owner = _owner;
-        isOpen = open;
         attackPos = attack;
         isPoweredUp = power;
-    }
-
-    public boolean flip(){
-        boolean retval = !isOpen;
-        isOpen = true;
-        return retval;
     }
 
     public void rotate(){
@@ -65,20 +55,12 @@ abstract public class BoardCard implements ISummoned, IDestructible {
         return isPoweredUp;
     }
 
-    public boolean getIsOpen(){
-        return isOpen;
-    }
-
     public boolean getAttackPos(){
         return attackPos;
     }
 
     public void setPowerUp(boolean val){
         isPoweredUp = val;
-    }
-
-    public void setIsOpen(boolean val){
-        isOpen = val;
     }
 
     public void setAttackPos(boolean val){

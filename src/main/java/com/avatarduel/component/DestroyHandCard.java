@@ -7,10 +7,12 @@ public class DestroyHandCard implements IHandCard {
     private SummonedCharacter target;
     private DestroySkillCard skill;
     private Player owner;
+    private boolean isOpen;
 
     public DestroyHandCard(DestroySkillCard card, Player _owner){
         skill = card;
         owner = _owner;
+        isOpen = true;
     }
 
     public void setTarget(SummonedCharacter _target){
@@ -23,6 +25,14 @@ public class DestroyHandCard implements IHandCard {
 
     public Player getOwner(){
         return owner;
+    }
+
+    public void flip(){
+        isOpen = !isOpen;
+    }
+
+    public boolean getIsOpen(){
+        return isOpen;
     }
 
     public void play(){

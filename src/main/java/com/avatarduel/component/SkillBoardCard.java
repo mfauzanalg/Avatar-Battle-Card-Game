@@ -8,7 +8,7 @@ abstract public class SkillBoardCard extends BoardCard {
     SkillCard card;
 
     public SkillBoardCard(BoardCard target, SkillCard _card){
-        super(target.owner, target.isOpen, target.attackPos, target.isPoweredUp);
+        super(target.owner, target.attackPos, target.isPoweredUp);
         this.target = target;
         card = _card;
         target.addSkillCard(_card);
