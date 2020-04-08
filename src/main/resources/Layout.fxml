@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -8,7 +9,11 @@
 
 <AnchorPane prefHeight="640.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.avatarduel.gui.layoutController">
    <children>
-      <HBox prefHeight="640.0" prefWidth="238.0" style="-fx-border-color: red;" />
+      <AnchorPane prefHeight="640.0" prefWidth="238.0" style="-fx-border-color: red;">
+         <children>
+            <Pane layoutX="17.0" layoutY="324.0" prefHeight="240.0" prefWidth="200.0" style="-fx-border-color: green;" />
+            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="17.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true" />
+         </children></AnchorPane>
       <VBox layoutX="233.0" layoutY="98.0" prefHeight="443.0" prefWidth="932.0">
          <children>
             <HBox prefHeight="220.0" prefWidth="757.0" style="-fx-border-color: black;">
@@ -92,46 +97,46 @@
          <children>
             <Pane prefHeight="100.0" prefWidth="83.0">
                <children>
-                  <fx:include source="LandCard.fxml" />
+                  <fx:include source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include source="LandCard.fxml" />
+                  <fx:include source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include source="LandCard.fxml" />
+                  <fx:include source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include fx:id="P1H4" source="LandCard.fxml" />
+                  <fx:include fx:id="P1H4" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include fx:id="P1H1" source="LandCard.fxml" />
+                  <fx:include fx:id="P1H1" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include fx:id="P1H2" source="LandCard.fxml" />
+                  <fx:include fx:id="P1H2" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include fx:id="P1H3" source="LandCard.fxml" />
+                  <fx:include fx:id="P1H3" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include source="LandCard.fxml" />
+                  <fx:include source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include source="LandCard.fxml" />
+                  <fx:include source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include source="LandCard.fxml" />
+                  <fx:include source="TCard.fxml" />
                </children></Pane>
          </children>
       </HBox>
-      <Button fx:id="btn" onMouseClicked="#drawCard" layoutX="1192.0" layoutY="555.0" mnemonicParsing="false" text="Button" />
+      <Button fx:id="btn" layoutX="1192.0" layoutY="555.0" mnemonicParsing="false" onMouseClicked="#drawCard" text="Button" />
    </children>
 </AnchorPane>

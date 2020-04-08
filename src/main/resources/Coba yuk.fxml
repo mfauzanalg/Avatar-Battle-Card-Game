@@ -10,12 +10,12 @@
       <Button fx:id="btn" layoutX="273.0" layoutY="60.0" mnemonicParsing="false" onMouseClicked="#buttonClikced" text="Button" />
       <Pane layoutX="120.0" layoutY="94.0" prefHeight="103.0" prefWidth="83.0">
          <children>
-             <fx:include fx:id="second" source="LandCard.fxml" />
+             <fx:include fx:id="second" source="TCard.fxml" />
          </children>
       </Pane>
       <Pane layoutX="14.0" layoutY="50.0" prefHeight="103.0" prefWidth="83.0">
          <children>
-             <fx:include fx:id="first" source="LandCard.fxml" />
+             <fx:include fx:id="first" source="TCard.fxml" />
          </children>
       </Pane>
       <Text fx:id="teks" layoutX="247.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" onMouseClicked="#textClicked" text="Text" wrappingWidth="51.999997675418854" />

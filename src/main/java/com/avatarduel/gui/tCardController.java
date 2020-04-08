@@ -12,7 +12,7 @@ import javafx.scene.text.Text;
 import java.io.File;
 
 
-public class landCardController {
+public class tCardController {
     @FXML private Text name;
     @FXML private Text attrib;
     @FXML private ImageView pict;
@@ -28,6 +28,8 @@ public class landCardController {
 
     public void loadCard(){
         AvatarDuel.a += 1;
+        System.out.println(AvatarDuel.a);
+        System.out.println(AvatarDuel.landData.size());
         File file = new File (AvatarDuel.landData.get(AvatarDuel.a).getImagePath());
         Image image = new Image(file.toURI().toString());
         pict.setImage(image);
