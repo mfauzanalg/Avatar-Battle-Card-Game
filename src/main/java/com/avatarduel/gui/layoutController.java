@@ -13,8 +13,8 @@ public class layoutController {
 
     public void drawCard(MouseEvent mouseEvent) {
         P1H1Controller.loadCard();
-        P1H2Controller.loadCard();
-        P1H3Controller.loadCard();
-        P1H4Controller.loadCard();
+//        P1H2Controller.loadCard();
+//        P1H3Controller.loadCard();
+//        P1H4Controller.loadCard();
     }
 }

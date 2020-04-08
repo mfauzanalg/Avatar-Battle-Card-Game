@@ -27,6 +27,7 @@ public class AvatarDuel extends Application {
   private static final String AURA_CSV_FILE_PATH = "card/data/skill_aura.csv";
   private static final String CHAR_CSV_FILE_PATH = "card/data/character.csv";
   public static List<LandCard> landData;
+  public static int a;
   public static CharacterCard cc;
   public static AuraSkillCard ac;
 
@@ -75,6 +76,7 @@ public class AvatarDuel extends Application {
       this.loadLandCards();
       this.loadAuraCards();
       this.loadCharCards();
+      a = 1;
       Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("window.fxml"));
 
       Scene scene = new Scene(root);

@@ -27,12 +27,14 @@ public class landCardController {
     }
 
     public void loadCard(){
-        File file = new File ("src/main/resources/com/avatarduel/card/image/land/Spirit Oasis.png");
+        AvatarDuel.a += 1;
+        File file = new File (AvatarDuel.landData.get(AvatarDuel.a).getImagePath());
         Image image = new Image(file.toURI().toString());
         pict.setImage(image);
-        name.setText(AvatarDuel.landData.get(5).getName());
+        elmt.setText(AvatarDuel.landData.get(AvatarDuel.a).getElement());
+        name.setText(AvatarDuel.landData.get(AvatarDuel.a).getName());
         attrib.setText("Males masukin nanti aja ya");
-        System.out.println(AvatarDuel.landData.get(5).getName());
+        System.out.println(AvatarDuel.landData.get(AvatarDuel.a).getImagePath());
     }
 
 }
