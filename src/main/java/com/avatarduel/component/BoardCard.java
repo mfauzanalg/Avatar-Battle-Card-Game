@@ -52,7 +52,7 @@ abstract public class BoardCard implements ISummoned, IDestructible {
     public void attack(Player other, int idx){
         // Check getPositionValue this sama other.board[idx]
         // Kalo other lebih gede, gak bisa diserang (Print message or something)
-        // Kalo this lebih gede, jalankan destroy milik other lalu kurangi HP other
+        // Kalo this lebih gede, jalankan destroy milik other.board[idx] lalu kurangi HP other sesuai selisih
     }
 
     abstract public int getPositionValue();

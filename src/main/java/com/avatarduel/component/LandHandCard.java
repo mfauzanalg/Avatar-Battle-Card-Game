@@ -19,8 +19,10 @@ public class LandHandCard implements IHandCard {
         return target;
     }
     public void play(){
-        // Tambah power player sesuai elemen kartu land
-        // Tunggu implementasi player
-        System.out.println("blm diimplemen");
+        String element = this.getCardInstance().getElement();
+        int valMax = this.getOwner().getMaxElement(element);
+        int valCurr = this.getOwner().getCurrentElement(element);
+        this.getOwner().setMaxElement(element, valMax + 1)
+        this.getOwner().setCurrentElement(element, valCur + 1)
     }
 }
