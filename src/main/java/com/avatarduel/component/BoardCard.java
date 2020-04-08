@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 abstract public class BoardCard implements ISummoned, IDestructible {
+    protected List<SkillCard> skills = new ArrayList<SkillCard>();
     protected Player owner;
     protected boolean isOpen;
     protected boolean attackPos;
@@ -48,5 +49,9 @@ abstract public class BoardCard implements ISummoned, IDestructible {
 
     public void setPowerUp(boolean val){
         isPoweredUp = val;
+    }
+
+    public void addSkillCard(SkillCard skill){
+        skills.add(skill);
     }
 }

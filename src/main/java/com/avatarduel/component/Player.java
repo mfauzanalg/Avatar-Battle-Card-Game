@@ -5,16 +5,18 @@ public class Player{
     private String name;
     private int health;
     private Stack<Card> deck;
-    private List<Card> hand;
-    private List<Card> board;
+    private List<IHandCard> hand; //Ini harus IHandCard karna method play adanya di IHandCard
+    private List<BoardCard> board; // Ini juga harus BoardCard biar bisa pake dekorator
+    private List<SkillBoardCard> skillBoard; // Kalo perlu Cardnya, pake method getCardInstance() ya
 
     public Player(String name, int health)
     {
         this.name = name;
         this.health = health;
         this.deck = new Stack<Card>();
-        this.hand = new ArrayList<Card>();
-        this.board = new ArrayList<Card>();
+        this.hand = new ArrayList<IHandCard>();
+        this.board = new ArrayList<BoardCard>();
+        this.skillBoard = new ArrayList<SkillBoardCard>();
     }
 
     public void setName(String name)
@@ -35,8 +37,10 @@ public class Player{
 	}
 
     public void draw(){
-        //pop card dari deck, add card ke hand;
-        System.out.println("belum diimplementasi");
+        //pop card dari deck
+        Card top = deck.pop();
+        HandCard factory = HandCardFactory.getFactory(top, this); // Gunakan factory method untuk menentukan factory yang akan digunakan
+        hand.add(factory.createHandCard(top, this)); // tambahkan IHandCard yang dibuat factory ke hand
 	}
 
     public void play(){

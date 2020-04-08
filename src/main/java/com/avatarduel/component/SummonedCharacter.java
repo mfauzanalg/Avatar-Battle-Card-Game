@@ -2,8 +2,6 @@ package com.avatarduel.component;
 
 // File : SummonedCharacter.java
 // Handles the behaviour of summoned characters
-import java.util.List;
-import java.util.ArrayList;
 
 public class SummonedCharacter extends BoardCard {
     CharacterCard summon;

@@ -11,6 +11,7 @@ abstract public class SkillBoardCard extends BoardCard {
         super(target.owner, target.isOpen, target.attackPos, target.isPoweredUp);
         this.target = target;
         card = _card;
+        target.addSkillCard(_card);
     }
 
     abstract public int getPositionValue();
