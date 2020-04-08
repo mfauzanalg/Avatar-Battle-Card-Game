@@ -27,8 +27,6 @@ public class windowController {
         AvatarDuel.P2 = new Player(player2.getText(), 80);
 
 
-
-
         Parent layoutParent = FXMLLoader.load(getClass().getClassLoader().getResource("Layout.fxml"));
         Scene layoutScene = new Scene(layoutParent);
 

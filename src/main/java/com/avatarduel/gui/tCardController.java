@@ -25,7 +25,7 @@ public class tCardController {
         pict.setImage(image);
         elmt.setText(card.getElement());
         name.setText(card.getName());
-        attrib.setText("Males masukin nanti aja ya");
+        attrib.setText("apa ya");
         System.out.println(card.getImagePath());
     }
 

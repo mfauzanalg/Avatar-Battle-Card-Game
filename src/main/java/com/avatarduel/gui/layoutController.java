@@ -23,6 +23,12 @@ public class layoutController implements Initializable{
     @FXML private tCardController P1H2Controller;
     @FXML private tCardController P1H3Controller;
     @FXML private tCardController P1H4Controller;
+
+
+
+
+
+
     @FXML private ImageView detailPict;
     @FXML private Text detailText;
     @FXML private Text p1name;
@@ -39,14 +45,15 @@ public class layoutController implements Initializable{
 
     public void hoverP1H1(MouseEvent mouseEvent){
         Card.cardHover = Card.onP1H1;
-        File file = new File (Card.cardHover.getImagePath());
-        Image image = new Image(file.toURI().toString());
-        detailPict.setImage(image);
-        detailText.setText(Card.cardHover.getDescription());
+        onHover();
     }
 
     public void hoverP1H2(MouseEvent mouseEvent){
         Card.cardHover = Card.onP1H2;
+        onHover();
+    }
+
+    public void onHover(){
         File file = new File (Card.cardHover.getImagePath());
         Image image = new Image(file.toURI().toString());
         detailPict.setImage(image);

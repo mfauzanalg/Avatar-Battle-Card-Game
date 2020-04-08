@@ -72,35 +72,35 @@
                            <children>
                               <Pane prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: Yellow;">
                                  <children>
-                                    <fx:include source="TCard.fxml" />
+                                    <fx:include fx:id="P2S1" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: Yellow;">
                                  <children>
-                                    <fx:include source="TCard.fxml" />
+                                    <fx:include fx:id="P2S2" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: Yellow;">
                                  <children>
-                                    <fx:include source="TCard.fxml" />
+                                    <fx:include fx:id="P2S3" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: Yellow;">
                                  <children>
-                                    <fx:include source="TCard.fxml" />
+                                    <fx:include fx:id="P2S4" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: Yellow;">
                                  <children>
-                                    <fx:include source="TCard.fxml" />
+                                    <fx:include fx:id="P2S5" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: Yellow;">
                                  <children>
-                                    <fx:include source="TCard.fxml" />
+                                    <fx:include fx:id="P2S6" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: Yellow;">
                                  <children>
-                                    <fx:include source="TCard.fxml" />
+                                    <fx:include fx:id="P2S7" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: Yellow;">
                                  <children>
-                                    <fx:include source="TCard.fxml" />
+                                    <fx:include fx:id="P2S8" source="TCard.fxml" />
                                  </children></Pane>
                            </children>
                         </HBox>
@@ -108,35 +108,35 @@
                            <children>
                               <Pane prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: Green;">
                                  <children>
-                                    <fx:include source="TCard.fxml" />
+                                    <fx:include fx:id="P2A1" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: Green;">
                                  <children>
-                                    <fx:include source="TCard.fxml" />
+                                    <fx:include fx:id="P2A2" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: Green;">
                                  <children>
-                                    <fx:include source="TCard.fxml" />
+                                    <fx:include fx:id="P2A3" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: Green;">
                                  <children>
-                                    <fx:include source="TCard.fxml" />
+                                    <fx:include fx:id="P2A4" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: Green;">
                                  <children>
-                                    <fx:include source="TCard.fxml" />
+                                    <fx:include fx:id="P2A5" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: Green;">
                                  <children>
-                                    <fx:include source="TCard.fxml" />
+                                    <fx:include fx:id="P2A6" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: Green;">
                                  <children>
-                                    <fx:include source="TCard.fxml" />
+                                    <fx:include fx:id="P2A7" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: Green;">
                                  <children>
-                                    <fx:include source="TCard.fxml" />
+                                    <fx:include fx:id="P2A8" source="TCard.fxml" />
                                  </children></Pane>
                            </children></HBox>
                      </children>
@@ -151,35 +151,35 @@
                            <children>
                               <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Green;">
                                  <children>
-                                    <fx:include source="TCard.fxml" />
+                                    <fx:include fx:id="P1A1" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Green;">
                                  <children>
-                                    <fx:include source="TCard.fxml" />
+                                    <fx:include fx:id="P1A2" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Green;">
                                  <children>
-                                    <fx:include source="TCard.fxml" />
+                                    <fx:include fx:id="P1A3" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Green;">
                                  <children>
-                                    <fx:include source="TCard.fxml" />
+                                    <fx:include fx:id="P1A4" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Green;">
                                  <children>
-                                    <fx:include source="TCard.fxml" />
+                                    <fx:include fx:id="P1A5" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Green;">
                                  <children>
-                                    <fx:include source="TCard.fxml" />
+                                    <fx:include fx:id="P1A6" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Green;">
                                  <children>
-                                    <fx:include source="TCard.fxml" />
+                                    <fx:include fx:id="P1A7" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Green;">
                                  <children>
-                                    <fx:include source="TCard.fxml" />
+                                    <fx:include fx:id="P1A8" source="TCard.fxml" />
                                  </children>
                               </Pane>
                            </children></HBox>
@@ -187,31 +187,31 @@
                            <children>
                               <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Yellow;">
                                  <children>
-                                    <fx:include source="TCard.fxml" />
+                                    <fx:include fx:id="P1S1" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Yellow;">
                                  <children>
-                                    <fx:include source="TCard.fxml" />
+                                    <fx:include fx:id="P1S2" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Yellow;">
                                  <children>
-                                    <fx:include source="TCard.fxml" />
+                                    <fx:include fx:id="P1S3" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Yellow;">
                                  <children>
-                                    <fx:include source="TCard.fxml" />
+                                    <fx:include fx:id="P1S4" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Yellow;">
                                  <children>
-                                    <fx:include source="TCard.fxml" />
+                                    <fx:include fx:id="P1S5" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Yellow;">
                                  <children>
-                                    <fx:include source="TCard.fxml" />
+                                    <fx:include fx:id="P1S6" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Yellow;">
                                  <children>
-                                    <fx:include source="TCard.fxml" />
+                                    <fx:include fx:id="P1S7" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Yellow;">
                                  <children>
@@ -269,39 +269,39 @@
          <children>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include source="TCard.fxml" />
+                  <fx:include fx:id="P2H9" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include source="TCard.fxml" />
+                  <fx:include fx:id="P2H7" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include source="TCard.fxml" />
+                  <fx:include fx:id="P2H5" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include source="TCard.fxml" />
+                  <fx:include fx:id="P2H3" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include source="TCard.fxml" />
+                  <fx:include fx:id="P2H1" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include source="TCard.fxml" />
+                  <fx:include fx:id="P2H2" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include source="TCard.fxml" />
+                  <fx:include fx:id="P2H4" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include source="TCard.fxml" />
+                  <fx:include fx:id="P2H6" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include source="TCard.fxml" />
+                  <fx:include fx:id="P2H8" source="TCard.fxml" />
                </children></Pane>
          </children>
       </HBox>
@@ -309,19 +309,19 @@
          <children>
             <Pane prefHeight="100.0" prefWidth="83.0">
                <children>
-                  <fx:include source="TCard.fxml" />
+                  <fx:include fx:id="P1H9" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include source="TCard.fxml" />
+                  <fx:include fx:id="P1H7" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include source="TCard.fxml" />
+                  <fx:include fx:id="P1H5" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include fx:id="P1H4" source="TCard.fxml" />
+                  <fx:include fx:id="P1H3" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
@@ -333,15 +333,15 @@
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include fx:id="P1H3" source="TCard.fxml" />
+                  <fx:include fx:id="P1H4" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include source="TCard.fxml" />
+                  <fx:include fx:id="P1H6" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include source="TCard.fxml" />
+                  <fx:include fx:id="P1H8" source="TCard.fxml" />
                </children></Pane>
          </children>
       </HBox>
