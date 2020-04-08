@@ -34,10 +34,4 @@ public class PowerUpHandCard implements IHandCard {
     public boolean getIsOpen(){
         return isOpen;
     }
-    
-    public void play(){
-        // Taruh kartu ke board
-
-        target.setPowerUp(true);
-    }
 }

@@ -28,12 +28,4 @@ public class LandHandCard implements IHandCard {
     public boolean getIsOpen(){
         return isOpen;
     }
-
-    public void play(){
-        String element = this.getCardInstance().getElement();
-        int valMax = this.getOwner().getMaxElement(element);
-        int valCurr = this.getOwner().getCurrentElement(element);
-        this.getOwner().setMaxElement(element, valMax + 1);
-        this.getOwner().setCurrentElement(element, valCurr + 1);
-    }
 }

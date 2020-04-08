@@ -34,11 +34,4 @@ public class DestroyHandCard implements IHandCard {
     public boolean getIsOpen(){
         return isOpen;
     }
-
-    public void play(){
-        // Put this card into board
-        // Get the target card and set it as target
-        target.destroy();
-        //Immediately remove this card from board
-    }
 }

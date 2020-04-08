@@ -29,9 +29,4 @@ public class AuraHandCard implements IHandCard {
     public boolean getIsOpen(){
         return isOpen;
     }
-
-    public void play(){
-        // Create a AuraBoardCard as a Decorator to Summoned Character
-        // Add this card to Player's board
-    }
 }

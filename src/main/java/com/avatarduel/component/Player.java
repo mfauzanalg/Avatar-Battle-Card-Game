@@ -117,8 +117,9 @@ public class Player{
     public void play(int idx){
         System.out.println("belum diimplementasi");
         IHandCard card = hand.remove(idx);
-        card.play();
+        //card.play(); // Play jadinya pake HandCardPlayer.playCard(...) aja
         //TODO, ubah IHandCard jadi BoardCard/skillBoardCard lalu put ke boar/skillBoard
+        // 
 	}
 
     public void rotate(int idx){
