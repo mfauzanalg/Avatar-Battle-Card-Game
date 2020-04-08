@@ -7,7 +7,7 @@ public class Player{
     private Stack<Card> deck;
     private List<IHandCard> hand; //Ini harus IHandCard karna method play adanya di IHandCard
     private List<BoardCard> board; // Ini juga harus BoardCard biar bisa pake dekorator
-    private List<SkillBoardCard> skillBoard; // Kalo perlu Cardnya, pake method getCardInstance() ya
+    private List<SkillCard> skillBoard; // Kalo perlu Cardnya, pake method getCardInstance() ya
 
     public Player(String name, int health)
     {
@@ -47,6 +47,8 @@ public class Player{
     public void play(){
         //play kartu di tangan yang dipilih Player
         //cara tahu kartu yang dipilih player gimana???
+        // Hand kan list, kalo bisa play ini nerima index yang didaoet dari GUI,
+        // Trus jalanin play punya IHandCard yang ada di index tsb
         System.out.println("belum diimplementasi");
         //play card from hand
         //remove card from hand
@@ -56,12 +58,14 @@ public class Player{
     public void rotate(){
         //rotate kartu di board yang dipilih Player
         //cara tahu kartu yang dipilih player gimana???
+        // Kayaknya sama dengan play bedanya yang di klik board doang
         System.out.println("belum diimplementasi");
 	}
 
     public void attack(){
         //menyerang player/character musuh menggunakan character di board
         //cara tahu kartu yang dipilih player gimana???
+        // Mirip dengan rotate
         System.out.println("belum diimplementasi");
 	}
 

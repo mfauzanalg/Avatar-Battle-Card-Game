@@ -54,4 +54,8 @@ abstract public class BoardCard implements ISummoned, IDestructible {
     public void addSkillCard(SkillCard skill){
         skills.add(skill);
     }
+
+    public List<SkillCard> getSkills(){
+        return skills;
+    }
 }
