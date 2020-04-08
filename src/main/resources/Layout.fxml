@@ -24,7 +24,7 @@
          <children>
             <HBox prefHeight="220.0" prefWidth="757.0" style="-fx-border-color: black;">
                <children>
-                  <AnchorPane fx:id="gantianchor" prefHeight="218.0" prefWidth="118.0" style="-fx-border-color: red;">
+                  <AnchorPane prefHeight="218.0" prefWidth="118.0" style="-fx-border-color: red;">
                      <children>
                         <ImageView fx:id="backCard2" fitHeight="75.0" fitWidth="65.0" layoutX="62.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -219,7 +219,7 @@
                                  </children></Pane>
                            </children></HBox>
                      </children></VBox>
-                  <AnchorPane fx:id="gantianchor2" layoutX="11.0" layoutY="11.0" prefHeight="218.0" prefWidth="129.0" style="-fx-border-color: red;">
+                  <AnchorPane layoutX="11.0" layoutY="11.0" prefHeight="218.0" prefWidth="129.0" style="-fx-border-color: red;">
                      <children>
                         <ImageView fx:id="water1" fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
                            <image>

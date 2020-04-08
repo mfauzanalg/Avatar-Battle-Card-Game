@@ -32,8 +32,18 @@ public class AvatarDuel extends Application {
   public static List<LandCard> landData;
   public static List<CharacterCard> CharData;
   public static List<AuraSkillCard> AuraData;
+  public static DestroySkillCard DestroyCard;
+  public static PowerUpSkillCard PowerUpCard;
   public static Player P1;
   public static Player P2;
+
+  public void loadDestroyCard(){
+    DestroyCard = new DestroySkillCard(99, "Destroy Card", "", "This is Destroy skill card", "src/main/resources/com/avatarduel/card/image/skill/Destroy.png");
+  }
+
+  public void loadPowerUpCard(){
+    PowerUpCard = new PowerUpSkillCard(100, "Power Up Card", "", "This is Power Up Skill card", "src/main/resources/com/avatarduel/card/image/skill/PowerUp.png");
+  }
 
   public void loadLandCards() throws IOException, URISyntaxException {
     File landCSVFile = new File(getClass().getResource(LAND_CSV_FILE_PATH).toURI());
@@ -81,6 +91,8 @@ public class AvatarDuel extends Application {
       this.loadLandCards();
       this.loadAuraCards();
       this.loadCharCards();
+      this.loadDestroyCard();
+      this.loadPowerUpCard();
 
       Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("window.fxml"));
       Scene scene = new Scene(root);
