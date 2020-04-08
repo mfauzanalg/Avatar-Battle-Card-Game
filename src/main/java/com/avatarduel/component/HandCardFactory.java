@@ -6,14 +6,17 @@ package com.avatarduel.component;
 public class HandCardFactory {
 
     public static HandCard getFactory(Card card){
+        HandCard retval = null;
         if (card.getType().equals("character")){
-            return new CharacterHandCardFactory();
+            retval = new CharacterHandCardFactory();
         }
         else if (card.getType().equals("skill")){
-            return SkillHandCardFactory.getSkillFactory(card);
+            retval = SkillHandCardFactory.getSkillFactory((SkillCard) card);
         }
         else if (card.getType().equals("land")){
-            return new LandHandCardFactory();
+            retval = new LandHandCardFactory();
         }
+
+        return retval;
     }
 }
