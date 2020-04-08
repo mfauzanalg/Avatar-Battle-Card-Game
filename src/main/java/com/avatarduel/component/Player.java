@@ -16,7 +16,7 @@ public class Player{
         this.deck = new Stack<Card>();
         this.hand = new ArrayList<IHandCard>();
         this.board = new ArrayList<BoardCard>();
-        this.skillBoard = new ArrayList<SkillBoardCard>();
+        this.skillBoard = new ArrayList<SkillCard>();
     }
 
     public void setName(String name)

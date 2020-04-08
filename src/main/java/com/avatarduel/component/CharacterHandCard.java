@@ -24,5 +24,6 @@ public class CharacterHandCard implements IHandCard {
         // Buat SummonedChar dengan objek ini sebagai parameter
         // Lalu tambahkan SummonedChar tersebut ke board milik player
         // Jangan lupa cek pilihan user apakah dia memilih posisi att/def dan apakah kartu dibuka / ditutup
+        // kayaknya character card gak bisa implementasi ini, harus bikin method kayak, play(boolean isOpen, boolean attackPos)
     }
 }

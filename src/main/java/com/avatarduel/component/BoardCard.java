@@ -13,6 +13,13 @@ abstract public class BoardCard implements ISummoned, IDestructible {
     protected boolean attackPos;
     protected boolean isPoweredUp;
 
+    public BoardCard(Player _owner){
+        owner = _owner;
+        isOpen = true;
+        attackPos = true;
+        isPoweredUp = false;
+    }
+
     public BoardCard(Player _owner, boolean open, boolean attack){
         owner = _owner;
         isOpen = open;
@@ -37,6 +44,17 @@ abstract public class BoardCard implements ISummoned, IDestructible {
         attackPos = !attackPos;
     }
 
+    public void attack(Player other){
+        // Method kalo board musuh kosong
+        // Langsung kurangi HP other sebanyak this.getPositionValue()
+    }
+
+    public void attack(Player other, int idx){
+        // Check getPositionValue this sama other.board[idx]
+        // Kalo other lebih gede, gak bisa diserang (Print message or something)
+        // Kalo this lebih gede, jalankan destroy milik other lalu kurangi HP other
+    }
+
     abstract public int getPositionValue();
 
     abstract public Card getCardInstance();
@@ -47,8 +65,24 @@ abstract public class BoardCard implements ISummoned, IDestructible {
         return isPoweredUp;
     }
 
+    public boolean getIsOpen(){
+        return isOpen;
+    }
+
+    public boolean getAttackPos(){
+        return attackPos;
+    }
+
     public void setPowerUp(boolean val){
         isPoweredUp = val;
+    }
+
+    public void setIsOpen(boolean val){
+        isOpen = val;
+    }
+
+    public void setAttackPos(boolean val){
+        attackPos = val;
     }
 
     public void addSkillCard(SkillCard skill){
