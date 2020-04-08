@@ -1,19 +1,17 @@
 package com.avatarduel.gui;
 
 import javafx.fxml.FXML;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
-import javafx.stage.Window;
 
 
 public class cobayukController {
 
     @FXML private Button btn;
     @FXML private Text teks;
-    @FXML private landCardController secondController;
-    @FXML private landCardController firstController;
+    @FXML private tCardController secondController;
+    @FXML private tCardController firstController;
 
 
     public void buttonClikced(MouseEvent mouseEvent) {

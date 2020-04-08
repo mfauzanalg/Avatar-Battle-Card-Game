@@ -1,23 +1,21 @@
 package com.avatarduel.customcontrol;
 
-import com.avatarduel.gui.landCardController;
-import javafx.beans.property.ObjectProperty;
+import com.avatarduel.gui.tCardController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.paint.Paint;
 
 import java.io.IOException;
 
 
 public class landCardCC extends AnchorPane {
-    landCardController controller;
+    tCardController controller;
 
     public landCardCC() throws IOException {
         super();
         try{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("LandCard.fxml"));
-            controller = new landCardController();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("TCard.fxml"));
+            controller = new tCardController();
             loader.setController(controller);
             Node n = loader.load();
 
