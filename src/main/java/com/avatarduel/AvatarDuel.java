@@ -1,5 +1,6 @@
 package com.avatarduel;
 
+import com.avatarduel.component.*;
 import com.avatarduel.gui.windowController;
 import java.awt.event.ActionEvent;
 import java.io.File;
@@ -9,10 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import com.avatarduel.component.AuraSkillCard;
-import com.avatarduel.component.CharacterCard;
-import com.avatarduel.component.LandCard;
-import com.avatarduel.component.Player;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -27,6 +24,9 @@ public class AvatarDuel extends Application {
   private static final String LAND_CSV_FILE_PATH = "card/data/land.csv";
   private static final String AURA_CSV_FILE_PATH = "card/data/skill_aura.csv";
   private static final String CHAR_CSV_FILE_PATH = "card/data/character.csv";
+  public static Card cardHover;
+  public static Card onP1H1;
+  public static Card onP1H2;
   public static List<LandCard> landData;
   public static List<CharacterCard> CharData;
   public static List<AuraSkillCard> AuraData;

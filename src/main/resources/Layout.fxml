@@ -248,8 +248,8 @@
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include fx:id="P1H2" source="TCard.fxml" />
-               </children></Pane>
+                  <fx:include fx:id="P1H2" onMouseEntered="#hoverP1H2" source="TCard.fxml" />
+               </children></Pane>`
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
                   <fx:include fx:id="P1H3" source="TCard.fxml" />
