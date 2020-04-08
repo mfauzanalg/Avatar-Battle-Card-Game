@@ -31,7 +31,6 @@ public class layoutController implements Initializable{
         AvatarDuel.onP1H1 = AvatarDuel.landData.get(1);
         P1H2Controller.loadCard(AvatarDuel.landData.get(2));
         AvatarDuel.onP1H2 = AvatarDuel.landData.get(2);
-        P1H3Controller.loadCard(AvatarDuel.landData.get(3));
     }
 
     public void hoverP1H1(MouseEvent mouseEvent){

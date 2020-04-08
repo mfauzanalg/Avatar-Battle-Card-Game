@@ -1,5 +1,10 @@
 package com.avatarduel;
 
+import com.avatarduel.component.AuraSkillCard;
+import com.avatarduel.component.CharacterCard;
+import com.avatarduel.component.LandCard;
+import com.avatarduel.component.Player;
+
 import com.avatarduel.component.*;
 import com.avatarduel.gui.windowController;
 import java.awt.event.ActionEvent;
