@@ -12,20 +12,12 @@ import javafx.scene.text.Text;
 
 import java.io.File;
 
-
 public class tCardController {
     @FXML private Text name;
     @FXML private Text attrib;
     @FXML private ImageView pict;
     @FXML private Text elmt;
 
-    public void dummyLoad(){
-        File file = new File ("src/main/resources/com/avatarduel/card/image/land/Spirit Oasis.png");
-        Image image = new Image(file.toURI().toString());
-        name.setText("Siapa ya");
-        attrib.setText("Aku keren");
-        pict.setImage(image);
-    }
 
     public void loadCard(Card card){
         File file = new File (card.getImagePath());
@@ -36,6 +28,15 @@ public class tCardController {
         attrib.setText("Males masukin nanti aja ya");
         System.out.println(card.getImagePath());
     }
+
+
+    //    public void dummyLoad(){
+//        File file = new File ("src/main/resources/com/avatarduel/card/image/land/Spirit Oasis.png");
+//        Image image = new Image(file.toURI().toString());
+//        name.setText("Siapa ya");
+//        attrib.setText("Aku keren");
+//        pict.setImage(image);
+//    }
 
 //    public void loadCard(){
 //        AvatarDuel.a += 1;

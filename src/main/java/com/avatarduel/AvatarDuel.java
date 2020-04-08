@@ -29,15 +29,11 @@ public class AvatarDuel extends Application {
   private static final String LAND_CSV_FILE_PATH = "card/data/land.csv";
   private static final String AURA_CSV_FILE_PATH = "card/data/skill_aura.csv";
   private static final String CHAR_CSV_FILE_PATH = "card/data/character.csv";
-  public static Card cardHover;
-  public static Card onP1H1;
-  public static Card onP1H2;
   public static List<LandCard> landData;
   public static List<CharacterCard> CharData;
   public static List<AuraSkillCard> AuraData;
   public static Player P1;
   public static Player P2;
-  public static int a;
 
   public void loadLandCards() throws IOException, URISyntaxException {
     File landCSVFile = new File(getClass().getResource(LAND_CSV_FILE_PATH).toURI());
@@ -47,7 +43,6 @@ public class AvatarDuel extends Application {
     landData = new ArrayList<LandCard>();
     for (String[] row : landRows) {
       //landCard constructor
-      //Land l = new Land(row[1], row[3], Element.valueOf(row[2]));
       LandCard lc = new LandCard(Integer.parseInt(row[0]), row[1], row[2], row[3], row[4]);
       landData.add(lc);
     }

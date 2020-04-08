@@ -179,7 +179,7 @@
                      </children></VBox>
                   <VBox layoutX="11.0" layoutY="11.0" prefHeight="218.0" prefWidth="129.0" style="-fx-border-color: red;">
                      <children>
-                        <Button fx:id="btn" mnemonicParsing="false" onMouseClicked="#drawCard" text="Button" />
+                        <Button fx:id="btn" mnemonicParsing="false" onMouseClicked="#button" text="Button" />
                      </children></VBox>
                </children>
             </HBox>
