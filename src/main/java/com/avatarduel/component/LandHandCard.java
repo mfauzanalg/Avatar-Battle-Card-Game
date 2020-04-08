@@ -23,6 +23,6 @@ public class LandHandCard implements IHandCard {
         int valMax = this.getOwner().getMaxElement(element);
         int valCurr = this.getOwner().getCurrentElement(element);
         this.getOwner().setMaxElement(element, valMax + 1);
-        this.getOwner().setCurrentElement(element, valCur + 1);
+        this.getOwner().setCurrentElement(element, valCurr + 1);
     }
 }

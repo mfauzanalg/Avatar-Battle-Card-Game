@@ -1,5 +1,6 @@
 package com.avatarduel;
 
+import com.avatarduel.gui.windowController;
 import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.IOException;
@@ -27,9 +28,11 @@ public class AvatarDuel extends Application {
   private static final String AURA_CSV_FILE_PATH = "card/data/skill_aura.csv";
   private static final String CHAR_CSV_FILE_PATH = "card/data/character.csv";
   public static List<LandCard> landData;
+  public static List<CharacterCard> CharData;
+  public static List<AuraSkillCard> AuraData;
+  public static String player1name;
+  public static String player2name;
   public static int a;
-  public static CharacterCard cc;
-  public static AuraSkillCard ac;
 
   public void loadLandCards() throws IOException, URISyntaxException {
     File landCSVFile = new File(getClass().getResource(LAND_CSV_FILE_PATH).toURI());
@@ -50,9 +53,11 @@ public class AvatarDuel extends Application {
     CSVReader charReader = new CSVReader(charCSVFile, "\t");
     charReader.setSkipHeader(true);
     List<String[]> charRows = charReader.read();
+    CharData = new ArrayList<CharacterCard>();
     for (String[] row : charRows) {
       //charCard constructor
-      cc = new CharacterCard(Integer.parseInt(row[0]), row[1], row[2], row[3], row[4], Integer.parseInt(row[5]), Integer.parseInt(row[6]), Integer.parseInt(row[7]));
+      CharacterCard cc = new CharacterCard(Integer.parseInt(row[0]), row[1], row[2], row[3], row[4], Integer.parseInt(row[5]), Integer.parseInt(row[6]), Integer.parseInt(row[7]));
+      CharData.add(cc);
     }
   }
 
@@ -61,13 +66,13 @@ public class AvatarDuel extends Application {
     CSVReader auraReader = new CSVReader(auraCSVFile, "\t");
     auraReader.setSkipHeader(true);
     List<String[]> auraRows = auraReader.read();
+    AuraData = new ArrayList<AuraSkillCard>();
     for (String[] row : auraRows) {
       //auraCard constructor
-       ac = new AuraSkillCard(Integer.parseInt(row[0]), row[1], row[2], row[3], row[4], Integer.parseInt(row[6]), Integer.parseInt(row[7]), Integer.parseInt(row[5]));
+      AuraSkillCard ac = new AuraSkillCard(Integer.parseInt(row[0]), row[1], row[2], row[3], row[4], Integer.parseInt(row[6]), Integer.parseInt(row[7]), Integer.parseInt(row[5]));
+      AuraData.add(ac);
     }
   }
-
-
 
   @Override
   public void start(Stage stage) throws IOException {
@@ -76,13 +81,14 @@ public class AvatarDuel extends Application {
       this.loadLandCards();
       this.loadAuraCards();
       this.loadCharCards();
-      a = 1;
-      Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("window.fxml"));
 
+      Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("window.fxml"));
       Scene scene = new Scene(root);
       stage.setTitle("Avatar Duel Kelompok 9");
       stage.setScene(scene);
       stage.show();
+
+
     } catch (IOException | URISyntaxException e){
       throw new IllegalStateException("Fauzan Keren" + e);
     }
