@@ -28,8 +28,8 @@ public class tCardController {
 
     public void loadCard(){
         AvatarDuel.a += 1;
-        System.out.println(AvatarDuel.a);
-        System.out.println(AvatarDuel.landData.size());
+//        System.out.println(AvatarDuel.a);
+//        System.out.println(AvatarDuel.landData.size());
         File file = new File (AvatarDuel.landData.get(AvatarDuel.a).getImagePath());
         Image image = new Image(file.toURI().toString());
         pict.setImage(image);
