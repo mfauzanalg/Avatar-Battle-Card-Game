@@ -6,6 +6,6 @@ package com.avatarduel.component;
 public class CharacterHandCardFactory extends HandCard {
     
     public IHandCard createHandCard(Card card, Player owner){
-        return new CharacterHandCard(card, owner);
+        return new CharacterHandCard((CharacterCard) card, owner);
     } 
 }
