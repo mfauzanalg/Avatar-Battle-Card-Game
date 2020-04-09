@@ -75,15 +75,8 @@ public class layoutController implements Initializable{
     @FXML private tCardController P2S7Controller;
     @FXML private tCardController P2S8Controller;
 
-
-    @FXML private ImageView detailPict;
-    @FXML private Text detailText;
-    @FXML private Text p1name;
-    @FXML private Text p2name;
-    @FXML private Text p1health;
-    @FXML private Text p2health;
-    @FXML private Text deckP1;
-    @FXML private Text deckP2;
+    public layoutController() {
+    }
 
     public void button(MouseEvent mouseEvent) {
         P1H1Controller.loadCard(AvatarDuel.landData.get(1));
@@ -326,6 +319,14 @@ public class layoutController implements Initializable{
 //    }
 
 
+    @FXML private ImageView detailPict;
+    @FXML private Text detailText;
+    @FXML private Text p1name;
+    @FXML private Text p2name;
+    @FXML private Text p1health;
+    @FXML private Text p2health;
+    @FXML private deckController PanelP1Controller;
+    @FXML private deckController PanelP2Controller;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -333,6 +334,8 @@ public class layoutController implements Initializable{
         p2name.setText(AvatarDuel.P2.getName());
         p1health.setText("Health : " + Integer.toString(AvatarDuel.P1.getHealth()));
         p2health.setText("Health : " + Integer.toString(AvatarDuel.P2.getHealth()));
+        PanelP1Controller.initialSet();
+        PanelP2Controller.initialSet();
     }
 
 }
