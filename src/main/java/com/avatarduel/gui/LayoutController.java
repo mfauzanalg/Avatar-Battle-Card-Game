@@ -2,6 +2,7 @@ package com.avatarduel.gui;
 
 import com.avatarduel.AvatarDuel;
 import com.avatarduel.component.Card;
+import com.avatarduel.component.HandCard;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -20,10 +21,11 @@ import java.util.ResourceBundle;
 
 public class LayoutController implements Initializable{
     @FXML private HandCardController HandCard1Controller;
+    @FXML private HandCardController HandCard2Controller;
 
     public void buttonClick(MouseEvent mouseEvent) {
         HandCard1Controller.loadCard(AvatarDuel.landData.get(3),1);
-        //Card.onP1H1 = AvatarDuel.charData.get(1);
+        HandCard2Controller.loadCard(AvatarDuel.landData.get(9), 3);
     }
 
 
