@@ -80,26 +80,26 @@ public class layoutController implements Initializable{
     }
 
     public void button(MouseEvent mouseEvent) {
-        P1H1Controller.loadCard(AvatarDuel.CharData.get(1));
-        Card.onP1H1 = AvatarDuel.CharData.get(1);
-        P1H2Controller.loadCard(AvatarDuel.landData.get(2));
-        Card.onP1H2 = AvatarDuel.landData.get(2);
-        P1H3Controller.loadCard(AvatarDuel.landData.get(3));
-        Card.onP1H3 = AvatarDuel.landData.get(3);
-        P1H4Controller.loadCard(AvatarDuel.CharData.get(4));
-        Card.onP1H4 = AvatarDuel.CharData.get(4);
+        P1H1Controller.loadCard(AvatarDuel.charData.get(1));
+        Card.onP1H1 = AvatarDuel.charData.get(1);
+        P1H2Controller.loadCard(AvatarDuel.charData.get(2));
+        Card.onP1H2 = AvatarDuel.charData.get(2);
+        P1H3Controller.loadCard(AvatarDuel.charData.get(3));
+        Card.onP1H3 = AvatarDuel.charData.get(3);
+        P1H4Controller.loadCard(AvatarDuel.charData.get(4));
+        Card.onP1H4 = AvatarDuel.charData.get(4);
         P1H5Controller.loadCard(AvatarDuel.landData.get(5));
         Card.onP1H5 = AvatarDuel.landData.get(5);
         P1H6Controller.loadCard(AvatarDuel.landData.get(6));
         Card.onP1H6 = AvatarDuel.landData.get(6);
         P1H7Controller.loadCard(AvatarDuel.landData.get(7));
         Card.onP1H7 = AvatarDuel.landData.get(7);
-        P1H8Controller.loadCard(AvatarDuel.CharData.get(8));
-        Card.onP1H8 = AvatarDuel.CharData.get(8);
-        P1H9Controller.loadCard(AvatarDuel.CharData.get(9));
-        Card.onP1H9 = AvatarDuel.CharData.get(9);
-        P2H1Controller.loadCard(AvatarDuel.CharData.get(10));
-        Card.onP2H1 = AvatarDuel.CharData.get(10);
+        P1H8Controller.loadCard(AvatarDuel.charData.get(8));
+        Card.onP1H8 = AvatarDuel.charData.get(8);
+        P1H9Controller.loadCard(AvatarDuel.charData.get(9));
+        Card.onP1H9 = AvatarDuel.charData.get(9);
+        P2H1Controller.loadCard(AvatarDuel.charData.get(10));
+        Card.onP2H1 = AvatarDuel.charData.get(10);
         P2H2Controller.loadCard(AvatarDuel.landData.get(11));
         Card.onP2H2 = AvatarDuel.landData.get(11);
     }

@@ -67,16 +67,16 @@ public class Player{
         switch(element){
             case ("FIRE"):
                 return this.maxFire;
-                break;
+//                break;
             case ("WATER"):
                 return this.maxWater;
-                break;
+//                break;
             case ("EARTH"):
                 return this.maxEarth;
-                break;
+//                break;
             case ("AIR"):
                 return this.maxAir;
-                break;
+//                break;
             default:
                 System.out.println("No Match");
                 return 0;
@@ -106,24 +106,24 @@ public class Player{
         switch(element){
             case ("FIRE"):
                 return this.currentFire;
-                break;
+//                break;
             case ("WATER"):
                 return this.currentWater;
-                break;
+//                break;
             case ("EARTH"):
                 return this.currentEarth;
-                break;
+//                break;
             case ("AIR"):
                 return this.currentAir;
-                break;
+//                break;
             default:
                 System.out.println("No Match");
                 return 0;
 		}
 	}
 
-    public void addCardsToDeck(List<Card> l){
-        this.deck.addAll(l);
+    public <T> void addCardsToDeck(List<T> l){
+        this.deck.addAll((Collection<? extends Card>) l);
 	}
 
     public Stack<Card> getDeck(){
@@ -131,7 +131,7 @@ public class Player{
 	}
 
     public void shuffleDeck(){
-        this.deck.shuffle();
+        Collections.shuffle(this.deck);
 	}
 
     public void draw(){
