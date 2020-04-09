@@ -98,6 +98,7 @@ public class layoutController implements Initializable{
         Card.onP1H6 = AvatarDuel.landData.get(6);
     }
 
+    //PLayer card
     public void hoverP1H1(MouseEvent mouseEvent){
         Card.cardHover = Card.onP1H1;
         onHover();
@@ -127,6 +128,233 @@ public class layoutController implements Initializable{
         Card.cardHover = Card.onP1H6;
         onHover();
     }
+
+    public void hoverP1H7(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP1H7;
+        onHover();
+    }
+
+    public void hoverP1H8(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP1H8;
+        onHover();
+    }
+
+    public void hoverP1H9(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP1H9;
+        onHover();
+    }
+
+    //Arena card
+    public void hoverP1A1(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP1A1;
+        onHover();
+    }
+
+    public void hoverP1A2(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP1A2;
+        onHover();
+    }
+
+    public void hoverP1A3(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP1A3;
+        onHover();
+    }
+
+    public void hoverP1A4(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP1A4;
+        onHover();
+    }
+
+    public void hoverP1A5(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP1A5;
+        onHover();
+    }
+
+    public void hoverP1A6(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP1A6;
+        onHover();
+    }
+
+    public void hoverP1A7(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP1A7;
+        onHover();
+    }
+
+    public void hoverP1A8(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP1A8;
+        onHover();
+    }
+
+    //Skill card
+    public void hoverP1S1(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP1S1;
+        onHover();
+    }
+
+    public void hoverP1S2(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP1S2;
+        onHover();
+    }
+
+    public void hoverP1S3(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP1S3;
+        onHover();
+    }
+
+    public void hoverP1S4(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP1S4;
+        onHover();
+    }
+
+    public void hoverP1S5(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP1S5;
+        onHover();
+    }
+
+    public void hoverP1S6(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP1S6;
+        onHover();
+    }
+
+    public void hoverP1S7(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP1S7;
+        onHover();
+    }
+
+    public void hoverP1S8(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP1S8;
+        onHover();
+    }
+
+    //Player 2
+    //PLayer card
+    public void hoverP2H1(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP2H1;
+        onHover();
+    }
+
+    public void hoverP2H2(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP2H2;
+        onHover();
+    }
+
+    public void hoverP2H3(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP2H3;
+        onHover();
+    }
+
+    public void hoverP2H4(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP2H4;
+        onHover();
+    }
+
+    public void hoverP2H5(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP2H5;
+        onHover();
+    }
+
+    public void hoverP2H6(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP2H6;
+        onHover();
+    }
+
+    public void hoverP2H7(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP2H7;
+        onHover();
+    }
+
+    public void hoverP2H8(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP2H8;
+        onHover();
+    }
+
+    public void hoverP2H9(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP2H9;
+        onHover();
+    }
+
+    //Arena card
+    public void hoverP2A1(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP2A1;
+        onHover();
+    }
+
+    public void hoverP2A2(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP2A2;
+        onHover();
+    }
+
+    public void hoverP2A3(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP2A3;
+        onHover();
+    }
+
+    public void hoverP2A4(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP2A4;
+        onHover();
+    }
+
+    public void hoverP2A5(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP2A5;
+        onHover();
+    }
+
+    public void hoverP2A6(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP2A6;
+        onHover();
+    }
+
+    public void hoverP2A7(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP2A7;
+        onHover();
+    }
+
+    public void hoverP2A8(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP2A8;
+        onHover();
+    }
+
+    //Skill card
+    public void hoverP2S1(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP2S1;
+        onHover();
+    }
+
+    public void hoverP2S2(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP2S2;
+        onHover();
+    }
+
+    public void hoverP2S3(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP2S3;
+        onHover();
+    }
+
+    public void hoverP2S4(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP2S4;
+        onHover();
+    }
+
+    public void hoverP2S5(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP2S5;
+        onHover();
+    }
+
+    public void hoverP2S6(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP2S6;
+        onHover();
+    }
+
+    public void hoverP2S7(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP2S7;
+        onHover();
+    }
+
+    public void hoverP2S8(MouseEvent mouseEvent){
+        Card.cardHover = Card.onP2S8;
+        onHover();
+    }
+
 
     public void onHover(){
         File file = new File (Card.cardHover.getImagePath());

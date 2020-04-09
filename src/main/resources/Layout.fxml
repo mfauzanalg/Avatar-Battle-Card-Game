@@ -72,35 +72,35 @@
                            <children>
                               <Pane prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: Yellow;">
                                  <children>
-                                    <fx:include fx:id="P2S1" source="TCard.fxml" />
+                                    <fx:include fx:id="P2S1" onMouseEntered="#hoverP2S1" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: Yellow;">
                                  <children>
-                                    <fx:include fx:id="P2S2" source="TCard.fxml" />
+                                    <fx:include fx:id="P2S2" onMouseEntered="#hoverP2S2" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: Yellow;">
                                  <children>
-                                    <fx:include fx:id="P2S3" source="TCard.fxml" />
+                                    <fx:include fx:id="P2S3" onMouseEntered="#hoverP2S3" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: Yellow;">
                                  <children>
-                                    <fx:include fx:id="P2S4" source="TCard.fxml" />
+                                    <fx:include fx:id="P2S4" onMouseEntered="#hoverP2S4" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: Yellow;">
                                  <children>
-                                    <fx:include fx:id="P2S5" source="TCard.fxml" />
+                                    <fx:include fx:id="P2S5" onMouseEntered="#hoverP2S5" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: Yellow;">
                                  <children>
-                                    <fx:include fx:id="P2S6" source="TCard.fxml" />
+                                    <fx:include fx:id="P2S6" onMouseEntered="#hoverP2S6" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: Yellow;">
                                  <children>
-                                    <fx:include fx:id="P2S7" source="TCard.fxml" />
+                                    <fx:include fx:id="P2S7" onMouseEntered="#hoverP2S7" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="100.0" prefWidth="100.0" style="-fx-border-color: Yellow;">
                                  <children>
-                                    <fx:include fx:id="P2S8" source="TCard.fxml" />
+                                    <fx:include fx:id="P2S8" onMouseEntered="#hoverP2S8" source="TCard.fxml" />
                                  </children></Pane>
                            </children>
                         </HBox>
@@ -108,35 +108,35 @@
                            <children>
                               <Pane prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: Green;">
                                  <children>
-                                    <fx:include fx:id="P2A1" source="TCard.fxml" />
+                                    <fx:include fx:id="P2A1" onMouseEntered="#hoverP2A1" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: Green;">
                                  <children>
-                                    <fx:include fx:id="P2A2" source="TCard.fxml" />
+                                    <fx:include fx:id="P2A2" onMouseEntered="#hoverP2A2" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: Green;">
                                  <children>
-                                    <fx:include fx:id="P2A3" source="TCard.fxml" />
+                                    <fx:include fx:id="P2A3" onMouseEntered="#hoverP2A3" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: Green;">
                                  <children>
-                                    <fx:include fx:id="P2A4" source="TCard.fxml" />
+                                    <fx:include fx:id="P2A4" onMouseEntered="#hoverP2A4" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: Green;">
                                  <children>
-                                    <fx:include fx:id="P2A5" source="TCard.fxml" />
+                                    <fx:include fx:id="P2A5" onMouseEntered="#hoverP2A5" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: Green;">
                                  <children>
-                                    <fx:include fx:id="P2A6" source="TCard.fxml" />
+                                    <fx:include fx:id="P2A6" onMouseEntered="#hoverP2A6" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: Green;">
                                  <children>
-                                    <fx:include fx:id="P2A7" source="TCard.fxml" />
+                                    <fx:include fx:id="P2A7" onMouseEntered="#hoverP2A7" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: Green;">
                                  <children>
-                                    <fx:include fx:id="P2A8" source="TCard.fxml" />
+                                    <fx:include fx:id="P2A8" onMouseEntered="#hoverP2A8" source="TCard.fxml" />
                                  </children></Pane>
                            </children></HBox>
                      </children>
@@ -151,35 +151,35 @@
                            <children>
                               <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Green;">
                                  <children>
-                                    <fx:include fx:id="P1A1" source="TCard.fxml" />
+                                    <fx:include fx:id="P1A1" onMouseEntered="#hoverP1A1" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Green;">
                                  <children>
-                                    <fx:include fx:id="P1A2" source="TCard.fxml" />
+                                    <fx:include fx:id="P1A2" onMouseEntered="#hoverP1A2" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Green;">
                                  <children>
-                                    <fx:include fx:id="P1A3" source="TCard.fxml" />
+                                    <fx:include fx:id="P1A3" onMouseEntered="#hoverP1A3" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Green;">
                                  <children>
-                                    <fx:include fx:id="P1A4" source="TCard.fxml" />
+                                    <fx:include fx:id="P1A4" onMouseEntered="#hoverP1A4" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Green;">
                                  <children>
-                                    <fx:include fx:id="P1A5" source="TCard.fxml" />
+                                    <fx:include fx:id="P1A5" onMouseEntered="#hoverP1A5" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Green;">
                                  <children>
-                                    <fx:include fx:id="P1A6" source="TCard.fxml" />
+                                    <fx:include fx:id="P1A6" onMouseEntered="#hoverP1A6" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Green;">
                                  <children>
-                                    <fx:include fx:id="P1A7" source="TCard.fxml" />
+                                    <fx:include fx:id="P1A7" onMouseEntered="#hoverP1A7" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Green;">
                                  <children>
-                                    <fx:include fx:id="P1A8" source="TCard.fxml" />
+                                    <fx:include fx:id="P1A8" onMouseEntered="#hoverP1A8" source="TCard.fxml" />
                                  </children>
                               </Pane>
                            </children></HBox>
@@ -187,31 +187,31 @@
                            <children>
                               <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Yellow;">
                                  <children>
-                                    <fx:include fx:id="P1S1" source="TCard.fxml" />
+                                    <fx:include fx:id="P1S1" onMouseEntered="#hoverP1S1" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Yellow;">
                                  <children>
-                                    <fx:include fx:id="P1S2" source="TCard.fxml" />
+                                    <fx:include fx:id="P1S2" onMouseEntered="#hoverP1S2" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Yellow;">
                                  <children>
-                                    <fx:include fx:id="P1S3" source="TCard.fxml" />
+                                    <fx:include fx:id="P1S3" onMouseEntered="#hoverP1S3" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Yellow;">
                                  <children>
-                                    <fx:include fx:id="P1S4" source="TCard.fxml" />
+                                    <fx:include fx:id="P1S4" onMouseEntered="#hoverP1S4" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Yellow;">
                                  <children>
-                                    <fx:include fx:id="P1S5" source="TCard.fxml" />
+                                    <fx:include fx:id="P1S5" onMouseEntered="#hoverP1S5" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Yellow;">
                                  <children>
-                                    <fx:include fx:id="P1S6" source="TCard.fxml" />
+                                    <fx:include fx:id="P1S6"  onMouseEntered="#hoverP1S6" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Yellow;">
                                  <children>
-                                    <fx:include fx:id="P1S7" source="TCard.fxml" />
+                                    <fx:include fx:id="P1S7" onMouseEntered="#hoverP1S7" source="TCard.fxml" />
                                  </children></Pane>
                               <Pane prefHeight="106.0" prefWidth="100.0" style="-fx-border-color: Yellow;">
                                  <children>
@@ -269,39 +269,39 @@
          <children>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include fx:id="P2H9" source="TCard.fxml" />
+                  <fx:include fx:id="P2H9" onMouseEntered="#hoverP2H9" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include fx:id="P2H7" source="TCard.fxml" />
+                  <fx:include fx:id="P2H7" onMouseEntered="#hoverP2H7" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include fx:id="P2H5" source="TCard.fxml" />
+                  <fx:include fx:id="P2H5"  onMouseEntered="#hoverP2H5" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include fx:id="P2H3" source="TCard.fxml" />
+                  <fx:include fx:id="P2H3" onMouseEntered="#hoverP2H3" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include fx:id="P2H1" source="TCard.fxml" />
+                  <fx:include fx:id="P2H1" onMouseEntered="#hoverP2H1" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include fx:id="P2H2" source="TCard.fxml" />
+                  <fx:include fx:id="P2H2" onMouseEntered="#hoverP2H2" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include fx:id="P2H4" source="TCard.fxml" />
+                  <fx:include fx:id="P2H4" onMouseEntered="#hoverP2H4" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include fx:id="P2H6" source="TCard.fxml" />
+                  <fx:include fx:id="P2H6" onMouseEntered="#hoverP2H6" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include fx:id="P2H8" source="TCard.fxml" />
+                  <fx:include fx:id="P2H8" onMouseEntered="#hoverP2H8" source="TCard.fxml" />
                </children></Pane>
          </children>
       </HBox>
@@ -309,19 +309,19 @@
          <children>
             <Pane prefHeight="100.0" prefWidth="83.0">
                <children>
-                  <fx:include fx:id="P1H9" source="TCard.fxml" />
+                  <fx:include fx:id="P1H9" onMouseEntered="#hoverP1H9" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include fx:id="P1H7" source="TCard.fxml" />
+                  <fx:include fx:id="P1H7" onMouseEntered="#hoverP1H7" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include fx:id="P1H5" source="TCard.fxml" />
+                  <fx:include fx:id="P1H5" onMouseEntered="#hoverP1H5" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include fx:id="P1H3" source="TCard.fxml" />
+                  <fx:include fx:id="P1H3" onMouseEntered="#hoverP1H3" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
@@ -333,15 +333,15 @@
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include fx:id="P1H4" source="TCard.fxml" />
+                  <fx:include fx:id="P1H4" onMouseEntered="#hoverP1H4" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include fx:id="P1H6" source="TCard.fxml" />
+                  <fx:include fx:id="P1H6" onMouseEntered="#hoverP1H6" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include fx:id="P1H8" source="TCard.fxml" />
+                  <fx:include fx:id="P1H8" onMouseEntered="#hoverP1H8" source="TCard.fxml" />
                </children></Pane>
          </children>
       </HBox>
