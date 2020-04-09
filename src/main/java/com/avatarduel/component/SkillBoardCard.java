@@ -3,12 +3,14 @@
 
 package com.avatarduel.component;
 
+import java.util.List;
+
 abstract public class SkillBoardCard extends BoardCard {
     BoardCard target;
     SkillCard card;
 
     public SkillBoardCard(BoardCard target, SkillCard _card){
-        super(target.owner, target.attackPos, target.isPoweredUp);
+        super(target.owner);
         this.target = target;
         card = _card;
         target.addSkillCard(_card);
@@ -20,5 +22,33 @@ abstract public class SkillBoardCard extends BoardCard {
         return card;
     }
 
+    public void rotate(){
+        target.rotate();
+    }
+
     abstract public void destroy();
+
+    public boolean getPowerUp(){
+        return target.getPowerUp();
+    }
+
+    public boolean getAttackPos(){
+        return target.getAttackPos();
+    }
+
+    public void setPowerUp(boolean val){
+        target.setPowerUp(val);
+    }
+
+    public void setAttackPos(boolean val){
+        target.setAttackPos(val);
+    }
+
+    public void addSkillCard(SkillCard skill){
+        target.addSkillCard(skill);
+    }
+
+    public List<SkillCard> getSkills(){
+        return target.getSkills();
+    }
 }

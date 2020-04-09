@@ -2,13 +2,20 @@ package com.avatarduel.component;
 
 // File : SummonedCharacter.java
 // Handles the behaviour of summoned characters
+import java.util.List;
+import java.util.ArrayList;
 
 public class SummonedCharacter extends BoardCard {
+    protected List<SkillCard> skills = new ArrayList<SkillCard>();
     CharacterCard summon;
+    protected boolean attackPos;
+    protected boolean isPoweredUp;
 
     public SummonedCharacter(Player owner, CharacterCard m, boolean attack){
-        super(owner, attack);
+        super(owner);
         summon = m;
+        attackPos = attack;
+        isPoweredUp = false;
     }
 
     public int getPositionValue(){
@@ -18,24 +25,35 @@ public class SummonedCharacter extends BoardCard {
     public Card getCardInstance(){
         return summon;
     }
-    /*public void render(){
-        System.out.print("Character " + summon.getName() + " dalam keadaan ");
-        if (isOpen){
-            System.out.print("terbuka ");
-        }
-        else{
-            System.out.print("tertutup ");
-        }
-        System.out.print("dengan posisi ");
 
-        if(attackPos){
-            System.out.println("menyerang");
-        }
-        else{
-            System.out.println("bertahan");
-        }
-    }*/
+    public void rotate(){
+        attackPos = !attackPos;
+    }
 
+    public boolean getPowerUp(){
+        return isPoweredUp;
+    }
+
+    public boolean getAttackPos(){
+        return attackPos;
+    }
+
+    public void setPowerUp(boolean val){
+        isPoweredUp = val;
+    }
+
+    public void setAttackPos(boolean val){
+        attackPos = val;
+    }
+
+    public void addSkillCard(SkillCard skill){
+        skills.add(skill);
+    }
+
+    public List<SkillCard> getSkills(){
+        return skills;
+    }
+    
     public void destroy(){
         // Remove this card from board
         // Plan : Decorator akan dipanggil destroynya lalu akan memanggil destroy BoardCard yang mereka wrap

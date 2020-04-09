@@ -15,7 +15,7 @@ public class AuraBoardCard extends SkillBoardCard {
     }
 
     public int getPositionValue(){
-        return (attackPos) ? (attackVal + target.getPositionValue()) : (defenseVal + target.getPositionValue());
+        return (target.getAttackPos()) ? (attackVal + target.getPositionValue()) : (defenseVal + target.getPositionValue());
     }    
 
     public void destroy(){

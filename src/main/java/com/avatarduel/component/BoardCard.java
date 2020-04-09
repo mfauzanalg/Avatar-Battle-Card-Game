@@ -4,35 +4,15 @@
 package com.avatarduel.component;
 
 import java.util.List;
-import java.util.ArrayList;
 
 abstract public class BoardCard implements ISummoned, IDestructible {
-    protected List<SkillCard> skills = new ArrayList<SkillCard>();
     protected Player owner;
-    protected boolean attackPos;
-    protected boolean isPoweredUp;
 
     public BoardCard(Player _owner){
         owner = _owner;
-        attackPos = true;
-        isPoweredUp = false;
     }
 
-    public BoardCard(Player _owner, boolean attack){
-        owner = _owner;
-        attackPos = attack;
-        isPoweredUp = false;
-    }
-
-    public BoardCard(Player _owner, boolean attack, boolean power){
-        owner = _owner;
-        attackPos = attack;
-        isPoweredUp = power;
-    }
-
-    public void rotate(){
-        attackPos = !attackPos;
-    }
+    abstract public void rotate();
 
     public void attack(Player other){
         // Method kalo board musuh kosong
@@ -51,27 +31,15 @@ abstract public class BoardCard implements ISummoned, IDestructible {
 
     abstract public void destroy();
 
-    public boolean getPowerUp(){
-        return isPoweredUp;
-    }
+    abstract public boolean getPowerUp();
 
-    public boolean getAttackPos(){
-        return attackPos;
-    }
+    abstract public boolean getAttackPos();
 
-    public void setPowerUp(boolean val){
-        isPoweredUp = val;
-    }
+    abstract public void setPowerUp(boolean val);
 
-    public void setAttackPos(boolean val){
-        attackPos = val;
-    }
+    abstract public void setAttackPos(boolean val);
 
-    public void addSkillCard(SkillCard skill){
-        skills.add(skill);
-    }
+    abstract public void addSkillCard(SkillCard skill);
 
-    public List<SkillCard> getSkills(){
-        return skills;
-    }
+    abstract public List<SkillCard> getSkills();
 }
