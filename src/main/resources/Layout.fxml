@@ -335,7 +335,7 @@
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>
-                  <fx:include fx:id="P1H1" onMouseEntered="#hoverP1H1" source="TCard.fxml" />
+                  <fx:include fx:id="P1H1" onMouseClicked="#clickAction" onMouseEntered="#hoverP1H1" source="TCard.fxml" />
                </children></Pane>
             <Pane prefHeight="106.0" prefWidth="81.0" style="-fx-border-color: Yellow;">
                <children>

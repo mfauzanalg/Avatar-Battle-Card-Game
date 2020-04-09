@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.fxml.Initializable;
 import javafx.stage.Stage;
@@ -86,18 +87,28 @@ public class layoutController implements Initializable{
     @FXML private Text deckP2;
 
     public void button(MouseEvent mouseEvent) {
-        P1H1Controller.loadCard(AvatarDuel.landData.get(1));
-        Card.onP1H1 = AvatarDuel.landData.get(1);
+        P1H1Controller.loadCard(AvatarDuel.CharData.get(1));
+        Card.onP1H1 = AvatarDuel.CharData.get(1);
         P1H2Controller.loadCard(AvatarDuel.landData.get(2));
         Card.onP1H2 = AvatarDuel.landData.get(2);
         P1H3Controller.loadCard(AvatarDuel.landData.get(3));
         Card.onP1H3 = AvatarDuel.landData.get(3);
-        P1H4Controller.loadCard(AvatarDuel.landData.get(4));
-        Card.onP1H4 = AvatarDuel.landData.get(4);
+        P1H4Controller.loadCard(AvatarDuel.CharData.get(4));
+        Card.onP1H4 = AvatarDuel.CharData.get(4);
         P1H5Controller.loadCard(AvatarDuel.landData.get(5));
         Card.onP1H5 = AvatarDuel.landData.get(5);
         P1H6Controller.loadCard(AvatarDuel.landData.get(6));
         Card.onP1H6 = AvatarDuel.landData.get(6);
+        P1H7Controller.loadCard(AvatarDuel.landData.get(7));
+        Card.onP1H7 = AvatarDuel.landData.get(7);
+        P1H8Controller.loadCard(AvatarDuel.CharData.get(8));
+        Card.onP1H8 = AvatarDuel.CharData.get(8);
+        P1H9Controller.loadCard(AvatarDuel.CharData.get(9));
+        Card.onP1H9 = AvatarDuel.CharData.get(9);
+        P2H1Controller.loadCard(AvatarDuel.CharData.get(10));
+        Card.onP2H1 = AvatarDuel.CharData.get(10);
+        P2H2Controller.loadCard(AvatarDuel.landData.get(11));
+        Card.onP2H2 = AvatarDuel.landData.get(11);
     }
 
     //PLayer card
@@ -309,12 +320,25 @@ public class layoutController implements Initializable{
         Card.cardHover = Card.onP2S8;
         onHover();
     }
+    public void clickAction(MouseEvent mouseEvent) throws  IOException{
+        onClick();
+    }
+
 
     public void onHover(){
         File file = new File (Card.cardHover.getImagePath());
         Image image = new Image(file.toURI().toString());
         detailPict.setImage(image);
         detailText.setText(Card.cardHover.getDescription());
+    }
+
+    public void onClick() throws IOException {
+        Stage stage = new Stage();
+        Pane myPane = null;
+        myPane = FXMLLoader.load(getClass().getClassLoader().getResource("actionBox.fxml"));
+        Scene scene = new Scene(myPane);
+        stage.setScene(scene);
+        stage.show();
     }
 
 //    public void actionBox(MouseEvent mouseEvent) throws IOException {
@@ -334,5 +358,4 @@ public class layoutController implements Initializable{
         p1health.setText("Health : " + Integer.toString(AvatarDuel.P1.getHealth()));
         p2health.setText("Health : " + Integer.toString(AvatarDuel.P2.getHealth()));
     }
-
 }
