@@ -9,4 +9,5 @@ public class CharAreaController {
     @FXML private TCardController S4Controller;
     @FXML private TCardController S5Controller;
     @FXML private TCardController S6Controller;
+
 }

@@ -19,10 +19,11 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class LayoutController implements Initializable{
+    @FXML private HandCardController HandCard1Controller;
 
-    public void button(MouseEvent mouseEvent) {
-//        P1H1Controller.loadCard(AvatarDuel.charData.get(1));
-//        Card.onP1H1 = AvatarDuel.charData.get(1);
+    public void buttonClick(MouseEvent mouseEvent) {
+        HandCard1Controller.loadCard(AvatarDuel.landData.get(3),1);
+        //Card.onP1H1 = AvatarDuel.charData.get(1);
     }
 
 
