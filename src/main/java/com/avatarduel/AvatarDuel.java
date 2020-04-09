@@ -92,7 +92,7 @@ public class AvatarDuel extends Application {
 
       Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Window.fxml"));
       Scene scene = new Scene(root);
-      stage.setResizable(false);
+//      stage.setResizable(false);
       stage.setTitle("Avatar Duel Kelompok 9");
       stage.setScene(scene);
       stage.show();

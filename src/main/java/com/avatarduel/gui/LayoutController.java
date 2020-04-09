@@ -54,22 +54,20 @@ public class LayoutController implements Initializable{
 ////    }
 //
 //
-//    @FXML private ImageView detailPict;
-//    @FXML private Text detailText;
-//    @FXML private Text p1name;
-//    @FXML private Text p2name;
-//    @FXML private Text p1health;
-//    @FXML private Text p2health;
-//    @FXML private DeckController PanelP1Controller;
-//    @FXML private DeckController PanelP2Controller;
+    @FXML private ImageView detailPict;
+    @FXML private Text detailText;
+    @FXML private DeckController PanelP1Controller;
+    @FXML private DeckController PanelP2Controller;
+    @FXML private PlayerInfoController PlayerInfo1Controller;
+    @FXML private PlayerInfoController PlayerInfo2Controller;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-//        p1name.setText(AvatarDuel.P1.getName());
-//        p2name.setText(AvatarDuel.P2.getName());
-//        p1health.setText("Health : " + Integer.toString(AvatarDuel.P1.getHealth()));
-//        p2health.setText("Health : " + Integer.toString(AvatarDuel.P2.getHealth()));
-//        PanelP1Controller.initialSet();
-//        PanelP2Controller.initialSet();
+        PlayerInfo1Controller.setName(AvatarDuel.P1.getName());
+        PlayerInfo2Controller.setName(AvatarDuel.P2.getName());
+        PlayerInfo1Controller.setHealth(Integer.toString(AvatarDuel.P1.getHealth()));
+        PlayerInfo2Controller.setHealth(Integer.toString(AvatarDuel.P1.getHealth()));
+        PanelP1Controller.initialSet();
+        PanelP2Controller.initialSet();
     }
 }

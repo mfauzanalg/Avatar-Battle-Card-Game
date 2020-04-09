@@ -16,10 +16,8 @@ import java.util.Objects;
 
 public class WindowController {
 
-    @FXML
-    TextField player1;
-    @FXML
-    TextField player2;
+    @FXML private TextField player1;
+    @FXML private TextField player2;
 
     @FXML
     public void startGameButton(javafx.event.ActionEvent actionEvent) throws IOException {
@@ -37,11 +35,11 @@ public class WindowController {
         AvatarDuel.P2.addCardsToDeck(AvatarDuel.P1.getDeck());
         AvatarDuel.P2.shuffleDeck();
 
+
         Parent layoutParent = FXMLLoader.load(getClass().getClassLoader().getResource("Layout.fxml"));
         Scene layoutScene = new Scene(layoutParent);
-
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        window.setResizable(false);
+//        window.setResizable(false);
         window.setScene(layoutScene);
         window.show();
     }

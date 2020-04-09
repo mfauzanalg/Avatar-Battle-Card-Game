@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="640.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.avatarduel.gui.LayoutController">
+<AnchorPane prefHeight="660.0" prefWidth="1287.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.avatarduel.gui.LayoutController">
    <children>
       <AnchorPane layoutX="278.0" layoutY="12.0" prefHeight="110.0" prefWidth="81.0">
          <children>
@@ -41,7 +41,7 @@
             <fx:include fx:id="HandCard2" source="HandCard.fxml" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="1133.0" layoutY="525.0" prefHeight="110.0" prefWidth="81.0">
+      <AnchorPane layoutX="1124.0" layoutY="525.0" prefHeight="110.0" prefWidth="81.0">
          <children>
             <fx:include fx:id="PlayerInfo1" source="PlayerInfo.fxml" />
          </children>
@@ -66,6 +66,6 @@
             <fx:include fx:id="CharArea2" source="CharArea.fxml" />
          </children>
       </AnchorPane>
-      <Button onMouseClicked="#buttonClick" layoutX="1148.0" layoutY="252.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="1148.0" layoutY="252.0" mnemonicParsing="false" onMouseClicked="#buttonClick" text="Button" />
    </children>
 </AnchorPane>

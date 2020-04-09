@@ -5,15 +5,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="110.0" prefWidth="147.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.avatarduel.gui.PlayerInfoController">
+<AnchorPane prefHeight="108.0" prefWidth="136.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.avatarduel.gui.PlayerInfoController">
    <children>
       <ImageView fitHeight="64.0" fitWidth="65.0" layoutX="10.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/unnamed.png" />
          </image>
       </ImageView>
-      <Text layoutX="92.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text fx:id="PlayerHealth" layoutX="92.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="PlayerName" layoutX="84.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="PlayerHealth" layoutX="84.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
    </children>
 </AnchorPane>
