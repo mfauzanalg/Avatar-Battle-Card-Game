@@ -32,17 +32,17 @@ public class AvatarDuel extends Application {
   public static List<LandCard> landData;
   public static List<CharacterCard> charData;
   public static List<AuraSkillCard> auraData;
-  public static DestroySkillCard DestroyCard;
-  public static PowerUpSkillCard PowerUpCard;
+  public static DestroySkillCard destroyCard;
+  public static PowerUpSkillCard powerUpCard;
   public static Player P1;
   public static Player P2;
 
   public void loadDestroyCard(){
-    DestroyCard = new DestroySkillCard(99, "Destroy Card", "", "This is Destroy skill card", "src/main/resources/com/avatarduel/card/image/skill/Destroy.png");
+    destroyCard = new DestroySkillCard(99, "Destroy Card", "", "This is Destroy skill card", "src/main/resources/com/avatarduel/card/image/skill/Destroy.png");
   }
 
   public void loadPowerUpCard(){
-    PowerUpCard = new PowerUpSkillCard(100, "Power Up Card", "", "This is Power Up Skill card", "src/main/resources/com/avatarduel/card/image/skill/PowerUp.png");
+    powerUpCard = new PowerUpSkillCard(100, "Power Up Card", "", "This is Power Up Skill card", "src/main/resources/com/avatarduel/card/image/skill/PowerUp.png");
   }
 
   public void loadLandCards() throws IOException, URISyntaxException {

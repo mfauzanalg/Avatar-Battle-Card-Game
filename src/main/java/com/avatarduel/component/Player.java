@@ -122,8 +122,8 @@ public class Player{
 		}
 	}
 
-    public <T> void addCardsToDeck(List<T> l){
-        this.deck.addAll((Collection<? extends Card>) l);
+    public <T extends Card> void addCardsToDeck(List<T> l){
+        this.deck.addAll(l);
 	}
 
     public Stack<Card> getDeck(){
@@ -132,6 +132,31 @@ public class Player{
 
     public void shuffleDeck(){
         Collections.shuffle(this.deck);
+	}
+
+    public <T extends Card> void addCard(T c){
+        this.deck.push(c);
+	}
+
+    public <T extends Card> void addSpecificCard(List<T> l, int id){
+        T c = l.stream()
+            .filter(i -> i.getId() == id)
+            .findAny()
+            .orElse(null);
+        if (c != null){
+            this.addCard(c);  
+		}
+	}
+
+    public <T extends Card> void addRandomCards(List<T> l, int quantity){
+        List<T> l1 = l;
+        int count = 0;
+        while (count != quantity){
+            Collections.shuffle(l1);
+            Card c = l1.get(0);
+            this.addCard(c);
+            count++;
+		}
 	}
 
     public void draw(){

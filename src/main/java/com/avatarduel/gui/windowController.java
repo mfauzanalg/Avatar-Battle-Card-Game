@@ -26,9 +26,13 @@ public class windowController {
         AvatarDuel.P1 = new Player(player1.getText(), 80);
         AvatarDuel.P2 = new Player(player2.getText(), 80);
 
-        AvatarDuel.P1.addCardsToDeck(AvatarDuel.landData);
-        AvatarDuel.P1.addCardsToDeck(AvatarDuel.charData);
-        AvatarDuel.P1.addCardsToDeck(AvatarDuel.auraData);
+        AvatarDuel.P1.addRandomCards(AvatarDuel.landData, 16);
+        AvatarDuel.P1.addRandomCards(AvatarDuel.charData, 24);
+        AvatarDuel.P1.addRandomCards(AvatarDuel.auraData, 6);
+        AvatarDuel.P1.addCard(AvatarDuel.destroyCard);
+        AvatarDuel.P1.addCard(AvatarDuel.destroyCard);
+        AvatarDuel.P1.addCard(AvatarDuel.powerUpCard);
+        AvatarDuel.P1.addCard(AvatarDuel.powerUpCard);
         AvatarDuel.P1.shuffleDeck();
         AvatarDuel.P2.addCardsToDeck(AvatarDuel.P1.getDeck());
         AvatarDuel.P2.shuffleDeck();
