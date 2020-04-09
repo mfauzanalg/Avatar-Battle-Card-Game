@@ -5,10 +5,10 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="mainPane" prefHeight="110.0" prefWidth="80.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.avatarduel.gui.TCardController">
+<Pane fx:id="mainPane" prefHeight="100.0" prefWidth="80.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.avatarduel.gui.TCardController">
    <children>
       <ImageView fx:id="pict" fitHeight="59.0" fitWidth="62.0" layoutX="10.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" />
-      <Text fx:id="attrib" layoutX="10.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="59.079742431640625">
+      <Text fx:id="attrib" layoutX="10.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="59.079742431640625">
          <font>
             <Font size="6.0" />
          </font>
@@ -18,7 +18,7 @@
             <Font size="6.0" />
          </font>
       </Text>
-      <Text fx:id="elmt" layoutX="67.0" layoutY="8.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="11.890289306640625">
+      <Text fx:id="elmt" layoutX="65.0" layoutY="9.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="11.890289306640625">
          <font>
             <Font size="6.0" />
          </font>

@@ -2,49 +2,49 @@
 
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="115.0" prefWidth="830.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.avatarduel.gui.HandCardController">
+<AnchorPane prefHeight="57.0" prefWidth="830.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.avatarduel.gui.HandCardController">
    <children>
-      <AnchorPane layoutX="4.0" layoutY="2.0" prefHeight="110.0" prefWidth="83.0">
+      <AnchorPane layoutX="4.0" layoutY="2.0" prefHeight="100.0" prefWidth="32.0">
          <children>
             <fx:include fx:id="H9" source="TCard.fxml" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="96.0" layoutY="2.0" prefHeight="110.0" prefWidth="83.0">
+      <AnchorPane layoutX="96.0" layoutY="2.0" prefHeight="61.0" prefWidth="83.0">
          <children>
             <fx:include fx:id="H7" source="TCard.fxml" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="188.0" layoutY="2.0" prefHeight="110.0" prefWidth="83.0">
+      <AnchorPane layoutX="188.0" layoutY="2.0" prefHeight="0.0" prefWidth="83.0">
          <children>
             <fx:include fx:id="H5" source="TCard.fxml" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="281.0" layoutY="2.0" prefHeight="110.0" prefWidth="83.0">
+      <AnchorPane layoutX="281.0" layoutY="2.0" prefHeight="37.0" prefWidth="83.0">
          <children>
             <fx:include fx:id="H3" source="TCard.fxml" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="374.0" layoutY="2.0" prefHeight="110.0" prefWidth="83.0">
+      <AnchorPane layoutX="374.0" layoutY="2.0" prefHeight="35.0" prefWidth="83.0">
          <children>
             <fx:include fx:id="H1" source="TCard.fxml" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="467.0" layoutY="2.0" prefHeight="110.0" prefWidth="83.0">
+      <AnchorPane layoutX="467.0" layoutY="2.0" prefHeight="17.0" prefWidth="83.0">
          <children>
             <fx:include fx:id="H2" source="TCard.fxml" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="559.0" layoutY="2.0" prefHeight="110.0" prefWidth="83.0">
+      <AnchorPane layoutX="559.0" layoutY="2.0" prefHeight="93.0" prefWidth="83.0">
          <children>
             <fx:include fx:id="H4" source="TCard.fxml" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="650.0" layoutY="2.0" prefHeight="110.0" prefWidth="83.0">
+      <AnchorPane layoutX="650.0" layoutY="2.0" prefHeight="49.0" prefWidth="83.0">
          <children>
             <fx:include fx:id="H6" source="TCard.fxml" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="741.0" layoutY="2.0" prefHeight="110.0" prefWidth="83.0">
+      <AnchorPane layoutX="741.0" layoutY="2.0" prefHeight="0.0" prefWidth="83.0">
          <children>
             <fx:include fx:id="H8" source="TCard.fxml" />
          </children>
