@@ -90,7 +90,7 @@ public class AvatarDuel extends Application {
       this.loadDestroyCard();
       this.loadPowerUpCard();
 
-      Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Window.fxml"));
+      Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Layout.fxml"));
       Scene scene = new Scene(root);
       stage.setResizable(false);
       stage.setTitle("Avatar Duel Kelompok 9");
