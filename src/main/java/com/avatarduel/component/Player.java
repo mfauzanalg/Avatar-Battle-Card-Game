@@ -27,6 +27,8 @@ public class Player{
         this.maxAir = 0; this.currentAir = 0;
     }
 
+    public List<IHandCard> getHand() {return this.hand;}
+
     public void setName(String name)
     {
         this.name = name;

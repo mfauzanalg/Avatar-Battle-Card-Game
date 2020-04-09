@@ -3,6 +3,7 @@ package com.avatarduel.gui;
 import com.avatarduel.AvatarDuel;
 import com.avatarduel.component.Card;
 import com.avatarduel.component.HandCard;
+import com.avatarduel.component.IHandCard;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -31,13 +32,21 @@ public class LayoutController implements Initializable{
     @FXML private PlayerInfoController PlayerInfo1Controller;
     @FXML private PlayerInfoController PlayerInfo2Controller;
 
-    public void buttonClick(MouseEvent mouseEvent) {
-        HandCard1Controller.loadCard(AvatarDuel.P1.getDeck().pop(),8);
-        HandCard2Controller.loadCard(AvatarDuel.P2.getDeck().pop(), 8);
+    public void draw(MouseEvent mouseEvent) {
+        AvatarDuel.P1.draw();
+        onHover();
+    }
+
+    public void updateHand() {
+        int index = 1;
+        for (IHandCard card : AvatarDuel.P1.getHand()) {
+            HandCard1Controller.loadCard(card.getCardInstance(),index++);
+        }
     }
 
     public void onHover(){
         DetailInfoController.showCard(Card.cardHover);
+        updateHand();
     }
 
 //    public void onClick() throws IOException {
@@ -66,4 +75,6 @@ public class LayoutController implements Initializable{
         PanelP1Controller.initialSet();
         PanelP2Controller.initialSet();
     }
+
+
 }

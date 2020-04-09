@@ -60,7 +60,6 @@ public class TCardController {
         attrib.setText("This is Destroy Card");
     }
 
-
     public void loadCard(Card card){
         this.id = card.getId();
         File file = new File (card.getImagePath());
