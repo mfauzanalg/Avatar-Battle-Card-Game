@@ -371,6 +371,8 @@ public class layoutController implements Initializable{
 //        stage.show();
 //    }
 
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         p1name.setText(AvatarDuel.P1.getName());
