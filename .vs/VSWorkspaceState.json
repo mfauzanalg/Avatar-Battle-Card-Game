@@ -1,15 +1,20 @@
 {
   "ExpandedNodes": [
     "",
+    "\\bin",
+    "\\bin\\main",
+    "\\bin\\main\\com",
+    "\\bin\\main\\com\\avatarduel",
+    "\\bin\\main\\com\\avatarduel\\card",
+    "\\bin\\main\\com\\avatarduel\\card\\data",
+    "\\gradle",
+    "\\gradle\\wrapper",
     "\\src",
     "\\src\\main",
     "\\src\\main\\java",
     "\\src\\main\\java\\com",
     "\\src\\main\\java\\com\\avatarduel",
-    "\\src\\main\\java\\com\\avatarduel\\component",
-    "\\src\\main\\java\\com\\avatarduel\\gui",
-    "\\src\\main\\java\\com\\avatarduel\\model",
-    "\\src\\main\\java\\com\\avatarduel\\util"
+    "\\src\\main\\java\\com\\avatarduel\\model"
   ],
   "SelectedNode": "\\src\\main\\java\\com\\avatarduel\\component\\Player.java",
   "PreviewInSolutionExplorer": false
