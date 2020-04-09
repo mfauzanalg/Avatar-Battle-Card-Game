@@ -48,12 +48,16 @@ public class Player{
         switch(element){
             case ("FIRE"):
                 this.maxFire = val;
+                break;
             case ("WATER"):
                 this.maxWater = val;
+                break;
             case ("EARTH"):
                 this.maxEarth = val;
+                break;
             case ("AIR"):
                 this.maxAir = val;
+                break;
             default:
                 System.out.println("No Match");
 		}
@@ -63,12 +67,16 @@ public class Player{
         switch(element){
             case ("FIRE"):
                 return this.maxFire;
+                break;
             case ("WATER"):
                 return this.maxWater;
+                break;
             case ("EARTH"):
                 return this.maxEarth;
+                break;
             case ("AIR"):
                 return this.maxAir;
+                break;
             default:
                 System.out.println("No Match");
                 return 0;
@@ -79,12 +87,16 @@ public class Player{
         switch(element){
             case ("FIRE"):
                 this.currentFire = val;
+                break;
             case ("WATER"):
                 this.currentWater = val;
+                break;
             case ("EARTH"):
                 this.currentEarth = val;
+                break;
             case ("AIR"):
                 this.currentAir = val;
+                break;
             default:
                 System.out.println("No Match");
 		}
@@ -94,16 +106,32 @@ public class Player{
         switch(element){
             case ("FIRE"):
                 return this.currentFire;
+                break;
             case ("WATER"):
                 return this.currentWater;
+                break;
             case ("EARTH"):
                 return this.currentEarth;
+                break;
             case ("AIR"):
                 return this.currentAir;
+                break;
             default:
                 System.out.println("No Match");
                 return 0;
 		}
+	}
+
+    public void addCardsToDeck(List<Card> l){
+        this.deck.addAll(l);
+	}
+
+    public Stack<Card> getDeck(){
+        return this.deck;
+	}
+
+    public void shuffleDeck(){
+        this.deck.shuffle();
 	}
 
     public void draw(){

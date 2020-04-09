@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -26,50 +25,7 @@
                <children>
                   <AnchorPane prefHeight="218.0" prefWidth="118.0" style="-fx-border-color: red;">
                      <children>
-                        <ImageView fx:id="backCard2" fitHeight="75.0" fitWidth="65.0" layoutX="62.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@img/back.png" />
-                           </image>
-                           <VBox.margin>
-                              <Insets left="30.0" />
-                           </VBox.margin></ImageView>
-                        <ImageView fx:id="air2" fitHeight="30.0" fitWidth="30.0" layoutX="81.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@img/Elements/Air.png" />
-                           </image>
-                           <VBox.margin>
-                              <Insets left="80.0" top="10.0" />
-                           </VBox.margin>
-                        </ImageView>
-                        <ImageView fx:id="earth2" fitHeight="30.0" fitWidth="30.0" layoutX="81.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@img/Elements/Earth.png" />
-                           </image>
-                           <VBox.margin>
-                              <Insets left="80.0" />
-                           </VBox.margin>
-                        </ImageView>
-                        <ImageView fx:id="fire2" fitHeight="30.0" fitWidth="30.0" layoutX="81.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@img/Elements/Fire.png" />
-                           </image>
-                           <VBox.margin>
-                              <Insets left="80.0" />
-                           </VBox.margin>
-                        </ImageView>
-                        <ImageView fx:id="water2" fitHeight="30.0" fitWidth="30.0" layoutX="81.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@img/Elements/Water.png" />
-                           </image>
-                           <VBox.margin>
-                              <Insets left="80.0" />
-                           </VBox.margin>
-                        </ImageView>
-                        <Text fx:id="deckP2" layoutX="14.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-                        <Text fx:id="powWater2" layoutX="20.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-                        <Text fx:id="powFire2" layoutX="22.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-                        <Text fx:id="powEarth2" layoutX="22.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-                        <Text fx:id="powAir2" layoutX="22.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                        <fx:include fx:id="PanelP2" source="Deck.fxml" />
                      </children></AnchorPane>
                   <VBox layoutX="11.0" layoutY="11.0" prefHeight="218.0" prefWidth="812.0" style="-fx-border-color: red;">
                      <children>
@@ -226,50 +182,7 @@
                      </children></VBox>
                   <AnchorPane layoutX="11.0" layoutY="11.0" prefHeight="218.0" prefWidth="129.0" style="-fx-border-color: red;">
                      <children>
-                        <Text fx:id="powAir1" layoutX="54.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-                        <ImageView fx:id="water1" fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@img/Elements/Water.png" />
-                           </image>
-                           <VBox.margin>
-                              <Insets left="10.0" top="10.0" />
-                           </VBox.margin>
-                        </ImageView>
-                        <ImageView fx:id="fire1" fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@img/Elements/Fire.png" />
-                           </image>
-                           <VBox.margin>
-                              <Insets left="10.0" />
-                           </VBox.margin>
-                        </ImageView>
-                        <ImageView fx:id="earth1" fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@img/Elements/Earth.png" />
-                           </image>
-                           <VBox.margin>
-                              <Insets left="10.0" />
-                           </VBox.margin>
-                        </ImageView>
-                        <ImageView fx:id="air1" fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@img/Elements/Air.png" />
-                           </image>
-                           <VBox.margin>
-                              <Insets left="10.0" />
-                           </VBox.margin>
-                        </ImageView>
-                        <ImageView fx:id="backCard1" fitHeight="75.0" fitWidth="65.0" layoutX="14.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@img/back.png" />
-                           </image>
-                           <VBox.margin>
-                              <Insets left="30.0" top="10.0" />
-                           </VBox.margin></ImageView>
-                        <Text fx:id="powEarth1" layoutX="54.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-                        <Text fx:id="powFire1" layoutX="54.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-                        <Text fx:id="powWater1" layoutX="55.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-                        <Text fx:id="deckP1" layoutX="74.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                        <fx:include fx:id="PanelP1" source="Deck.fxml" />
                      </children>
                   </AnchorPane>
                </children>
