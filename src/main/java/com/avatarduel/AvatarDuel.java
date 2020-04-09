@@ -50,6 +50,7 @@ public class AvatarDuel extends Application {
     addDataBase(dataBase, charData);
     dataBase.put(destroyCard.getId(), destroyCard);
     dataBase.put(powerUpCard.getId(), powerUpCard);
+    dataBase.put(0, new Card("", 0, "", "", "", "src/main/resources/com/avatarduel/card/image/blank.png"));
   }
 
   public void loadDestroyCard(){

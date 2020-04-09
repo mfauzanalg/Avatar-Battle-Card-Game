@@ -12,12 +12,12 @@ public class Card {
     private String imagepath;
 
     public Card(){
-        type = "";
-        id = 0;
-        name = "";
-        element = "";
-        description = "";
-        imagepath = "src/main/resources/com/avatarduel/card/image/skill/Destroy.png";
+        this.type = "";
+        this.id = 0;
+        this.name = "";
+        this.element = "";
+        this.description = "";
+        this.imagepath = "src/main/resources/com/avatarduel/card/image/blank.png";
     }
 
     public Card(String _type, int _id, String _name, String ele, String desc, String path){
@@ -28,6 +28,7 @@ public class Card {
         description = desc;
         imagepath = path;
     }
+
 
     public String getType(){
         return type;

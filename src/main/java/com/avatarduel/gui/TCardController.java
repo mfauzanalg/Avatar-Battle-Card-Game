@@ -29,7 +29,7 @@ public class TCardController {
 
     public void loadCharCard(CharacterCard card){
         elmt.setText(card.getElement());
-        attrib.setText("Attack " + card.getAttack() + " Def : " + card.getDefense() + " Pow " + card.getPower());
+        attrib.setText("Atk/Def/Pow \n" + card.getAttack() + "/ " + card.getDefense() + "/" + card.getPower());
     }
 
     public void loadSkillCard(SkillCard card){
@@ -47,7 +47,7 @@ public class TCardController {
 
     public void loadAuraCard(AuraSkillCard card){
         elmt.setText(card.getElement());
-        attrib.setText("Attack " + card.getAttack() + " Def : " + card.getDefense() + " Pow " + card.getPower());
+        attrib.setText("Atk/Def/Pow \n" + card.getAttack() + "/ " + card.getDefense() + "/" + card.getPower());
     }
 
     public void loadDestroyCard(DestroySkillCard card){

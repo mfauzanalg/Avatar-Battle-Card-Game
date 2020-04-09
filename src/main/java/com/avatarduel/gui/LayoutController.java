@@ -20,8 +20,16 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class LayoutController implements Initializable{
+    @FXML private Text detailText;
+    @FXML private Text detailName;
+    @FXML private ImageView detailPict;
+    @FXML private DeckController PanelP1Controller;
+    @FXML private DeckController PanelP2Controller;
     @FXML private HandCardController HandCard1Controller;
     @FXML private HandCardController HandCard2Controller;
+    @FXML private DetailInfoController DetailInfoController;
+    @FXML private PlayerInfoController PlayerInfo1Controller;
+    @FXML private PlayerInfoController PlayerInfo2Controller;
 
     public void buttonClick(MouseEvent mouseEvent) {
         HandCard1Controller.loadCard(AvatarDuel.P1.getDeck().pop(),8);
@@ -29,10 +37,7 @@ public class LayoutController implements Initializable{
     }
 
     public void onHover(){
-        File file = new File (Card.cardHover.getImagePath());
-        Image image = new Image(file.toURI().toString());
-        detailPict.setImage(image);
-        detailText.setText(Card.cardHover.getDescription());
+        DetailInfoController.showCard(Card.cardHover);
     }
 
 //    public void onClick() throws IOException {
@@ -51,13 +56,6 @@ public class LayoutController implements Initializable{
 //        stage.setScene(new Scene(root1));
 //        stage.show();
 //    }
-
-    @FXML private ImageView detailPict;
-    @FXML private Text detailText;
-    @FXML private DeckController PanelP1Controller;
-    @FXML private DeckController PanelP2Controller;
-    @FXML private PlayerInfoController PlayerInfo1Controller;
-    @FXML private PlayerInfoController PlayerInfo2Controller;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
