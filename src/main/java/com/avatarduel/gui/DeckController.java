@@ -3,7 +3,7 @@ package com.avatarduel.gui;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
 
-public class deckController {
+public class DeckController {
     @FXML private Text airPow;
     @FXML private Text earthPow;
     @FXML private Text firePow;

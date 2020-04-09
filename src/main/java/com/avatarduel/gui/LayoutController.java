@@ -4,7 +4,6 @@ import com.avatarduel.AvatarDuel;
 import com.avatarduel.component.Card;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -19,64 +18,64 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class layoutController implements Initializable{
-    @FXML private tCardController P1H1Controller;
-    @FXML private tCardController P1H2Controller;
-    @FXML private tCardController P1H3Controller;
-    @FXML private tCardController P1H4Controller;
-    @FXML private tCardController P1H5Controller;
-    @FXML private tCardController P1H6Controller;
-    @FXML private tCardController P1H7Controller;
-    @FXML private tCardController P1H8Controller;
-    @FXML private tCardController P1H9Controller;
+public class LayoutController implements Initializable{
+    @FXML private TCardController P1H1Controller;
+    @FXML private TCardController P1H2Controller;
+    @FXML private TCardController P1H3Controller;
+    @FXML private TCardController P1H4Controller;
+    @FXML private TCardController P1H5Controller;
+    @FXML private TCardController P1H6Controller;
+    @FXML private TCardController P1H7Controller;
+    @FXML private TCardController P1H8Controller;
+    @FXML private TCardController P1H9Controller;
 
-    @FXML private tCardController P1A1Controller;
-    @FXML private tCardController P1A2Controller;
-    @FXML private tCardController P1A3Controller;
-    @FXML private tCardController P1A4Controller;
-    @FXML private tCardController P1A5Controller;
-    @FXML private tCardController P1A6Controller;
-    @FXML private tCardController P1A7Controller;
-    @FXML private tCardController P1A8Controller;
+    @FXML private TCardController P1A1Controller;
+    @FXML private TCardController P1A2Controller;
+    @FXML private TCardController P1A3Controller;
+    @FXML private TCardController P1A4Controller;
+    @FXML private TCardController P1A5Controller;
+    @FXML private TCardController P1A6Controller;
+    @FXML private TCardController P1A7Controller;
+    @FXML private TCardController P1A8Controller;
 
-    @FXML private tCardController P1S1Controller;
-    @FXML private tCardController P1S2Controller;
-    @FXML private tCardController P1S3Controller;
-    @FXML private tCardController P1S4Controller;
-    @FXML private tCardController P1S5Controller;
-    @FXML private tCardController P1S6Controller;
-    @FXML private tCardController P1S7Controller;
-    @FXML private tCardController P1S8Controller;
+    @FXML private TCardController P1S1Controller;
+    @FXML private TCardController P1S2Controller;
+    @FXML private TCardController P1S3Controller;
+    @FXML private TCardController P1S4Controller;
+    @FXML private TCardController P1S5Controller;
+    @FXML private TCardController P1S6Controller;
+    @FXML private TCardController P1S7Controller;
+    @FXML private TCardController P1S8Controller;
 
-    @FXML private tCardController P2H1Controller;
-    @FXML private tCardController P2H2Controller;
-    @FXML private tCardController P2H3Controller;
-    @FXML private tCardController P2H4Controller;
-    @FXML private tCardController P2H5Controller;
-    @FXML private tCardController P2H6Controller;
-    @FXML private tCardController P2H7Controller;
-    @FXML private tCardController P2H8Controller;
-    @FXML private tCardController P2H9Controller;
+    @FXML private TCardController P2H1Controller;
+    @FXML private TCardController P2H2Controller;
+    @FXML private TCardController P2H3Controller;
+    @FXML private TCardController P2H4Controller;
+    @FXML private TCardController P2H5Controller;
+    @FXML private TCardController P2H6Controller;
+    @FXML private TCardController P2H7Controller;
+    @FXML private TCardController P2H8Controller;
+    @FXML private TCardController P2H9Controller;
 
-    @FXML private tCardController P2A1Controller;
-    @FXML private tCardController P2A2Controller;
-    @FXML private tCardController P2A3Controller;
-    @FXML private tCardController P2A4Controller;
-    @FXML private tCardController P2A5Controller;
-    @FXML private tCardController P2A6Controller;
-    @FXML private tCardController P2A7Controller;
-    @FXML private tCardController P2A8Controller;
+    @FXML private TCardController P2A1Controller;
+    @FXML private TCardController P2A2Controller;
+    @FXML private TCardController P2A3Controller;
+    @FXML private TCardController P2A4Controller;
+    @FXML private TCardController P2A5Controller;
+    @FXML private TCardController P2A6Controller;
+    @FXML private TCardController P2A7Controller;
+    @FXML private TCardController P2A8Controller;
 
-    @FXML private tCardController P2S1Controller;
-    @FXML private tCardController P2S2Controller;
-    @FXML private tCardController P2S3Controller;
-    @FXML private tCardController P2S4Controller;
-    @FXML private tCardController P2S5Controller;
-    @FXML private tCardController P2S6Controller;
-    @FXML private tCardController P2S7Controller;
-    @FXML private tCardController P2S8Controller;
+    @FXML private TCardController P2S1Controller;
+    @FXML private TCardController P2S2Controller;
+    @FXML private TCardController P2S3Controller;
+    @FXML private TCardController P2S4Controller;
+    @FXML private TCardController P2S5Controller;
+    @FXML private TCardController P2S6Controller;
+    @FXML private TCardController P2S7Controller;
+    @FXML private TCardController P2S8Controller;
 
-    public layoutController() {
+    public LayoutController() {
     }
 
     public void button(MouseEvent mouseEvent) {
@@ -349,8 +348,8 @@ public class layoutController implements Initializable{
     @FXML private Text p2name;
     @FXML private Text p1health;
     @FXML private Text p2health;
-    @FXML private deckController PanelP1Controller;
-    @FXML private deckController PanelP2Controller;
+    @FXML private DeckController PanelP1Controller;
+    @FXML private DeckController PanelP2Controller;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

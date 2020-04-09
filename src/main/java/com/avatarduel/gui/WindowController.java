@@ -14,7 +14,7 @@ import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.util.Objects;
 
-public class windowController {
+public class WindowController {
 
     @FXML
     TextField player1;

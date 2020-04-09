@@ -10,8 +10,8 @@ public class cobayukController {
 
     @FXML private Button btn;
     @FXML private Text teks;
-    @FXML private tCardController secondController;
-    @FXML private tCardController firstController;
+    @FXML private TCardController secondController;
+    @FXML private TCardController firstController;
 
 
     public void buttonClikced(MouseEvent mouseEvent) {

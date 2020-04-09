@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="218.0" prefWidth="118.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.avatarduel.gui.deckController">
+<AnchorPane prefHeight="218.0" prefWidth="118.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.avatarduel.gui.DeckController">
    <children>
       <ImageView fx:id="deckPict" fitHeight="75.0" fitWidth="53.0" layoutX="56.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
          <image>

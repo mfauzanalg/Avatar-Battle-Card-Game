@@ -12,7 +12,7 @@ import javafx.scene.text.Text;
 
 import java.io.File;
 
-public class tCardController {
+public class TCardController {
     @FXML private Text name;
     @FXML private Text attrib;
     @FXML private ImageView pict;

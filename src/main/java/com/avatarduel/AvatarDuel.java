@@ -6,14 +6,12 @@ import com.avatarduel.component.LandCard;
 import com.avatarduel.component.Player;
 
 import com.avatarduel.component.*;
-import com.avatarduel.gui.windowController;
-import java.awt.event.ActionEvent;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -21,8 +19,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import com.avatarduel.model.Element;
-import com.avatarduel.model.Land;
 import com.avatarduel.util.CSVReader;
 
 public class AvatarDuel extends Application {
@@ -94,7 +90,7 @@ public class AvatarDuel extends Application {
       this.loadDestroyCard();
       this.loadPowerUpCard();
 
-      Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("window.fxml"));
+      Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Window.fxml"));
       Scene scene = new Scene(root);
       stage.setResizable(false);
       stage.setTitle("Avatar Duel Kelompok 9");
