@@ -70,6 +70,10 @@ public class DetailInfoController {
         }
         else if (type.equals("skill")){
             this.showSkillCard((SkillCard) card);
-        } else{}
+        }
+        else{
+            detailElmt.setText("");
+            detailStat.setText("");
+        }
     }
 }
