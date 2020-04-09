@@ -11,7 +11,9 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -25,6 +27,7 @@ public class AvatarDuel extends Application {
   private static final String LAND_CSV_FILE_PATH = "card/data/land.csv";
   private static final String AURA_CSV_FILE_PATH = "card/data/skill_aura.csv";
   private static final String CHAR_CSV_FILE_PATH = "card/data/character.csv";
+  public static HashMap<Integer, Card> dataBase;
   public static List<LandCard> landData;
   public static List<CharacterCard> charData;
   public static List<AuraSkillCard> auraData;
@@ -32,6 +35,22 @@ public class AvatarDuel extends Application {
   public static PowerUpSkillCard powerUpCard;
   public static Player P1;
   public static Player P2;
+
+
+  public <T extends Card> void addDataBase(HashMap<Integer, Card> dataBase, List<T> cardList){
+    for (T card: cardList) {
+      dataBase.put(card.getId(), card);
+    }
+  }
+
+  public void initializeDataBase(){
+    dataBase = new HashMap<Integer, Card>();
+    addDataBase(dataBase, landData);
+    addDataBase(dataBase, auraData);
+    addDataBase(dataBase, charData);
+    dataBase.put(destroyCard.getId(), destroyCard);
+    dataBase.put(powerUpCard.getId(), powerUpCard);
+  }
 
   public void loadDestroyCard(){
     destroyCard = new DestroySkillCard(99, "Destroy Card", "", "This is Destroy skill card", "src/main/resources/com/avatarduel/card/image/skill/Destroy.png");
@@ -89,15 +108,13 @@ public class AvatarDuel extends Application {
       this.loadCharCards();
       this.loadDestroyCard();
       this.loadPowerUpCard();
+      this.initializeDataBase();
 
       Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Window.fxml"));
       Scene scene = new Scene(root);
-//      stage.setResizable(false);
       stage.setTitle("Avatar Duel Kelompok 9");
       stage.setScene(scene);
       stage.show();
-
-
     } catch (IOException | URISyntaxException e){
       throw new IllegalStateException("Fauzan Keren" + e);
     }

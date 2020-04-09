@@ -17,7 +17,7 @@ public class Card {
         name = "";
         element = "";
         description = "";
-        imagepath = "";
+        imagepath = "src/main/resources/com/avatarduel/card/image/skill/Destroy.png";
     }
 
     public Card(String _type, int _id, String _name, String ele, String desc, String path){
@@ -55,7 +55,7 @@ public class Card {
 
 
     // Card on layout
-    public static Card cardHover;
+    public static Card cardHover = new Card();
 
 //    // Card on hand player 1
 //    public static Card onP1H1 = new Card();

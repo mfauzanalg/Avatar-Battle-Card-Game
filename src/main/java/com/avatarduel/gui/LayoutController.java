@@ -24,18 +24,17 @@ public class LayoutController implements Initializable{
     @FXML private HandCardController HandCard2Controller;
 
     public void buttonClick(MouseEvent mouseEvent) {
-        HandCard1Controller.loadCard(AvatarDuel.landData.get(3),1);
-        HandCard2Controller.loadCard(AvatarDuel.landData.get(9), 3);
+        HandCard1Controller.loadCard(AvatarDuel.P1.getDeck().pop(),8);
+        HandCard2Controller.loadCard(AvatarDuel.P2.getDeck().pop(), 8);
     }
 
+    public void onHover(){
+        File file = new File (Card.cardHover.getImagePath());
+        Image image = new Image(file.toURI().toString());
+        detailPict.setImage(image);
+        detailText.setText(Card.cardHover.getDescription());
+    }
 
-//    public void onHover(){
-//        File file = new File (Card.cardHover.getImagePath());
-//        Image image = new Image(file.toURI().toString());
-//        detailPict.setImage(image);
-//        detailText.setText(Card.cardHover.getDescription());
-//    }
-//
 //    public void onClick() throws IOException {
 //        Stage stage = new Stage();
 //        Pane myPane = null;
@@ -44,16 +43,15 @@ public class LayoutController implements Initializable{
 //        stage.setScene(scene);
 //        stage.show();
 //    }
-//
-////    public void actionBox(MouseEvent mouseEvent) throws IOException {
-////        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("actionBox.fxml"));
-////        Parent root1 = (Parent) fxmlLoader.load();
-////        Stage stage = new Stage();
-////        stage.setScene(new Scene(root1));
-////        stage.show();
-////    }
-//
-//
+
+//    public void actionBox(MouseEvent mouseEvent) throws IOException {
+//        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("actionBox.fxml"));
+//        Parent root1 = (Parent) fxmlLoader.load();
+//        Stage stage = new Stage();
+//        stage.setScene(new Scene(root1));
+//        stage.show();
+//    }
+
     @FXML private ImageView detailPict;
     @FXML private Text detailText;
     @FXML private DeckController PanelP1Controller;
