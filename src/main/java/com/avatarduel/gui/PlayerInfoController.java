@@ -1,19 +1,18 @@
 package com.avatarduel.gui;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.TextArea;
 import javafx.scene.text.Text;
 
 public class PlayerInfoController {
-    @FXML private Text PlayerName;
-    @FXML private Text PlayerHealth;
+    @FXML private Text playerName;
+    @FXML private Text playerHealth;
 
     public void setName(String name){
-        PlayerName.setText(name);
+        playerName.setText(name);
     }
 
     public void setHealth(String health){
-        PlayerHealth.setText("Health : " + health);
+        playerHealth.setText("Health : " + health);
     }
 
 
