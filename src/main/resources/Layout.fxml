@@ -56,6 +56,6 @@
          </children>
       </AnchorPane>
       <Button layoutX="1148.0" layoutY="252.0" mnemonicParsing="false" onMouseClicked="#draw" text="Draw" />
-      <fx:include fx:id="DetailInfo" source="DetailInfo.fxml" />
+      <fx:include fx:id="detailInfo" source="DetailInfo.fxml" />
    </children>
 </AnchorPane>
