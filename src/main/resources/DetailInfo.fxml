@@ -24,7 +24,7 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fx:id="detailElmt" layoutX="33.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" x="-11.0" y="-32.0">
+      <Text fx:id="detailElmt" layoutX="213.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" x="-11.0" y="-32.0">
          <font>
             <Font size="14.0" />
          </font>

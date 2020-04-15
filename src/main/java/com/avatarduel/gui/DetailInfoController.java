@@ -23,6 +23,8 @@ public class DetailInfoController {
     private String earthPath = "src/main/resources/img/Elements/Earth.png";
     private String firePath = "src/main/resources/img/Elements/Fire.png";
     private String waterPath = "src/main/resources/img/Elements/Water.png";
+    private String blankPath = "src/main/resources/com/avatarduel/card/image/blank.png";
+
 
     public String setElmtPict(String elmt){
         if (elmt.equals("ENERGY")){ return energyPath; }
@@ -62,7 +64,10 @@ public class DetailInfoController {
     }
 
     public void showAuraCard(AuraSkillCard card){
-        detailElmt.setText(card.getElement());
+//        detailElmt.setText(card.getElement());
+        File file = new File (setElmtPict(card.getElement()));
+        Image image = new Image(file.toURI().toString());
+        elmtPict.setImage(image);
         detailStat.setText("Atk/Def/Pow " + space + card.getAttack() + "/ " + card.getDefense() + "/" + card.getPower());
     }
 
@@ -81,6 +86,9 @@ public class DetailInfoController {
         detailImage.setImage(image);
         detailDesc.setText(card.getDescription());
         detailName.setText(card.getName());
+        File file2 = new File (blankPath);
+        Image image2 = new Image(file2.toURI().toString());
+        elmtPict.setImage(image2);
 
         String type = card.getType();
         if (type.equals("land")){

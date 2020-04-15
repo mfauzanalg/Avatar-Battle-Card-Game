@@ -35,6 +35,7 @@ public class TCardController {
     }
 
     public void loadLandCard(Card card){
+//        elmt.setText(card.getElement());
         File file = new File (setElmtPict(card.getElement()));
         Image image = new Image(file.toURI().toString());
         elmtPict.setImage(image);
@@ -42,6 +43,7 @@ public class TCardController {
     }
 
     public void loadCharCard(CharacterCard card){
+//        elmt.setText(card.getElement());
         File file = new File (setElmtPict(card.getElement()));
         Image image = new Image(file.toURI().toString());
         elmtPict.setImage(image);
@@ -85,6 +87,7 @@ public class TCardController {
         Image image = new Image(file.toURI().toString());
         pict.setImage(image);
         name.setText(card.getName());
+
 
         String type = card.getType();
         if (type.equals("land")){
