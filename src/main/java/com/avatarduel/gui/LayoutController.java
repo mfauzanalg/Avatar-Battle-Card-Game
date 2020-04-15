@@ -2,13 +2,21 @@ package com.avatarduel.gui;
 
 import com.avatarduel.AvatarDuel;
 import com.avatarduel.component.Card;
+import com.avatarduel.component.HandCard;
 import com.avatarduel.component.IHandCard;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.fxml.Initializable;
+import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -16,13 +24,13 @@ public class LayoutController implements Initializable{
     @FXML private Text detailText;
     @FXML private Text detailName;
     @FXML private ImageView detailPict;
-    @FXML private DeckController panelP1Controller;
-    @FXML private DeckController panelP2Controller;
-    @FXML private HandCardController handCard1Controller;
-    @FXML private HandCardController handCard2Controller;
-    @FXML private DetailInfoController detailInfoController;
-    @FXML private PlayerInfoController playerInfo1Controller;
-    @FXML private PlayerInfoController playerInfo2Controller;
+    @FXML private DeckController PanelP1Controller;
+    @FXML private DeckController PanelP2Controller;
+    @FXML private HandCardController HandCard1Controller;
+    @FXML private HandCardController HandCard2Controller;
+    @FXML private DetailInfoController DetailInfoController;
+    @FXML private PlayerInfoController PlayerInfo1Controller;
+    @FXML private PlayerInfoController PlayerInfo2Controller;
 
     public void draw(MouseEvent mouseEvent) {
         AvatarDuel.P1.draw();
@@ -32,12 +40,12 @@ public class LayoutController implements Initializable{
     public void updateHand() {
         int index = 1;
         for (IHandCard card : AvatarDuel.P1.getHand()) {
-            handCard1Controller.loadCard(card.getCardInstance(),index++);
+            HandCard1Controller.loadCard(card.getCardInstance(),index++);
         }
     }
 
     public void onHover(){
-        detailInfoController.showCard(Card.cardHover);
+        DetailInfoController.showCard(Card.cardHover);
         updateHand();
     }
 
@@ -60,12 +68,12 @@ public class LayoutController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        playerInfo1Controller.setName(AvatarDuel.P1.getName());
-        playerInfo2Controller.setName(AvatarDuel.P2.getName());
-        playerInfo1Controller.setHealth(Integer.toString(AvatarDuel.P1.getHealth()));
-        playerInfo2Controller.setHealth(Integer.toString(AvatarDuel.P1.getHealth()));
-        panelP1Controller.initialSet();
-        panelP2Controller.initialSet();
+        PlayerInfo1Controller.setName(AvatarDuel.P1.getName());
+        PlayerInfo2Controller.setName(AvatarDuel.P2.getName());
+        PlayerInfo1Controller.setHealth(Integer.toString(AvatarDuel.P1.getHealth()));
+        PlayerInfo2Controller.setHealth(Integer.toString(AvatarDuel.P1.getHealth()));
+        PanelP1Controller.initialSet();
+        PanelP2Controller.initialSet();
     }
 
 

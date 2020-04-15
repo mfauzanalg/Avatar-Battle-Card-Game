@@ -12,7 +12,7 @@
             <Image url="@img/unnamed.png" />
          </image>
       </ImageView>
-      <Text fx:id="playerName" layoutX="84.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text fx:id="playerHealth" layoutX="84.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="PlayerName" layoutX="84.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="PlayerHealth" layoutX="84.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
    </children>
 </AnchorPane>
