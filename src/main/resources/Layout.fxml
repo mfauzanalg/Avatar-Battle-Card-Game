@@ -66,5 +66,6 @@
          </children>
       </AnchorPane>
       <Button layoutX="1148.0" layoutY="232.0" mnemonicParsing="false" onMouseClicked="#draw" text="Draw" />
+      <Button fx:id="actionbutton" onMouseClicked="#Action" layoutX="1144.0" layoutY="170.0" mnemonicParsing="false" text="Action" />
    </children>
 </AnchorPane>

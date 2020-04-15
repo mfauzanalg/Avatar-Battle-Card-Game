@@ -4,11 +4,16 @@ import com.avatarduel.AvatarDuel;
 import com.avatarduel.component.Card;
 import com.avatarduel.component.IHandCard;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.fxml.Initializable;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -26,13 +31,18 @@ public class LayoutController implements Initializable{
 
     public void draw(MouseEvent mouseEvent) {
         AvatarDuel.P1.draw();
+        AvatarDuel.P2.draw();
         onHover();
     }
 
     public void updateHand() {
         int index = 1;
+        int indes = 1;
         for (IHandCard card : AvatarDuel.P1.getHand()) {
             handCard1Controller.loadCard(card.getCardInstance(),index++);
+        }
+        for (IHandCard card : AvatarDuel.P2.getHand()) {
+            handCard2Controller.loadCard(card.getCardInstance(),indes++);
         }
     }
 
@@ -40,23 +50,6 @@ public class LayoutController implements Initializable{
         detailInfoController.showCard(Card.cardHover);
         updateHand();
     }
-
-//    public void onClick() throws IOException {
-//        Stage stage = new Stage();
-//        Pane myPane = null;
-//        myPane = FXMLLoader.load(getClass().getClassLoader().getResource("actionBox.fxml"));
-//        Scene scene = new Scene(myPane);
-//        stage.setScene(scene);
-//        stage.show();
-//    }
-
-//    public void actionBox(MouseEvent mouseEvent) throws IOException {
-//        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("actionBox.fxml"));
-//        Parent root1 = (Parent) fxmlLoader.load();
-//        Stage stage = new Stage();
-//        stage.setScene(new Scene(root1));
-//        stage.show();
-//    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -69,4 +62,16 @@ public class LayoutController implements Initializable{
     }
 
 
+    public void Action(MouseEvent mouseEvent) throws IOException {
+        try{
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("ActionBox.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setTitle("ActionBox");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e){
+            throw new IllegalStateException("Fauzan Keren" + e);
+        }
+    }
 }
