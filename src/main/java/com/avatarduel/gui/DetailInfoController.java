@@ -14,16 +14,37 @@ public class DetailInfoController {
     @FXML private ImageView detailImage;
     @FXML private Text detailName;
     @FXML private Text detailElmt;
+    @FXML private ImageView elmtPict;
 
     public String space = "                    ";
 
+    private String energyPath = "src/main/resources/img/Elements/Energy.png";
+    private String airPath = "src/main/resources/img/Elements/Air.png";
+    private String earthPath = "src/main/resources/img/Elements/Earth.png";
+    private String firePath = "src/main/resources/img/Elements/Fire.png";
+    private String waterPath = "src/main/resources/img/Elements/Water.png";
+
+    public String setElmtPict(String elmt){
+        if (elmt.equals("ENERGY")){ return energyPath; }
+        else if(elmt.equals("AIR")){ return airPath; }
+        else if(elmt.equals("EARTH")){ return earthPath; }
+        else if(elmt.equals("FIRE")){ return firePath; }
+        else { return waterPath; }
+    }
+
     public void showLandCard(Card card){
-        detailElmt.setText(card.getElement());
+//        detailElmt.setText(card.getElement());
+        File file = new File (setElmtPict(card.getElement()));
+        Image image = new Image(file.toURI().toString());
+        elmtPict.setImage(image);
         detailStat.setText("This is " + card.getElement() + " Land Card");
     }
 
     public void showCharCard(CharacterCard card){
-        detailElmt.setText(card.getElement());
+//        detailElmt.setText(card.getElement());
+        File file = new File (setElmtPict(card.getElement()));
+        Image image = new Image(file.toURI().toString());
+        elmtPict.setImage(image);
         detailStat.setText("Atk/Def/Pow " + space + card.getAttack() + "/ " + card.getDefense() + "/" + card.getPower());
     }
 
