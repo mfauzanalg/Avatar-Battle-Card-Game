@@ -35,17 +35,4 @@ public class HandCardController {
         }
     }
 
-    public void handAction(){
-        try{
-            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("HandAction.fxml"));
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-            stage.setTitle("ActionBox");
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e){
-            throw new IllegalStateException("Fauzan Keren" + e);
-        }
-    }
-
 }

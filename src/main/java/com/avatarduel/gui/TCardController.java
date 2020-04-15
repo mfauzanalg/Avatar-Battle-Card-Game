@@ -107,14 +107,12 @@ public class TCardController {
     }
 
     public void hover(MouseEvent mouseEvent) {
-         Card.cardHover = AvatarDuel.dataBase.get(this.id);
+        Card.cardHover = AvatarDuel.dataBase.get(this.id);
     }
-
-
 
     public void click(MouseEvent mouseEvent) {
         try{
-            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("HandAction.fxml"));
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("HandCharAct.fxml"));
             Scene scene = new Scene(root);
             Stage stage = new Stage();
             stage.setTitle("ActionBox");
