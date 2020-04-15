@@ -33,6 +33,8 @@ public class LayoutController implements Initializable{
         AvatarDuel.P1.draw();
         AvatarDuel.P2.draw();
         onHover();
+        panelP2Controller.setPanel(AvatarDuel.P2);
+        panelP1Controller.setPanel(AvatarDuel.P1);
     }
 
     public void updateHand() {
@@ -56,9 +58,9 @@ public class LayoutController implements Initializable{
         playerInfo1Controller.setName(AvatarDuel.P1.getName());
         playerInfo2Controller.setName(AvatarDuel.P2.getName());
         playerInfo1Controller.setHealth(Integer.toString(AvatarDuel.P1.getHealth()));
-        playerInfo2Controller.setHealth(Integer.toString(AvatarDuel.P1.getHealth()));
-        panelP1Controller.initialSet();
-        panelP2Controller.initialSet();
+        playerInfo2Controller.setHealth(Integer.toString(AvatarDuel.P2.getHealth()));
+        panelP1Controller.setPanel(AvatarDuel.P1);
+        panelP2Controller.setPanel(AvatarDuel.P2);
     }
     
 }

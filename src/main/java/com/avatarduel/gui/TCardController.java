@@ -111,13 +111,26 @@ public class TCardController {
     }
 
     public void click(MouseEvent mouseEvent) {
+        Card.cardClick1 = AvatarDuel.dataBase.get(this.id);
+        showAction();
+    }
+
+    public void showAction(){
         try{
-            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("HandCharAct.fxml"));
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-            stage.setTitle("ActionBox");
-            stage.setScene(scene);
-            stage.show();
+            String actionBox;
+            String type = Card.cardClick1.getType();
+            if (!type.equals("")){
+                if (type.equals("land")) {actionBox = "HandLandAct.fxml"; }
+                else if (type.equals("character")) {actionBox = "HandCharAct.fxml";}
+                else {actionBox = "HandSkillAct.fxml";}
+
+                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource(actionBox));
+                Scene scene = new Scene(root);
+                Stage stage = new Stage();
+                stage.setTitle("Select");
+                stage.setScene(scene);
+                stage.show();
+            }
         } catch (IOException e){
             throw new IllegalStateException("Fauzan Keren" + e);
         }

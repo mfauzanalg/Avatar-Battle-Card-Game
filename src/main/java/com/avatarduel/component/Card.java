@@ -57,6 +57,7 @@ public class Card {
 
     // Card on layout
     public static Card cardHover = new Card();
+    public static Card cardClick1 = new Card();
 
 //    // Card on hand player 1
 //    public static Card onP1H1 = new Card();

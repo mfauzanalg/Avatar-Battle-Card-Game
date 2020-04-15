@@ -8,10 +8,7 @@ public class Player{
     private List<IHandCard> hand; //Ini harus IHandCard karna method play adanya di IHandCard
     private List<BoardCard> board; // Ini juga harus BoardCard biar bisa pake dekorator
     private List<SkillCard> skillBoard; // Kalo perlu Cardnya, pake method getCardInstance() ya
-    private int maxWater, currentWater,
-                maxEarth, currentEarth,
-                maxFire, currentFire,
-                maxAir, currentAir;
+    private int maxWater, currentWater, maxEarth, currentEarth, maxFire, currentFire, maxAir, currentAir, maxEnergy, currentEnergy;
 
     public Player(String name, int health)
     {
@@ -25,6 +22,7 @@ public class Player{
         this.maxEarth = 0; this.currentEarth = 0;
         this.maxFire = 0; this.currentFire = 0;
         this.maxAir = 0; this.currentAir = 0;
+        this.maxEnergy = 0; this.currentEnergy = 0;
     }
 
     public List<IHandCard> getHand() {return this.hand;}
@@ -60,6 +58,9 @@ public class Player{
             case ("AIR"):
                 this.maxAir = val;
                 break;
+            case ("ENERGY"):
+                this.maxEnergy = val;
+                break;
             default:
                 System.out.println("No Match");
 		}
@@ -79,6 +80,8 @@ public class Player{
             case ("AIR"):
                 return this.maxAir;
 //                break;
+            case ("ENERGY"):
+                return this.maxEnergy;
             default:
                 System.out.println("No Match");
                 return 0;
@@ -99,6 +102,9 @@ public class Player{
             case ("AIR"):
                 this.currentAir = val;
                 break;
+            case ("ENERGY"):
+                this.currentEnergy = val;
+                break;
             default:
                 System.out.println("No Match");
 		}
@@ -118,6 +124,8 @@ public class Player{
             case ("AIR"):
                 return this.currentAir;
 //                break;
+            case ("ENERGY"):
+                return this.currentEnergy;
             default:
                 System.out.println("No Match");
                 return 0;
@@ -164,6 +172,7 @@ public class Player{
     public void draw(){
         //pop card dari deck
         Card top = deck.pop();
+        System.out.println(deck.capacity());
         HandCard factory = HandCardFactory.getFactory(top); // Gunakan factory method untuk menentukan factory yang akan digunakan
         // TODO, kasih exception kalo factory = null
         hand.add(factory.createHandCard(top, this)); // tambahkan IHandCard yang dibuat factory ke hand
