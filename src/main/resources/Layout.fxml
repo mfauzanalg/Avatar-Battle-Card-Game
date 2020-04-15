@@ -6,20 +6,20 @@
 
 <AnchorPane onMouseMoved="#onHover" prefHeight="660.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.avatarduel.gui.LayoutController">
    <children>
-      <AnchorPane fx:id="BattlePhasePane" layoutX="242.0" layoutY="321.0" prefHeight="155.0" prefWidth="40.0">
+      <AnchorPane fx:id="BattlePhasePane" layoutX="371.0" layoutY="107.0" prefHeight="440.0" prefWidth="40.0">
          <fx:include fx:id="battlephase" source="BattlePhase.fxml" />
       </AnchorPane>
-      <AnchorPane layoutX="278.0" layoutY="12.0" prefHeight="110.0" prefWidth="81.0">
+      <AnchorPane layoutX="236.0" layoutY="12.0" prefHeight="110.0" prefWidth="81.0">
          <children>
             <fx:include fx:id="playerInfo2" source="PlayerInfo.fxml" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="277.0" layoutY="127.0" prefHeight="218.0" prefWidth="129.0" style="-fx-border-color: red;">
+      <AnchorPane layoutX="233.0" layoutY="105.0" prefHeight="218.0" prefWidth="129.0" style="-fx-border-color: red;">
          <children>
             <fx:include fx:id="panelP1" source="Deck.fxml" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="1148.0" layoutY="323.0" prefHeight="218.0" prefWidth="118.0" style="-fx-border-color: red;">
+      <AnchorPane layoutX="1148.0" layoutY="293.0" prefHeight="218.0" prefWidth="118.0" style="-fx-border-color: red;">
          <children>
             <fx:include fx:id="panelP2" source="Deck.fxml" />
          </children>
@@ -34,7 +34,7 @@
             <fx:include fx:id="handCard2" source="HandCard.fxml" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="1124.0" layoutY="555.0" prefHeight="110.0" prefWidth="81.0">
+      <AnchorPane layoutX="1144.0" layoutY="555.0" prefHeight="110.0" prefWidth="81.0">
          <children>
             <fx:include fx:id="playerInfo1" source="PlayerInfo.fxml" />
          </children>
@@ -59,8 +59,12 @@
             <fx:include fx:id="charArea2" source="CharArea.fxml" />
          </children>
       </AnchorPane>
-      <Button layoutX="1148.0" layoutY="252.0" mnemonicParsing="false" onMouseClicked="#draw" text="Draw" />
-      <fx:include fx:id="detailInfo" source="DetailInfo.fxml" />
-      <Line endX="582.199951171875" layoutX="528.0" layoutY="323.0" startX="-95.39999389648438" />
+      <AnchorPane layoutX="-3.0" prefHeight="518.0" prefWidth="200.0">
+         <children>
+            <fx:include fx:id="detailInfo" source="DetailInfo.fxml" />
+         </children>
+      </AnchorPane>
+      <Button layoutX="1148.0" layoutY="202.0" mnemonicParsing="false" onMouseClicked="#draw" text="Draw" />
+      <Line endX="582.199951171875" layoutX="529.0" layoutY="324.0" startX="-95.39999389648438" />
    </children>
 </AnchorPane>
