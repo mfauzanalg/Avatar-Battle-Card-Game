@@ -60,18 +60,5 @@ public class LayoutController implements Initializable{
         panelP1Controller.initialSet();
         panelP2Controller.initialSet();
     }
-
-
-    public void Action(MouseEvent mouseEvent) throws IOException {
-        try{
-            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("ActionBox.fxml"));
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-            stage.setTitle("ActionBox");
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e){
-            throw new IllegalStateException("Fauzan Keren" + e);
-        }
-    }
+    
 }

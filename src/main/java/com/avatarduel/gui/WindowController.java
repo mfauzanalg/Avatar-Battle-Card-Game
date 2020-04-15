@@ -27,10 +27,12 @@ public class WindowController {
         AvatarDuel.P1.addRandomCards(AvatarDuel.landData, 16);
         AvatarDuel.P1.addRandomCards(AvatarDuel.charData, 24);
         AvatarDuel.P1.addRandomCards(AvatarDuel.auraData, 6);
+
         AvatarDuel.P1.addCard(AvatarDuel.destroyCard);
         AvatarDuel.P1.addCard(AvatarDuel.destroyCard);
         AvatarDuel.P1.addCard(AvatarDuel.powerUpCard);
         AvatarDuel.P1.addCard(AvatarDuel.powerUpCard);
+
         AvatarDuel.P1.shuffleDeck();
         AvatarDuel.P2.addCardsToDeck(AvatarDuel.P1.getDeck());
         AvatarDuel.P2.shuffleDeck();

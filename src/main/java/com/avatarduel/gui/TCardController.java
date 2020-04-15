@@ -3,14 +3,19 @@ package com.avatarduel.gui;
 import com.avatarduel.AvatarDuel;
 import com.avatarduel.component.*;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.IOException;
 
 public class TCardController {
     @FXML private Text name;
@@ -103,5 +108,20 @@ public class TCardController {
 
     public void hover(MouseEvent mouseEvent) {
          Card.cardHover = AvatarDuel.dataBase.get(this.id);
+    }
+
+
+
+    public void click(MouseEvent mouseEvent) {
+        try{
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("HandAction.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setTitle("ActionBox");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e){
+            throw new IllegalStateException("Fauzan Keren" + e);
+        }
     }
 }

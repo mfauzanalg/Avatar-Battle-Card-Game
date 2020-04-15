@@ -2,6 +2,12 @@ package com.avatarduel.gui;
 
 import com.avatarduel.component.Card;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class HandCardController {
     @FXML private TCardController h1Controller;
@@ -26,6 +32,19 @@ public class HandCardController {
             case 8: h8Controller.loadCard(card); break;
             case 9: h9Controller.loadCard(card); break;
             default:
+        }
+    }
+
+    public void handAction(){
+        try{
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("HandAction.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setTitle("ActionBox");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e){
+            throw new IllegalStateException("Fauzan Keren" + e);
         }
     }
 
