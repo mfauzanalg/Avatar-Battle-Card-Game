@@ -9,8 +9,10 @@ public class DeckController {
     @FXML private Text firePow;
     @FXML private Text waterPow;
     @FXML private Text deck;
+    @FXML private Text energyPow;
 
     public void initialSet(){
+        energyPow.setText("0/0");
         airPow.setText("0/0");
         earthPow.setText("0/0");
         firePow.setText("0/0");

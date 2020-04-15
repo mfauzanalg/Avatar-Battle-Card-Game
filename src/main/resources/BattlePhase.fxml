@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="440.0" prefWidth="40.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.avatarduel.gui.BattlePhaseController">
+   <children>
+      <AnchorPane fx:id="drawP" layoutX="2.0" layoutY="3.0" prefHeight="60.0" prefWidth="35.0" style="-fx-border-color: black;">
+         <children>
+            <Text layoutX="10.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DP" />
+         </children></AnchorPane>
+      <AnchorPane fx:id="mainP" layoutX="2.0" layoutY="112.0" prefHeight="60.0" prefWidth="35.0" style="-fx-border-color: black;">
+         <children>
+            <Text layoutX="10.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MP" />
+         </children></AnchorPane>
+      <AnchorPane fx:id="battleP" layoutX="2.0" layoutY="224.0" prefHeight="60.0" prefWidth="35.0" style="-fx-border-color: black;">
+         <children>
+            <Text layoutX="10.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BP" />
+         </children></AnchorPane>
+      <AnchorPane fx:id="endP" layoutX="2.0" layoutY="337.0" prefHeight="60.0" prefWidth="35.0" style="-fx-border-color: black;">
+         <children>
+            <Text layoutX="10.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EP" />
+         </children></AnchorPane>
+   </children>
+</AnchorPane>
