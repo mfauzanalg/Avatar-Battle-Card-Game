@@ -10,7 +10,10 @@ public class Card {
     private String element;
     private String description;
     private String imagepath;
-
+    public static final String CHARACTER_CARD = "character";
+    public static final String SKILL_CARD = "skill";
+    public static final String LAND_CARD = "land";
+    
     public Card(){
         this.type = "";
         this.id = 0;

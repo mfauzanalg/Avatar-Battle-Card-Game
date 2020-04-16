@@ -16,7 +16,13 @@ abstract public class SkillBoardCard extends BoardCard {
         target.addSkillCard(_card);
     }
 
-    abstract public int getPositionValue();
+    abstract public int getAttackValue();
+
+    abstract public int getDefenseValue();
+
+    public int getPositionValue(){
+        return (target.getAttackPos()) ? getAttackValue() : getDefenseValue();
+    }
 
     public Card getCardInstance(){
         return card;
@@ -50,5 +56,9 @@ abstract public class SkillBoardCard extends BoardCard {
 
     public List<SkillCard> getSkills(){
         return target.getSkills();
+    }
+
+    public void removeSkill(SkillCard card){
+        target.removeSkill(card);
     }
 }

@@ -25,6 +25,10 @@ abstract public class BoardCard implements ISummoned, IDestructible {
         // Kalo this lebih gede, jalankan destroy milik other.board[idx] lalu kurangi HP other sesuai selisih
     }
 
+    abstract public int getAttackValue();
+
+    abstract public int getDefenseValue();
+    
     abstract public int getPositionValue();
 
     abstract public Card getCardInstance();
@@ -42,4 +46,6 @@ abstract public class BoardCard implements ISummoned, IDestructible {
     abstract public void addSkillCard(SkillCard skill);
 
     abstract public List<SkillCard> getSkills();
+
+    abstract public void removeSkill(SkillCard skill);
 }

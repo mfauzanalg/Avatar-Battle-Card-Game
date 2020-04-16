@@ -10,7 +10,7 @@ public class CharacterHandCard implements IHandCard {
 
     public CharacterHandCard(CharacterCard card, Player _target){
         kar = card;
-        target = target;
+        target = _target;
         isOpen = true;
     }
 

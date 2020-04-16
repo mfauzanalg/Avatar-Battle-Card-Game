@@ -8,6 +8,8 @@ import java.util.ArrayList;
 public class SummonedCharacter extends BoardCard {
     protected List<SkillCard> skills = new ArrayList<SkillCard>();
     CharacterCard summon;
+    protected int attackLost;
+    protected int defenseLost;
     protected boolean attackPos;
     protected boolean isPoweredUp;
 
@@ -16,10 +18,20 @@ public class SummonedCharacter extends BoardCard {
         summon = m;
         attackPos = attack;
         isPoweredUp = false;
+        attackLost = 0;
+        defenseLost = 0;
+    }
+
+    public int getAttackValue(){
+        return summon.getAttack() - attackLost;
+    }
+
+    public int getDefenseValue(){
+        return summon.getDefense() - defenseLost;
     }
 
     public int getPositionValue(){
-        return (attackPos) ? summon.getAttack() : summon.getDefense();
+        return (attackPos) ? getAttackValue() : getDefenseValue();
     }
 
     public Card getCardInstance(){
@@ -59,5 +71,25 @@ public class SummonedCharacter extends BoardCard {
         // Plan : Decorator akan dipanggil destroynya lalu akan memanggil destroy BoardCard yang mereka wrap
         // Karna struktur pasti Decorator(Decorator(Decorator.......(SummonedCharacter)))...) maka SummonedCharacter pasti yang terakhir harus di destroy
         // Sehingga destroy milik SummonedCharacter tidak perlu memanggil method destroy lainnya
+        int cidx = this.owner.getBoard().indexOf(this);
+        this.owner.getBoard().set(cidx, null);
+    }
+
+    public void removeSkill(SkillCard card){
+        skills.remove(card);
+        if (card.getEffect().equals(SkillCard.SKILL_AURA)){
+            attackLost += ((AuraSkillCard) card).getAttack();
+            defenseLost += ((AuraSkillCard) card).getDefense();
+        }
+        else if (card.getEffect().equals(SkillCard.SKILL_POWERUP)){
+            boolean found = false;
+            for (SkillCard skill : skills){
+                if (skill.getEffect().equals(SkillCard.SKILL_POWERUP)){
+                    found = true;
+                    break;
+                }
+            }
+            isPoweredUp = found;
+        }
     }
 }

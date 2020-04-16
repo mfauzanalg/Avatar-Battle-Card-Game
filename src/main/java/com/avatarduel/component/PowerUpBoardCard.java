@@ -12,8 +12,12 @@ public class PowerUpBoardCard extends SkillBoardCard {
         target.setPowerUp(true);
     }
 
-    public int getPositionValue(){
-        return target.getPositionValue();
+    public int getAttackValue(){
+        return target.getAttackValue();
+    }
+
+    public int getDefenseValue(){
+        return target.getDefenseValue();
     }
 
     public void destroy(){

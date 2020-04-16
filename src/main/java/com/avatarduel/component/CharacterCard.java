@@ -9,7 +9,7 @@ public class CharacterCard extends Card {
     private int power;
 
     public CharacterCard(int _id, String _name, String ele, String desc, String path, int att, int def, int pow){
-        super("character", _id, _name, ele, desc, path);
+        super(Card.CHARACTER_CARD, _id, _name, ele, desc, path);
         attack = att;
         defense = def;
         power = pow;

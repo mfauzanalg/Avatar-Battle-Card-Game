@@ -3,6 +3,8 @@
 // Menjalankan efek langsung untuk kartu yang tidak menetap di board (Contoh, LandCard dan DestroySkillCard)
 
 package com.avatarduel.component;
+import java.util.List;
+import java.util.ArrayList;
 
 public class HandCardPlayer {
 
@@ -11,25 +13,30 @@ public class HandCardPlayer {
     // Mungkin perlu idx board yang kosong dimana??
     public static void playCard(CharacterHandCard card, boolean attack){
         SummonedCharacter chara = new SummonedCharacter(card.getOwner(), (CharacterCard) card.getCardInstance(), attack);
-        //card.getOwner().getBoard().add(chara);  // Nambahin kartu ke board, nunggu method nambahin di Player 
+        int cidx = card.getOwner().getBoard().indexOf(null);
+        card.getOwner().getBoard().set(cidx, chara);  
     }
 
-    // Menerima AuraHandCard, kartu target, dan index tempat target berada di board
+    // Menerima AuraHandCard, dan kartu target
     // Me-replace board[idx] dengan kartu yang dipilih sebagai target
-    public static void playCard(AuraHandCard card, BoardCard target, int idx){
+    public static void playCard(AuraHandCard card, BoardCard target){
         AuraBoardCard aura = new AuraBoardCard(target, (AuraSkillCard) card.getCardInstance());
-        // card.getOwner().getBoard().set(idx, aura) // Replace kartu ke board[idx]
-        // card.getOwner().getBoard().add(card.getCardInstance()); // Nambahin kartu ke skillBoard
+        int cidx = card.getOwner().getBoard().indexOf(target);
+        int sidx = card.getOwner().getBoard().indexOf(null);
+        card.getOwner().getBoard().set(cidx, aura);
+        card.getOwner().getSkillBoard().set(sidx, (SkillCard) card.getCardInstance()); // Nambahin kartu ke skillBoard
     }
 
     // 11 12 sama Aura
-    public static void playCard(PowerUpHandCard card, BoardCard target, int idx){
+    public static void playCard(PowerUpHandCard card, BoardCard target){
         PowerUpBoardCard power = new PowerUpBoardCard(target, (PowerUpSkillCard) card.getCardInstance());
-        // card.getOwner().getBoard().set(idx, power) // Replace kartu ke board[idx]
-        // card.getOwner().getBoard().add(card.getCardInstance()); // Nambahin kartu ke skillBoard
+        int cidx = card.getOwner().getBoard().indexOf(target);
+        int sidx = card.getOwner().getBoard().indexOf(null);
+        card.getOwner().getBoard().set(cidx, power);
+        card.getOwner().getSkillBoard().set(sidx, (SkillCard) card.getCardInstance()); // Nambahin kartu ke skillBoard
     }
 
-    public static void playCard(DestroyHandCard card, BoardCard target){
+    public static void playCard(BoardCard target){
         target.destroy();
     }
 

@@ -6,6 +6,6 @@ package com.avatarduel.component;
 public class DestroySkillCard extends SkillCard {
     
     public DestroySkillCard(int _id, String _name, String ele, String desc, String path){
-        super(_id, _name, ele, desc, path,"destroy");
+        super(_id, _name, ele, desc, path, SkillCard.SKILL_DESTROY);
     }
 }

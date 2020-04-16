@@ -23,6 +23,10 @@ public class Player{
         this.maxFire = 0; this.currentFire = 0;
         this.maxAir = 0; this.currentAir = 0;
         this.maxEnergy = 0; this.currentEnergy = 0;
+        for (int i = 0; i < 8; i++){  // Inisialisasi board dengan null
+            board.add(null);
+            skillBoard.add(null);
+        }
     }
 
     public List<IHandCard> getHand() {return this.hand;}
@@ -167,7 +171,15 @@ public class Player{
             this.addCard(c);
             count++;
 		}
-	}
+    }
+    
+    public List<BoardCard> getBoard(){
+        return board;
+    }
+
+    public List<SkillCard> getSkillBoard(){
+        return skillBoard;
+    }
 
     public void draw(){
         //pop card dari deck
@@ -178,29 +190,67 @@ public class Player{
         hand.add(factory.createHandCard(top, this)); // tambahkan IHandCard yang dibuat factory ke hand
 	}
 
-    public void play(int idx){
-        System.out.println("belum diimplementasi");
-        IHandCard card = hand.remove(idx);
-        //card.play(); // Play jadinya pake HandCardPlayer.playCard(...) aja
-        //TODO, ubah IHandCard jadi BoardCard/skillBoardCard lalu put ke boar/skillBoard
-        // 
-	}
+    // Menerima indeks kartu tangan yang dipilih dan apakah character di summon pada posisi attack
+    // Menambahkan CharacterBoardCard ke indeks null pertama di board
+    public void playCharacterCard(int idx, boolean attack){
+        if (board.indexOf(null) == -1){ // Jika board penuh
+            // ...Throw exception? 
+        }
+        else{
+
+            CharacterHandCard card = (CharacterHandCard) hand.remove(idx);
+            HandCardPlayer.playCard(card, attack);
+        }
+    }
+
+    // Menerima indeks kartu tangan yang dipilih dan BoardCard yang dipilih untuk diberi skill
+    public void playSkillCard(int idx, BoardCard target){
+        if (skillBoard.indexOf(null) == -1){ // Jika skillboard penuh
+            // ...
+        }
+        else{
+
+            SkillCard card = (SkillCard) hand.get(idx).getCardInstance();
+            if (card.getEffect().equals(SkillCard.SKILL_AURA)){
+                HandCardPlayer.playCard((AuraHandCard) hand.remove(idx), target);
+            }
+            else if (card.getEffect().equals(SkillCard.SKILL_POWERUP)){
+                HandCardPlayer.playCard((PowerUpHandCard) hand.remove(idx), target);    
+            }
+            else if (card.getEffect().equals(SkillCard.SKILL_DESTROY)){
+                HandCardPlayer.playCard(target);
+            }
+        }
+    }
+
+    public void playLandCard(int idx){
+        LandHandCard card = (LandHandCard) hand.remove(idx);
+        HandCardPlayer.playCard(card);
+    }
 
     public void rotate(int idx){
         board.get(idx).rotate();
 	}
 
-    public void attack(int idx){
-        //menyerang player/character musuh menggunakan character di board
-        System.out.println("belum diimplementasi");
-        //yang ngehandle attack board atau player?
-        //buat interface targetable buat attack??
-        // kayaknya board aja, player buat nentuin yang mana yang diserang
+    // Menerima index character yang ingin dipakai menyerang, Player musuh, dan index target serangan
+    // Karna attack penyerang pasti lebih besar dari attack/defense musuh kartu musuh pasti hancur
+    public void attack(int idx, Player enemy, int enemyidx){
+        boolean isAttackPos = enemy.getBoard().get(enemyidx).getAttackPos();
+        int attackingVal = board.get(idx).getPositionValue();
+        int attackedVal = enemy.getBoard().get(enemyidx).getPositionValue();
+        enemy.getBoard().get(enemyidx).destroy();
+        if (isAttackPos) {
+            enemy.setHealth(enemy.getHealth() - attackingVal + attackedVal);
+        }
 	}
 
-    public void destroy(int idx){
+    public void remove(int idx){
         //membuang kartu skill di board;
-        System.out.println("belum diimplementasi");
-        //yang bisa didestroy kan skill sm character, cara tahunya gimana?
+        SkillCard card = skillBoard.remove(idx);
+        for (BoardCard chara : board){
+            if (chara.getSkills().contains(card)){
+                chara.removeSkill(card);
+            }
+        }
 	}
 }

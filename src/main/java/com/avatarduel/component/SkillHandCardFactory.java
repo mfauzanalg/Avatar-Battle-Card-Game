@@ -8,13 +8,13 @@ public class SkillHandCardFactory {
     public static HandCard getSkillFactory(SkillCard card){
         HandCard retval = null;
 
-        if (card.getEffect().equals("aura")){
+        if (card.getEffect().equals(SkillCard.SKILL_AURA)){
             retval = new AuraHandCardFactory();
         }
-        else if (card.getEffect().equals("destroy")){
+        else if (card.getEffect().equals(SkillCard.SKILL_DESTROY)){
             retval = new DestroyHandCardFactory();
         }
-        else if (card.getEffect().equals("powerup")){
+        else if (card.getEffect().equals(SkillCard.SKILL_POWERUP)){
             retval = new PowerUpHandCardFactory();
         }
 

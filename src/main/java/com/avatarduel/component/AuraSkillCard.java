@@ -9,7 +9,7 @@ public class AuraSkillCard extends SkillCard {
     private int power;
 
     public AuraSkillCard(int _id, String _name, String ele, String desc, String path, int att, int def, int pow){
-        super(_id, _name, ele, desc, path, "aura");
+        super(_id, _name, ele, desc, path, SkillCard.SKILL_AURA);
         attack = att;
         defense = def;
         power = pow;
