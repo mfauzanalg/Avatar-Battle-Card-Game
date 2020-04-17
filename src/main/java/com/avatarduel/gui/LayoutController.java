@@ -33,6 +33,7 @@ public class LayoutController implements Initializable{
         AvatarDuel.P1.draw();
         AvatarDuel.P2.draw();
         onHover();
+        updateHand();
         panelP2Controller.setPanel(AvatarDuel.P2);
         panelP1Controller.setPanel(AvatarDuel.P1);
     }
@@ -50,7 +51,7 @@ public class LayoutController implements Initializable{
 
     public void onHover(){
         detailInfoController.showCard(Card.cardHover);
-        updateHand();
+        //updateHand();
     }
 
     @Override

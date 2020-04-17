@@ -88,6 +88,7 @@ public class TCardController {
 
     public void loadCard(Card card){
         this.id = card.getId();
+        //System.out.println(card.getImagePath());
         File file = new File (card.getImagePath());
         Image image = new Image(file.toURI().toString());
         pict.setImage(image);

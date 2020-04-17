@@ -16,7 +16,7 @@ public class DetailInfoController {
     @FXML private Text detailElmt;
     @FXML private ImageView elmtPict;
 
-    public String space = "                    ";
+    public String space = "                 ";
 
     private String energyPath = "src/main/resources/img/Elements/Energy.png";
     private String airPath = "src/main/resources/img/Elements/Air.png";
