@@ -23,6 +23,7 @@ public class TCardController {
     @FXML private ImageView pict;
     @FXML private Text elmt;
     @FXML private ImageView elmtPict;
+    @FXML private ImageView cardBackground;
     private int id;
 
     private String energyPath = "src/main/resources/img/Elements/Energy.png";
@@ -31,6 +32,7 @@ public class TCardController {
     private String firePath = "src/main/resources/img/Elements/Fire.png";
     private String waterPath = "src/main/resources/img/Elements/Water.png";
     private String blankPath = "src/main/resources/com/avatarduel/card/image/blank.png";
+    private String hiddenPath = "src/main/resources/img/back.png";
 
     public String setElmtPict(String elmt){
         if (elmt.equals("ENERGY")){ return energyPath; }
@@ -40,19 +42,19 @@ public class TCardController {
         else { return waterPath; }
     }
 
-    public void loadLandCard(Card card){
-//        elmt.setText(card.getElement());
-        File file = new File (setElmtPict(card.getElement()));
+    public void loadPict (String path, ImageView container){
+        File file = new File (path);
         Image image = new Image(file.toURI().toString());
-        elmtPict.setImage(image);
+        container.setImage(image);
+    }
+
+    public void loadLandCard(Card card){
+        loadPict(setElmtPict(card.getElement()), elmtPict);
         attrib.setText("this is " + card.getElement() + " Land Card");
     }
 
     public void loadCharCard(CharacterCard card){
-//        elmt.setText(card.getElement());
-        File file = new File (setElmtPict(card.getElement()));
-        Image image = new Image(file.toURI().toString());
-        elmtPict.setImage(image);
+        loadPict(setElmtPict(card.getElement()), elmtPict);
         attrib.setText("Atk/Def/Pow \n" + card.getAttack() + "/ " + card.getDefense() + "/" + card.getPower());
     }
 
@@ -70,10 +72,7 @@ public class TCardController {
     }
 
     public void loadAuraCard(AuraSkillCard card){
-//        elmt.setText(card.getElement());
-        File file = new File (setElmtPict(card.getElement()));
-        Image image = new Image(file.toURI().toString());
-        elmtPict.setImage(image);
+        loadPict(setElmtPict(card.getElement()), elmtPict);
         attrib.setText("Atk/Def/Pow \n" + card.getAttack() + "/ " + card.getDefense() + "/" + card.getPower());
     }
 
@@ -90,13 +89,18 @@ public class TCardController {
     public void loadCard(Card card){
         this.id = card.getId();
         attrib.setText("");
-        File file = new File (card.getImagePath());
-        Image image = new Image(file.toURI().toString());
-        pict.setImage(image);
+        loadPict(blankPath, cardBackground);
+
+        if (card.getImagePath().equals(hiddenPath)){
+            loadPict(card.getImagePath(), cardBackground);
+        }
+        else{
+            loadPict(card.getImagePath(), pict);
+        }
+
+
         name.setText(card.getName());
-        File file2 = new File(blankPath);
-        Image image2 = new Image(file.toURI().toString());
-        elmtPict.setImage(image);
+        loadPict(blankPath, elmtPict);
 
         String type = card.getType();
         if (type.equals("land")){

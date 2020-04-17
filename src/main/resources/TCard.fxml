@@ -24,5 +24,6 @@
             <Font size="6.0" />
          </font>
       </Text>
+      <ImageView fx:id="cardBackground" fitHeight="100.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </Pane>

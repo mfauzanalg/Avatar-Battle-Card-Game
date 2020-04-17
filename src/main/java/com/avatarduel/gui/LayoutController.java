@@ -32,7 +32,8 @@ public class LayoutController implements Initializable{
     @FXML private PlayerInfoController playerInfo1Controller;
     @FXML private PlayerInfoController playerInfo2Controller;
     @FXML private BattlePhaseController battlePhaseController;
-    Phase gamePhase;
+    private String HIDDEN_CARD = "src/main/resources/img/back.png";
+    public static Phase gamePhase;
 
     public void popDrawInfo() throws IOException {
         try{
@@ -55,31 +56,30 @@ public class LayoutController implements Initializable{
         panelP1Controller.setPanel(AvatarDuel.P1);
     }
 
+    public void hideCard(HandCardController hand, int size){
+        Card hiddenCard = new Card();
+        hiddenCard.setImagepath(HIDDEN_CARD);
+        for (int i = 0; i < size; i++){
+            hand.loadCard(hiddenCard, i);
+            System.out.println(hiddenCard.getImagePath());
+        }
+    }
+
     public void reset() {
         int fromIndex1 = AvatarDuel.P1.getHand().size();
         int fromIndex2 = AvatarDuel.P2.getHand().size();
 
+        Card emptyCard = new Card();
         for (int i = fromIndex1-1; i < 9; i++){
-            Card emptyCard = new Card();
             handCard1Controller.loadCard(emptyCard, i);
         }
         for (int i = fromIndex2-1; i < 9; i++){
-            Card emptyCard = new Card();
             handCard2Controller.loadCard(emptyCard, i);
         }
     }
 
     public void updateHand() {
         reset();
-//        int index = 1;
-//        int indeks = 1;
-//        for (IHandCard card : AvatarDuel.P1.getHand()) {
-//            handCard1Controller.loadCard(card.getCardInstance(),index++);
-//        }
-//        for (IHandCard card : AvatarDuel.P2.getHand()) {
-//            handCard2Controller.loadCard(card.getCardInstance(),indeks++);
-//        }
-
         for (int i = 0; i < AvatarDuel.P1.getHand().size(); i++){
             handCard1Controller.loadCard(AvatarDuel.P1.getHand().get(i).getCardInstance(), i);
         }
@@ -101,7 +101,9 @@ public class LayoutController implements Initializable{
         panelP1Controller.setPanel(AvatarDuel.P1);
         panelP2Controller.setPanel(AvatarDuel.P2);
         gamePhase = new Phase(AvatarDuel.P1, AvatarDuel.P2);
-        gamePhase.initialize(); updateHand(); battlePhaseController.setColor(battlePhaseController.getDrawP(), gamePhase.getCurrentPlayer().getName());
+        gamePhase.initialize(); updateHand();
+        battlePhaseController.setColor(battlePhaseController.getDrawP(), gamePhase.getCurrentPlayer().getName());
+        hideCard(handCard2Controller, AvatarDuel.P2.getHand().size());
     }
 
     public void nextPhase() throws IOException {
@@ -124,6 +126,7 @@ public class LayoutController implements Initializable{
             case("end"):
                 battlePhaseController.resetColor(battlePhaseController.getBattleP());
                 battlePhaseController.setColor(battlePhaseController.getEndP(), gamePhase.getCurrentPlayer().getName());
+
                 break;
         }
     }

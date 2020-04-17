@@ -57,6 +57,10 @@ public class Card {
         return imagepath;
     }
 
+    public void setImagepath(String path){
+        this.imagepath = path;
+    }
+
 
     // Card on layout
     public static Card cardHover = new Card();
