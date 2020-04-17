@@ -13,6 +13,10 @@ public class Phase {
     private Player currentPlayer;
     private String currentPhase;
 
+    public String getCurrentPhase(){
+        return this.currentPhase;
+    }
+
     public Phase(Player one, Player two){
         player_one = one;
         player_two = two;
@@ -45,28 +49,28 @@ public class Phase {
                 break;
             
             case BATTLE_PHASE :
-                currentPhase = END_PHASE;
                 endPhase();
                 break;
             
             case END_PHASE :
-                currentPhase = DRAW_PHASE;
                 drawPhase();
                 break;
-            
             default :
         }
     }
 
     public void drawPhase(){
+        currentPhase = DRAW_PHASE;
         System.out.println(currentPlayer.getName() + "'s Turn");
         System.out.println("Draw Phase");
         System.out.println(currentPlayer.getName() + " draws a card");
         currentPlayer.draw();
-        nextPhase();
+        //nextPhase();
     }
 
     public void endPhase(){
+        System.out.println("End Phase");
+        currentPhase = END_PHASE;
         currentPlayer.flipHand();
         currentPlayer.reset();
         currentPlayer = getNextPlayer();

@@ -13,6 +13,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.fxml.Initializable;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.net.URL;
@@ -30,6 +31,17 @@ public class LayoutController implements Initializable{
     @FXML private PlayerInfoController playerInfo1Controller;
     @FXML private PlayerInfoController playerInfo2Controller;
     Phase gamePhase;
+
+    public void popPhaseInfo() throws IOException {
+        try{
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("PhaseInfo.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setTitle("PhaseInfo");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e){System.out.println(e);}
+    }
 
     public void draw(MouseEvent mouseEvent) {
         AvatarDuel.P1.draw();
@@ -67,11 +79,14 @@ public class LayoutController implements Initializable{
         gamePhase.initialize(); updateHand();
     }
 
-    public void nextPhase(){
+    public void nextPhase() throws IOException {
         gamePhase.nextPhase();
         updateHand();
+        switch (gamePhase.getCurrentPhase()){
+            case ("draw"):
+                popPhaseInfo();
+                break;
+        }
     }
-
-
 
 }
