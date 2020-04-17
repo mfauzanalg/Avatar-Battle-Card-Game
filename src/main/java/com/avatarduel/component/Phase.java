@@ -2,6 +2,8 @@
 // Mengatur jalannya permainan
 
 package com.avatarduel.component;
+import java.util.Random;
+import java.util.List;
 
 public class Phase {
     public static final String DRAW_PHASE = "draw";
@@ -68,9 +70,24 @@ public class Phase {
 //        nextPhase();
     }
 
+    public boolean enemyBoardIsEmpty(){
+        boolean retval = true;
+        for (BoardCard card : getNextPlayer().getBoard()){
+            if (card != null){
+                retval = false;
+                break;
+            }
+        }
+
+        return retval;
+    }
+
     public void endPhase(){
         System.out.println("End Phase");
         currentPhase = END_PHASE;
+        if (currentPlayer.getHand().size() >= 9){
+            discardHand();
+        }
         currentPlayer.flipHand();
         currentPlayer.reset();
         currentPlayer = getNextPlayer();
@@ -129,6 +146,17 @@ public class Phase {
         }
     }
 
+    public void changeCardPosition(int idx){
+        if (currentPhase != MAIN_PHASE){
+            System.out.println("You can only change card position during the Main Phase");
+            // Throw error here?
+        }
+        else {
+
+            currentPlayer.rotate(idx);
+        }
+    }
+
     public void attackCharacter(int cidx, int tidx){
         if (currentPhase != BATTLE_PHASE){
             System.out.println("You can only attack during the Battle Phase");
@@ -137,5 +165,22 @@ public class Phase {
         else {
             currentPlayer.attack(cidx, getNextPlayer(), tidx);
         }
+    }
+
+    public void attackPlayer(int cidx){
+        if (currentPhase != BATTLE_PHASE){
+            System.out.println("You can only attack during the Battle Phase");
+            // Throw error here?
+        }
+        else {
+
+            currentPlayer.attack(cidx, getNextPlayer());
+        }       
+    }
+
+    public void discardHand(){
+        Random rand = new Random();
+        int idx = rand.nextInt(9);
+        currentPlayer.removeHandCard(idx);
     }
 }

@@ -27,19 +27,8 @@ public class WindowController {
         AvatarDuel.P1 = new Player("siapa", 80);
         AvatarDuel.P2 = new Player("fauzan", 80);
 
-        AvatarDuel.P1.addRandomCards(AvatarDuel.landData, 16);
-        AvatarDuel.P1.addRandomCards(AvatarDuel.charData, 24);
-        AvatarDuel.P1.addRandomCards(AvatarDuel.auraData, 6);
-
-        AvatarDuel.P1.addCard(AvatarDuel.destroyCard);
-        AvatarDuel.P1.addCard(AvatarDuel.destroyCard);
-        AvatarDuel.P1.addCard(AvatarDuel.powerUpCard);
-        AvatarDuel.P1.addCard(AvatarDuel.powerUpCard);
-
-        AvatarDuel.P1.shuffleDeck();
-        AvatarDuel.P2.addCardsToDeck(AvatarDuel.P1.getDeck());
-        AvatarDuel.P2.shuffleDeck();
-
+        AvatarDuel.P1.getDeck().initializeDeck(34, 6, 16, 2, 2);
+        AvatarDuel.P2.getDeck().initializeDeck(24, 6, 16, 2, 2);
 
         Parent layoutParent = FXMLLoader.load(getClass().getClassLoader().getResource("Layout.fxml"));
         Scene layoutScene = new Scene(layoutParent);

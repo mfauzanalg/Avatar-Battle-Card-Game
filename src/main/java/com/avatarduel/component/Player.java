@@ -4,7 +4,7 @@ import java.util.*;
 public class Player{
     private String name;
     private int health;
-    private Stack<Card> deck;
+    private Deck deck;
     private List<IHandCard> hand; //Ini harus IHandCard karna method play adanya di IHandCard
     private List<BoardCard> board; // Ini juga harus BoardCard biar bisa pake dekorator
     private List<SkillCard> skillBoard; // Kalo perlu Cardnya, pake method getCardInstance() ya
@@ -14,7 +14,7 @@ public class Player{
     {
         this.name = name;
         this.health = health;
-        this.deck = new Stack<Card>();
+        this.deck = new Deck();
         this.hand = new ArrayList<IHandCard>();
         this.board = new ArrayList<BoardCard>();
         this.skillBoard = new ArrayList<SkillCard>();
@@ -29,27 +29,15 @@ public class Player{
         }
     }
 
-    public List<IHandCard> getHand() {return this.hand;}
+    /**Setter Getter name*/
+    public void setName(String name){this.name = name; }
+    public String getName() {return this.name;}
 
-    public IHandCard getHandAt(int idx) {return hand.get(idx);}
+    /**Setter Getter health*/
+    public void setHealth(int health){ this.health = health; }
+    public int getHealth(){ return this.health; }
 
-    public void setName(String name)
-    {
-        this.name = name;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public void setHealth(int health){
-        this.health = health;
-	}
-
-    public int getHealth(){
-        return this.health;
-	}
-
+    /**Setter Getter max element*/
     public void setMaxElement(String element, int val ){
         switch(element){
             case ("FIRE"):
@@ -71,7 +59,6 @@ public class Player{
                 System.out.println("No Match");
 		}
 	}
-
     public int getMaxElement(String element){
         switch(element){
             case ("FIRE"):
@@ -94,6 +81,7 @@ public class Player{
 		}
 	}
 
+    /**Setter Getter current element*/
     public void setCurrentElement(String element, int val ){
         switch(element){
             case ("FIRE"):
@@ -115,7 +103,6 @@ public class Player{
                 System.out.println("No Match");
 		}
 	}
-
     public int getCurrentElement(String element){
         switch(element){
             case ("FIRE"):
@@ -138,43 +125,64 @@ public class Player{
 		}
 	}
 
-    public <T extends Card> void addCardsToDeck(List<T> l){
-        this.deck.addAll(l);
-	}
+	/**Getter hand*/
+    public List<IHandCard> getHand() {return this.hand;}
+    public IHandCard getHandAt(int idx) {return hand.get(idx);}
 
-    public Stack<Card> getDeck(){
+    /**Board getter*/
+    public List<BoardCard> getBoard(){ return board; }
+    public BoardCard getBoardCardAt(int idx){ return board.get(idx); }
+
+    /**Skill Board getter*/
+    public List<SkillCard> getSkillBoard(){ return skillBoard; }
+    public SkillCard getSkillBoardCardAt(int idx){return skillBoard.get(idx);}
+
+    /**Getter Dexk*/
+    public Deck getDeck(){
         return this.deck;
-	}
-
-    public void shuffleDeck(){
-        Collections.shuffle(this.deck);
-	}
-
-    public <T extends Card> void addCard(T c){
-        this.deck.push(c);
-	}
-
-    public <T extends Card> void addSpecificCard(List<T> l, int id){
-        T c = l.stream()
-            .filter(i -> i.getId() == id)
-            .findAny()
-            .orElse(null);
-        if (c != null){
-            this.addCard(c);  
-		}
-	}
-
-    public <T extends Card> void addRandomCards(List<T> l, int quantity){
-        List<T> l1 = l;
-        int count = 0;
-        while (count != quantity){
-            Collections.shuffle(l1);
-            Card c = l1.get(0);
-            this.addCard(c);
-            count++;
-		}
     }
 
+//    /**Deck Manipulation*/
+//    public Stack<Card> getDeck(){
+//        return this.deck;
+//    }
+//    public <T extends Card> void addCardsToDeck(List<T> l){
+//        this.deck.addAll(l);
+//	}
+//    public void shuffleDeck(){
+//        Collections.shuffle(this.deck);
+//	}
+//    public <T extends Card> void addCard(T c){
+//        this.deck.push(c);
+//	}
+//    public <T extends Card> void addSpecificCard(List<T> l, int id){
+//        T c = l.stream()
+//            .filter(i -> i.getId() == id)
+//            .findAny()
+//            .orElse(null);
+//        if (c != null){
+//            this.addCard(c);
+//		}
+//	}
+//    public <T extends Card> void addRandomCards(List<T> l, int quantity){
+//        List<T> l1 = l;
+//        int count = 0;
+//        while (count != quantity){
+//            Collections.shuffle(l1);
+//            Card c = l1.get(0);
+//            this.addCard(c);
+//            count++;
+//		}
+//    }
+
+    /**Hand manipulation*/
+    public void draw(){
+        //pop card dari deck
+        Card top = deck.getDeck().remove(0);
+        HandCard factory = HandCardFactory.getFactory(top); // Gunakan factory method untuk menentukan factory yang akan digunakan
+        // TODO, kasih exception kalo factory = null
+        hand.add(factory.createHandCard(top, this)); // tambahkan IHandCard yang dibuat factory ke hand
+    }
     public void flipHand(){
         for (IHandCard card : hand){
             if (card != null){
@@ -182,7 +190,26 @@ public class Player{
             }
         }
     }
+    public void removeHandCard(int idx){
+        // membuang kartu skill yang ada di tangan
+        hand.remove(idx);
+    }
 
+    /**Board manipulation*/
+    public void removeBoardSkill(int idx){
+        //membuang kartu skill di board;
+        SkillCard card = skillBoard.remove(idx);
+        for (BoardCard chara : board){
+            if (chara.getSkills().contains(card)){
+                chara.removeSkill(card);
+            }
+        }
+    }
+    public void rotate(int idx){
+        board.get(idx).rotate();
+    }
+
+    /**Reset energy*/
     public void reset(){
         this.currentWater = this.maxWater;
         this.currentEarth = this.maxEarth;
@@ -190,31 +217,8 @@ public class Player{
         this.currentAir = this.maxAir;
         this.currentEnergy = this.maxEnergy;
     }
-    
-    public List<BoardCard> getBoard(){
-        return board;
-    }
 
-    public List<SkillCard> getSkillBoard(){
-        return skillBoard;
-    }
-
-    public BoardCard getBoardCardAt(int idx){
-        return board.get(idx);
-    }
-
-    public SkillCard getSkillBoardCardAt(int idx){
-        return skillBoard.get(idx);
-    }
-
-    public void draw(){
-        //pop card dari deck
-        Card top = deck.pop();
-        HandCard factory = HandCardFactory.getFactory(top); // Gunakan factory method untuk menentukan factory yang akan digunakan
-        // TODO, kasih exception kalo factory = null
-        hand.add(factory.createHandCard(top, this)); // tambahkan IHandCard yang dibuat factory ke hand
-	}
-
+    /**Action*/
     // Menerima indeks kartu tangan yang dipilih dan apakah character di summon pada posisi attack
     // Menambahkan CharacterBoardCard ke indeks null pertama di board
     public void playCharacterCard(int idx, boolean attack){
@@ -228,7 +232,6 @@ public class Player{
             System.out.println(getName() + " summons " + card.getCardInstance().getName());
         }
     }
-
     // Menerima indeks kartu tangan yang dipilih dan BoardCard yang dipilih untuk diberi skill
     public void playSkillCard(int idx, BoardCard target){
         if (skillBoard.indexOf(null) == -1){ // Jika skillboard penuh
@@ -249,15 +252,10 @@ public class Player{
             System.out.println(getName() + " plays " + card.getName());
         }
     }
-
     public void playLandCard(int idx){
         LandHandCard card = (LandHandCard) hand.remove(idx);
         HandCardPlayer.playCard(card);
         System.out.println(getName() + " summons " + card.getCardInstance().getName());
-    }
-
-    public void rotate(int idx){
-        board.get(idx).rotate();
     }
 
     // Menerima index character yang ingin dipakai menyerang, Player musuh, dan index target serangan
@@ -268,22 +266,20 @@ public class Player{
         int attackedVal = enemy.getBoard().get(enemyidx).getPositionValue();
         enemy.getBoard().get(enemyidx).destroy();
         if (isAttackPos) {
-            enemy.setHealth(enemy.getHealth() - attackingVal + attackedVal);
+            int enemyHealth = enemy.getHealth() - attackingVal + attackedVal;
+            if (enemyHealth < 0){
+                enemyHealth = 0;
+            } 
+            enemy.setHealth(enemyHealth);
         }
 	}
 
-    public void removeBoardSkill(int idx){
-        //membuang kartu skill di board;
-        SkillCard card = skillBoard.remove(idx);
-        for (BoardCard chara : board){
-            if (chara.getSkills().contains(card)){
-                chara.removeSkill(card);
-            }
-        }
-    }
-    
-    public void removeHandSkill(int idx){
-        // membuang kartu skill yang ada di tangan
-        hand.remove(idx);
+    public void attack(int idx, Player enemy){
+        int attackingVal = board.get(idx).getPositionValue();
+        int enemyHealth = enemy.getHealth() - attackingVal;
+        if (enemyHealth < 0){
+            enemyHealth = 0;
+        } 
+        enemy.setHealth(enemyHealth);
     }
 }
