@@ -29,6 +29,7 @@ public class LayoutController implements Initializable{
     @FXML private DetailInfoController detailInfoController;
     @FXML private PlayerInfoController playerInfo1Controller;
     @FXML private PlayerInfoController playerInfo2Controller;
+    Phase gamePhase;
 
     public void draw(MouseEvent mouseEvent) {
         AvatarDuel.P1.draw();
@@ -62,8 +63,13 @@ public class LayoutController implements Initializable{
         playerInfo2Controller.setHealth(Integer.toString(AvatarDuel.P2.getHealth()));
         panelP1Controller.setPanel(AvatarDuel.P1);
         panelP2Controller.setPanel(AvatarDuel.P2);
-        Phase gamePhase = new Phase(AvatarDuel.P1, AvatarDuel.P2);
+        gamePhase = new Phase(AvatarDuel.P1, AvatarDuel.P2);
         gamePhase.initialize(); updateHand();
+    }
+
+    public void nextPhase(){
+        gamePhase.nextPhase();
+        updateHand();
     }
 
 
