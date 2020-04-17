@@ -190,7 +190,7 @@ public class Player{
             }
         }
     }
-    public void removeHandSkill(int idx){
+    public void removeHandCard(int idx){
         // membuang kartu skill yang ada di tangan
         hand.remove(idx);
     }
@@ -257,6 +257,7 @@ public class Player{
         HandCardPlayer.playCard(card);
         System.out.println(getName() + " summons " + card.getCardInstance().getName());
     }
+
     // Menerima index character yang ingin dipakai menyerang, Player musuh, dan index target serangan
     // Karna attack penyerang pasti lebih besar dari attack/defense musuh kartu musuh pasti hancur
     public void attack(int idx, Player enemy, int enemyidx){
@@ -265,7 +266,20 @@ public class Player{
         int attackedVal = enemy.getBoard().get(enemyidx).getPositionValue();
         enemy.getBoard().get(enemyidx).destroy();
         if (isAttackPos) {
-            enemy.setHealth(enemy.getHealth() - attackingVal + attackedVal);
+            int enemyHealth = enemy.getHealth() - attackingVal + attackedVal;
+            if (enemyHealth < 0){
+                enemyHealth = 0;
+            } 
+            enemy.setHealth(enemyHealth);
         }
 	}
+
+    public void attack(int idx, Player enemy){
+        int attackingVal = board.get(idx).getPositionValue();
+        int enemyHealth = enemy.getHealth() - attackingVal;
+        if (enemyHealth < 0){
+            enemyHealth = 0;
+        } 
+        enemy.setHealth(enemyHealth);
+    }
 }
