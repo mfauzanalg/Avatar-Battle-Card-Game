@@ -13,7 +13,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.fxml.Initializable;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.net.URL;
@@ -78,7 +77,7 @@ public class LayoutController implements Initializable{
         panelP1Controller.setPanel(AvatarDuel.P1);
         panelP2Controller.setPanel(AvatarDuel.P2);
         gamePhase = new Phase(AvatarDuel.P1, AvatarDuel.P2);
-        gamePhase.initialize(); updateHand();
+        gamePhase.initialize(); updateHand(); battlePhaseController.setColor(battlePhaseController.getDrawP(), gamePhase.getCurrentPlayer().getName());
     }
 
     public void nextPhase() throws IOException {
@@ -88,19 +87,19 @@ public class LayoutController implements Initializable{
             case ("draw"):
                 popDrawInfo();
                 battlePhaseController.resetColor(battlePhaseController.getEndP());
-                battlePhaseController.setColor(battlePhaseController.getDrawP());
+                battlePhaseController.setColor(battlePhaseController.getDrawP(), gamePhase.getCurrentPlayer().getName());
                 break;
             case("main"):
                 battlePhaseController.resetColor(battlePhaseController.getDrawP());
-                battlePhaseController.setColor(battlePhaseController.getMainP());
+                battlePhaseController.setColor(battlePhaseController.getMainP(), gamePhase.getCurrentPlayer().getName());
                 break;
             case("battle"):
                 battlePhaseController.resetColor(battlePhaseController.getMainP());
-                battlePhaseController.setColor(battlePhaseController.getBattleP());
+                battlePhaseController.setColor(battlePhaseController.getBattleP(), gamePhase.getCurrentPlayer().getName());
                 break;
             case("end"):
                 battlePhaseController.resetColor(battlePhaseController.getBattleP());
-                battlePhaseController.setColor(battlePhaseController.getEndP());
+                battlePhaseController.setColor(battlePhaseController.getEndP(), gamePhase.getCurrentPlayer().getName());
                 break;
         }
     }

@@ -15,6 +15,10 @@ public class Phase {
     private Player currentPlayer;
     private String currentPhase;
 
+    public Player getCurrentPlayer(){
+        return this.currentPlayer;
+    }
+
     public String getCurrentPhase(){
         return this.currentPhase;
     }
@@ -30,7 +34,7 @@ public class Phase {
             player_one.draw();
             player_two.draw();
         }
-        currentPlayer = player_one;
+        currentPlayer = player_two;
         drawPhase();
     }
 
@@ -62,6 +66,7 @@ public class Phase {
     }
 
     public void drawPhase(){
+        currentPlayer = getNextPlayer();
         currentPhase = DRAW_PHASE;
         System.out.println(currentPlayer.getName() + "'s Turn");
         System.out.println("Draw Phase");
@@ -90,7 +95,6 @@ public class Phase {
         }
         currentPlayer.flipHand();
         currentPlayer.reset();
-        currentPlayer = getNextPlayer();
 //        nextPhase();
     }
 
