@@ -108,7 +108,11 @@ public class TCardController {
     }
 
     public void hover(MouseEvent mouseEvent) {
-        Card.cardHover = AvatarDuel.dataBase.get(this.id);
+        Card newCard = AvatarDuel.dataBase.get(this.id);
+        if (newCard.getId() != 0 ){
+            Card.cardHover = newCard;
+            System.out.println(newCard.getImagePath());
+        }
     }
 
     public void click(MouseEvent mouseEvent) {
