@@ -30,6 +30,7 @@ public class LayoutController implements Initializable{
     @FXML private DetailInfoController detailInfoController;
     @FXML private PlayerInfoController playerInfo1Controller;
     @FXML private PlayerInfoController playerInfo2Controller;
+    @FXML private BattlePhaseController battlePhaseController;
     Phase gamePhase;
 
     public void popDrawInfo() throws IOException {
@@ -40,6 +41,7 @@ public class LayoutController implements Initializable{
             stage.setTitle("PhaseInfo");
             stage.setScene(scene);
             stage.show();
+            updateHand();
         } catch (IOException e){System.out.println(e);}
     }
 
@@ -85,7 +87,20 @@ public class LayoutController implements Initializable{
         switch (gamePhase.getCurrentPhase()){
             case ("draw"):
                 popDrawInfo();
-                updateHand();
+                battlePhaseController.resetColor(battlePhaseController.getEndP());
+                battlePhaseController.setColor(battlePhaseController.getDrawP());
+                break;
+            case("main"):
+                battlePhaseController.resetColor(battlePhaseController.getDrawP());
+                battlePhaseController.setColor(battlePhaseController.getMainP());
+                break;
+            case("battle"):
+                battlePhaseController.resetColor(battlePhaseController.getMainP());
+                battlePhaseController.setColor(battlePhaseController.getBattleP());
+                break;
+            case("end"):
+                battlePhaseController.resetColor(battlePhaseController.getBattleP());
+                battlePhaseController.setColor(battlePhaseController.getEndP());
                 break;
         }
     }

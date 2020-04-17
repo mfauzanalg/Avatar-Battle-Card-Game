@@ -20,6 +20,7 @@ public class DrawInfoController implements Initializable {
     }
 
     public void close(MouseEvent mouseEvent) {
+
         Stage stage = (Stage) drawButton.getScene().getWindow();
         stage.close();
     }

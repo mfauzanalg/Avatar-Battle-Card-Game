@@ -65,7 +65,7 @@ public class Phase {
         System.out.println("Draw Phase");
         System.out.println(currentPlayer.getName() + " draws a card");
         currentPlayer.draw();
-        //nextPhase();
+//        nextPhase();
     }
 
     public void endPhase(){
@@ -74,7 +74,7 @@ public class Phase {
         currentPlayer.flipHand();
         currentPlayer.reset();
         currentPlayer = getNextPlayer();
-        nextPhase();
+//        nextPhase();
     }
 
     public void summonCharacter(int idx, boolean isAttackPosition){

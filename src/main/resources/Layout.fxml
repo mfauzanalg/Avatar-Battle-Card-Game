@@ -7,7 +7,7 @@
    <children>
       <AnchorPane layoutX="371.0" layoutY="105.0" prefHeight="384.0" prefWidth="40.0">
          <children>
-            <fx:include source="BattlePhase.fxml" />
+            <fx:include fx:id="battlePhase" source="BattlePhase.fxml" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="227.0" layoutY="1.0" prefHeight="110.0" prefWidth="81.0">
