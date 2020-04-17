@@ -4,6 +4,7 @@ import com.avatarduel.AvatarDuel;
 import com.avatarduel.component.Card;
 import com.avatarduel.component.IHandCard;
 import com.avatarduel.component.Phase;
+import com.avatarduel.component.Player;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,6 +17,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class LayoutController implements Initializable{
@@ -53,14 +55,36 @@ public class LayoutController implements Initializable{
         panelP1Controller.setPanel(AvatarDuel.P1);
     }
 
-    public void updateHand() {
-        int index = 1;
-        int indeks = 1;
-        for (IHandCard card : AvatarDuel.P1.getHand()) {
-            handCard1Controller.loadCard(card.getCardInstance(),index++);
+    public void reset() {
+        int fromIndex1 = AvatarDuel.P1.getHand().size();
+        int fromIndex2 = AvatarDuel.P2.getHand().size();
+
+        for (int i = fromIndex1-1; i < 9; i++){
+            Card emptyCard = new Card();
+            handCard1Controller.loadCard(emptyCard, i);
         }
-        for (IHandCard card : AvatarDuel.P2.getHand()) {
-            handCard2Controller.loadCard(card.getCardInstance(),indeks++);
+        for (int i = fromIndex2-1; i < 9; i++){
+            Card emptyCard = new Card();
+            handCard2Controller.loadCard(emptyCard, i);
+        }
+    }
+
+    public void updateHand() {
+        reset();
+//        int index = 1;
+//        int indeks = 1;
+//        for (IHandCard card : AvatarDuel.P1.getHand()) {
+//            handCard1Controller.loadCard(card.getCardInstance(),index++);
+//        }
+//        for (IHandCard card : AvatarDuel.P2.getHand()) {
+//            handCard2Controller.loadCard(card.getCardInstance(),indeks++);
+//        }
+
+        for (int i = 0; i < AvatarDuel.P1.getHand().size(); i++){
+            handCard1Controller.loadCard(AvatarDuel.P1.getHand().get(i).getCardInstance(), i);
+        }
+        for (int i = 0; i < AvatarDuel.P2.getHand().size(); i++){
+            handCard2Controller.loadCard(AvatarDuel.P2.getHand().get(i).getCardInstance(), i);
         }
     }
 
@@ -82,9 +106,9 @@ public class LayoutController implements Initializable{
 
     public void nextPhase() throws IOException {
         gamePhase.nextPhase();
-        updateHand();
         switch (gamePhase.getCurrentPhase()){
             case ("draw"):
+                updateHand();
                 popDrawInfo();
                 battlePhaseController.resetColor(battlePhaseController.getEndP());
                 battlePhaseController.setColor(battlePhaseController.getDrawP(), gamePhase.getCurrentPlayer().getName());

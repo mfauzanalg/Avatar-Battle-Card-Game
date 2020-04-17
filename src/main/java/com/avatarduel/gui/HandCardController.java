@@ -22,15 +22,15 @@ public class HandCardController {
 
     public void loadCard(Card card, int x){
         switch (x){
-            case 1: h1Controller.loadCard(card); break;
-            case 2: h2Controller.loadCard(card); break;
-            case 3: h3Controller.loadCard(card); break;
-            case 4: h4Controller.loadCard(card); break;
-            case 5: h5Controller.loadCard(card); break;
-            case 6: h6Controller.loadCard(card); break;
-            case 7: h7Controller.loadCard(card); break;
-            case 8: h8Controller.loadCard(card); break;
-            case 9: h9Controller.loadCard(card); break;
+            case 0: h1Controller.loadCard(card); break;
+            case 1: h2Controller.loadCard(card); break;
+            case 2: h3Controller.loadCard(card); break;
+            case 3: h4Controller.loadCard(card); break;
+            case 4: h5Controller.loadCard(card); break;
+            case 5: h6Controller.loadCard(card); break;
+            case 6: h7Controller.loadCard(card); break;
+            case 7: h8Controller.loadCard(card); break;
+            case 8: h9Controller.loadCard(card); break;
             default:
         }
     }

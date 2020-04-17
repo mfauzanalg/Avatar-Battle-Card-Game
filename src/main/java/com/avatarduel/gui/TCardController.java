@@ -30,6 +30,7 @@ public class TCardController {
     private String earthPath = "src/main/resources/img/Elements/Earth.png";
     private String firePath = "src/main/resources/img/Elements/Fire.png";
     private String waterPath = "src/main/resources/img/Elements/Water.png";
+    private String blankPath = "src/main/resources/com/avatarduel/card/image/blank.png";
 
     public String setElmtPict(String elmt){
         if (elmt.equals("ENERGY")){ return energyPath; }
@@ -88,11 +89,14 @@ public class TCardController {
 
     public void loadCard(Card card){
         this.id = card.getId();
+        attrib.setText("");
         File file = new File (card.getImagePath());
         Image image = new Image(file.toURI().toString());
         pict.setImage(image);
         name.setText(card.getName());
-
+        File file2 = new File(blankPath);
+        Image image2 = new Image(file.toURI().toString());
+        elmtPict.setImage(image);
 
         String type = card.getType();
         if (type.equals("land")){
@@ -101,7 +105,7 @@ public class TCardController {
         else if (type.equals("character")){
             this.loadCharCard((CharacterCard) card);
         }
-        else{
+        else if (type.equals("skill")){
             this.loadSkillCard((SkillCard) card);
         }
     }
