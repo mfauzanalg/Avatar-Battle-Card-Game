@@ -32,9 +32,9 @@ public class LayoutController implements Initializable{
     @FXML private PlayerInfoController playerInfo2Controller;
     Phase gamePhase;
 
-    public void popPhaseInfo() throws IOException {
+    public void popDrawInfo() throws IOException {
         try{
-            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("PhaseInfo.fxml"));
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("DrawInfo.fxml"));
             Scene scene = new Scene(root);
             Stage stage = new Stage();
             stage.setTitle("PhaseInfo");
@@ -84,7 +84,8 @@ public class LayoutController implements Initializable{
         updateHand();
         switch (gamePhase.getCurrentPhase()){
             case ("draw"):
-                popPhaseInfo();
+                popDrawInfo();
+                updateHand();
                 break;
         }
     }
