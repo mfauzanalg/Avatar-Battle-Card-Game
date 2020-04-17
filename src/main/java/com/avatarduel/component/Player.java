@@ -23,13 +23,15 @@ public class Player{
         this.maxFire = 0; this.currentFire = 0;
         this.maxAir = 0; this.currentAir = 0;
         this.maxEnergy = 0; this.currentEnergy = 0;
-        for (int i = 0; i < 8; i++){  // Inisialisasi board dengan null
+        for (int i = 0; i < 6; i++){  // Inisialisasi board dengan null
             board.add(null);
             skillBoard.add(null);
         }
     }
 
     public List<IHandCard> getHand() {return this.hand;}
+
+    public IHandCard getHandAt(int idx) {return hand.get(idx);}
 
     public void setName(String name)
     {
@@ -172,6 +174,22 @@ public class Player{
             count++;
 		}
     }
+
+    public void flipHand(){
+        for (IHandCard card : hand){
+            if (card != null){
+                card.flip();
+            }
+        }
+    }
+
+    public void reset(){
+        this.currentWater = this.maxWater;
+        this.currentEarth = this.maxEarth;
+        this.currentFire = this.maxFire;
+        this.currentAir = this.maxAir;
+        this.currentEnergy = this.maxEnergy;
+    }
     
     public List<BoardCard> getBoard(){
         return board;
@@ -179,6 +197,14 @@ public class Player{
 
     public List<SkillCard> getSkillBoard(){
         return skillBoard;
+    }
+
+    public BoardCard getBoardCardAt(int idx){
+        return board.get(idx);
+    }
+
+    public SkillCard getSkillBoardCardAt(int idx){
+        return skillBoard.get(idx);
     }
 
     public void draw(){
@@ -199,6 +225,7 @@ public class Player{
 
             CharacterHandCard card = (CharacterHandCard) hand.remove(idx);
             HandCardPlayer.playCard(card, attack);
+            System.out.println(getName() + " summons " + card.getCardInstance().getName());
         }
     }
 
@@ -219,17 +246,19 @@ public class Player{
             else if (card.getEffect().equals(SkillCard.SKILL_DESTROY)){
                 HandCardPlayer.playCard(target);
             }
+            System.out.println(getName() + " plays " + card.getName());
         }
     }
 
     public void playLandCard(int idx){
         LandHandCard card = (LandHandCard) hand.remove(idx);
         HandCardPlayer.playCard(card);
+        System.out.println(getName() + " summons " + card.getCardInstance().getName());
     }
 
     public void rotate(int idx){
         board.get(idx).rotate();
-	}
+    }
 
     // Menerima index character yang ingin dipakai menyerang, Player musuh, dan index target serangan
     // Karna attack penyerang pasti lebih besar dari attack/defense musuh kartu musuh pasti hancur
@@ -243,7 +272,7 @@ public class Player{
         }
 	}
 
-    public void remove(int idx){
+    public void removeBoardSkill(int idx){
         //membuang kartu skill di board;
         SkillCard card = skillBoard.remove(idx);
         for (BoardCard chara : board){
@@ -251,5 +280,10 @@ public class Player{
                 chara.removeSkill(card);
             }
         }
-	}
+    }
+    
+    public void removeHandSkill(int idx){
+        // membuang kartu skill yang ada di tangan
+        hand.remove(idx);
+    }
 }
