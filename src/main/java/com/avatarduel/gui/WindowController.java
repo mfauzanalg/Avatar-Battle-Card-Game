@@ -21,8 +21,11 @@ public class WindowController {
 
     @FXML
     public void startGameButton(javafx.event.ActionEvent actionEvent) throws IOException {
-        AvatarDuel.P1 = new Player(player1.getText(), 80);
-        AvatarDuel.P2 = new Player(player2.getText(), 80);
+//        AvatarDuel.P1 = new Player(player1.getText(), 80);
+//        AvatarDuel.P2 = new Player(player2.getText(), 80);
+
+        AvatarDuel.P1 = new Player("siapa", 80);
+        AvatarDuel.P2 = new Player("fauzan", 80);
 
         AvatarDuel.P1.addRandomCards(AvatarDuel.landData, 16);
         AvatarDuel.P1.addRandomCards(AvatarDuel.charData, 24);

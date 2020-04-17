@@ -19,6 +19,7 @@ public class Phase {
     }
 
     public void initialize(){
+        currentPhase = DRAW_PHASE;
         for (int i = 0; i < 7; i++){
             player_one.draw();
             player_two.draw();
@@ -130,7 +131,6 @@ public class Phase {
             // Throw error here?
         }
         else {
-
             currentPlayer.attack(cidx, getNextPlayer(), tidx);
         }
     }

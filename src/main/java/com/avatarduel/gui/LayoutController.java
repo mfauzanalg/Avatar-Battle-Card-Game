@@ -3,6 +3,7 @@ package com.avatarduel.gui;
 import com.avatarduel.AvatarDuel;
 import com.avatarduel.component.Card;
 import com.avatarduel.component.IHandCard;
+import com.avatarduel.component.Phase;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -40,18 +41,17 @@ public class LayoutController implements Initializable{
 
     public void updateHand() {
         int index = 1;
-        int indes = 1;
+        int indeks = 1;
         for (IHandCard card : AvatarDuel.P1.getHand()) {
             handCard1Controller.loadCard(card.getCardInstance(),index++);
         }
         for (IHandCard card : AvatarDuel.P2.getHand()) {
-            handCard2Controller.loadCard(card.getCardInstance(),indes++);
+            handCard2Controller.loadCard(card.getCardInstance(),indeks++);
         }
     }
 
     public void onHover(){
         detailInfoController.showCard(Card.cardHover);
-        //updateHand();
     }
 
     @Override
@@ -62,6 +62,10 @@ public class LayoutController implements Initializable{
         playerInfo2Controller.setHealth(Integer.toString(AvatarDuel.P2.getHealth()));
         panelP1Controller.setPanel(AvatarDuel.P1);
         panelP2Controller.setPanel(AvatarDuel.P2);
+        Phase gamePhase = new Phase(AvatarDuel.P1, AvatarDuel.P2);
+        gamePhase.initialize(); updateHand();
     }
-    
+
+
+
 }
