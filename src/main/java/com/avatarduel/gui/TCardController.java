@@ -6,11 +6,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -148,17 +146,17 @@ public class TCardController {
             String type = Card.cardClick1.getType();
             Player curPlayer = LayoutController.gamePhase.getCurrentPlayer();
             String curPhase = LayoutController.gamePhase.getCurrentPhase();
+            Card.clickIdx = this.indeks;
 
             if (place.equals("hand") && this.cardOwn.equals(curPlayer) && "main".equals(curPhase)){
                 if (type.equals("land")) {actionBox = "HandLandAct.fxml"; }
                 else if (type.equals("character")) {actionBox = "HandCharAct.fxml";}
                 else if (type.equals("skill")) {actionBox = "HandSkillAct.fxml";}
-//                System.out.println("indeks : " + this.indeks);
 
                 loadScene(actionBox);
-            }
-        } catch (IOException e){
-            throw new IllegalStateException("Fauzan Keren" + e);
+                }
+            } catch (IOException e){
+                throw new IllegalStateException("Fauzan Keren" + e);
         }
     }
 }

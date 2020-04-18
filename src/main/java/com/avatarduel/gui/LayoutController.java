@@ -190,6 +190,7 @@ public class LayoutController implements Initializable{
                 break;
             case("main"):
                 changeColorPhase("main");
+
                 break;
             case("battle"):
                 changeColorPhase("battle");

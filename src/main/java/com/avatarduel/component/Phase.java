@@ -2,6 +2,7 @@
 // Mengatur jalannya permainan
 
 package com.avatarduel.component;
+
 import java.util.Random;
 import java.util.List;
 
@@ -146,6 +147,7 @@ public class Phase {
         }
         else {
             currentPlayer.playLandCard(idx);
+
         }
     }
 

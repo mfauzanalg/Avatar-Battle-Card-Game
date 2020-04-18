@@ -2,12 +2,14 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.RadialGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane onMouseMoved="#onHover" prefHeight="661.0" prefWidth="1287.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.avatarduel.gui.LayoutController">
+<AnchorPane onMouseMoved="#onHover" onMouseEntered="#updateDeck" prefHeight="661.0" prefWidth="1287.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.avatarduel.gui.LayoutController">
    <children>
       <AnchorPane layoutX="371.0" layoutY="105.0" prefHeight="384.0" prefWidth="40.0">
          <children>
@@ -19,7 +21,7 @@
             <fx:include fx:id="playerInfo2" source="PlayerInfo.fxml" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="236.0" layoutY="105.0" prefHeight="218.0" prefWidth="129.0" style="-fx-border-color: red;">
+      <AnchorPane layoutX="233.0" layoutY="105.0" prefHeight="218.0" prefWidth="129.0" style="-fx-border-color: red;">
          <children>
             <fx:include fx:id="panelP2" source="Deck.fxml" />
          </children>
@@ -89,5 +91,12 @@
             </RadialGradient>
          </stroke>
       </Line>
+      <Pane layoutX="233.0" layoutY="380.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="160.0" prefWidth="130.0" style="-fx-border-color: black;">
+         <children>
+            <Text fx:id="message" layoutX="43.0" layoutY="23.0" strokeType="INSIDE" strokeWidth="0.0" text="Message" textAlignment="CENTER" />
+            <Button fx:id="button1" layoutX="39.0" layoutY="94.0" mnemonicParsing="false" text="Button" />
+            <Button fx:id="button2" layoutX="38.0" layoutY="127.0" mnemonicParsing="false" text="Button" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>
