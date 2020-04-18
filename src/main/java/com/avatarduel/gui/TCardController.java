@@ -132,13 +132,13 @@ public class TCardController {
             String place = Card.cardClick1.getPlace();
             String type = Card.cardClick1.getType();
             int idx = Card.cardClick1.getIdx();
+            int owner = Card.cardClick1.getOwner();
             if (place.equals("hand")){
                 if (type.equals("land")) {actionBox = "HandLandAct.fxml"; }
                 else if (type.equals("character")) {actionBox = "HandCharAct.fxml";}
                 else if (type.equals("skill")) {actionBox = "HandSkillAct.fxml";}
                 System.out.println("indeks : " + idx);
-                System.out.println("Ada di mana :" + place);
-                System.out.println("Punya siapa :" + idx);
+                System.out.println("Punya siapa :" + owner);
 
                 Parent root = FXMLLoader.load(getClass().getClassLoader().getResource(actionBox));
                 Scene scene = new Scene(root);
