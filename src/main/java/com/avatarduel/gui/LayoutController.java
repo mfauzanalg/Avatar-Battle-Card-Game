@@ -30,6 +30,10 @@ public class LayoutController implements Initializable{
     @FXML private PlayerInfoController playerInfo1Controller;
     @FXML private PlayerInfoController playerInfo2Controller;
     @FXML private BattlePhaseController battlePhaseController;
+    @FXML private SkillAreaController skillArea1Controller;
+    @FXML private SkillAreaController skillArea2Controller;
+    @FXML private CharAreaController charArea1Controller;
+    @FXML private CharAreaController charArea2Controller;
     private String HIDDEN_CARD = "src/main/resources/img/back.png";
     public static Phase gamePhase;
 
@@ -123,6 +127,22 @@ public class LayoutController implements Initializable{
         updateOneHand(AvatarDuel.P2);
     }
 
+    public void updateCharArea(){
+        Card emptyCard = new Card();
+        for (int i = 0; i < 6; i++){
+            charArea1Controller.loadCard(emptyCard, i);
+            charArea2Controller.loadCard(emptyCard, i);
+        }
+    }
+
+    public void updateSkillArea(){
+        Card emptyCard = new Card();
+        for (int i = 0; i < 6; i++){
+            skillArea1Controller.loadCard(emptyCard, i);
+            skillArea2Controller.loadCard(emptyCard, i);
+        }
+    }
+
     public void updateOneHand(Player P){
         if (P.equals(AvatarDuel.P1)){
             resetOne(AvatarDuel.P1);
@@ -139,7 +159,8 @@ public class LayoutController implements Initializable{
     }
 
     public void onHover(){
-        detailInfoController.showCard(Card.cardHover);
+//        detailInfoController.showCard(Card.cardHover);
+        System.out.println(Card.cardHover.getId());
     }
 
     @Override
@@ -155,6 +176,7 @@ public class LayoutController implements Initializable{
         gamePhase.initialize(); updateAllHand(); updateDeck();
         battlePhaseController.setColor(battlePhaseController.getDrawP(), gamePhase.getCurrentPlayer().getName());
         hideCard(handCard2Controller, AvatarDuel.P2.getHand().size());
+        updateCharArea(); updateSkillArea();
     }
 
     public void nextPhase() throws IOException {

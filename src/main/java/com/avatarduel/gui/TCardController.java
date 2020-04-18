@@ -24,6 +24,7 @@ public class TCardController {
     @FXML private Text elmt;
     @FXML private ImageView elmtPict;
     @FXML private ImageView cardBackground;
+    private Card card;
     private int id;
 
     private String energyPath = "src/main/resources/img/Elements/Energy.png";
@@ -87,7 +88,7 @@ public class TCardController {
     }
 
     public void loadCard(Card card){
-        this.id = card.getId();
+        this.card = card;
         attrib.setText("");
         loadPict(blankPath, cardBackground);
 
@@ -114,14 +115,14 @@ public class TCardController {
     }
 
     public void hover(MouseEvent mouseEvent) {
-        Card newCard = AvatarDuel.dataBase.get(this.id);
-        if (newCard.getId() != 0 ){
+        Card newCard = this.card;
+        if (newCard.getId() != 0){
             Card.cardHover = newCard;
         }
     }
 
     public void click(MouseEvent mouseEvent) {
-        Card.cardClick1 = AvatarDuel.dataBase.get(this.id);
+        Card.cardClick1 = this.card;
         showAction();
     }
 
@@ -135,15 +136,17 @@ public class TCardController {
                 if (type.equals("land")) {actionBox = "HandLandAct.fxml"; }
                 else if (type.equals("character")) {actionBox = "HandCharAct.fxml";}
                 else if (type.equals("skill")) {actionBox = "HandSkillAct.fxml";}
-            }
-            System.out.println(idx);
+                System.out.println("indeks : " + idx);
+                System.out.println("Ada di mana :" + place);
+                System.out.println("Punya siapa :" + idx);
 
-            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource(actionBox));
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-            stage.setTitle("");
-            stage.setScene(scene);
-            stage.show();
+                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource(actionBox));
+                Scene scene = new Scene(root);
+                Stage stage = new Stage();
+                stage.setTitle("");
+                stage.setScene(scene);
+                stage.show();
+            }
         } catch (IOException e){
             throw new IllegalStateException("Fauzan Keren" + e);
         }

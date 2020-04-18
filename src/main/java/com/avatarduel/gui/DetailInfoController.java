@@ -81,28 +81,27 @@ public class DetailInfoController {
 
 
     public void showCard(Card card){
-        File file = new File (card.getImagePath());
-        Image image = new Image(file.toURI().toString());
-        detailImage.setImage(image);
-        detailDesc.setText(card.getDescription());
-        detailName.setText(card.getName());
-        File file2 = new File (blankPath);
-        Image image2 = new Image(file2.toURI().toString());
-        elmtPict.setImage(image2);
+        if (card.getId() != 0) {
+            File file = new File(card.getImagePath());
+            Image image = new Image(file.toURI().toString());
+            detailImage.setImage(image);
+            detailDesc.setText(card.getDescription());
+            detailName.setText(card.getName());
+            File file2 = new File(blankPath);
+            Image image2 = new Image(file2.toURI().toString());
+            elmtPict.setImage(image2);
 
-        String type = card.getType();
-        if (type.equals("land")){
-            this.showLandCard(card);
-        }
-        else if (type.equals("character")){
-            this.showCharCard((CharacterCard) card);
-        }
-        else if (type.equals("skill")){
-            this.showSkillCard((SkillCard) card);
-        }
-        else{
-            detailElmt.setText("");
-            detailStat.setText("");
+            String type = card.getType();
+            if (type.equals("land")) {
+                this.showLandCard(card);
+            } else if (type.equals("character")) {
+                this.showCharCard((CharacterCard) card);
+            } else if (type.equals("skill")) {
+                this.showSkillCard((SkillCard) card);
+            } else {
+                detailElmt.setText("");
+                detailStat.setText("");
+            }
         }
     }
 }
