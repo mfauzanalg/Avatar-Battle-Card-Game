@@ -222,24 +222,35 @@ public class Player{
     // Menambahkan CharacterBoardCard ke indeks null pertama di board
     public void playCharacterCard(int idx, boolean attack){
     
-        CharacterHandCard card = (CharacterHandCard) hand.remove(idx);
-        HandCardPlayer.playCard(card, attack);
-        System.out.println(getName() + " summons " + card.getCardInstance().getName());
+        CharacterHandCard card = (CharacterHandCard) hand.get(idx);
+        if (!HandCardPlayer.validatePlay(card)){
+            System.out.println("You don't have enough power to summon " + card.getCardInstance().getName());
+        }
+        else{
+            hand.remove(idx);
+            HandCardPlayer.playCard(card, attack);
+            System.out.println(getName() + " summons " + card.getCardInstance().getName());
+        }
     }
     // Menerima indeks kartu tangan yang dipilih dan BoardCard yang dipilih untuk diberi skill
     public void playSkillCard(int idx, BoardCard target){
 
         SkillCard card = (SkillCard) hand.get(idx).getCardInstance();
-        if (card.getEffect().equals(SkillCard.SKILL_AURA)){
-            HandCardPlayer.playCard((AuraHandCard) hand.remove(idx), target);
+        if (!HandCardPlayer.validatePlay(hand.get(idx))){
+            System.out.println("You don't have enough power to play " + card.getName());
         }
-        else if (card.getEffect().equals(SkillCard.SKILL_POWERUP)){
-            HandCardPlayer.playCard((PowerUpHandCard) hand.remove(idx), target);    
+        else {
+            if (card.getEffect().equals(SkillCard.SKILL_AURA)){
+                HandCardPlayer.playCard((AuraHandCard) hand.remove(idx), target);
+            }
+            else if (card.getEffect().equals(SkillCard.SKILL_POWERUP)){
+                HandCardPlayer.playCard((PowerUpHandCard) hand.remove(idx), target);    
+            }
+            else if (card.getEffect().equals(SkillCard.SKILL_DESTROY)){
+                HandCardPlayer.playCard(target);
+            }
+            System.out.println(getName() + " plays " + card.getName());
         }
-        else if (card.getEffect().equals(SkillCard.SKILL_DESTROY)){
-            HandCardPlayer.playCard(target);
-        }
-        System.out.println(getName() + " plays " + card.getName());
     }
     public void playLandCard(int idx){
         LandHandCard card = (LandHandCard) hand.remove(idx);
