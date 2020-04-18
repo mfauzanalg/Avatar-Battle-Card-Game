@@ -2,7 +2,6 @@ package com.avatarduel.gui;
 
 import com.avatarduel.AvatarDuel;
 import com.avatarduel.component.Card;
-import com.avatarduel.component.IHandCard;
 import com.avatarduel.component.Phase;
 import com.avatarduel.component.Player;
 import javafx.fxml.FXML;
@@ -17,7 +16,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class LayoutController implements Initializable{
@@ -65,7 +63,7 @@ public class LayoutController implements Initializable{
             stage.setTitle("PhaseInfo");
             stage.setScene(scene);
             stage.show();
-            updateHand();
+            updateAllHand();
         } catch (IOException e){System.out.println(e);}
     }
 
@@ -73,7 +71,7 @@ public class LayoutController implements Initializable{
         AvatarDuel.P1.draw();
         AvatarDuel.P2.draw();
         onHover();
-        updateHand();
+        updateAllHand();
         panelP2Controller.setPanel(AvatarDuel.P2);
         panelP1Controller.setPanel(AvatarDuel.P1);
     }
@@ -83,7 +81,6 @@ public class LayoutController implements Initializable{
         hiddenCard.setImagepath(HIDDEN_CARD);
         for (int i = 0; i < size; i++){
             hand.loadCard(hiddenCard, i);
-            System.out.println(hiddenCard.getImagePath());
         }
     }
 
@@ -95,26 +92,44 @@ public class LayoutController implements Initializable{
         }
     }
 
-    public void reset() {
+    public void resetAll() {
+        resetOne(AvatarDuel.P1);
+        resetOne(AvatarDuel.P2);
+    }
+
+    public void resetOne(Player P){
         int fromIndex1 = AvatarDuel.P1.getHand().size();
         int fromIndex2 = AvatarDuel.P2.getHand().size();
-
         Card emptyCard = new Card();
-        for (int i = fromIndex1-1; i < 9; i++){
-            handCard1Controller.loadCard(emptyCard, i);
+        if (P.equals(AvatarDuel.P1)){
+            for (int i = fromIndex1-1; i < 9; i++){
+                handCard1Controller.loadCard(emptyCard, i);
+            }
         }
-        for (int i = fromIndex2-1; i < 9; i++){
-            handCard2Controller.loadCard(emptyCard, i);
+        else{
+            for (int i = fromIndex2-1; i < 9; i++){
+                handCard2Controller.loadCard(emptyCard, i);
+            }
         }
     }
 
-    public void updateHand() {
-        reset();
-        for (int i = 0; i < AvatarDuel.P1.getHand().size(); i++){
-            handCard1Controller.loadCard(AvatarDuel.P1.getHand().get(i).getCardInstance(), i);
+    public void updateAllHand() {
+        updateOneHand(AvatarDuel.P1);
+        updateOneHand(AvatarDuel.P2);
+    }
+
+    public void updateOneHand(Player P){
+        if (P.equals(AvatarDuel.P1)){
+            resetOne(AvatarDuel.P1);
+            for (int i = 0; i < AvatarDuel.P1.getHand().size(); i++){
+                handCard1Controller.loadCard(AvatarDuel.P1.getHand().get(i).getCardInstance(), i);
+            }
         }
-        for (int i = 0; i < AvatarDuel.P2.getHand().size(); i++){
-            handCard2Controller.loadCard(AvatarDuel.P2.getHand().get(i).getCardInstance(), i);
+        else{
+            resetOne(AvatarDuel.P2);
+            for (int i = 0; i < AvatarDuel.P2.getHand().size(); i++){
+                handCard2Controller.loadCard(AvatarDuel.P2.getHand().get(i).getCardInstance(), i);
+            }
         }
     }
 
@@ -132,7 +147,7 @@ public class LayoutController implements Initializable{
         panelP2Controller.setPanel(AvatarDuel.P2);
 
         gamePhase = new Phase(AvatarDuel.P1, AvatarDuel.P2);
-        gamePhase.initialize(); updateHand();
+        gamePhase.initialize(); updateAllHand();
         battlePhaseController.setColor(battlePhaseController.getDrawP(), gamePhase.getCurrentPlayer().getName());
         hideCard(handCard2Controller, AvatarDuel.P2.getHand().size());
     }
@@ -141,7 +156,7 @@ public class LayoutController implements Initializable{
         gamePhase.nextPhase();
         switch (gamePhase.getCurrentPhase()){
             case ("draw"):
-                updateHand();
+                updateAllHand();
                 popDrawInfo();
                 changeColorPhase("draw");
                 hideChangeTurn();
@@ -153,6 +168,7 @@ public class LayoutController implements Initializable{
                 changeColorPhase("battle");
                 break;
             case("end"):
+                updateOneHand(gamePhase.getCurrentPlayer());
                 changeColorPhase("end");
                 break;
         }

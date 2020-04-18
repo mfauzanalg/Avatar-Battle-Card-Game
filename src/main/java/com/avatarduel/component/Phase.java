@@ -92,6 +92,7 @@ public class Phase {
         currentPhase = END_PHASE;
         if (currentPlayer.getHand().size() >= 9){
             discardHand();
+            System.out.println("MASUEEKk");
         }
         currentPlayer.flipHand();
         currentPlayer.reset();
