@@ -21,6 +21,8 @@ public class HandCardController {
     @FXML private TCardController h9Controller;
 
     public void loadCard(Card card, int x){
+        card.setIdx(x);
+        card.setPlace("hand");
         switch (x){
             case 0: h1Controller.loadCard(card); break;
             case 1: h2Controller.loadCard(card); break;
