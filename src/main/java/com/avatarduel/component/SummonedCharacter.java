@@ -72,7 +72,7 @@ public class SummonedCharacter extends BoardCard {
         // Karna struktur pasti Decorator(Decorator(Decorator.......(SummonedCharacter)))...) maka SummonedCharacter pasti yang terakhir harus di destroy
         // Sehingga destroy milik SummonedCharacter tidak perlu memanggil method destroy lainnya
         int cidx = this.owner.getBoard().indexOf(this);
-        this.owner.getBoard().set(cidx, null);
+        this.owner.getBoard().set(cidx, NullCardHandler.getNullBoardCard());
     }
 
     public void removeSkill(SkillCard card){

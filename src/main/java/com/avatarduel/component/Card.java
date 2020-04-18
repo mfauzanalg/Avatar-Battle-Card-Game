@@ -16,10 +16,11 @@ public class Card {
     public static final String CHARACTER_CARD = "character";
     public static final String SKILL_CARD = "skill";
     public static final String LAND_CARD = "land";
-    
+    public static final int NULL_ID = 0;
+
     public Card(){
         this.type = "";
-        this.id = 0;
+        this.id = NULL_ID;
 //        this.idx = -1;
         this.name = "";
         this.element = "";

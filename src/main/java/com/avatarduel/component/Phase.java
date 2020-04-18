@@ -81,7 +81,7 @@ public class Phase {
     public boolean enemyBoardIsEmpty(){
         boolean retval = true;
         for (BoardCard card : getNextPlayer().getBoard()){
-            if (card != null){
+            if (card != NullCardHandler.getNullBoardCard()){
                 retval = false;
                 break;
             }
@@ -105,9 +105,9 @@ public class Phase {
             System.out.println("You can only play cards during the Main Phase");
             // Throw error here?
         }
-        else if (currentPlayer.getBoard().size() == 6){
+        if (currentPlayer.getBoard().indexOf(NullCardHandler.getNullBoardCard()) == -1){ // Jika board penuh
             System.out.println("Your character board is full!");
-            // Throw error here?
+            // ...Throw exception? 
         }
         else {
             currentPlayer.playCharacterCard(idx, isAttackPosition);
@@ -120,9 +120,9 @@ public class Phase {
             System.out.println("You can only play cards during the Main Phase");
             // Throw error here?
         }
-        else if (currentPlayer.getSkillBoard().size() == 6){
+        if (currentPlayer.getSkillBoard().indexOf(NullCardHandler.getNullSkillCard()) == -1){ // Jika skillboard penuh
             System.out.println("Your skill board is full!");
-            // Throw error here?
+            // ...
         }
         else {
             SkillCard card = (SkillCard) currentPlayer.getHandAt(cidx).getCardInstance();
@@ -136,7 +136,6 @@ public class Phase {
 
             currentPlayer.playSkillCard(cidx, target);
         }
-        
     }
 
     public void playLandCard(int idx){

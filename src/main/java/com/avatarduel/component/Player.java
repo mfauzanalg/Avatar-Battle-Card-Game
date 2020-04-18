@@ -24,8 +24,8 @@ public class Player{
         this.maxAir = 0; this.currentAir = 0;
         this.maxEnergy = 0; this.currentEnergy = 0;
         for (int i = 0; i < 6; i++){  // Inisialisasi board dengan null
-            board.add(null);
-            skillBoard.add(null);
+            board.add(NullCardHandler.getNullBoardCard());
+            skillBoard.add(NullCardHandler.getNullSkillCard());
         }
     }
 
@@ -185,9 +185,7 @@ public class Player{
     }
     public void flipHand(){
         for (IHandCard card : hand){
-            if (card != null){
-                card.flip();
-            }
+            card.flip();
         }
     }
     public void removeHandCard(int idx){
@@ -222,33 +220,25 @@ public class Player{
     // Menerima indeks kartu tangan yang dipilih dan apakah character di summon pada posisi attack
     // Menambahkan CharacterBoardCard ke indeks null pertama di board
     public void playCharacterCard(int idx, boolean attack){
-        if (board.indexOf(null) == -1){ // Jika board penuh
-            // ...Throw exception? 
-        }
-        else{
-            CharacterHandCard card = (CharacterHandCard) hand.remove(idx);
-            HandCardPlayer.playCard(card, attack);
-            System.out.println(getName() + " summons " + card.getCardInstance().getName());
-        }
+    
+        CharacterHandCard card = (CharacterHandCard) hand.remove(idx);
+        HandCardPlayer.playCard(card, attack);
+        System.out.println(getName() + " summons " + card.getCardInstance().getName());
     }
     // Menerima indeks kartu tangan yang dipilih dan BoardCard yang dipilih untuk diberi skill
     public void playSkillCard(int idx, BoardCard target){
-        if (skillBoard.indexOf(null) == -1){ // Jika skillboard penuh
-            // ...
+
+        SkillCard card = (SkillCard) hand.get(idx).getCardInstance();
+        if (card.getEffect().equals(SkillCard.SKILL_AURA)){
+            HandCardPlayer.playCard((AuraHandCard) hand.remove(idx), target);
         }
-        else{
-            SkillCard card = (SkillCard) hand.get(idx).getCardInstance();
-            if (card.getEffect().equals(SkillCard.SKILL_AURA)){
-                HandCardPlayer.playCard((AuraHandCard) hand.remove(idx), target);
-            }
-            else if (card.getEffect().equals(SkillCard.SKILL_POWERUP)){
-                HandCardPlayer.playCard((PowerUpHandCard) hand.remove(idx), target);    
-            }
-            else if (card.getEffect().equals(SkillCard.SKILL_DESTROY)){
-                HandCardPlayer.playCard(target);
-            }
-            System.out.println(getName() + " plays " + card.getName());
+        else if (card.getEffect().equals(SkillCard.SKILL_POWERUP)){
+            HandCardPlayer.playCard((PowerUpHandCard) hand.remove(idx), target);    
         }
+        else if (card.getEffect().equals(SkillCard.SKILL_DESTROY)){
+            HandCardPlayer.playCard(target);
+        }
+        System.out.println(getName() + " plays " + card.getName());
     }
     public void playLandCard(int idx){
         LandHandCard card = (LandHandCard) hand.remove(idx);
@@ -263,7 +253,7 @@ public class Player{
         int attackingVal = board.get(idx).getPositionValue();
         int attackedVal = enemy.getBoard().get(enemyidx).getPositionValue();
         enemy.getBoard().get(enemyidx).destroy();
-        if (isAttackPos) {
+        if (isAttackPos || board.get(idx).getPowerUp()) {
             int enemyHealth = enemy.getHealth() - attackingVal + attackedVal;
             if (enemyHealth < 0){
                 enemyHealth = 0;
