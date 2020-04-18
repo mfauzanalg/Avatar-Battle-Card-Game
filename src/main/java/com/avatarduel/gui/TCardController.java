@@ -2,6 +2,7 @@ package com.avatarduel.gui;
 
 import com.avatarduel.AvatarDuel;
 import com.avatarduel.component.*;
+import javafx.animation.RotateTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,13 +10,16 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.File;
 import java.io.IOException;
 
 public class TCardController {
+    @FXML private Pane mainPane;
     @FXML private Text name;
     @FXML private Text attrib;
     @FXML private ImageView pict;
@@ -143,6 +147,13 @@ public class TCardController {
         showAction();
     }
 
+    public void rotateCard(){
+        RotateTransition rotateTransition = new RotateTransition(Duration.seconds(0.1), mainPane);
+        rotateTransition.setFromAngle(0);
+        rotateTransition.setToAngle(90);
+        rotateTransition.play();
+    }
+
     public void showAction(){
         try{
             String actionBox = null;
@@ -156,11 +167,13 @@ public class TCardController {
                 if (type.equals("land")) {actionBox = "HandLandAct.fxml"; }
                 else if (type.equals("character")) {actionBox = "HandCharAct.fxml";}
                 else if (type.equals("skill")) {actionBox = "HandSkillAct.fxml";}
-
                 loadScene(actionBox);
-                }
-            } catch (IOException e){
-                throw new IllegalStateException("Fauzan Keren" + e);
+            }
+            else if (place.equals("character") && this.cardOwn.equals(curPlayer) && "main".equals(curPhase)){
+                loadScene("RotateCard.fxml");
+            }
+        } catch (IOException e){
+            throw new IllegalStateException("Fauzan Keren" + e);
         }
     }
 }

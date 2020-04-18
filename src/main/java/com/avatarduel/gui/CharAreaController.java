@@ -24,4 +24,15 @@ public class CharAreaController {
         }
     }
 
+    public void rotateCard(int x){
+        switch (x){
+            case 0: c1Controller.rotateCard(); break;
+            case 1: c2Controller.rotateCard(); break;
+            case 2: c3Controller.rotateCard(); break;
+            case 3: c4Controller.rotateCard(); break;
+            case 4: c5Controller.rotateCard(); break;
+            case 5: c6Controller.rotateCard(); break;
+        }
+    }
+
 }

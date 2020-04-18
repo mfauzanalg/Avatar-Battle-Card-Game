@@ -4,6 +4,7 @@ import com.avatarduel.AvatarDuel;
 import com.avatarduel.component.Card;
 import com.avatarduel.component.Phase;
 import com.avatarduel.component.Player;
+import javafx.animation.RotateTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,6 +14,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.fxml.Initializable;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
@@ -185,6 +187,9 @@ public class LayoutController implements Initializable{
             resetOneChar(AvatarDuel.P1);
             for (int i = 0; i < AvatarDuel.P1.getBoard().size(); i++){
                 charArea1Controller.loadCard(AvatarDuel.P1.getBoard().get(i).getCardInstance(), i, 1);
+                if (!AvatarDuel.P1.getBoard().get(i).getAttackPos()){
+                    charArea1Controller.rotateCard(i);
+                }
             }
         }
         else{
@@ -194,6 +199,7 @@ public class LayoutController implements Initializable{
             }
         }
     }
+
 
     public void updateOneSkill(Player P){
         if (P.equals(AvatarDuel.P1)){
