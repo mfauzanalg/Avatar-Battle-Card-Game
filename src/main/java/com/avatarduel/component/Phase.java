@@ -106,10 +106,11 @@ public class Phase {
             System.out.println("You can only play cards during the Main Phase");
             // Throw error here?
         }
-        else if (currentPlayer.getBoard().size() == 6){
-            System.out.println("Your character board is full!");
-            // Throw error here?
-        }
+        // karena sebenrnya dia selalu penuh cardnya
+//        else if (currentPlayer.getBoard().size() == 6){
+//            System.out.println("Your character board is full!");
+//            // Throw error here?
+//        }
         else {
             currentPlayer.playCharacterCard(idx, isAttackPosition);
         }
@@ -147,7 +148,6 @@ public class Phase {
         }
         else {
             currentPlayer.playLandCard(idx);
-
         }
     }
 

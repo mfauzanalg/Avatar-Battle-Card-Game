@@ -13,7 +13,8 @@ public class HandCardPlayer {
     // Mungkin perlu idx board yang kosong dimana??
     public static void playCard(CharacterHandCard card, boolean attack){
         SummonedCharacter chara = new SummonedCharacter(card.getOwner(), (CharacterCard) card.getCardInstance(), attack);
-        int cidx = card.getOwner().getBoard().indexOf(null);
+//        int cidx = card.getOwner().getBoard().indexOf(null);
+        int cidx = 1;
         card.getOwner().getBoard().set(cidx, chara);  
     }
 

@@ -41,6 +41,7 @@ public class LayoutController implements Initializable{
         panelP1Controller.setPanel(AvatarDuel.P1);
         panelP2Controller.setPanel(AvatarDuel.P2);
         updateOneHand(gamePhase.getCurrentPlayer());
+        updateOneChar(gamePhase.getCurrentPlayer());
     }
 
     public void changeColorPhase(String phase){
@@ -103,11 +104,11 @@ public class LayoutController implements Initializable{
     }
 
     public void resetAll() {
-        resetOne(AvatarDuel.P1);
-        resetOne(AvatarDuel.P2);
+        resetOneHand(AvatarDuel.P1);
+        resetOneHand(AvatarDuel.P2);
     }
 
-    public void resetOne(Player P){
+    public void resetOneHand(Player P){
         int fromIndex1 = AvatarDuel.P1.getHand().size();
         int fromIndex2 = AvatarDuel.P2.getHand().size();
         Card emptyCard = new Card();
@@ -123,12 +124,28 @@ public class LayoutController implements Initializable{
         }
     }
 
+    public void resetOneChar(Player P){
+        int fromIndex1 = AvatarDuel.P1.getBoard().size();
+        int fromIndex2 = AvatarDuel.P2.getBoard().size();
+        Card emptyCard = new Card();
+        if (P.equals(AvatarDuel.P1)){
+            for (int i = fromIndex1-1; i < 6; i++){
+                charArea1Controller.loadCard(emptyCard, i, 0);
+            }
+        }
+        else{
+            for (int i = fromIndex2-1; i < 6; i++){
+                charArea2Controller.loadCard(emptyCard, i, 0);
+            }
+        }
+    }
+
     public void updateAllHand() {
         updateOneHand(AvatarDuel.P1);
         updateOneHand(AvatarDuel.P2);
     }
 
-    public void updateCharArea(){
+    public void initialCharArea(){
         Card emptyCard = new Card();
         for (int i = 0; i < 6; i++){
             charArea1Controller.loadCard(emptyCard, i, 0);
@@ -136,7 +153,7 @@ public class LayoutController implements Initializable{
         }
     }
 
-    public void updateSkillArea(){
+    public void initialSkillArea(){
         Card emptyCard = new Card();
         for (int i = 0; i < 6; i++){
             skillArea1Controller.loadCard(emptyCard, i, 0);
@@ -144,15 +161,31 @@ public class LayoutController implements Initializable{
         }
     }
 
+    public void updateOneChar(Player P){
+        if (P.equals(AvatarDuel.P1)){
+            resetOneChar(AvatarDuel.P1);
+            for (int i = 0; i < AvatarDuel.P1.getBoard().size(); i++){
+//                charArea1Controller.loadCard(AvatarDuel.P1.getBoard().get(i).getCardInstance(), i, 1);
+                System.out.println("miaww ");
+            }
+        }
+//        else{
+//            resetOneChar(AvatarDuel.P2);
+//            for (int i = 0; i < AvatarDuel.P2.getBoard().size(); i++){
+//                charArea2Controller.loadCard(AvatarDuel.P2.getBoard().get(i).getCardInstance(), i, 2);
+//            }
+//        }
+    }
+
     public void updateOneHand(Player P){
         if (P.equals(AvatarDuel.P1)){
-            resetOne(AvatarDuel.P1);
+            resetOneHand(AvatarDuel.P1);
             for (int i = 0; i < AvatarDuel.P1.getHand().size(); i++){
                 handCard1Controller.loadCard(AvatarDuel.P1.getHand().get(i).getCardInstance(), i, 1);
             }
         }
         else{
-            resetOne(AvatarDuel.P2);
+            resetOneHand(AvatarDuel.P2);
             for (int i = 0; i < AvatarDuel.P2.getHand().size(); i++){
                 handCard2Controller.loadCard(AvatarDuel.P2.getHand().get(i).getCardInstance(), i, 2);
             }
@@ -173,10 +206,10 @@ public class LayoutController implements Initializable{
         panelP2Controller.setPanel(AvatarDuel.P2);
 
         gamePhase = new Phase(AvatarDuel.P1, AvatarDuel.P2);
-        gamePhase.initialize(); updateAllHand(); updateDeck();
+        gamePhase.initialize(); updateAllHand();
         battlePhaseController.setColor(battlePhaseController.getDrawP(), gamePhase.getCurrentPlayer().getName());
         hideCard(handCard2Controller, AvatarDuel.P2.getHand().size());
-        updateCharArea(); updateSkillArea();
+        initialCharArea(); initialSkillArea();  updateDeck();
     }
 
     public void nextPhase() throws IOException {
