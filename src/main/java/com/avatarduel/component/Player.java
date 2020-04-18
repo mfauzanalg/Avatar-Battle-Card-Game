@@ -247,7 +247,7 @@ public class Player{
                 HandCardPlayer.playCard((PowerUpHandCard) hand.remove(idx), target);    
             }
             else if (card.getEffect().equals(SkillCard.SKILL_DESTROY)){
-                HandCardPlayer.playCard(target);
+                HandCardPlayer.playCard((DestroyHandCard) hand.remove(idx), target);
             }
             System.out.println(getName() + " plays " + card.getName());
         }
