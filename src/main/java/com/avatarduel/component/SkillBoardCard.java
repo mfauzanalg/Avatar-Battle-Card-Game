@@ -25,7 +25,7 @@ abstract public class SkillBoardCard extends BoardCard {
     }
 
     public Card getCardInstance(){
-        return card;
+        return target.getCardInstance();
     }
 
     public void rotate(){
