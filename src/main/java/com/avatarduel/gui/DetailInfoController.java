@@ -72,11 +72,19 @@ public class DetailInfoController {
     }
 
     public void showDestroyCard(DestroySkillCard card){
+        File file = new File (setElmtPict(card.getElement()));
+        Image image = new Image(file.toURI().toString());
+        elmtPict.setImage(image);
         detailDesc.setText("This is Destroy Card");
+        detailStat.setText("Pow : " + card.getPower());
     }
 
     public void showPowerUpCard(PowerUpSkillCard card){
+        File file = new File (setElmtPict(card.getElement()));
+        Image image = new Image(file.toURI().toString());
+        elmtPict.setImage(image);
         detailDesc.setText("This is PowerUp Card");
+        detailStat.setText("Pow : " + card.getPower());
     }
 
 

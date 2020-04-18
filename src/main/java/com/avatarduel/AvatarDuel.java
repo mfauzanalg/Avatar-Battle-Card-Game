@@ -54,11 +54,11 @@ public class AvatarDuel extends Application {
   }
 
   public void loadDestroyCard(){
-    destroyCard = new DestroySkillCard(99, "Destroy Card", "", "This is Destroy skill card", "src/main/resources/com/avatarduel/card/image/skill/Destroy.png", 0);
+    destroyCard = new DestroySkillCard(99, "Destroy Card", "WATER", "This is Destroy skill card", "src/main/resources/com/avatarduel/card/image/skill/Destroy.png", 2);
   }
 
   public void loadPowerUpCard(){
-    powerUpCard = new PowerUpSkillCard(100, "Power Up Card", "", "This is Power Up Skill card", "src/main/resources/com/avatarduel/card/image/skill/PowerUp.png", 0);
+    powerUpCard = new PowerUpSkillCard(100, "Power Up Card", "EARTH", "This is Power Up Skill card", "src/main/resources/com/avatarduel/card/image/skill/PowerUp.png", 2);
   }
 
   public void loadLandCards() throws IOException, URISyntaxException {

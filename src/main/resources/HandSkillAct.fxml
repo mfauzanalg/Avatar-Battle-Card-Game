@@ -7,6 +7,6 @@
 <AnchorPane prefHeight="130.0" prefWidth="260.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.avatarduel.gui.HandSkillActController">
     <children>
         <Text layoutX="71.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Use This Skill Card?" wrappingWidth="118.75390625" />
-        <Button layoutX="101.0" layoutY="65.0" mnemonicParsing="false" text="Confirm" />
+        <Button fx:id="confirmButton" onMouseClicked="#onClick" layoutX="101.0" layoutY="65.0" mnemonicParsing="false" text="Confirm" />
     </children>
 </AnchorPane>
