@@ -26,6 +26,8 @@ public class TCardController {
     @FXML private ImageView cardBackground;
     private Card card;
     private int indeks;
+    private int owner;
+    private Player cardOwn;
 
     private String energyPath = "src/main/resources/img/Elements/Energy.png";
     private String airPath = "src/main/resources/img/Elements/Air.png";
@@ -41,6 +43,15 @@ public class TCardController {
         else if(elmt.equals("EARTH")){ return earthPath; }
         else if(elmt.equals("FIRE")){ return firePath; }
         else { return waterPath; }
+    }
+
+    public void loadScene (String fxml) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource(fxml));
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setTitle("");
+        stage.setScene(scene);
+        stage.show();
     }
 
     public void loadPict (String path, ImageView container){
@@ -87,10 +98,12 @@ public class TCardController {
         attrib.setText("This is Destroy Card");
     }
 
-    public void loadCard(Card card, int x){
+    public void loadCard(Card card, int x, int p){
         this.card = card;
         this.indeks = x;
-//        this.card.setIdx(3);
+        this.owner = p;
+        if (p == 1) this.cardOwn = AvatarDuel.P1;
+        else if (p == 2) this.cardOwn = AvatarDuel.P2;
         attrib.setText("");
         loadPict(blankPath, cardBackground);
 
@@ -133,20 +146,16 @@ public class TCardController {
             String actionBox = null;
             String place = Card.cardClick1.getPlace();
             String type = Card.cardClick1.getType();
-//            int idx = Card.cardClick1.getIdx();
-//            int owner = Card.cardClick1.getOwner();
-            if (place.equals("hand")){
+            Player curPlayer = LayoutController.gamePhase.getCurrentPlayer();
+            String curPhase = LayoutController.gamePhase.getCurrentPhase();
+
+            if (place.equals("hand") && this.cardOwn.equals(curPlayer) && "main".equals(curPhase)){
                 if (type.equals("land")) {actionBox = "HandLandAct.fxml"; }
                 else if (type.equals("character")) {actionBox = "HandCharAct.fxml";}
                 else if (type.equals("skill")) {actionBox = "HandSkillAct.fxml";}
-                System.out.println("indeks : " + this.indeks);
+//                System.out.println("indeks : " + this.indeks);
 
-                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource(actionBox));
-                Scene scene = new Scene(root);
-                Stage stage = new Stage();
-                stage.setTitle("");
-                stage.setScene(scene);
-                stage.show();
+                loadScene(actionBox);
             }
         } catch (IOException e){
             throw new IllegalStateException("Fauzan Keren" + e);

@@ -11,16 +11,16 @@ public class SkillAreaController {
     @FXML private TCardController s5Controller;
     @FXML private TCardController s6Controller;
 
-    public void loadCard(Card card, int x){
+    public void loadCard(Card card, int x, int p){
 //        card.setIdx(x);
         card.setPlace("skill");
         switch (x){
-            case 0: s1Controller.loadCard(card,0); break;
-            case 1: s2Controller.loadCard(card,1); break;
-            case 2: s3Controller.loadCard(card,2); break;
-            case 3: s4Controller.loadCard(card,3); break;
-            case 4: s5Controller.loadCard(card,4);break;
-            case 5: s6Controller.loadCard(card,5); break;
+            case 0: s1Controller.loadCard(card,0, p); break;
+            case 1: s2Controller.loadCard(card,1, p); break;
+            case 2: s3Controller.loadCard(card,2, p); break;
+            case 3: s4Controller.loadCard(card,3, p); break;
+            case 4: s5Controller.loadCard(card,4, p);break;
+            case 5: s6Controller.loadCard(card,5, p); break;
         }
     }
 }

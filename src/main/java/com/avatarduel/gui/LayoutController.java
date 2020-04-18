@@ -89,7 +89,7 @@ public class LayoutController implements Initializable{
         Card hiddenCard = new Card();
         hiddenCard.setImagepath(HIDDEN_CARD);
         for (int i = 0; i < size; i++){
-            hand.loadCard(hiddenCard, i);
+            hand.loadCard(hiddenCard, i, 0);
         }
     }
 
@@ -112,12 +112,12 @@ public class LayoutController implements Initializable{
         Card emptyCard = new Card();
         if (P.equals(AvatarDuel.P1)){
             for (int i = fromIndex1-1; i < 9; i++){
-                handCard1Controller.loadCard(emptyCard, i);
+                handCard1Controller.loadCard(emptyCard, i, 0);
             }
         }
         else{
             for (int i = fromIndex2-1; i < 9; i++){
-                handCard2Controller.loadCard(emptyCard, i);
+                handCard2Controller.loadCard(emptyCard, i, 0);
             }
         }
     }
@@ -130,16 +130,16 @@ public class LayoutController implements Initializable{
     public void updateCharArea(){
         Card emptyCard = new Card();
         for (int i = 0; i < 6; i++){
-            charArea1Controller.loadCard(emptyCard, i);
-            charArea2Controller.loadCard(emptyCard, i);
+            charArea1Controller.loadCard(emptyCard, i, 0);
+            charArea2Controller.loadCard(emptyCard, i, 0);
         }
     }
 
     public void updateSkillArea(){
         Card emptyCard = new Card();
         for (int i = 0; i < 6; i++){
-            skillArea1Controller.loadCard(emptyCard, i);
-            skillArea2Controller.loadCard(emptyCard, i);
+            skillArea1Controller.loadCard(emptyCard, i, 0);
+            skillArea2Controller.loadCard(emptyCard, i, 0);
         }
     }
 
@@ -147,15 +147,13 @@ public class LayoutController implements Initializable{
         if (P.equals(AvatarDuel.P1)){
             resetOne(AvatarDuel.P1);
             for (int i = 0; i < AvatarDuel.P1.getHand().size(); i++){
-                handCard1Controller.loadCard(AvatarDuel.P1.getHand().get(i).getCardInstance(), i);
-//                AvatarDuel.P1.getHand().get(i).getCardInstance().setOwner(1);
+                handCard1Controller.loadCard(AvatarDuel.P1.getHand().get(i).getCardInstance(), i, 1);
             }
         }
         else{
             resetOne(AvatarDuel.P2);
             for (int i = 0; i < AvatarDuel.P2.getHand().size(); i++){
-                handCard2Controller.loadCard(AvatarDuel.P2.getHand().get(i).getCardInstance(), i);
-//                AvatarDuel.P2.getHand().get(i).getCardInstance().setOwner(2);
+                handCard2Controller.loadCard(AvatarDuel.P2.getHand().get(i).getCardInstance(), i, 2);
             }
         }
     }

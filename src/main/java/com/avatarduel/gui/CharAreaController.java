@@ -11,16 +11,16 @@ public class CharAreaController {
     @FXML private TCardController c5Controller;
     @FXML private TCardController c6Controller;
 
-    public void loadCard(Card card, int x){
+    public void loadCard(Card card, int x, int p){
 //        card.setIdx(x);
         card.setPlace("character");
         switch (x){
-            case 0: c1Controller.loadCard(card,0); break;
-            case 1: c2Controller.loadCard(card,1); break;
-            case 2: c3Controller.loadCard(card,2); break;
-            case 3: c4Controller.loadCard(card,3); break;
-            case 4: c5Controller.loadCard(card,4); break;
-            case 5: c6Controller.loadCard(card,5); break;
+            case 0: c1Controller.loadCard(card,0, p); break;
+            case 1: c2Controller.loadCard(card,1, p); break;
+            case 2: c3Controller.loadCard(card,2, p); break;
+            case 3: c4Controller.loadCard(card,3, p); break;
+            case 4: c5Controller.loadCard(card,4, p); break;
+            case 5: c6Controller.loadCard(card,5, p); break;
         }
     }
 
