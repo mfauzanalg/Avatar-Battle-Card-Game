@@ -23,6 +23,7 @@ public class Player{
         this.maxFire = 0; this.currentFire = 0;
         this.maxAir = 0; this.currentAir = 0;
         this.maxEnergy = 0; this.currentEnergy = 0;
+        Card emptyCard = new Card();
         for (int i = 0; i < 6; i++){  // Inisialisasi board dengan null
             board.add(NullCardHandler.getNullBoardCard());
             skillBoard.add(NullCardHandler.getNullSkillCard());
