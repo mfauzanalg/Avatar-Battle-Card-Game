@@ -35,6 +35,28 @@ public class LayoutController implements Initializable{
     private String HIDDEN_CARD = "src/main/resources/img/back.png";
     public static Phase gamePhase;
 
+    public void changeColorPhase(String phase){
+        switch (phase){
+            case("draw"):
+                battlePhaseController.resetColor(battlePhaseController.getEndP());
+                battlePhaseController.setColor(battlePhaseController.getDrawP(), gamePhase.getCurrentPlayer().getName());
+                break;
+            case("main"):
+                battlePhaseController.resetColor(battlePhaseController.getDrawP());
+                battlePhaseController.setColor(battlePhaseController.getMainP(), gamePhase.getCurrentPlayer().getName());
+                break;
+            case("battle"):
+                battlePhaseController.resetColor(battlePhaseController.getMainP());
+                battlePhaseController.setColor(battlePhaseController.getBattleP(), gamePhase.getCurrentPlayer().getName());
+                break;
+            case("end"):
+                battlePhaseController.resetColor(battlePhaseController.getBattleP());
+                battlePhaseController.setColor(battlePhaseController.getEndP(), gamePhase.getCurrentPlayer().getName());
+                break;
+        }
+    }
+
+
     public void popDrawInfo() throws IOException {
         try{
             Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("DrawInfo.fxml"));
@@ -62,6 +84,14 @@ public class LayoutController implements Initializable{
         for (int i = 0; i < size; i++){
             hand.loadCard(hiddenCard, i);
             System.out.println(hiddenCard.getImagePath());
+        }
+    }
+
+    public void hideChangeTurn(){
+        if (gamePhase.getCurrentPlayer().equals(AvatarDuel.P1)){
+            hideCard(handCard2Controller, AvatarDuel.P2.getHand().size());
+        }else{
+            hideCard(handCard1Controller, AvatarDuel.P1.getHand().size());
         }
     }
 
@@ -100,6 +130,7 @@ public class LayoutController implements Initializable{
         playerInfo2Controller.setHealth(Integer.toString(AvatarDuel.P2.getHealth()));
         panelP1Controller.setPanel(AvatarDuel.P1);
         panelP2Controller.setPanel(AvatarDuel.P2);
+
         gamePhase = new Phase(AvatarDuel.P1, AvatarDuel.P2);
         gamePhase.initialize(); updateHand();
         battlePhaseController.setColor(battlePhaseController.getDrawP(), gamePhase.getCurrentPlayer().getName());
@@ -112,21 +143,17 @@ public class LayoutController implements Initializable{
             case ("draw"):
                 updateHand();
                 popDrawInfo();
-                battlePhaseController.resetColor(battlePhaseController.getEndP());
-                battlePhaseController.setColor(battlePhaseController.getDrawP(), gamePhase.getCurrentPlayer().getName());
+                changeColorPhase("draw");
+                hideChangeTurn();
                 break;
             case("main"):
-                battlePhaseController.resetColor(battlePhaseController.getDrawP());
-                battlePhaseController.setColor(battlePhaseController.getMainP(), gamePhase.getCurrentPlayer().getName());
+                changeColorPhase("main");
                 break;
             case("battle"):
-                battlePhaseController.resetColor(battlePhaseController.getMainP());
-                battlePhaseController.setColor(battlePhaseController.getBattleP(), gamePhase.getCurrentPlayer().getName());
+                changeColorPhase("battle");
                 break;
             case("end"):
-                battlePhaseController.resetColor(battlePhaseController.getBattleP());
-                battlePhaseController.setColor(battlePhaseController.getEndP(), gamePhase.getCurrentPlayer().getName());
-
+                changeColorPhase("end");
                 break;
         }
     }
