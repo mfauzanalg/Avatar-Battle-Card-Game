@@ -15,12 +15,12 @@ public class SkillAreaController {
 //        card.setIdx(x);
         card.setPlace("skill");
         switch (x){
-            case 0: s1Controller.loadCard(card,0, p); break;
-            case 1: s2Controller.loadCard(card,1, p); break;
-            case 2: s3Controller.loadCard(card,2, p); break;
-            case 3: s4Controller.loadCard(card,3, p); break;
-            case 4: s5Controller.loadCard(card,4, p);break;
-            case 5: s6Controller.loadCard(card,5, p); break;
+            case 0: s1Controller.loadCard(card,0, p, "skill"); break;
+            case 1: s2Controller.loadCard(card,1, p, "skill"); break;
+            case 2: s3Controller.loadCard(card,2, p, "skill"); break;
+            case 3: s4Controller.loadCard(card,3, p, "skill"); break;
+            case 4: s5Controller.loadCard(card,4, p, "skill");break;
+            case 5: s6Controller.loadCard(card,5, p, "skill"); break;
         }
     }
 }

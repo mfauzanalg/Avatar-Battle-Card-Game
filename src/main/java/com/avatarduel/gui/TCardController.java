@@ -25,6 +25,7 @@ public class TCardController {
     private Card card;
     private int indeks;
     private int owner;
+    private String place;
     private Player cardOwn;
 
     private String energyPath = "src/main/resources/img/Elements/Energy.png";
@@ -87,19 +88,22 @@ public class TCardController {
     }
 
     public void loadDestroyCard(DestroySkillCard card){
+        loadPict(setElmtPict(card.getElement()), elmtPict);
         elmt.setText(card.getElement());
-        attrib.setText("This is Destroy Card");
+        attrib.setText("This is Destroy Card Pow : " + card.getPower());
     }
 
     public void loadPowerUpCard(PowerUpSkillCard card){
+        loadPict(setElmtPict(card.getElement()), elmtPict);
         elmt.setText(card.getElement());
-        attrib.setText("This is Destroy Card");
+        attrib.setText("This is Destroy Card Pow : " + card.getPower());
     }
 
-    public void loadCard(Card card, int x, int p){
+    public void loadCard(Card card, int x, int p, String place){
         this.card = card;
         this.indeks = x;
         this.owner = p;
+        this.place = place;
         if (p == 1) this.cardOwn = AvatarDuel.P1;
         else if (p == 2) this.cardOwn = AvatarDuel.P2;
         attrib.setText("");
@@ -142,7 +146,7 @@ public class TCardController {
     public void showAction(){
         try{
             String actionBox = null;
-            String place = Card.cardClick1.getPlace();
+            String place = this.place;
             String type = Card.cardClick1.getType();
             Player curPlayer = LayoutController.gamePhase.getCurrentPlayer();
             String curPhase = LayoutController.gamePhase.getCurrentPhase();
