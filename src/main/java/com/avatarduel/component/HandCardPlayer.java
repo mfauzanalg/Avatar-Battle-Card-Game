@@ -15,6 +15,7 @@ public class HandCardPlayer {
 
         SummonedCharacter chara = new SummonedCharacter(card.getOwner(), (CharacterCard) card.getCardInstance(), attack);
         int cidx = card.getOwner().getBoard().indexOf(NullCardHandler.getNullBoardCard());
+        decreaseUserPower(card);
         card.getOwner().getBoard().set(cidx, chara);  
     }
 
@@ -25,6 +26,7 @@ public class HandCardPlayer {
         AuraBoardCard aura = new AuraBoardCard(target, (AuraSkillCard) card.getCardInstance());
         int cidx = card.getOwner().getBoard().indexOf(target);
         int sidx = card.getOwner().getBoard().indexOf(NullCardHandler.getNullSkillCard());
+        decreaseUserPower(card);
         card.getOwner().getBoard().set(cidx, aura);
         card.getOwner().getSkillBoard().set(sidx, (SkillCard) card.getCardInstance()); // Nambahin kartu ke skillBoard
     }
@@ -35,11 +37,13 @@ public class HandCardPlayer {
         PowerUpBoardCard power = new PowerUpBoardCard(target, (PowerUpSkillCard) card.getCardInstance());
         int cidx = card.getOwner().getBoard().indexOf(target);
         int sidx = card.getOwner().getBoard().indexOf(NullCardHandler.getNullSkillCard());
+        decreaseUserPower(card);
         card.getOwner().getBoard().set(cidx, power);
         card.getOwner().getSkillBoard().set(sidx, (SkillCard) card.getCardInstance()); // Nambahin kartu ke skillBoard
     }
 
-    public static void playCard(BoardCard target){
+    public static void playCard(DestroyHandCard card, BoardCard target){
+        decreaseUserPower(card);
         target.destroy();
     }
 
@@ -51,15 +55,27 @@ public class HandCardPlayer {
         card.getOwner().setCurrentElement(element, valCurr + 1);
     }
 
-    public static boolean validatePlay(CharacterHandCard card){
-        int currentElementPower = card.getOwner().getCurrentElement(card.getCardInstance().getElement());
-        int requiredElementPower = ((CharacterCard)card.getCardInstance()).getPower();
-        return currentElementPower >= requiredElementPower;       
-    }
-
     public static boolean validatePlay(IHandCard card){
         int currentElementPower = card.getOwner().getCurrentElement(card.getCardInstance().getElement());
-        int requiredElementPower = ((SkillCard)card.getCardInstance()).getPower();
+        int requiredElementPower = 0;
+        if (card.getCardInstance().getType().equals(Card.CHARACTER_CARD)){
+            requiredElementPower = ((CharacterCard)card.getCardInstance()).getPower();
+        }
+        else if (card.getCardInstance().getType().equals(Card.SKILL_CARD)){ 
+            requiredElementPower = ((SkillCard)card.getCardInstance()).getPower();
+        }
         return currentElementPower >= requiredElementPower;
+    }
+
+    public static void decreaseUserPower(IHandCard card){
+        int currentElementPower = card.getOwner().getCurrentElement(card.getCardInstance().getElement());
+        int requiredElementPower = 0;
+        if (card.getCardInstance().getType().equals(Card.CHARACTER_CARD)){
+            requiredElementPower = ((CharacterCard)card.getCardInstance()).getPower();
+        }
+        else if (card.getCardInstance().getType().equals(Card.SKILL_CARD)){ 
+            requiredElementPower = ((SkillCard)card.getCardInstance()).getPower();
+        }
+        card.getOwner().setCurrentElement(card.getCardInstance().getElement(), currentElementPower - requiredElementPower);
     }
 }
