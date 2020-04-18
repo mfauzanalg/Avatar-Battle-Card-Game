@@ -40,6 +40,7 @@ public class LayoutController implements Initializable{
     public void updateDeck(){
         panelP1Controller.setPanel(AvatarDuel.P1);
         panelP2Controller.setPanel(AvatarDuel.P2);
+        updateOneHand(gamePhase.getCurrentPlayer());
     }
 
     public void changeColorPhase(String phase){
