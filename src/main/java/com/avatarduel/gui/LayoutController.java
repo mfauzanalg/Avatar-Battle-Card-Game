@@ -148,14 +148,14 @@ public class LayoutController implements Initializable{
             resetOne(AvatarDuel.P1);
             for (int i = 0; i < AvatarDuel.P1.getHand().size(); i++){
                 handCard1Controller.loadCard(AvatarDuel.P1.getHand().get(i).getCardInstance(), i);
-                AvatarDuel.P1.getHand().get(i).getCardInstance().setOwner(1);
+//                AvatarDuel.P1.getHand().get(i).getCardInstance().setOwner(1);
             }
         }
         else{
             resetOne(AvatarDuel.P2);
             for (int i = 0; i < AvatarDuel.P2.getHand().size(); i++){
                 handCard2Controller.loadCard(AvatarDuel.P2.getHand().get(i).getCardInstance(), i);
-                AvatarDuel.P2.getHand().get(i).getCardInstance().setOwner(2);
+//                AvatarDuel.P2.getHand().get(i).getCardInstance().setOwner(2);
             }
         }
     }

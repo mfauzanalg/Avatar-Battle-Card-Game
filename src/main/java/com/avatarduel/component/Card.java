@@ -11,8 +11,8 @@ public class Card {
     private String description;
     private String imagepath;
     private String place;
-    private int idx;
-    private int owner;
+//    private int idx;
+//    private int owner;
     public static final String CHARACTER_CARD = "character";
     public static final String SKILL_CARD = "skill";
     public static final String LAND_CARD = "land";
@@ -20,12 +20,12 @@ public class Card {
     public Card(){
         this.type = "";
         this.id = 0;
-        this.idx = -1;
+//        this.idx = -1;
         this.name = "";
         this.element = "";
         this.description = "";
         this.place = "";
-        this.owner = 0;
+//        this.owner = 0;
         this.imagepath = "src/main/resources/com/avatarduel/card/image/blank.png";
     }
 
@@ -37,25 +37,25 @@ public class Card {
         description = desc;
         imagepath = path;
         this.place = "deck";
-        this.idx = -1;
-        this.owner = 0;
+//        this.idx = -1;
+//        this.owner = 0;
     }
 
-    public int getOwner(){
-        return owner;
-    }
+//    public int getOwner(){
+//        return owner;
+//    }
 
-    public void setOwner(int owner){
-        this.owner = owner;
-    }
+//    public void setOwner(int owner){
+//        this.owner = owner;
+//    }
 
-    public int getIdx(){
-        return idx;
-    }
+//    public int getIdx(){
+//        return idx;
+//    }
 
-    public void setIdx(int idx){
-        this.idx = idx;
-    }
+//    public void setIdx(int idx){
+//        this.idx = idx;
+//    }
 
     public String getPlace(){
         return place;

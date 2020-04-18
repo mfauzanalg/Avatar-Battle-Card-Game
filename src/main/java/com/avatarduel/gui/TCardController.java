@@ -25,7 +25,7 @@ public class TCardController {
     @FXML private ImageView elmtPict;
     @FXML private ImageView cardBackground;
     private Card card;
-    private int id;
+    private int indeks;
 
     private String energyPath = "src/main/resources/img/Elements/Energy.png";
     private String airPath = "src/main/resources/img/Elements/Air.png";
@@ -87,8 +87,10 @@ public class TCardController {
         attrib.setText("This is Destroy Card");
     }
 
-    public void loadCard(Card card){
+    public void loadCard(Card card, int x){
         this.card = card;
+        this.indeks = x;
+//        this.card.setIdx(3);
         attrib.setText("");
         loadPict(blankPath, cardBackground);
 
@@ -131,14 +133,13 @@ public class TCardController {
             String actionBox = null;
             String place = Card.cardClick1.getPlace();
             String type = Card.cardClick1.getType();
-            int idx = Card.cardClick1.getIdx();
-            int owner = Card.cardClick1.getOwner();
+//            int idx = Card.cardClick1.getIdx();
+//            int owner = Card.cardClick1.getOwner();
             if (place.equals("hand")){
                 if (type.equals("land")) {actionBox = "HandLandAct.fxml"; }
                 else if (type.equals("character")) {actionBox = "HandCharAct.fxml";}
                 else if (type.equals("skill")) {actionBox = "HandSkillAct.fxml";}
-                System.out.println("indeks : " + idx);
-                System.out.println("Punya siapa :" + owner);
+                System.out.println("indeks : " + this.indeks);
 
                 Parent root = FXMLLoader.load(getClass().getClassLoader().getResource(actionBox));
                 Scene scene = new Scene(root);

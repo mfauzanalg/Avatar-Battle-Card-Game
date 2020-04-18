@@ -21,18 +21,18 @@ public class HandCardController {
     @FXML private TCardController h9Controller;
 
     public void loadCard(Card card, int x){
-        card.setIdx(x);
+//        card.setIdx(x);
         card.setPlace("hand");
         switch (x){
-            case 0: h1Controller.loadCard(card); break;
-            case 1: h2Controller.loadCard(card); break;
-            case 2: h3Controller.loadCard(card); break;
-            case 3: h4Controller.loadCard(card); break;
-            case 4: h5Controller.loadCard(card); break;
-            case 5: h6Controller.loadCard(card); break;
-            case 6: h7Controller.loadCard(card); break;
-            case 7: h8Controller.loadCard(card); break;
-            case 8: h9Controller.loadCard(card); break;
+            case 0: h1Controller.loadCard(card,0); break;
+            case 1: h2Controller.loadCard(card,1); break;
+            case 2: h3Controller.loadCard(card,2); break;
+            case 3: h4Controller.loadCard(card,3); break;
+            case 4: h5Controller.loadCard(card,4); break;
+            case 5: h6Controller.loadCard(card,5); break;
+            case 6: h7Controller.loadCard(card,6); break;
+            case 7: h8Controller.loadCard(card,7); break;
+            case 8: h9Controller.loadCard(card,8); break;
             default:
         }
     }
