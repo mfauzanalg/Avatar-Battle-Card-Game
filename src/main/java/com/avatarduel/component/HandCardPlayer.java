@@ -15,6 +15,7 @@ public class HandCardPlayer {
 
         SummonedCharacter chara = new SummonedCharacter(card.getOwner(), (CharacterCard) card.getCardInstance(), attack);
         int cidx = card.getOwner().getBoard().indexOf(NullCardHandler.getNullBoardCard());
+        System.out.println("cidx of summon is " + cidx);
         decreaseUserPower(card);
         card.getOwner().getBoard().set(cidx, chara);  
     }
@@ -25,7 +26,8 @@ public class HandCardPlayer {
         
         AuraBoardCard aura = new AuraBoardCard(target, (AuraSkillCard) card.getCardInstance());
         int cidx = card.getOwner().getBoard().indexOf(target);
-        int sidx = card.getOwner().getBoard().indexOf(NullCardHandler.getNullSkillCard());
+        int sidx = card.getOwner().getSkillBoard().indexOf(NullCardHandler.getNullSkillCard());
+        System.out.println("cidx and sidx is " + cidx + " " + sidx);
         decreaseUserPower(card);
         card.getOwner().getBoard().set(cidx, aura);
         card.getOwner().getSkillBoard().set(sidx, (SkillCard) card.getCardInstance()); // Nambahin kartu ke skillBoard
@@ -36,7 +38,7 @@ public class HandCardPlayer {
         
         PowerUpBoardCard power = new PowerUpBoardCard(target, (PowerUpSkillCard) card.getCardInstance());
         int cidx = card.getOwner().getBoard().indexOf(target);
-        int sidx = card.getOwner().getBoard().indexOf(NullCardHandler.getNullSkillCard());
+        int sidx = card.getOwner().getSkillBoard().indexOf(NullCardHandler.getNullSkillCard());
         decreaseUserPower(card);
         card.getOwner().getBoard().set(cidx, power);
         card.getOwner().getSkillBoard().set(sidx, (SkillCard) card.getCardInstance()); // Nambahin kartu ke skillBoard
