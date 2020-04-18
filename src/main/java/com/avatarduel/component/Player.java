@@ -226,7 +226,6 @@ public class Player{
             // ...Throw exception? 
         }
         else{
-
             CharacterHandCard card = (CharacterHandCard) hand.remove(idx);
             HandCardPlayer.playCard(card, attack);
             System.out.println(getName() + " summons " + card.getCardInstance().getName());
@@ -238,7 +237,6 @@ public class Player{
             // ...
         }
         else{
-
             SkillCard card = (SkillCard) hand.get(idx).getCardInstance();
             if (card.getEffect().equals(SkillCard.SKILL_AURA)){
                 HandCardPlayer.playCard((AuraHandCard) hand.remove(idx), target);

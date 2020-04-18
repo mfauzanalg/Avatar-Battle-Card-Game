@@ -33,6 +33,11 @@ public class LayoutController implements Initializable{
     private String HIDDEN_CARD = "src/main/resources/img/back.png";
     public static Phase gamePhase;
 
+    public void updateDeck(){
+        panelP1Controller.setPanel(AvatarDuel.P1);
+        panelP2Controller.setPanel(AvatarDuel.P2);
+    }
+
     public void changeColorPhase(String phase){
         switch (phase){
             case("draw"):
@@ -147,7 +152,7 @@ public class LayoutController implements Initializable{
         panelP2Controller.setPanel(AvatarDuel.P2);
 
         gamePhase = new Phase(AvatarDuel.P1, AvatarDuel.P2);
-        gamePhase.initialize(); updateAllHand();
+        gamePhase.initialize(); updateAllHand(); updateDeck();
         battlePhaseController.setColor(battlePhaseController.getDrawP(), gamePhase.getCurrentPlayer().getName());
         hideCard(handCard2Controller, AvatarDuel.P2.getHand().size());
     }
@@ -156,6 +161,7 @@ public class LayoutController implements Initializable{
         gamePhase.nextPhase();
         switch (gamePhase.getCurrentPhase()){
             case ("draw"):
+                updateDeck();
                 updateAllHand();
                 popDrawInfo();
                 changeColorPhase("draw");

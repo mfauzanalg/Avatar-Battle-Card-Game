@@ -98,7 +98,6 @@ public class TCardController {
             loadPict(card.getImagePath(), pict);
         }
 
-
         name.setText(card.getName());
         loadPict(blankPath, elmtPict);
 
@@ -128,19 +127,21 @@ public class TCardController {
 
     public void showAction(){
         try{
-            String actionBox;
+            String actionBox = null;
             String type = Card.cardClick1.getType();
-            if (!type.equals("")){
+            if (!type.equals("") && (Card.cardClick1 instanceof IHandCard)){
                 if (type.equals("land")) {actionBox = "HandLandAct.fxml"; }
                 else if (type.equals("character")) {actionBox = "HandCharAct.fxml";}
-                else {actionBox = "HandSkillAct.fxml";}
+                else if (type.equals("skill")) {actionBox = "HandSkillAct.fxml";}
 
                 Parent root = FXMLLoader.load(getClass().getClassLoader().getResource(actionBox));
                 Scene scene = new Scene(root);
                 Stage stage = new Stage();
-                stage.setTitle("Select");
+                stage.setTitle("");
                 stage.setScene(scene);
                 stage.show();
+            }else{
+                System.out.println(Card.cardClick1.getClass().getSimpleName());
             }
         } catch (IOException e){
             throw new IllegalStateException("Fauzan Keren" + e);

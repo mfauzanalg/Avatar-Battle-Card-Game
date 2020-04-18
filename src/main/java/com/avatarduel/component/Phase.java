@@ -45,23 +45,17 @@ public class Phase {
     public void nextPhase(){
         switch(currentPhase){
             case DRAW_PHASE :
-                System.out.println("Main Phase");
-                currentPhase = MAIN_PHASE;
+                mainPhase();
                 break;
-            
             case MAIN_PHASE :
-                System.out.println("Battle Phase");
-                currentPhase = BATTLE_PHASE;
+                battlePhase();
                 break;
-            
             case BATTLE_PHASE :
                 endPhase();
                 break;
-            
             case END_PHASE :
                 drawPhase();
                 break;
-            default :
         }
     }
 
@@ -72,7 +66,16 @@ public class Phase {
         System.out.println("Draw Phase");
         System.out.println(currentPlayer.getName() + " draws a card");
         currentPlayer.draw();
-//        nextPhase();
+    }
+
+    public void mainPhase(){
+        System.out.println("Main Phase");
+        currentPhase = MAIN_PHASE;
+    }
+
+    public void battlePhase(){
+        System.out.println("Battle Phase");
+        currentPhase = BATTLE_PHASE;
     }
 
     public boolean enemyBoardIsEmpty(){
@@ -92,15 +95,12 @@ public class Phase {
         currentPhase = END_PHASE;
         if (currentPlayer.getHand().size() >= 9){
             discardHand();
-            System.out.println("MASUEEKk");
         }
         currentPlayer.flipHand();
         currentPlayer.reset();
-//        nextPhase();
     }
 
     public void summonCharacter(int idx, boolean isAttackPosition){
-        
         if (currentPhase != MAIN_PHASE){
             System.out.println("You can only play cards during the Main Phase");
             // Throw error here?
@@ -125,7 +125,6 @@ public class Phase {
             // Throw error here?
         }
         else {
-
             SkillCard card = (SkillCard) currentPlayer.getHandAt(cidx).getCardInstance();
             BoardCard target;
             if (card.getEffect().equals(SkillCard.SKILL_DESTROY)){
@@ -146,7 +145,6 @@ public class Phase {
             // Throw error here?
         }
         else {
-
             currentPlayer.playLandCard(idx);
         }
     }
@@ -157,7 +155,6 @@ public class Phase {
             // Throw error here?
         }
         else {
-
             currentPlayer.rotate(idx);
         }
     }
@@ -178,7 +175,6 @@ public class Phase {
             // Throw error here?
         }
         else {
-
             currentPlayer.attack(cidx, getNextPlayer());
         }       
     }

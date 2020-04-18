@@ -27,7 +27,7 @@ public class WindowController {
         AvatarDuel.P1 = new Player("siapa", 80);
         AvatarDuel.P2 = new Player("fauzan", 80);
 
-        AvatarDuel.P1.getDeck().initializeDeck(34, 6, 16, 2, 2);
+        AvatarDuel.P1.getDeck().initializeDeck(24, 6, 16, 2, 2);
         AvatarDuel.P2.getDeck().initializeDeck(24, 6, 16, 2, 2);
 
         Parent layoutParent = FXMLLoader.load(getClass().getClassLoader().getResource("Layout.fxml"));
