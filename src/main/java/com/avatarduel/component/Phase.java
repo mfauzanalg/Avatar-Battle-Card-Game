@@ -315,6 +315,6 @@ public class Phase {
      * @return true if enemyplayer's deck is 0 or if enemy health is 0
      */
     public boolean isWinner(){
-        return (getNextPlayer().getHealth() <= 0 || getNextPlayer().getDeck().isEmpty());
+        return (getNextPlayer().getHealth() <= 0 || getNextPlayer().getDeck().getDeck().isEmpty());
     }
 }

@@ -41,6 +41,7 @@ public class LayoutController implements Initializable{
     public static boolean wantAttack = false;
     public static boolean wantSkill = false;
     public static boolean directAtk = false;
+    public static boolean finishGame = false;
 
     public void updateDeck(){
         sendMessage();
