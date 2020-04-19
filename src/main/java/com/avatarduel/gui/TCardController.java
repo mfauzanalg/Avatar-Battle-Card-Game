@@ -44,6 +44,10 @@ public class TCardController {
     private String blankPath = "src/main/resources/com/avatarduel/card/image/blank.png";
     private String hiddenPath = "src/main/resources/img/back.png";
 
+    void selectPane(){
+
+    }
+
     public String setElmtPict(String elmt){
         if (elmt.equals("ENERGY")){ return energyPath; }
         else if(elmt.equals("AIR")){ return airPath; }
