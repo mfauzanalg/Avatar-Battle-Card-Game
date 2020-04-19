@@ -2,6 +2,7 @@ package com.avatarduel.gui;
 
 import com.avatarduel.AvatarDuel;
 import com.avatarduel.component.Card;
+import com.avatarduel.component.CharacterCard;
 import com.avatarduel.component.Phase;
 import com.avatarduel.component.Player;
 import javafx.animation.RotateTransition;
@@ -44,8 +45,11 @@ public class LayoutController implements Initializable{
         panelP1Controller.setPanel(AvatarDuel.P1);
         panelP2Controller.setPanel(AvatarDuel.P2);
         updateOneHand(gamePhase.getCurrentPlayer());
-        updateOneChar(gamePhase.getCurrentPlayer());
-        updateOneSkill(gamePhase.getCurrentPlayer());
+//        updateOneChar(gamePhase.getCurrentPlayer());
+//        updateOneSkill(gamePhase.getCurrentPlayer());
+        updateAllChar();
+        updateAllCSkill();
+        updateInfo();
         System.out.println("refresh");
     }
 
@@ -182,6 +186,11 @@ public class LayoutController implements Initializable{
         }
     }
 
+    public void updateAllChar(){
+        updateOneChar(AvatarDuel.P1);
+        updateOneChar(AvatarDuel.P2);
+    }
+
     public void updateOneChar(Player P){
         if (P.equals(AvatarDuel.P1)){
 //            resetOneChar(AvatarDuel.P1);
@@ -193,23 +202,30 @@ public class LayoutController implements Initializable{
             }
         }
         else{
-            resetOneChar(AvatarDuel.P2);
+//            resetOneChar(AvatarDuel.P2);
             for (int i = 0; i < AvatarDuel.P2.getBoard().size(); i++){
                 charArea2Controller.loadCard(AvatarDuel.P2.getBoard().get(i).getCardInstance(), i, 2);
+                if (!AvatarDuel.P2.getBoard().get(i).getAttackPos()){
+                    charArea2Controller.rotateCard(i);
+                }
             }
         }
     }
 
+    public void updateAllCSkill(){
+        updateOneSkill(AvatarDuel.P1);
+        updateOneSkill(AvatarDuel.P2);
+    }
 
     public void updateOneSkill(Player P){
         if (P.equals(AvatarDuel.P1)){
-            resetOneSkill(AvatarDuel.P1);
+//            resetOneSkill(AvatarDuel.P1);
             for (int i = 0; i < AvatarDuel.P1.getBoard().size(); i++){
                 skillArea1Controller.loadCard(AvatarDuel.P1.getSkillBoard().get(i), i, 1);
             }
         }
         else{
-            resetOneSkill(AvatarDuel.P2);
+//            resetOneSkill(AvatarDuel.P2);
             for (int i = 0; i < AvatarDuel.P2.getBoard().size(); i++){
                 skillArea2Controller.loadCard(AvatarDuel.P2.getSkillBoard().get(i) , i, 2);
             }
@@ -235,15 +251,18 @@ public class LayoutController implements Initializable{
         detailInfoController.showCard(Card.cardHover);
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void updateInfo(){
         playerInfo1Controller.setName(AvatarDuel.P1.getName());
         playerInfo2Controller.setName(AvatarDuel.P2.getName());
         playerInfo1Controller.setHealth(Integer.toString(AvatarDuel.P1.getHealth()));
         playerInfo2Controller.setHealth(Integer.toString(AvatarDuel.P2.getHealth()));
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        updateInfo();
         panelP1Controller.setPanel(AvatarDuel.P1);
         panelP2Controller.setPanel(AvatarDuel.P2);
-
         gamePhase = new Phase(AvatarDuel.P1, AvatarDuel.P2);
         gamePhase.initialize(); updateAllHand();
         battlePhaseController.setColor(battlePhaseController.getDrawP(), gamePhase.getCurrentPlayer().getName());

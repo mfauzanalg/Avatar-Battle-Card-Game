@@ -172,6 +172,9 @@ public class TCardController {
             else if (place.equals("character") && this.cardOwn.equals(curPlayer) && "main".equals(curPhase)){
                 loadScene("RotateCard.fxml");
             }
+            else if (place.equals("character") && this.cardOwn.equals(curPlayer) && "battle".equals(curPhase)){
+                loadScene("AttackBox.fxml");
+            }
         } catch (IOException e){
             throw new IllegalStateException("Fauzan Keren" + e);
         }

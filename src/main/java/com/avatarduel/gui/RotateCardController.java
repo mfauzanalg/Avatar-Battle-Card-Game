@@ -9,10 +9,10 @@ public class RotateCardController {
     @FXML private Button confirmButton;
 
     public void onClicked(MouseEvent mouseEvent) {
-        //LayoutController.gamePhase.changeCardPosition(Card.clickIdx);
+        LayoutController.gamePhase.changeCardPosition(Card.clickIdx);
         System.out.println(Card.clickIdx);
-//        Stage stage = (Stage) confirmButton.getScene().getWindow();
-//        stage.close();
+        Stage stage = (Stage) confirmButton.getScene().getWindow();
+        stage.close();
     }
 }
 
