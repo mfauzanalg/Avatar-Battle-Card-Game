@@ -46,4 +46,12 @@ public class CharAreaController {
         }
     }
 
+    public void resetBorder() {
+        c1Controller.resetPane();
+        c2Controller.resetPane();
+        c3Controller.resetPane();
+        c4Controller.resetPane();
+        c5Controller.resetPane();
+        c6Controller.resetPane();
+    }
 }

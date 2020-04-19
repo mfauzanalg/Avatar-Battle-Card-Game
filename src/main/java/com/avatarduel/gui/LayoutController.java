@@ -1,10 +1,7 @@
 package com.avatarduel.gui;
 
 import com.avatarduel.AvatarDuel;
-import com.avatarduel.component.Card;
-import com.avatarduel.component.CharacterCard;
-import com.avatarduel.component.Phase;
-import com.avatarduel.component.Player;
+import com.avatarduel.component.*;
 import javafx.animation.RotateTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -43,9 +40,11 @@ public class LayoutController implements Initializable{
     public static Phase gamePhase;
     public static boolean wantAttack = false;
     public static boolean wantSkill = false;
-
+    public static boolean directAtk = false;
 
     public void updateDeck(){
+        sendMessage();
+        isDirectAttack();
         messageBox.setText("");
         panelP1Controller.setPanel(AvatarDuel.P1);
         panelP2Controller.setPanel(AvatarDuel.P2);
@@ -54,12 +53,32 @@ public class LayoutController implements Initializable{
         updateAllCSkill();
         updateInfo();
         System.out.println("refresh");
-        sendMessage();
+    }
+
+    public void isDirectAttack(){
+        if (directAtk && wantAttack){
+            gamePhase.attackPlayer(Card.clickIdx);
+            System.out.println("direct kok attack");
+            resetBorder();
+            directAtk = false;
+        }
+    }
+
+    public void resetBorder(){
+        charArea1Controller.resetBorder();
+        charArea2Controller.resetBorder();
+        skillArea1Controller.resetBorder();
+        skillArea2Controller.resetBorder();
+        handCard1Controller.resetBorder();
+        handCard1Controller.resetBorder();
     }
 
     public void sendMessage(){
-        if (wantAttack) messageBox.setText("Select Target to Attack");
-        if (wantSkill) messageBox.setText("Select Target to Use Skill Card");
+        if (wantAttack && !directAtk) messageBox.setText("Select Target to Attack");
+        else if (wantSkill) messageBox.setText("Select Target to Use Skill Card");
+        else if (!wantAttack || !wantSkill){
+            resetBorder();
+        }
     }
 
     public void changeColorPhase(String phase){

@@ -38,13 +38,23 @@
             <fx:include fx:id="playerInfo2" source="PlayerInfo.fxml" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="233.0" layoutY="105.0" prefHeight="218.0" prefWidth="129.0" style="-fx-border-color: red;">
+      <AnchorPane layoutX="233.0" layoutY="105.0" prefHeight="218.0" prefWidth="129.0" style="-fx-border-color: black; -fx-background-color: #ed8c8c;">
          <children>
+            <ImageView fitHeight="255.0" fitWidth="129.0" layoutX="2.0" opacity="0.5">
+               <image>
+                  <Image url="@img/deck.jpg" />
+               </image>
+            </ImageView>
             <fx:include fx:id="panelP2" source="Deck.fxml" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="1148.0" layoutY="288.0" prefHeight="218.0" prefWidth="118.0" style="-fx-border-color: red;">
+      <AnchorPane layoutX="1148.0" layoutY="288.0" prefHeight="218.0" prefWidth="118.0" style="-fx-border-color: black;-fx-background-color: #c2dbed;" translateX="-9.0">
          <children>
+            <ImageView fitHeight="255.0" fitWidth="129.0" layoutX="2.0" opacity="0.5">
+               <image>
+                  <Image url="@img/deck.jpg" />
+               </image>
+            </ImageView>
             <fx:include fx:id="panelP1" source="Deck.fxml" />
          </children>
       </AnchorPane>

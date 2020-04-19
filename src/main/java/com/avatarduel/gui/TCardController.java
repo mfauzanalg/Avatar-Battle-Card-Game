@@ -44,6 +44,14 @@ public class TCardController {
     private String blankPath = "src/main/resources/com/avatarduel/card/image/blank.png";
     private String hiddenPath = "src/main/resources/img/back.png";
 
+    void resetPane(){
+        mainPane.setStyle("-fx-border-color: black; -fx-border-width: 1");
+    }
+
+    void selectedPane(){
+        mainPane.setStyle("-fx-border-color: #c74646; -fx-border-width: 3");
+    }
+
     public String setElmtPict(String elmt){
         if (elmt.equals("ENERGY")){ return energyPath; }
         else if(elmt.equals("AIR")){ return airPath; }
@@ -200,6 +208,10 @@ public class TCardController {
 
     public void showAction(){
         try{
+            if(this.card.getId()<= 0){
+                return;
+            }
+            resetPane();
             String actionBox = null;
             String place = this.place;
             String type = Card.cardClick1.getType();
@@ -213,17 +225,31 @@ public class TCardController {
             if (LayoutController.wantAttack || LayoutController.wantSkill){
                 loadScene("TargetThis.fxml");
             }
-            else if (place.equals("hand") && this.cardOwn.equals(curPlayer) && "main".equals(curPhase)){
-                if (type.equals("land") && (!useLand)) {actionBox = "HandLandAct.fxml"; }
-                else if (type.equals("character")) {actionBox = "HandCharAct.fxml";}
-                else if (type.equals("skill")) {actionBox = "HandSkillAct.fxml";}
-                loadScene(actionBox);
-            }
-            else if (place.equals("character") && this.cardOwn.equals(curPlayer) && "main".equals(curPhase)){
-                loadScene("RotateCard.fxml");
-            }
-            else if (place.equals("character") && this.cardOwn.equals(curPlayer) && "battle".equals(curPhase) && this.attackPos && this.canAttack){
-                loadScene("AttackBox.fxml");
+            else if ("main".equals(curPhase)){
+                if (place.equals("hand") && this.cardOwn.equals(curPlayer)){
+                    if (type.equals("land") && (!useLand)) {actionBox = "HandLandAct.fxml"; }
+                    else if (type.equals("character")) {actionBox = "HandCharAct.fxml";}
+                    else if (type.equals("skill")) {actionBox = "HandSkillAct.fxml"; selectedPane();}
+                    loadScene(actionBox);
+                }
+                else if ("main".equals(curPhase)){
+                    if (place.equals("hand") && this.cardOwn.equals(curPlayer)){
+                        if (type.equals("land") && (!useLand)) {actionBox = "HandLandAct.fxml"; }
+                        else if (type.equals("character")) {actionBox = "HandCharAct.fxml";}
+                        else if (type.equals("skill")) {actionBox = "HandSkillAct.fxml"; selectedPane();}
+                        loadScene(actionBox);
+                    }
+                    else if (place.equals("character") && this.cardOwn.equals(curPlayer)){
+                        loadScene("RotateCard.fxml");
+                    }
+                    else if (place.equals("skill") && this.cardOwn.equals(curPlayer)){
+                        loadScene("DestroySkill.fxml");
+                    }
+                }
+                else if (place.equals("character") && this.cardOwn.equals(curPlayer) && "battle".equals(curPhase) && this.attackPos && this.canAttack){
+                    selectedPane();
+                    loadScene("AttackBox.fxml");
+                }
             }
         } catch (IOException e){
             throw new IllegalStateException("Fauzan Keren" + e);

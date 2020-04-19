@@ -18,7 +18,6 @@ public class TargetThisController {
         }
         else if (LayoutController.wantSkill){
             Card.trg = Card.clickIdx;
-            System.out.println("punya siapa hayoo: " + Card.cardOwner);
             int curPlayer;
             if (LayoutController.gamePhase.getCurrentPlayer().equals(AvatarDuel.P1)) curPlayer = 1;
             else curPlayer = 2;

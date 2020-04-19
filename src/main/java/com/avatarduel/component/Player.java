@@ -217,6 +217,9 @@ public class Player{
      */
     public void draw(){
         //pop card dari deck
+        if (deck.getDeck().size() == 0){
+            return;
+        }
         Card top = deck.getDeck().remove(0);
         HandCard factory = HandCardFactory.getFactory(top); // Gunakan factory method untuk menentukan factory yang akan digunakan
         // TODO, kasih exception kalo factory = null
@@ -286,7 +289,7 @@ public class Player{
     public void playCharacterCard(int idx, boolean attack){
     
         CharacterHandCard card = (CharacterHandCard) hand.get(idx);
-        if (!HandCardPlayer.validatePlay(card)){
+        if (HandCardPlayer.validatePlay(card)){
             System.out.println("You don't have enough power to summon " + card.getCardInstance().getName());
         }
         else{
@@ -305,7 +308,7 @@ public class Player{
     public void playSkillCard(int idx, BoardCard target){
 
         SkillCard card = (SkillCard) hand.get(idx).getCardInstance();
-        if (!HandCardPlayer.validatePlay(hand.get(idx))){
+        if (HandCardPlayer.validatePlay(hand.get(idx))){
             System.out.println("You don't have enough power to play " + card.getName());
         }
         else {

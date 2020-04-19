@@ -37,4 +37,15 @@ public class HandCardController {
         }
     }
 
+    public void resetBorder() {
+        h1Controller.resetPane();
+        h2Controller.resetPane();
+        h3Controller.resetPane();
+        h4Controller.resetPane();
+        h5Controller.resetPane();
+        h6Controller.resetPane();
+        h7Controller.resetPane();
+        h8Controller.resetPane();
+        h9Controller.resetPane();
+    }
 }
