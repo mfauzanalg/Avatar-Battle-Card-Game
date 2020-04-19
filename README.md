@@ -1,7 +1,10 @@
 # IF2210 Project Kelompok 9 K01
 
+## Sturcture
+
+
 ## Prerequisite
-Java 8
+Java 8,
 JavaFx
 
 ## How to Compile and Run Program
