@@ -6,7 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class HandCharActConrtroller {
+public class HandCharActController {
     @FXML private Button atkButton;
     @FXML private Button defButton;
 

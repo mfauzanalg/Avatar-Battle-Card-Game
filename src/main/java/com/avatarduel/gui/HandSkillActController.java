@@ -1,6 +1,7 @@
 package com.avatarduel.gui;
 
 import com.avatarduel.component.Card;
+import com.avatarduel.component.Player;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
