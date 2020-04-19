@@ -23,4 +23,13 @@ public class SkillAreaController {
             case 5: s6Controller.loadCard(card,5, p, "skill"); break;
         }
     }
+
+    public void resetBorder() {
+        s1Controller.resetPane();
+        s2Controller.resetPane();
+        s3Controller.resetPane();
+        s4Controller.resetPane();
+        s5Controller.resetPane();
+        s6Controller.resetPane();
+    }
 }

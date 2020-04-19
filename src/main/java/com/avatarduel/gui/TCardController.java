@@ -44,8 +44,12 @@ public class TCardController {
     private String blankPath = "src/main/resources/com/avatarduel/card/image/blank.png";
     private String hiddenPath = "src/main/resources/img/back.png";
 
-    void selectPane(){
+    void resetPane(){
+        mainPane.setStyle("-fx-border-color: black; -fx-border-width: 1");
+    }
 
+    void selectedPane(){
+        mainPane.setStyle("-fx-border-color: #c74646; -fx-border-width: 3");
     }
 
     public String setElmtPict(String elmt){
@@ -204,6 +208,7 @@ public class TCardController {
 
     public void showAction(){
         try{
+            resetPane();
             String actionBox = null;
             String place = this.place;
             String type = Card.cardClick1.getType();
@@ -221,7 +226,7 @@ public class TCardController {
                 if (place.equals("hand") && this.cardOwn.equals(curPlayer)){
                     if (type.equals("land") && (!useLand)) {actionBox = "HandLandAct.fxml"; }
                     else if (type.equals("character")) {actionBox = "HandCharAct.fxml";}
-                    else if (type.equals("skill")) {actionBox = "HandSkillAct.fxml";}
+                    else if (type.equals("skill")) {actionBox = "HandSkillAct.fxml"; selectedPane();}
                     loadScene(actionBox);
                 }
                 else if (place.equals("character") && this.cardOwn.equals(curPlayer)){
@@ -232,6 +237,7 @@ public class TCardController {
                 }
             }
             else if (place.equals("character") && this.cardOwn.equals(curPlayer) && "battle".equals(curPhase) && this.attackPos && this.canAttack){
+                selectedPane();
                 loadScene("AttackBox.fxml");
             }
         } catch (IOException e){
