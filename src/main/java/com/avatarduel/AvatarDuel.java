@@ -19,6 +19,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import com.avatarduel.util.CSVReader;
@@ -111,9 +112,12 @@ public class AvatarDuel extends Application {
       this.loadPowerUpCard();
       this.initializeDataBase();
 
+      Image image = new Image("/img/icon.png");
+
       Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Window.fxml"));
       Scene scene = new Scene(root);
       stage.setTitle("Avatar Duel Kelompok 9");
+      stage.getIcons().add(image);
       stage.setScene(scene);
       stage.show();
     } catch (IOException | URISyntaxException e){
