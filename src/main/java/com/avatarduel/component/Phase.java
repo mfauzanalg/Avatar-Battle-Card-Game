@@ -84,7 +84,7 @@ public class Phase {
 
     /**
      * Moves to the next phase.
-     * The phase order is Draw Phase -> Main Phase -> Battle Phase -> End Phase -> Repeat
+     * The phase order is Draw Phase, Main Phase, Battle Phase, End Phase, Repeat
      */
     public void nextPhase(){
         switch(currentPhase){
@@ -223,7 +223,7 @@ public class Phase {
 
     /**
      * Takes the index of the land card in hand and plays it
-     * @param idx
+     * @param idx index of land card in hand
      */
     public void playLandCard(int idx){
         if (currentPhase != MAIN_PHASE){

@@ -18,7 +18,7 @@ public interface ISummoned {
 
     /**
      * Returns the summoned character this class represents
-     * @return
+     * @return Card class that stores info of character card
      */
     Card getCardInstance();
 }

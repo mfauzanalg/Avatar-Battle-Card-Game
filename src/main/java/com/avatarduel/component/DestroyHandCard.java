@@ -16,7 +16,7 @@ public class DestroyHandCard implements IHandCard {
     /**
      * Creates a new DestroyHandCard with the DestroySkillCard that is added to the player's hand as card, and said player as the owner 
      * @param card The DestroySkillCard that will be added to the player's hand
-     * @param _target The player in question
+     * @param _owner The player in question
      */
     public DestroyHandCard(DestroySkillCard card, Player _owner){
         skill = card;
@@ -42,7 +42,7 @@ public class DestroyHandCard implements IHandCard {
 
     /**
      * Returns the owner of this card
-     * @return
+     * @return Player who owns this card
      */
     public Player getOwner(){
         return owner;

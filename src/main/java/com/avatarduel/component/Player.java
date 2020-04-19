@@ -171,6 +171,7 @@ public class Player{
 
 	/**
      * Returns the player's hand
+     * @return List of IHandCard
      */
     public List<IHandCard> getHand() {return this.hand;}
     /**
@@ -199,7 +200,7 @@ public class Player{
     public List<SkillCard> getSkillBoard(){ return skillBoard; }
     /**
      * Returns the player's card at a specific index in their skill board
-     * @param idx
+     * @param idx targeted index
      * @return SkillCard in board index idx
      */
     public SkillCard getSkillBoardCardAt(int idx){return skillBoard.get(idx);}
