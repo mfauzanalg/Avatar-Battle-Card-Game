@@ -249,7 +249,7 @@ public class LayoutController implements Initializable{
     }
 
     public void onHover(){
-        detailInfoController.showCard(Card.cardHover);
+        detailInfoController.showCard(Card.cardHover, Card.atk, Card.def);
     }
 
     public void updateInfo(){

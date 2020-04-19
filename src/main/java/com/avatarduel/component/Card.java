@@ -100,4 +100,6 @@ public class Card {
     public static Card cardClick1 = new Card();
     public static int clickIdx = -1;
     public static int targetidx = -1;
+    public static int atk = -1;
+    public static int def = -1;
 }
