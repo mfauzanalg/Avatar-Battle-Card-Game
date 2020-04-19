@@ -28,6 +28,6 @@ public class DeckController {
         earthPow.setText(P.getCurrentElement("EARTH") + "/" + P.getMaxElement("EARTH"));
         firePow.setText(P.getCurrentElement("FIRE") + "/" + P.getMaxElement("FIRE"));
         waterPow.setText(P.getCurrentElement("WATER") + "/" + P.getMaxElement("WATER"));
-        deck.setText(P.getDeck().getDeck().size() + "/50");
+        deck.setText(P.getDeck().getDeck().size() + "/60");
     }
 }

@@ -315,7 +315,10 @@ public class TCardController {
             Card.clickIdx = this.indeks;
             Card.cardOwner = this.owner;
 
-            if (LayoutController.wantAttack || LayoutController.wantSkill){
+            if (LayoutController.wantAttack && LayoutController.directAtk){
+                loadScene("DirectAttack.fxml");
+            }
+            else if (LayoutController.wantAttack || LayoutController.wantSkill){
                 loadScene("TargetThis.fxml");
             }
             else if ("main".equals(curPhase)) {

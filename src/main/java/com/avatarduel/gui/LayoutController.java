@@ -103,6 +103,7 @@ public class LayoutController implements Initializable{
             gamePhase.attackPlayer(Card.clickIdx);
             System.out.println("direct kok attack");
             resetBorder();
+            wantAttack = false;
         }
     }
 
@@ -355,6 +356,7 @@ public class LayoutController implements Initializable{
      * @throws IOException to load new window
      */
     public void nextPhase() throws IOException {
+        resetBorder();
         gamePhase.nextPhase();
         switch (gamePhase.getCurrentPhase()){
             case ("draw"):
@@ -370,6 +372,7 @@ public class LayoutController implements Initializable{
                 changeColorPhase("battle");
                 break;
             case("end"):
+                directAtk = false;
                 updateOneHand(gamePhase.getCurrentPlayer());
                 changeColorPhase("end");
                 break;

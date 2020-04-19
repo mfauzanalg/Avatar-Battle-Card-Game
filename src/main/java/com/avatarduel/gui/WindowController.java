@@ -36,8 +36,8 @@ public class WindowController {
         AvatarDuel.P1 = new Player(player1.getText(), 80);
         AvatarDuel.P2 = new Player(player2.getText(), 80);
 
-        AvatarDuel.P1.getDeck().initializeDeck(24, 6, 16, 2, 2);
-        AvatarDuel.P2.getDeck().initializeDeck(24, 6, 16, 2, 2);
+        AvatarDuel.P1.getDeck().initializeDeck(24, 6, 26, 2, 2);
+        AvatarDuel.P2.getDeck().initializeDeck(24, 6, 26, 2, 2);
 
         Parent layoutParent = FXMLLoader.load(getClass().getClassLoader().getResource("Layout.fxml"));
         Scene layoutScene = new Scene(layoutParent);
