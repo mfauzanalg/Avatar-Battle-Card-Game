@@ -334,7 +334,7 @@ public class Phase {
      * @param idx skill card index
      */
     public void removeBoardSkill(int idx){
-        currentPlayer.removeBoardSkill(idx);
+        currentPlayer.removeBoardSkill(idx, getNextPlayer());
     }
 
     /**

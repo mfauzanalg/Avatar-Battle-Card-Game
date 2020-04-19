@@ -245,17 +245,30 @@ public class Player{
     }
 
     /**
-     * Removes a skill card in board at index idx
+     * Removes a skill card in board at index idx and then removes it from list of skills
+     * If no card in the player's board has said skill, search enemy's board instead
      * @param idx index of skill card in board to remove
+     * @param enemy Enemy of currentPlayer
      */
-    public void removeBoardSkill(int idx){
+    public void removeBoardSkill(int idx, Player enemy){
         //membuang kartu skill di board;
         SkillCard card = skillBoard.get(idx);
+        boolean found = false;
         skillBoard.set(idx, NullCardHandler.getNullSkillCard());
         for (BoardCard chara : board){
             if (chara.getSkills().contains(card)){
+                found = true;
                 chara.removeSkill(card);
+                break;
             }
+        }
+        if (!found){
+            for (BoardCard echara : enemy.getBoard()){
+                if (echara.getSkills().contains(card)){
+                    echara.removeSkill(card);
+                    break;
+                }
+            }   
         }
     }
 
@@ -370,5 +383,6 @@ public class Player{
             enemyHealth = 0;
         } 
         enemy.setHealth(enemyHealth);
+        getBoardCardAt(idx).setCanAttack(false);
     }
 }

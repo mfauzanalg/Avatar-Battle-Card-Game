@@ -22,6 +22,15 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * LayoutController serves as a controller for Layout.fxml scene builder
+ * Layout shows everythin on the arena
+ * @see com.avatarduel.component.Phase
+ * @see Card
+ * @see LayoutController
+ * @see DrawInfoController
+ */
+
 public class LayoutController implements Initializable{
     @FXML private Text detailText;
     @FXML private Text detailName;
@@ -62,6 +71,8 @@ public class LayoutController implements Initializable{
         stage.show();
     }
 
+ 
+
     public void updateDeck() throws IOException {
         sendMessage();
         isDirectAttack();
@@ -81,14 +92,21 @@ public class LayoutController implements Initializable{
         }
     }
 
+    /**
+     * Function to validate if a card is playing a direct attack against the enemy player
+     */
+
     public void isDirectAttack(){
         if (directAtk && wantAttack){
             gamePhase.attackPlayer(Card.clickIdx);
             System.out.println("direct kok attack");
             resetBorder();
-            directAtk = false;
         }
     }
+
+    /**
+     * Function to reset the border of the player
+     */
 
     public void resetBorder(){
         charArea1Controller.resetBorder();
@@ -99,6 +117,10 @@ public class LayoutController implements Initializable{
         handCard1Controller.resetBorder();
     }
 
+    /**
+     * Function to send message to player when a target is needed when the player cast a skill card
+     */
+
     public void sendMessage(){
         if (wantAttack && !directAtk) messageBox.setText("Select Target to Attack");
         else if (wantSkill) messageBox.setText("Select Target to Use Skill Card");
@@ -106,6 +128,10 @@ public class LayoutController implements Initializable{
             resetBorder();
         }
     }
+
+    /**
+     * Function to change the color of the current phase
+     */
 
     public void changeColorPhase(String phase){
         switch (phase){
@@ -128,10 +154,20 @@ public class LayoutController implements Initializable{
         }
     }
 
+    /**
+     * Function to show info of the card drawn
+     */
+
 
     public void popDrawInfo() throws IOException {
         loadScene("DrawInfo.fxml");
     }
+
+    /**
+     * Function to update the deck of the player
+     * @param hand is parameter that contain a set of card that a player holds in his hand
+     * @param size size of number of the card that contained in the hand
+     */
 
     public void hideCard(HandCardController hand, int size){
         Card hiddenCard = new Card();
@@ -141,6 +177,10 @@ public class LayoutController implements Initializable{
         }
     }
 
+    /**
+     * Function to hide the changed turn
+     */
+
     public void hideChangeTurn(){
         if (gamePhase.getCurrentPlayer().equals(AvatarDuel.P1)){
             hideCard(handCard2Controller, AvatarDuel.P2.getHand().size());
@@ -149,10 +189,19 @@ public class LayoutController implements Initializable{
         }
     }
 
+    /**
+     * Function to reset all the player's card on his hand
+     */
+
     public void resetAll() {
         resetOneHand(AvatarDuel.P1);
         resetOneHand(AvatarDuel.P2);
     }
+
+    /**
+     * Function to reset the hand of the player
+     * @param P player whom the hand card will be reset
+     */
 
     public void resetOneHand(Player P){
         int fromIndex1 = AvatarDuel.P1.getHand().size();
@@ -170,6 +219,11 @@ public class LayoutController implements Initializable{
         }
     }
 
+    /**
+     * Function to reset the hand of the player
+     * @param P player whom the char card
+     */
+
     public void resetOneChar(Player P){
         int fromIndex1 = AvatarDuel.P1.getBoard().size();
         int fromIndex2 = AvatarDuel.P2.getBoard().size();
@@ -185,6 +239,11 @@ public class LayoutController implements Initializable{
             }
         }
     }
+
+    /**
+     * Function to reset the hand of the player
+     * @param P player whom the skill card will be reset
+     */
 
     public void resetOneSkill(Player P){
         int fromIndex1 = AvatarDuel.P1.getBoard().size();
@@ -202,10 +261,19 @@ public class LayoutController implements Initializable{
         }
     }
 
+    /**
+     * Function to update all the card in the hand of the player
+     */
+
+
     public void updateAllHand() {
         updateOneHand(AvatarDuel.P1);
         updateOneHand(AvatarDuel.P2);
     }
+
+    /**
+     * Function to initialize char area
+     */
 
     public void initialCharArea(){
         Card emptyCard = new Card();
@@ -215,6 +283,10 @@ public class LayoutController implements Initializable{
         }
     }
 
+    /**
+     * Function to initialize skill area
+     */
+
     public void initialSkillArea(){
         Card emptyCard = new Card();
         for (int i = 0; i < 6; i++){
@@ -223,10 +295,19 @@ public class LayoutController implements Initializable{
         }
     }
 
+    /**
+     * Function to update all char in area
+     */
+
     public void updateAllChar(){
         updateOneChar(AvatarDuel.P1);
         updateOneChar(AvatarDuel.P2);
     }
+
+    /**
+     * Function to update char
+     * @param P update charater card of a player
+     */
 
     public void updateOneChar(Player P){
         if (P.equals(AvatarDuel.P1)){
@@ -253,10 +334,19 @@ public class LayoutController implements Initializable{
         }
     }
 
+    /**
+     * Function to update all character skill
+     */
+
     public void updateAllCSkill(){
         updateOneSkill(AvatarDuel.P1);
         updateOneSkill(AvatarDuel.P2);
     }
+
+    /**
+     * Function to update skill card
+     * @param P update skill card of a player
+     */
 
     public void updateOneSkill(Player P){
         if (P.equals(AvatarDuel.P1)){
@@ -273,6 +363,11 @@ public class LayoutController implements Initializable{
         }
     }
 
+    /**
+     * Function to update one hand card
+     * @param P update hand card of a player
+     */
+
     public void updateOneHand(Player P){
         if (P.equals(AvatarDuel.P1)){
             resetOneHand(AvatarDuel.P1);
@@ -288,9 +383,17 @@ public class LayoutController implements Initializable{
         }
     }
 
+    /**
+     * Function to know when a card is hovered over
+     */
+
     public void onHover(){
         detailInfoController.showCard(Card.cardHover, Card.atk, Card.def);
     }
+
+    /**
+     * Function to update info of a card
+     */
 
     public void updateInfo(){
         playerInfo1Controller.setName(AvatarDuel.P1.getName());
@@ -298,6 +401,12 @@ public class LayoutController implements Initializable{
         playerInfo1Controller.setHealth(Integer.toString(AvatarDuel.P1.getHealth()));
         playerInfo2Controller.setHealth(Integer.toString(AvatarDuel.P2.getHealth()));
     }
+
+    /**
+     * Function to update skill card
+     * @param location contains path of the image of thhe card
+     * @param resources contains resources needed
+     */
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -315,6 +424,10 @@ public class LayoutController implements Initializable{
         hideCard(handCard2Controller, AvatarDuel.P2.getHand().size());
         initialCharArea(); initialSkillArea();
     }
+
+    /**
+     * Function switch to next phase
+     */
 
     public void nextPhase() throws IOException {
         gamePhase.nextPhase();

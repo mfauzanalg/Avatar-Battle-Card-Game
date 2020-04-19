@@ -2,7 +2,14 @@ package com.avatarduel.gui;
 
 import com.avatarduel.component.BoardCard;
 import com.avatarduel.component.Card;
+import com.avatarduel.component.SummonedCharacter;
 import javafx.fxml.FXML;
+
+/**
+ * CharAreaController serves as a controller for CharArea.fxml scene builder
+ * CharArea represents a row and 6 colunns of char card the arena
+ * @see TCardController
+ */
 
 public class CharAreaController {
     @FXML private TCardController c1Controller;
@@ -11,6 +18,13 @@ public class CharAreaController {
     @FXML private TCardController c4Controller;
     @FXML private TCardController c5Controller;
     @FXML private TCardController c6Controller;
+
+    /**
+     * Function to switch between case of the input parameter x (index of the card in the arena)
+     * @param card is parameter for which card is the input
+     * @param x is the index of the card in the arena
+     * @param p is the player that own the card
+     */
 
     public void loadCard(Card card, int x, int p){
         card.setPlace("character");
@@ -24,6 +38,13 @@ public class CharAreaController {
         }
     }
 
+    /**
+     * Function to switch between case of the input parameter x (index of the card in the arena)
+     * @param card is parameter for which card is the input
+     * @param x is the index of the card in the arena
+     * @param p is the player that own the card
+     */
+
     public void loadBoard(BoardCard card, int x, int p){
         switch (x){
             case 0: c1Controller.loadBoard(card,0, p, "character"); break;
@@ -35,6 +56,12 @@ public class CharAreaController {
         }
     }
 
+    /**
+     * Function to switch between case of the input parameter x (index of the card in the arena that will be rotated)
+     * @param x is the condition of the card
+     * @param pos is the index of the card in the arena
+     */
+
     public void rotateCard(int x, boolean pos){
         switch (x){
             case 0: c1Controller.rotateCard(pos); break;
@@ -45,6 +72,10 @@ public class CharAreaController {
             case 5: c6Controller.rotateCard(pos); break;
         }
     }
+
+    /**
+     * Function to switch between case of the input parameter x (index of the card in the arena that will be resetted)
+     */
 
     public void resetBorder() {
         c1Controller.resetPane();
