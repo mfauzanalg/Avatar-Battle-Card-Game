@@ -44,6 +44,7 @@ public class DetailInfoController {
     /**
      * Function to set a picture of the element of the card that has  been chosen
      * @param elmt is parameter for the element of the card that has been chosen
+     * @return return path of the element
      */
     public String setElmtPict(String elmt){
         if (elmt.equals("ENERGY")){ return energyPath; }
@@ -65,6 +66,8 @@ public class DetailInfoController {
     /**
      * Function to show the landcard if the card that has been chosen has the type of charcard
      * @param card is parameter for the card that has been chosen
+     * @param atk is the card atk
+     * @param def is the card def
      */
     public void showCharCard(CharacterCard card, int atk, int def){
         loadPict(setElmtPict(card.getElement()), elmtPict);
@@ -126,6 +129,8 @@ public class DetailInfoController {
     /**
      * Function to show the landcard if the card that has been chosen has the type of card
      * @param card is parameter for the card that has been chosen
+     * @param atk this card attack value
+     * @param def this card def value
      */
     public void showCard(Card card, int atk, int def){
         if (card.getId() != 0) {

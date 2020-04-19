@@ -61,6 +61,7 @@ public class LayoutController implements Initializable{
     /**
      * load new Scene in new Window
      * @param fxml target fxml
+     * @throws IOException to load new window
      */
     public void loadScene (String fxml) throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource(fxml));
@@ -74,6 +75,7 @@ public class LayoutController implements Initializable{
 
     /**
      * Function to Update PLayer Deck and Most of the window
+     * @throws IOException to load new window
      */
     public void updateDeck() throws IOException {
         sendMessage();
@@ -129,6 +131,7 @@ public class LayoutController implements Initializable{
 
     /**
      * Function to change the color of the current phase
+     * @param phase current player phase
      */
     public void changeColorPhase(String phase){
         switch (phase){
@@ -153,6 +156,7 @@ public class LayoutController implements Initializable{
 
     /**
      * Function to show info of the card drawn
+     * @throws IOException to load new window
      */
     public void popDrawInfo() throws IOException {
         loadScene("DrawInfo.fxml");
@@ -346,6 +350,7 @@ public class LayoutController implements Initializable{
 
     /**
      * Function switch to next phase
+     * @throws IOException to load new window
      */
     public void nextPhase() throws IOException {
         gamePhase.nextPhase();

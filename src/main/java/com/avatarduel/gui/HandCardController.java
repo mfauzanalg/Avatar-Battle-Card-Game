@@ -31,6 +31,7 @@ public class HandCardController {
      * Function to load the card that is needed
      * @param card contains the info of the card
      * @param p contains position of the card
+     * @param x indeks of the card
      */
     public void loadCard(Card card, int x, int p){
 //        card.setIdx(x);

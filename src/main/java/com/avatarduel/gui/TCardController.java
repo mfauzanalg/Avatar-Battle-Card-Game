@@ -88,6 +88,7 @@ public class TCardController {
     /**
      * Function to load scene
      * @param fxml fxml that will be loaded
+     * @throws IOException to load new window
      */
 
     public void loadScene (String fxml) throws IOException {
@@ -281,6 +282,7 @@ public class TCardController {
 
     /**
      * Function to rotate card
+     * @param toDefPost cahnge to this position
      */
     public void rotateCard(boolean toDefPost){
         if (toDefPost){

@@ -68,6 +68,7 @@ public class Phase {
     /**
      * Initializes the game.
      * Sets current phase to draw phase and each player draws 7 cards from the top of their deck
+     * @throws IOException to load new window
      */
     public void initialize() throws IOException {
         currentPhase = DRAW_PHASE;
@@ -90,6 +91,7 @@ public class Phase {
     /**
      * Moves to the next phase.
      * The phase order is Draw Phase, Main Phase, Battle Phase, End Phase, Repeat
+     * @throws IOException to load new window
      */
     public void nextPhase() throws IOException {
         switch(currentPhase){
@@ -111,6 +113,7 @@ public class Phase {
     /**
      * load new Scene in new Window
      * @param fxml target fxml
+     * @throws IOException to load new window
      */
     public void loadScene (String fxml) throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource(fxml));
@@ -124,6 +127,7 @@ public class Phase {
     /**
      * Resets useLand and sets the current player to the next player.
      * And then said player draws a card from their deck
+     * @throws IOException to load new window
      */
     public void drawPhase() throws IOException {
         setUseLand(false);
