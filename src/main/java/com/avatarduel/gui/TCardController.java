@@ -63,6 +63,59 @@ public class TCardController {
         container.setImage(image);
     }
 
+    public void initialLoad(Card card, int x, int p, String place){
+        this.card = card;
+        this.indeks = x;
+        this.owner = p;
+        this.place = place;
+        if (p == 1) this.cardOwn = AvatarDuel.P1;
+        else if (p == 2) this.cardOwn = AvatarDuel.P2;
+        attrib.setText("");
+        loadPict(blankPath, cardBackground);
+    }
+
+    public void loadBoard(BoardCard card, int x, int p, String place){
+        initialLoad(card.getCardInstance(), x, p, place);
+        name.setText("");
+        loadPict(blankPath, elmtPict);
+        loadPict(blankPath, pict);
+        CharacterCard cardInstance =  (CharacterCard) card.getCardInstance();
+
+        if (card.getCardInstance().getId() > 0){
+            loadPict(cardInstance.getImagePath(), pict);
+            loadPict(setElmtPict(card.getCardInstance().getElement()), elmtPict);
+            name.setText(cardInstance.getName());
+            attrib.setText("Atk/Def/Pow \n" + card.getAttackValue() + "/ " + card.getDefenseValue() + "/" + cardInstance.getPower());
+        }
+
+
+    }
+
+    public void loadCard(Card card, int x, int p, String place){
+        initialLoad(card, x, p, place);
+
+        if (card.getImagePath().equals(hiddenPath)){
+            loadPict(card.getImagePath(), cardBackground);
+        }
+        else{
+            loadPict(card.getImagePath(), pict);
+        }
+
+        name.setText(card.getName());
+        loadPict(blankPath, elmtPict);
+
+        String type = card.getType();
+        if (type.equals("land")){
+            this.loadLandCard(card);
+        }
+        else if (type.equals("character")){
+            this.loadCharCard((CharacterCard) card);
+        }
+        else if (type.equals("skill")){
+            this.loadSkillCard((SkillCard) card);
+        }
+    }
+
     public void loadLandCard(Card card){
         loadPict(setElmtPict(card.getElement()), elmtPict);
         attrib.setText("this is " + card.getElement() + " Land Card");
@@ -101,45 +154,6 @@ public class TCardController {
         loadPict(setElmtPict(card.getElement()), elmtPict);
         elmt.setText(card.getElement());
         attrib.setText("This is Destroy Card Pow : " + card.getPower());
-    }
-
-    public void loadCard(BoardCard card, int x, int p, String place){
-        CharacterCard newVal =  (CharacterCard) card.getCardInstance();
-        newVal.setAttack(card.getAttackValue());
-        newVal.setDefense(card.getDefenseValue());
-        loadCard(newVal, x, p, place);
-    }
-
-    public void loadCard(Card card, int x, int p, String place){
-        this.card = card;
-        this.indeks = x;
-        this.owner = p;
-        this.place = place;
-        if (p == 1) this.cardOwn = AvatarDuel.P1;
-        else if (p == 2) this.cardOwn = AvatarDuel.P2;
-        attrib.setText("");
-        loadPict(blankPath, cardBackground);
-
-        if (card.getImagePath().equals(hiddenPath)){
-            loadPict(card.getImagePath(), cardBackground);
-        }
-        else{
-            loadPict(card.getImagePath(), pict);
-        }
-
-        name.setText(card.getName());
-        loadPict(blankPath, elmtPict);
-
-        String type = card.getType();
-        if (type.equals("land")){
-            this.loadLandCard(card);
-        }
-        else if (type.equals("character")){
-            this.loadCharCard((CharacterCard) card);
-        }
-        else if (type.equals("skill")){
-            this.loadSkillCard((SkillCard) card);
-        }
     }
 
     public void hover(MouseEvent mouseEvent) {

@@ -195,16 +195,17 @@ public class LayoutController implements Initializable{
         if (P.equals(AvatarDuel.P1)){
 //            resetOneChar(AvatarDuel.P1);
             for (int i = 0; i < AvatarDuel.P1.getBoard().size(); i++){
-                charArea1Controller.loadCard(AvatarDuel.P1.getBoard().get(i), i, 1);
+                charArea1Controller.loadBoard(AvatarDuel.P1.getBoard().get(i), i, 1);
                 if (!AvatarDuel.P1.getBoard().get(i).getAttackPos()){
                     charArea1Controller.rotateCard(i);
                 }
+                if (i == 0) System.out.println("ATK sekarang :" + AvatarDuel.P1.getBoard().get(i).getAttackValue());
             }
         }
         else{
 //            resetOneChar(AvatarDuel.P2);
             for (int i = 0; i < AvatarDuel.P2.getBoard().size(); i++){
-                charArea2Controller.loadCard(AvatarDuel.P2.getBoard().get(i).getCardInstance(), i, 2);
+                charArea2Controller.loadBoard(AvatarDuel.P2.getBoard().get(i), i, 2);
                 if (!AvatarDuel.P2.getBoard().get(i).getAttackPos()){
                     charArea2Controller.rotateCard(i);
                 }
