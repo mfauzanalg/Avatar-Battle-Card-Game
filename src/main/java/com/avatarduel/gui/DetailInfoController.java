@@ -8,6 +8,12 @@ import javafx.scene.text.Text;
 
 import java.io.File;
 
+/**
+ * DetailInfoController serves as a controller for DetailInfo.fxml scene builder
+ * DetailInfo represents 2 boxes that contain the information of the hovered card
+ * @see TCardController
+ */
+
 public class DetailInfoController {
     @FXML private Text detailDesc;
     @FXML private Text detailStat;
@@ -25,11 +31,22 @@ public class DetailInfoController {
     private String waterPath = "src/main/resources/img/Elements/Water.png";
     private String blankPath = "src/main/resources/com/avatarduel/card/image/blank.png";
 
+    /**
+     * Function to load the picture of the selected card
+     * @param path is parameter for the path of the image of the card that selected
+     * @param container is the imageview container of where the picture of the card will be displayed
+     */
+
     public void loadPict (String path, ImageView container){
         File file = new File (path);
         Image image = new Image(file.toURI().toString());
         container.setImage(image);
     }
+
+    /**
+     * Function to set a picture of the element of the card that has  been chosen
+     * @param elmt is parameter for the element of the card that has been chosen
+     */
 
     public String setElmtPict(String elmt){
         if (elmt.equals("ENERGY")){ return energyPath; }
@@ -39,15 +56,30 @@ public class DetailInfoController {
         else { return waterPath; }
     }
 
+    /**
+     * Function to show the landcard if the card that has been chosen has the type of landcard
+     * @param card is parameter for the card that has been chosen
+     */
+
     public void showLandCard(Card card){
         loadPict(setElmtPict(card.getElement()), elmtPict);
         detailStat.setText("This is " + card.getElement() + " Land Card");
     }
 
+    /**
+     * Function to show the landcard if the card that has been chosen has the type of charcard
+     * @param card is parameter for the card that has been chosen
+     */
+
     public void showCharCard(CharacterCard card, int atk, int def){
         loadPict(setElmtPict(card.getElement()), elmtPict);
         detailStat.setText("Atk/Def/Pow " + space + atk + "/ " + def + "/" + card.getPower());
     }
+
+    /**
+     * Function to show the landcard if the card that has been chosen has the type of skillcard
+     * @param card is parameter for the card that has been chosen
+     */
 
     public void showSkillCard(SkillCard card){
         String eff = card.getEffect();
@@ -62,12 +94,22 @@ public class DetailInfoController {
         }
     }
 
+    /**
+     * Function to show the landcard if the card that has been chosen has the type of auracard
+     * @param card is parameter for the card that has been chosen
+     */
+
     public void showAuraCard(AuraSkillCard card){
         File file = new File (setElmtPict(card.getElement()));
         Image image = new Image(file.toURI().toString());
         elmtPict.setImage(image);
         detailStat.setText("Atk/Def/Pow " + space + card.getAttack() + "/ " + card.getDefense() + "/" + card.getPower());
     }
+
+    /**
+     * Function to show the landcard if the card that has been chosen has the type of destroycard
+     * @param card is parameter for the card that has been chosen
+     */
 
     public void showDestroyCard(DestroySkillCard card){
         File file = new File (setElmtPict(card.getElement()));
@@ -77,6 +119,11 @@ public class DetailInfoController {
         detailStat.setText("Pow : " + card.getPower());
     }
 
+    /**
+     * Function to show the landcard if the card that has been chosen has the type of powercard
+     * @param card is parameter for the card that has been chosen
+     */
+
     public void showPowerUpCard(PowerUpSkillCard card){
         File file = new File (setElmtPict(card.getElement()));
         Image image = new Image(file.toURI().toString());
@@ -85,6 +132,10 @@ public class DetailInfoController {
         detailStat.setText("Pow : " + card.getPower());
     }
 
+    /**
+     * Function to show the landcard if the card that has been chosen has the type of card
+     * @param card is parameter for the card that has been chosen
+     */
 
     public void showCard(Card card, int atk, int def){
         if (card.getId() != 0) {
