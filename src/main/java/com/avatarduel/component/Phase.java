@@ -164,7 +164,6 @@ public class Phase {
         System.out.println("Battle Phase");
         if (enemyBoardIsEmpty()){
             LayoutController.directAtk = true;
-            System.out.println("masuk trueeee");
         }
         currentPhase = BATTLE_PHASE;
     }
