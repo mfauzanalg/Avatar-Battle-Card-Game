@@ -3,11 +3,19 @@ package com.avatarduel.gui;
 import com.avatarduel.component.Card;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+
+/**
+ * HandCardController serves as a controller for DrawInfo.fxml scene builder
+ * DrawInfo represents pop up window box to notify the player that a card has been drawn into the hand
+ * @see TCardController
+ * @see Card
+ */
 
 public class HandCardController {
     @FXML private TCardController h1Controller;
@@ -19,6 +27,12 @@ public class HandCardController {
     @FXML private TCardController h7Controller;
     @FXML private TCardController h8Controller;
     @FXML private TCardController h9Controller;
+
+    /**
+     * Function to load the card that is needed
+     * @param card contains the info of the card
+     * @param p contains position of the card
+     */
 
     public void loadCard(Card card, int x, int p){
 //        card.setIdx(x);
@@ -36,6 +50,10 @@ public class HandCardController {
             default:
         }
     }
+
+    /**
+     * Function to reset the border
+     */
 
     public void resetBorder() {
         h1Controller.resetPane();
