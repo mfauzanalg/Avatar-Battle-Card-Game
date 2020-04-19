@@ -43,7 +43,6 @@ public class WindowController {
         Parent layoutParent = FXMLLoader.load(getClass().getClassLoader().getResource("Layout.fxml"));
         Scene layoutScene = new Scene(layoutParent);
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-//        window.setResizable(false);
         window.setScene(layoutScene);
         window.show();
     }
