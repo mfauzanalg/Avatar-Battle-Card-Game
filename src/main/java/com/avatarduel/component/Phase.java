@@ -3,6 +3,8 @@
 
 package com.avatarduel.component;
 
+import com.avatarduel.gui.LayoutController;
+
 import java.util.Random;
 import java.util.List;
 
@@ -82,7 +84,12 @@ public class Phase {
     }
 
     public void battlePhase(){
+        LayoutController.directAtk = false;
         System.out.println("Battle Phase");
+        if (enemyBoardIsEmpty()){
+            LayoutController.directAtk = true;
+            System.out.println("masuk trueeee");
+        }
         currentPhase = BATTLE_PHASE;
     }
 
