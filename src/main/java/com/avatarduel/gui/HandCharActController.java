@@ -12,7 +12,6 @@ import javafx.stage.Stage;
  * @see com.avatarduel.component.Phase
  * @see Card
  */
-
 public class HandCharActController {
     @FXML private Button atkButton;
     @FXML private Button defButton;
@@ -21,7 +20,6 @@ public class HandCharActController {
      * Function to handle the attack button
      * @param mouseEvent is  function to invoke the methods that is needed when the button is clicked
      */
-
     public void atkClick(MouseEvent mouseEvent) {
         LayoutController.gamePhase.summonCharacter(Card.clickIdx, true);
         Stage stage = (Stage) atkButton.getScene().getWindow();
@@ -32,12 +30,9 @@ public class HandCharActController {
      * Function to handle the defense button
      * @param mouseEvent is  function to invoke the methods that is needed when the button is clicked
      */
-
     public void defClick(MouseEvent mouseEvent) {
         LayoutController.gamePhase.summonCharacter(Card.clickIdx, false);
         Stage stage = (Stage) defButton.getScene().getWindow();
         stage.close();
     }
-
-
 }

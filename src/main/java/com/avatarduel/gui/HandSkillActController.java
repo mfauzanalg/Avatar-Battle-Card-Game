@@ -14,7 +14,6 @@ import javafx.stage.Stage;
  * @see Card
  * @see LayoutController
  */
-
 public class HandSkillActController {
     @FXML private Button confirmButton;
 
@@ -22,7 +21,6 @@ public class HandSkillActController {
      * Function to handle the confirm button
      * @param mouseEvent is  function to invoke the methods that is needed when the button is clicked
      */
-
     public void onClick(MouseEvent mouseEvent) {
         LayoutController.wantSkill = true;
         Card.src = Card.clickIdx;

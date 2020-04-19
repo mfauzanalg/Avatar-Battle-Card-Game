@@ -22,7 +22,6 @@ public class AttackBoxController {
      * Function to invoke responses when confirmB button is pressed
      * @param mouseEvent The player that played the AuraSkillCard
      */
-
     public void onClick(MouseEvent mouseEvent) {
         LayoutController.wantAttack = true;
         Card.src = Card.clickIdx;

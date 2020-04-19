@@ -16,7 +16,6 @@ import java.io.IOException;
  * @see TCardController
  * @see Card
  */
-
 public class HandCardController {
     @FXML private TCardController h1Controller;
     @FXML private TCardController h2Controller;
@@ -33,7 +32,6 @@ public class HandCardController {
      * @param card contains the info of the card
      * @param p contains position of the card
      */
-
     public void loadCard(Card card, int x, int p){
 //        card.setIdx(x);
         card.setPlace("hand");
@@ -54,7 +52,6 @@ public class HandCardController {
     /**
      * Function to reset the border
      */
-
     public void resetBorder() {
         h1Controller.resetPane();
         h2Controller.resetPane();

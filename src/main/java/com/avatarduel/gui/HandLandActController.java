@@ -12,7 +12,6 @@ import javafx.stage.Stage;
  * @see com.avatarduel.component.Phase
  * @see Card
  */
-
 public class HandLandActController {
     @FXML private Button confirmButton;
 
@@ -20,11 +19,9 @@ public class HandLandActController {
      * Function to handle the confirm button
      * @param mouseEvent is  function to invoke the methods that is needed when the button is clicked
      */
-
     public void onClick(MouseEvent mouseEvent) {
         LayoutController.gamePhase.playLandCard(Card.clickIdx);
         Stage stage = (Stage) confirmButton.getScene().getWindow();
         stage.close();
     }
-
 }

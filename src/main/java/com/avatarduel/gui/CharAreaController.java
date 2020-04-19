@@ -44,7 +44,6 @@ public class CharAreaController {
      * @param x is the index of the card in the arena
      * @param p is the player that own the card
      */
-
     public void loadBoard(BoardCard card, int x, int p){
         switch (x){
             case 0: c1Controller.loadBoard(card,0, p, "character"); break;
@@ -59,9 +58,8 @@ public class CharAreaController {
     /**
      * Function to switch between case of the input parameter x (index of the card in the arena that will be rotated)
      * @param x is the condition of the card
-     * @param pos is the index of the card in the arena
+     * @param pos is the target position of the card in the arena
      */
-
     public void rotateCard(int x, boolean pos){
         switch (x){
             case 0: c1Controller.rotateCard(pos); break;
@@ -74,9 +72,8 @@ public class CharAreaController {
     }
 
     /**
-     * Function to switch between case of the input parameter x (index of the card in the arena that will be resetted)
+     * Function to reset card border to black 1px
      */
-
     public void resetBorder() {
         c1Controller.resetPane();
         c2Controller.resetPane();

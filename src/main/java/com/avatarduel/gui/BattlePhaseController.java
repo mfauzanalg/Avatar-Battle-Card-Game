@@ -23,7 +23,6 @@ public class BattlePhaseController {
      * Function to get a draw phase
      * @return a highlight to an anchorPane that contains where is the current state of the game (draw phase)
      */
-
     public AnchorPane getDrawP(){
         return this.drawP;
     }
@@ -32,7 +31,6 @@ public class BattlePhaseController {
      * Function to get a main phase
      * @return a highlight to an anchorPane that contains where is the current state of the game (main phase)
      */
-
     public AnchorPane getMainP(){
         return this.mainP;
     }
@@ -41,7 +39,6 @@ public class BattlePhaseController {
      * Function to get a battle phase
      * @return a highlight to an anchorPane that contains where is the current state of the game (battle phase)
      */
-
     public AnchorPane getBattleP(){
         return this.battleP;
     }
@@ -50,17 +47,15 @@ public class BattlePhaseController {
      * Function to get a end phase
      * @return a highlight to an anchorPane that contains where is the current state of the game (end phase)
      */
-
     public AnchorPane getEndP(){
         return this.endP;
     }
 
     /**
-     * Function to set the color of current phase's row
+     * Function to set the color of current phase's row and current player
      * @param P is an anchorpane that contain the game state
      * @param player contains the player who owns the turn
      */
-
     public void setColor(AnchorPane P, String player){
         String P1 = AvatarDuel.P1.getName();
         String P2 = AvatarDuel.P2.getName();
@@ -69,10 +64,9 @@ public class BattlePhaseController {
     }
 
     /**
-     * Function to reset the color of current phase's row
+     * Function to reset the color of current phase's row to default
      * @param P is an anchorpane that contain the game state
      */
-
     public void resetColor(AnchorPane P){
         P.setStyle("#c2dbed; -fx-border-width: 1; -fx-border-color: black");
     }
