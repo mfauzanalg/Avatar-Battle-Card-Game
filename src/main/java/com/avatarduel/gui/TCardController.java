@@ -18,6 +18,19 @@ import javafx.util.Duration;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * TargetThisController serves as a controller for TargetThis.fxml scene builder
+ * TargetThis shows a window that is shown when a player wins the game
+ * @see Card
+ * @see CharacterCard
+ * @see BoardCard
+ * @see CharacterCard
+ * @see DestroySkillCard
+ * @see AuraBoardCard
+ * @see AuraHandCard
+ * @see AuraSkillCard
+ */
+
 public class TCardController {
     @FXML private Pane mainPane;
     @FXML private Text name;
@@ -44,13 +57,27 @@ public class TCardController {
     private String blankPath = "src/main/resources/com/avatarduel/card/image/blank.png";
     private String hiddenPath = "src/main/resources/img/back.png";
 
+    /**
+     * Function reset pane
+     */
+
     void resetPane(){
         mainPane.setStyle("-fx-border-color: black; -fx-border-width: 1");
     }
 
+    /**
+     * Function select pane
+     */
+
     void selectedPane(){
         mainPane.setStyle("-fx-border-color: #c74646; -fx-border-width: 3");
     }
+
+    /**
+     * Function set element picture
+     * @param elmt contains element of a card
+     * @return path of the card image
+     */
 
     public String setElmtPict(String elmt){
         if (elmt.equals("ENERGY")){ return energyPath; }
@@ -59,6 +86,11 @@ public class TCardController {
         else if(elmt.equals("FIRE")){ return firePath; }
         else { return waterPath; }
     }
+
+    /**
+     * Function to load scene
+     * @param fxml fxml that will be loaded
+     */
 
     public void loadScene (String fxml) throws IOException {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource(fxml));
@@ -69,11 +101,25 @@ public class TCardController {
         stage.show();
     }
 
+    /**
+     * Function to load card image
+     * @param container contain image of the card
+     * @param path contains the path of the card
+     */
+
     public void loadPict (String path, ImageView container){
         File file = new File (path);
         Image image = new Image(file.toURI().toString());
         container.setImage(image);
     }
+
+    /**
+     * Function initialize load
+     * @param card contains card
+     * @param x contains index of the card
+     * @param p contains position of the card
+     * @param place contains place of the card
+     */
 
     public void initialLoad(Card card, int x, int p, String place){
         this.card = card;
@@ -85,6 +131,14 @@ public class TCardController {
         attrib.setText("");
         loadPict(blankPath, cardBackground);
     }
+
+    /**
+     * Function initialize load
+     * @param card contains card
+     * @param x contains index of the card
+     * @param p contains position of the card
+     * @param place contains place of the card
+     */
 
     public void loadBoard(BoardCard card, int x, int p, String place){
         initialLoad(card.getCardInstance(), x, p, place);
@@ -104,9 +158,15 @@ public class TCardController {
             name.setText(cardInstance.getName());
             attrib.setText("Atk/Def/Pow \n" + card.getAttackValue() + "/ " + card.getDefenseValue() + "/" + cardInstance.getPower());
         }
-
-
     }
+
+    /**
+     * Function initialize load
+     * @param card contains card
+     * @param x contains index of the card
+     * @param p contains position of the card
+     * @param place contains place of the card
+     */
 
     public void loadCard(Card card, int x, int p, String place){
         initialLoad(card, x, p, place);
@@ -135,10 +195,20 @@ public class TCardController {
         }
     }
 
+    /**
+     * Function to load land card
+     * @param card contain the card
+     */
+
     public void loadLandCard(Card card){
         loadPict(setElmtPict(card.getElement()), elmtPict);
         attrib.setText("this is " + card.getElement() + " Land Card");
     }
+
+    /**
+     * Function to load character card
+     * @param card contain the character card
+     */
 
     public void loadCharCard(CharacterCard card){
         loadPict(setElmtPict(card.getElement()), elmtPict);
@@ -146,6 +216,11 @@ public class TCardController {
         this.atk = card.getAttack();
         this.def = card.getDefense();
     }
+
+    /**
+     * Function to load skill card
+     * @param card contain the skill card
+     */
 
     public void loadSkillCard(SkillCard card){
         String eff = card.getEffect();
@@ -160,6 +235,11 @@ public class TCardController {
         }
     }
 
+    /**
+     * Function to load aura card
+     * @param card contain the aura card
+     */
+
     public void loadAuraCard(AuraSkillCard card){
         loadPict(setElmtPict(card.getElement()), elmtPict);
         attrib.setText("Atk/Def/Pow \n" + card.getAttack() + "/ " + card.getDefense() + "/" + card.getPower());
@@ -167,15 +247,30 @@ public class TCardController {
         this.def = card.getDefense();
     }
 
+     /**
+     * Function to load destroy card
+     * @param card contain the destroy card
+     */
+
     public void loadDestroyCard(DestroySkillCard card){
         loadPict(setElmtPict(card.getElement()), elmtPict);
         attrib.setText("This is Destroy Card Pow : " + card.getPower());
     }
 
+     /**
+     * Function to load power up card
+     * @param card contain the power up card
+     */
+
     public void loadPowerUpCard(PowerUpSkillCard card){
         loadPict(setElmtPict(card.getElement()), elmtPict);
         attrib.setText("This is Destroy Card Pow : " + card.getPower());
     }
+
+    /**
+     * Function handle the hover
+     * @param mouseEvent is function to invoke the methods that is needed when the button is clicked
+     */
 
     public void hover(MouseEvent mouseEvent) {
         Card newCard = this.card;
@@ -188,10 +283,19 @@ public class TCardController {
         }
     }
 
+     /**
+     * Function handle button
+     * @param mouseEvent is function to invoke the methods that is needed when the button is clicked
+     */
+
     public void click(MouseEvent mouseEvent) {
         Card.cardClick1 = this.card;
         showAction();
     }
+
+    /**
+     * Function to rotate card
+     */
 
     public void rotateCard(boolean toDefPost){
         if (toDefPost){
@@ -205,6 +309,10 @@ public class TCardController {
             rotateTransition.play();
         }
     }
+
+    /**
+     * Function to show actions
+     */
 
     public void showAction(){
         try{
