@@ -6,8 +6,8 @@ package com.avatarduel.component;
 public class PowerUpBoardCard extends SkillBoardCard {
     BoardCard target;
 
-    public PowerUpBoardCard(BoardCard _target, PowerUpSkillCard card){
-        super(_target, card);
+    public PowerUpBoardCard(Player owner, BoardCard _target, PowerUpSkillCard card){
+        super(owner, _target, card);
         target = _target;
         target.setPowerUp(true);
     }
