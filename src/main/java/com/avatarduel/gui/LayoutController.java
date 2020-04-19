@@ -195,7 +195,7 @@ public class LayoutController implements Initializable{
         if (P.equals(AvatarDuel.P1)){
 //            resetOneChar(AvatarDuel.P1);
             for (int i = 0; i < AvatarDuel.P1.getBoard().size(); i++){
-                charArea1Controller.loadCard(AvatarDuel.P1.getBoard().get(i).getCardInstance(), i, 1);
+                charArea1Controller.loadCard(AvatarDuel.P1.getBoard().get(i), i, 1);
                 if (!AvatarDuel.P1.getBoard().get(i).getAttackPos()){
                     charArea1Controller.rotateCard(i);
                 }

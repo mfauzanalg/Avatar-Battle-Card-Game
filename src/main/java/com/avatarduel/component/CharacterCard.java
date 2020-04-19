@@ -26,8 +26,16 @@ public class CharacterCard extends Card {
         return attack;
     }
 
+    public void setAttack(int attack){
+        this.attack = attack;
+    }
+
     public int getDefense(){
         return defense;
+    }
+
+    public void setDefense(int def){
+        this.defense = def;
     }
 
     public int getPower(){

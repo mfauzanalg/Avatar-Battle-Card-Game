@@ -103,6 +103,13 @@ public class TCardController {
         attrib.setText("This is Destroy Card Pow : " + card.getPower());
     }
 
+    public void loadCard(BoardCard card, int x, int p, String place){
+        CharacterCard newVal =  (CharacterCard) card.getCardInstance();
+        newVal.setAttack(card.getAttackValue());
+        newVal.setDefense(card.getDefenseValue());
+        loadCard(newVal, x, p, place);
+    }
+
     public void loadCard(Card card, int x, int p, String place){
         this.card = card;
         this.indeks = x;
