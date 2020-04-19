@@ -40,13 +40,13 @@ public class LayoutController implements Initializable{
 
     private String HIDDEN_CARD = "src/main/resources/img/back.png";
     public static Phase gamePhase;
+    public static boolean wantAttack = false;
+
 
     public void updateDeck(){
         panelP1Controller.setPanel(AvatarDuel.P1);
         panelP2Controller.setPanel(AvatarDuel.P2);
         updateOneHand(gamePhase.getCurrentPlayer());
-//        updateOneChar(gamePhase.getCurrentPlayer());
-//        updateOneSkill(gamePhase.getCurrentPlayer());
         updateAllChar();
         updateAllCSkill();
         updateInfo();

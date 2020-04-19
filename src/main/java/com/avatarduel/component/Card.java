@@ -99,7 +99,10 @@ public class Card {
     public static Card cardHover = new Card();
     public static Card cardClick1 = new Card();
     public static int clickIdx = -1;
-    public static int targetidx = -1;
+    public static int targetIdx = -1;
+    public static boolean targetEnemy = true;
     public static int atk = -1;
     public static int def = -1;
+    public static int src;
+    public static int trg;
 }
