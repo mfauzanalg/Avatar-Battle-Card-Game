@@ -61,7 +61,6 @@ public class LayoutController implements Initializable{
             gamePhase.attackPlayer(Card.clickIdx);
             System.out.println("direct kok attack");
             resetBorder();
-            directAtk = false;
         }
     }
 

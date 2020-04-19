@@ -370,5 +370,6 @@ public class Player{
             enemyHealth = 0;
         } 
         enemy.setHealth(enemyHealth);
+        getBoardCardAt(idx).setCanAttack(false);
     }
 }
