@@ -3,10 +3,14 @@ package com.avatarduel.gui;
 import com.avatarduel.AvatarDuel;
 import com.avatarduel.component.*;
 import javafx.animation.RotateTransition;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
@@ -44,6 +48,7 @@ public class LayoutController implements Initializable{
     @FXML private CharAreaController charArea1Controller;
     @FXML private CharAreaController charArea2Controller;
     @FXML private Text messageBox;
+    @FXML private Button nextPhaseButton;
 
     private String HIDDEN_CARD = "src/main/resources/img/back.png";
     public static Phase gamePhase;
@@ -51,12 +56,24 @@ public class LayoutController implements Initializable{
     public static boolean wantSkill = false;
     public static boolean directAtk = false;
     public static boolean finishGame = false;
+    public static Player winner;
 
     /**
-     * Function to update the deck of the player
+     * load new Scene in new Window
+     * @param fxml target fxml
      */
+    public void loadScene (String fxml) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource(fxml));
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setTitle("");
+        stage.setScene(scene);
+        stage.show();
+    }
 
-    public void updateDeck(){
+ 
+
+    public void updateDeck() throws IOException {
         sendMessage();
         isDirectAttack();
         messageBox.setText("");
@@ -67,6 +84,12 @@ public class LayoutController implements Initializable{
         updateAllCSkill();
         updateInfo();
         System.out.println("refresh");
+        if(finishGame){
+            System.out.println("mantap jiwa");
+            loadScene("WinScreen.fxml");
+            Stage stage = (Stage) nextPhaseButton.getScene().getWindow();
+            stage.close();
+        }
     }
 
     /**
@@ -137,15 +160,7 @@ public class LayoutController implements Initializable{
 
 
     public void popDrawInfo() throws IOException {
-        try{
-            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("DrawInfo.fxml"));
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-            stage.setTitle("PhaseInfo");
-            stage.setScene(scene);
-            stage.show();
-            updateAllHand();
-        } catch (IOException e){System.out.println(e);}
+        loadScene("DrawInfo.fxml");
     }
 
     /**
@@ -399,10 +414,15 @@ public class LayoutController implements Initializable{
         panelP1Controller.setPanel(AvatarDuel.P1);
         panelP2Controller.setPanel(AvatarDuel.P2);
         gamePhase = new Phase(AvatarDuel.P1, AvatarDuel.P2);
-        gamePhase.initialize(); updateAllHand();
+        try {
+            gamePhase.initialize();
+            updateDeck();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         battlePhaseController.setColor(battlePhaseController.getDrawP(), gamePhase.getCurrentPlayer().getName());
         hideCard(handCard2Controller, AvatarDuel.P2.getHand().size());
-        initialCharArea(); initialSkillArea();  updateDeck();
+        initialCharArea(); initialSkillArea();
     }
 
     /**
@@ -413,15 +433,13 @@ public class LayoutController implements Initializable{
         gamePhase.nextPhase();
         switch (gamePhase.getCurrentPhase()){
             case ("draw"):
-                updateDeck();
-                updateAllHand();
                 popDrawInfo();
+                updateDeck();
                 changeColorPhase("draw");
                 hideChangeTurn();
                 break;
             case("main"):
                 changeColorPhase("main");
-
                 break;
             case("battle"):
                 changeColorPhase("battle");
