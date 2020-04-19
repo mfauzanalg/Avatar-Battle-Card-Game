@@ -157,13 +157,11 @@ public class TCardController {
 
     public void loadDestroyCard(DestroySkillCard card){
         loadPict(setElmtPict(card.getElement()), elmtPict);
-        elmt.setText(card.getElement());
         attrib.setText("This is Destroy Card Pow : " + card.getPower());
     }
 
     public void loadPowerUpCard(PowerUpSkillCard card){
         loadPict(setElmtPict(card.getElement()), elmtPict);
-        elmt.setText(card.getElement());
         attrib.setText("This is Destroy Card Pow : " + card.getPower());
     }
 
@@ -194,7 +192,6 @@ public class TCardController {
             rotateTransition.setToAngle(0);
             rotateTransition.play();
         }
-
     }
 
     public void showAction(){

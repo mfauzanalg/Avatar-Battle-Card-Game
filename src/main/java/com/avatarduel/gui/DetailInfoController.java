@@ -13,7 +13,7 @@ public class DetailInfoController {
     @FXML private Text detailStat;
     @FXML private ImageView detailImage;
     @FXML private Text detailName;
-    @FXML private Text detailElmt;
+    @FXML private Text detailType;
     @FXML private ImageView elmtPict;
 
     public String space = "                 ";
@@ -96,12 +96,15 @@ public class DetailInfoController {
             String type = card.getType();
             if (type.equals("land")) {
                 this.showLandCard(card);
+                detailType.setText("LAND\nCARD");
             } else if (type.equals("character")) {
                 this.showCharCard((CharacterCard) card, atk, def);
+                detailType.setText("CHARACTER\nCARD");
             } else if (type.equals("skill")) {
                 this.showSkillCard((SkillCard) card);
+                detailType.setText("SKILL\nCARD");
             } else {
-                detailElmt.setText("");
+                detailType.setText("");
                 detailStat.setText("");
             }
         }
