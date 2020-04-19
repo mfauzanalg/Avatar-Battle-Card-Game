@@ -31,6 +31,8 @@ public class TCardController {
     private int owner;
     private String place;
     private Player cardOwn;
+    private int atk;
+    private int def;
 
     private String energyPath = "src/main/resources/img/Elements/Energy.png";
     private String airPath = "src/main/resources/img/Elements/Air.png";
@@ -76,6 +78,9 @@ public class TCardController {
 
     public void loadBoard(BoardCard card, int x, int p, String place){
         initialLoad(card.getCardInstance(), x, p, place);
+        this.atk = card.getAttackValue();
+        this.def = card.getDefenseValue();
+
         name.setText("");
         loadPict(blankPath, elmtPict);
         loadPict(blankPath, pict);
@@ -93,6 +98,8 @@ public class TCardController {
 
     public void loadCard(Card card, int x, int p, String place){
         initialLoad(card, x, p, place);
+        this.atk = 0;
+        this.def = 0;
 
         if (card.getImagePath().equals(hiddenPath)){
             loadPict(card.getImagePath(), cardBackground);
@@ -124,6 +131,8 @@ public class TCardController {
     public void loadCharCard(CharacterCard card){
         loadPict(setElmtPict(card.getElement()), elmtPict);
         attrib.setText("Atk/Def/Pow \n" + card.getAttack() + "/ " + card.getDefense() + "/" + card.getPower());
+        this.atk = card.getAttack();
+        this.def = card.getDefense();
     }
 
     public void loadSkillCard(SkillCard card){
@@ -142,6 +151,8 @@ public class TCardController {
     public void loadAuraCard(AuraSkillCard card){
         loadPict(setElmtPict(card.getElement()), elmtPict);
         attrib.setText("Atk/Def/Pow \n" + card.getAttack() + "/ " + card.getDefense() + "/" + card.getPower());
+        this.atk = card.getAttack();
+        this.def = card.getDefense();
     }
 
     public void loadDestroyCard(DestroySkillCard card){
@@ -158,8 +169,12 @@ public class TCardController {
 
     public void hover(MouseEvent mouseEvent) {
         Card newCard = this.card;
+        int newAtk = this.atk;
+        int newDef = this.def;
         if (newCard.getId() != 0){
             Card.cardHover = newCard;
+            Card.atk = newAtk;
+            Card.def = newDef;
         }
     }
 

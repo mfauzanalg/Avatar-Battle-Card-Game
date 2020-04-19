@@ -44,9 +44,9 @@ public class DetailInfoController {
         detailStat.setText("This is " + card.getElement() + " Land Card");
     }
 
-    public void showCharCard(CharacterCard card){
+    public void showCharCard(CharacterCard card, int atk, int def){
         loadPict(setElmtPict(card.getElement()), elmtPict);
-        detailStat.setText("Atk/Def/Pow " + space + card.getAttack() + "/ " + card.getDefense() + "/" + card.getPower());
+        detailStat.setText("Atk/Def/Pow " + space + atk + "/ " + def + "/" + card.getPower());
     }
 
     public void showSkillCard(SkillCard card){
@@ -85,14 +85,8 @@ public class DetailInfoController {
         detailStat.setText("Pow : " + card.getPower());
     }
 
-    public void showCard(BoardCard card){
-        CharacterCard cardInstance =  (CharacterCard) card.getCardInstance();
-        if (cardInstance.getId() > 0){
 
-        }
-    }
-
-    public void showCard(Card card){
+    public void showCard(Card card, int atk, int def){
         if (card.getId() != 0) {
             loadPict(card.getImagePath(), detailImage);
             detailDesc.setText(card.getDescription());
@@ -103,7 +97,7 @@ public class DetailInfoController {
             if (type.equals("land")) {
                 this.showLandCard(card);
             } else if (type.equals("character")) {
-                this.showCharCard((CharacterCard) card);
+                this.showCharCard((CharacterCard) card, atk, def);
             } else if (type.equals("skill")) {
                 this.showSkillCard((SkillCard) card);
             } else {
