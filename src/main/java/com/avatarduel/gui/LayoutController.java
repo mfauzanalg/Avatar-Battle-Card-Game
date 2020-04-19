@@ -78,6 +78,10 @@ public class LayoutController implements Initializable{
      * @throws IOException to load new window
      */
     public void updateDeck() throws IOException {
+        LayoutController.directAtk = false;
+        if (gamePhase.enemyBoardIsEmpty()){
+            LayoutController.directAtk = true;
+        }
         sendMessage();
         isDirectAttack();
         messageBox.setText("");
