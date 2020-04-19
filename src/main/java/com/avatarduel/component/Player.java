@@ -215,6 +215,9 @@ public class Player{
         this.currentFire = this.maxFire;
         this.currentAir = this.maxAir;
         this.currentEnergy = this.maxEnergy;
+        for (BoardCard card: board) {
+            card.setCanAttack(true);
+        }
     }
 
     /**Action*/
@@ -223,7 +226,7 @@ public class Player{
     public void playCharacterCard(int idx, boolean attack){
     
         CharacterHandCard card = (CharacterHandCard) hand.get(idx);
-        if (HandCardPlayer.validatePlay(card)){
+        if (!HandCardPlayer.validatePlay(card)){
             System.out.println("You don't have enough power to summon " + card.getCardInstance().getName());
         }
         else{
@@ -236,7 +239,7 @@ public class Player{
     public void playSkillCard(int idx, BoardCard target){
 
         SkillCard card = (SkillCard) hand.get(idx).getCardInstance();
-        if (HandCardPlayer.validatePlay(hand.get(idx))){
+        if (!HandCardPlayer.validatePlay(hand.get(idx))){
             System.out.println("You don't have enough power to play " + card.getName());
         }
         else {
@@ -244,7 +247,7 @@ public class Player{
                 HandCardPlayer.playCard((AuraHandCard) hand.remove(idx), target);
             }
             else if (card.getEffect().equals(SkillCard.SKILL_POWERUP)){
-                HandCardPlayer.playCard((PowerUpHandCard) hand.remove(idx), target);    
+                HandCardPlayer.playCard((PowerUpHandCard) hand.remove(idx), target);
             }
             else if (card.getEffect().equals(SkillCard.SKILL_DESTROY)){
                 HandCardPlayer.playCard((DestroyHandCard) hand.remove(idx), target);
@@ -268,9 +271,10 @@ public class Player{
             int enemyHealth = enemy.getHealth() - attackingVal + attackedVal;
             if (enemyHealth < 0){
                 enemyHealth = 0;
-            } 
+            }
             enemy.setHealth(enemyHealth);
         }
+        getBoardCardAt(idx).setCanAttack(false);
         enemy.getBoardCardAt(enemyidx).destroy();
 	}
 
