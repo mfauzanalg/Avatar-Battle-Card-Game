@@ -25,11 +25,11 @@ public class HandCardPlayer {
     public static void playCard(AuraHandCard card, BoardCard target){
         
         AuraBoardCard aura = new AuraBoardCard(target, (AuraSkillCard) card.getCardInstance());
-        int cidx = card.getOwner().getBoard().indexOf(target);
+        int cidx = target.getOwner().getBoard().indexOf(target);
         int sidx = card.getOwner().getSkillBoard().indexOf(NullCardHandler.getNullSkillCard());
         System.out.println("cidx and sidx is " + cidx + " " + sidx);
         decreaseUserPower(card);
-        card.getOwner().getBoard().set(cidx, aura);
+        target.getOwner().getBoard().set(cidx, aura);
         card.getOwner().getSkillBoard().set(sidx, (SkillCard) card.getCardInstance()); // Nambahin kartu ke skillBoard
     }
 
@@ -37,10 +37,10 @@ public class HandCardPlayer {
     public static void playCard(PowerUpHandCard card, BoardCard target){
         
         PowerUpBoardCard power = new PowerUpBoardCard(target, (PowerUpSkillCard) card.getCardInstance());
-        int cidx = card.getOwner().getBoard().indexOf(target);
+        int cidx = target.getOwner().getBoard().indexOf(target);
         int sidx = card.getOwner().getSkillBoard().indexOf(NullCardHandler.getNullSkillCard());
         decreaseUserPower(card);
-        card.getOwner().getBoard().set(cidx, power);
+        target.getOwner().getBoard().set(cidx, power);
         card.getOwner().getSkillBoard().set(sidx, (SkillCard) card.getCardInstance()); // Nambahin kartu ke skillBoard
     }
 

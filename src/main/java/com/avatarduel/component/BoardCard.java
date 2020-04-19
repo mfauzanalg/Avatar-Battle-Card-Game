@@ -25,6 +25,10 @@ abstract public class BoardCard implements ISummoned, IDestructible {
         // Kalo this lebih gede, jalankan destroy milik other.board[idx] lalu kurangi HP other sesuai selisih
     }
 
+    public Player getOwner(){
+        return owner;
+    }
+    
     abstract public int getAttackValue();
 
     abstract public int getDefenseValue();
