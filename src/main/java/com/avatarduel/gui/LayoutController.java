@@ -37,13 +37,16 @@ public class LayoutController implements Initializable{
     @FXML private SkillAreaController skillArea2Controller;
     @FXML private CharAreaController charArea1Controller;
     @FXML private CharAreaController charArea2Controller;
+    @FXML private Text messageBox;
 
     private String HIDDEN_CARD = "src/main/resources/img/back.png";
     public static Phase gamePhase;
     public static boolean wantAttack = false;
+    public static boolean wantSkill = false;
 
 
     public void updateDeck(){
+        messageBox.setText("");
         panelP1Controller.setPanel(AvatarDuel.P1);
         panelP2Controller.setPanel(AvatarDuel.P2);
         updateOneHand(gamePhase.getCurrentPlayer());
@@ -51,6 +54,12 @@ public class LayoutController implements Initializable{
         updateAllCSkill();
         updateInfo();
         System.out.println("refresh");
+        sendMessage();
+    }
+
+    public void sendMessage(){
+        if (wantAttack) messageBox.setText("Select Target to Attack");
+        if (wantSkill) messageBox.setText("Select Target to Use Skill Card");
     }
 
     public void changeColorPhase(String phase){
@@ -85,15 +94,6 @@ public class LayoutController implements Initializable{
             stage.show();
             updateAllHand();
         } catch (IOException e){System.out.println(e);}
-    }
-
-    public void draw(MouseEvent mouseEvent) {
-        AvatarDuel.P1.draw();
-        AvatarDuel.P2.draw();
-        onHover();
-        updateAllHand();
-        panelP2Controller.setPanel(AvatarDuel.P2);
-        panelP1Controller.setPanel(AvatarDuel.P1);
     }
 
     public void hideCard(HandCardController hand, int size){

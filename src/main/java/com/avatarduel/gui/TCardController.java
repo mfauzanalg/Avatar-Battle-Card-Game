@@ -202,7 +202,10 @@ public class TCardController {
             Player curPlayer = LayoutController.gamePhase.getCurrentPlayer();
             String curPhase = LayoutController.gamePhase.getCurrentPhase();
             Card.clickIdx = this.indeks;
-            if (LayoutController.wantAttack){
+            Card.cardOwner = this.owner;
+            System.out.println("punya siapa hayoo: " + Card.cardOwner);
+
+            if (LayoutController.wantAttack || LayoutController.wantSkill){
                 loadScene("TargetThis.fxml");
             }
             else{
