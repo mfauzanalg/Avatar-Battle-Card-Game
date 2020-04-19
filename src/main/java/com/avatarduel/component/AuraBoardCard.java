@@ -7,8 +7,8 @@ public class AuraBoardCard extends SkillBoardCard {
     int attackVal;
     int defenseVal;
 
-    public AuraBoardCard(BoardCard _target, AuraSkillCard card){
-        super(_target, card);
+    public AuraBoardCard(Player owner, BoardCard _target, AuraSkillCard card){
+        super(owner, _target, card);
         target = _target;
         attackVal = card.getAttack();
         defenseVal = card.getDefense();

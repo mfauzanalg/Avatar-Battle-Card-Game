@@ -23,7 +23,7 @@ public class HandCardPlayer {
     // Me-replace board[idx] dengan kartu yang dipilih sebagai target
     public static void playCard(AuraHandCard card, BoardCard target){
         
-        AuraBoardCard aura = new AuraBoardCard(target, (AuraSkillCard) card.getCardInstance());
+        AuraBoardCard aura = new AuraBoardCard(card.getOwner(), target, (AuraSkillCard) card.getCardInstance());
         int cidx = target.getOwner().getBoard().indexOf(target);
         int sidx = card.getOwner().getSkillBoard().indexOf(NullCardHandler.getNullSkillCard());
         decreaseUserPower(card);
@@ -34,7 +34,7 @@ public class HandCardPlayer {
     // 11 12 sama Aura
     public static void playCard(PowerUpHandCard card, BoardCard target){
         
-        PowerUpBoardCard power = new PowerUpBoardCard(target, (PowerUpSkillCard) card.getCardInstance());
+        PowerUpBoardCard power = new PowerUpBoardCard(card.getOwner(), target, (PowerUpSkillCard) card.getCardInstance());
         int cidx = target.getOwner().getBoard().indexOf(target);
         int sidx = card.getOwner().getSkillBoard().indexOf(NullCardHandler.getNullSkillCard());
         decreaseUserPower(card);
