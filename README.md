@@ -28,7 +28,7 @@ JavaFx
 │  │  └─ v16\
 │  │     └─ .suo\
 │  ├─ ProjectSettings.json\
-│  ├─ VSWorkspaceState.json
+│  ├─ VSWorkspaceState.json\
 │  └─ slnx.sqlite\
 ├─ bin\
 │  └─ main\
