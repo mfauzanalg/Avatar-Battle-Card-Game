@@ -142,6 +142,39 @@ public class Player{
         return this.deck;
     }
 
+//    /**Deck Manipulation*/
+//    public Stack<Card> getDeck(){
+//        return this.deck;
+//    }
+//    public <T extends Card> void addCardsToDeck(List<T> l){
+//        this.deck.addAll(l);
+//	}
+//    public void shuffleDeck(){
+//        Collections.shuffle(this.deck);
+//	}
+//    public <T extends Card> void addCard(T c){
+//        this.deck.push(c);
+//	}
+//    public <T extends Card> void addSpecificCard(List<T> l, int id){
+//        T c = l.stream()
+//            .filter(i -> i.getId() == id)
+//            .findAny()
+//            .orElse(null);
+//        if (c != null){
+//            this.addCard(c);
+//		}
+//	}
+//    public <T extends Card> void addRandomCards(List<T> l, int quantity){
+//        List<T> l1 = l;
+//        int count = 0;
+//        while (count != quantity){
+//            Collections.shuffle(l1);
+//            Card c = l1.get(0);
+//            this.addCard(c);
+//            count++;
+//		}
+//    }
+
     /**Hand manipulation*/
     public void draw(){
         //pop card dari deck
@@ -182,9 +215,6 @@ public class Player{
         this.currentFire = this.maxFire;
         this.currentAir = this.maxAir;
         this.currentEnergy = this.maxEnergy;
-        for (BoardCard card : board) {
-            card.setCanAttack(true);
-        }
     }
 
     /**Action*/
@@ -241,7 +271,6 @@ public class Player{
             } 
             enemy.setHealth(enemyHealth);
         }
-        getBoardCardAt(idx).setCanAttack(false);
         enemy.getBoardCardAt(enemyidx).destroy();
 	}
 
