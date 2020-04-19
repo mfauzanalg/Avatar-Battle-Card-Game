@@ -1,19 +1,22 @@
-# IF2210 Project Template
-Kelompok 9 K01
+# IF2210 Project Kelompok 9 K01
 
-Here is an example of project using gradle as the build tools.
-Try running these commands:
+## Prerequisite
+Java 8
+JavaFx
 
-`./gradlew run`
+## How to Compile and Run Program
+1. Open terminal in this folder
+2. Try running these commands to compile and run the program `/gradlew run`
 
-You will notice that it will open a window that display 'Avatar Duel'.
-In the command line you can see the data that is being read by `CSVReader.java`
+## Build Documentation
+1. Open terminal in this folder
+2. Try running these commands to compile and run the program `/gradlew avatarDocs`
+3. you can see the documentation in ./build/docs/javadoc/index.html
 
-What happen is when you use `./gradlew run`, it will start the main function in your app.
-For this app, the main function lives in `AvatarDuel.java`.
+## SceenShots
+![Image1](./screenshots/capture1.png)
+![Image2](./screenshots/capture2.png)
 
-You can explore more about gradle [here](https://guides.gradle.org/creating-new-gradle-builds/)
 
 ## Credit
-
 All images and description are taken from [Avatar Wikia](https://avatar.fandom.com/wiki/Avatar_Wiki)
