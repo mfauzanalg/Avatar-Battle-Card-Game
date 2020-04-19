@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane onMouseEntered="#updateDeck" onMouseMoved="#onHover" prefHeight="661.0" prefWidth="1287.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.avatarduel.gui.LayoutController">
+<AnchorPane onMouseEntered="#updateDeck" onMouseMoved="#onHover" prefHeight="661.0" prefWidth="1287.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.avatarduel.gui.LayoutController">
    <children>
       <ImageView fitHeight="661.0" fitWidth="1549.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -44,7 +48,7 @@
             <fx:include fx:id="panelP2" source="Deck.fxml" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="1148.0" layoutY="288.0" prefHeight="218.0" prefWidth="118.0" style="-fx-border-color: black;-fx-background-color: #ed8c8c;">
+      <AnchorPane layoutX="1148.0" layoutY="288.0" prefHeight="218.0" prefWidth="118.0" style="-fx-border-color: black;-fx-background-color: #ed8c8c;" translateX="-9.0">
          <children>
             <ImageView fitHeight="255.0" fitWidth="129.0" layoutX="2.0" opacity="0.5">
                <image>
@@ -105,7 +109,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color blue="1.0" green="1.0" red="1.0" />
                      </color>
                   </Stop>
                </stops>
