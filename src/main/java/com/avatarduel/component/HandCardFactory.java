@@ -1,10 +1,15 @@
-// File : HandCardFactory.java
-// Factory method untuk mengubah Card menjadi HandCard
-
 package com.avatarduel.component;
 
+/**
+ * HandCardFactory is the factory method that returns Factory according to the card inputted
+ */
 public class HandCardFactory {
 
+    /**
+     * Returns a CharacterHandCardFactory when the inputted card is a CharacterCard, SkillHandCardFactory when it's a SkillCard, and LandCardFactory when it's a LandCard
+     * @param card card to be converted
+     * @return Factory that can convert the specified input card
+     */
     public static HandCard getFactory(Card card){
         HandCard retval = null;
         if (card.getType().equals(Card.CHARACTER_CARD)){

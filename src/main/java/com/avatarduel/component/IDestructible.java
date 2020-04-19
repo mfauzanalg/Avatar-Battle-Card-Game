@@ -1,8 +1,12 @@
-// File : IDestructible.java
-// Interface for cards that stay in board and need to be removed later on
 package com.avatarduel.component;
 
+/**
+ * IDestructible is the interface for cards that can be destroyed and needs to be removed later on
+ */
 interface IDestructible {
-    // Removes card from board
+    
+    /**
+     * Removes card from board
+     */
     void destroy();
 }

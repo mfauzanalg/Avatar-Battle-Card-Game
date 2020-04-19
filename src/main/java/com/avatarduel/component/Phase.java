@@ -1,10 +1,12 @@
-// File : Phase.java
-// Mengatur jalannya permainan
 
 package com.avatarduel.component;
 
 import java.util.Random;
 import java.util.List;
+
+/**
+ * Phase is the bridge between the front end and the back end for gameplay
+ */
 
 public class Phase {
     public static final String DRAW_PHASE = "draw";
@@ -18,23 +20,48 @@ public class Phase {
     private String currentPhase;
     private boolean useLand; //udah pake land card ato belom
 
+    /**
+     * Sets whether current player has played a land card this turn or not
+     * @param useLand true or false
+     */
     public void setUseLand(boolean useLand){ this.useLand = useLand;}
 
+    /**
+     * Gets whether the current player has played a land card this turn or not
+     * @return true if has played, false otherwise
+     */
     public boolean getUseLand(){return this.useLand;}
 
+    /**
+     * Returns the player who is currently having their turn
+     * @return player currently having their turn
+     */
     public Player getCurrentPlayer(){
         return this.currentPlayer;
     }
 
+    /**
+     * Returns the current phase
+     * @return Phase.DRAW_PHASE, Phase.MAIN_PHASE, Phase.BATTLE_PHASE, Phase.END_PHASE, or Phase.MATCH_END
+     */
     public String getCurrentPhase(){
         return this.currentPhase;
     }
 
+    /**
+     * Creates a new Phase with Player one and Player two as players
+     * @param one Player #1
+     * @param two Player #2
+     */
     public Phase(Player one, Player two){
         player_one = one;
         player_two = two;
     }
 
+    /**
+     * Initializes the game.
+     * Sets current phase to draw phase and each player draws 7 cards from the top of their deck
+     */
     public void initialize(){
         currentPhase = DRAW_PHASE;
         for (int i = 0; i < 7; i++){
@@ -45,10 +72,18 @@ public class Phase {
         drawPhase();
     }
 
+    /**
+     * Returns the player who is currently awaiting their turn
+     * @return Player waiting for turn
+     */
     public Player getNextPlayer(){
         return (currentPlayer == player_one) ? player_two : player_one;
     }
 
+    /**
+     * Moves to the next phase.
+     * The phase order is Draw Phase -> Main Phase -> Battle Phase -> End Phase -> Repeat
+     */
     public void nextPhase(){
         switch(currentPhase){
             case DRAW_PHASE :
@@ -66,6 +101,10 @@ public class Phase {
         }
     }
 
+    /**
+     * Resets useLand and sets the current player to the next player.
+     * And then said player draws a card from their deck
+     */
     public void drawPhase(){
         setUseLand(false);
         currentPlayer = getNextPlayer();
@@ -76,16 +115,26 @@ public class Phase {
         currentPlayer.draw();
     }
 
+    /**
+     * Sets current phase to main phase
+     */
     public void mainPhase(){
         System.out.println("Main Phase");
         currentPhase = MAIN_PHASE;
     }
 
+    /**
+     * Sets current phase to battle phase
+     */
     public void battlePhase(){
         System.out.println("Battle Phase");
         currentPhase = BATTLE_PHASE;
     }
 
+    /**
+     * Checks whether the enemy board is empty or not
+     * @return true if is empty, false otherwise
+     */
     public boolean enemyBoardIsEmpty(){
         boolean retval = true;
         for (BoardCard card : getNextPlayer().getBoard()){
@@ -98,16 +147,31 @@ public class Phase {
         return retval;
     }
 
+    /**
+     * Set's current phase to end phase. Randomly discards card until player has 8 cards if player has 9 or more cards
+     */
     public void endPhase(){
         System.out.println("End Phase");
         currentPhase = END_PHASE;
         if (currentPlayer.getHand().size() >= 9){
-            discardHand();
+            while (currentPlayer.getHand().size() > 8){
+                
+                discardHand();
+            }
         }
         currentPlayer.flipHand();
         currentPlayer.reset();
+        if (isWinner()){
+            currentPhase = MATCH_END;
+            System.out.println(currentPlayer.getName() + " won!");
+        }
     }
 
+    /**
+     * Summons a character card who's in index idx in player's hand to the board
+     * @param idx idx of card in hand
+     * @param isAttackPosition true if summons in attack position, false otherwise
+     */
     public void summonCharacter(int idx, boolean isAttackPosition){
         if (currentPhase != MAIN_PHASE){
             System.out.println("You can only play cards during the Main Phase");
@@ -122,7 +186,12 @@ public class Phase {
         }
     }
 
-    // Menerima index skill card di tangan dan index target skill
+    /**
+     * Takes the index of the skill card in hand, the index of the target in board, and boolean targetsEnemyCard and plays it
+     * @param cidx index of skill card in hand
+     * @param tidx index of target BoardCard in board
+     * @param targetsEnemyCard true if the target is the enemy's card, false otherwise
+     */
     public void playSkillCard(int cidx, int tidx, boolean targetsEnemyCard){
         if (currentPhase != MAIN_PHASE){
             System.out.println("You can only play cards during the Main Phase");
@@ -145,6 +214,10 @@ public class Phase {
         }
     }
 
+    /**
+     * Takes the index of the land card in hand and plays it
+     * @param idx
+     */
     public void playLandCard(int idx){
         if (currentPhase != MAIN_PHASE){
             System.out.println("You can only play cards during the Main Phase");
@@ -156,6 +229,10 @@ public class Phase {
         }
     }
 
+    /**
+     * Takes the index of the card in board and changes it's position from attack to defense and vice versa
+     * @param idx idx of the card whose position is about to be changed
+     */
     public void changeCardPosition(int idx){
         if (currentPhase != MAIN_PHASE){
             System.out.println("You can only change card position during the Main Phase");
@@ -166,6 +243,11 @@ public class Phase {
         }
     }
 
+    /**
+     * Takes the index of the attacking card, and the index of the attacked card. And makes the attacking card attack the enemy card
+     * @param cidx index of attacking card
+     * @param tidx index of attacked card
+     */
     public void attackCharacter(int cidx, int tidx){
         if (currentPhase != BATTLE_PHASE){
             System.out.println("You can only attack during the Battle Phase");
@@ -186,6 +268,10 @@ public class Phase {
         }
     }
 
+    /**
+     * Takes the index of the attacking card and use said card to attack enemy directly
+     * @param cidx index of attacking card
+     */
     public void attackPlayer(int cidx){
         if (currentPhase != BATTLE_PHASE){
             System.out.println("You can only attack during the Battle Phase");
@@ -200,19 +286,28 @@ public class Phase {
         }       
     }
 
+    /**
+     * Randomly discards card from player's hand
+     */
     public void discardHand(){
         Random rand = new Random();
-        int idx = rand.nextInt(9);
+        int idx = rand.nextInt(currentPlayer.getHand().size());
         currentPlayer.removeHandCard(idx);
     }
 
-    // Ketika player ingin membuang skill yang ada di board
-    // Menerima index letak kartu tersebut lalu di remove
+    /**
+     * Takes the index of skill card in board and removes the skill card
+     * @param idx skill card index
+     */
     public void removeBoardSkill(int idx){
         currentPlayer.removeBoardSkill(idx);
     }
 
+    /**
+     * Checks whether a winner has been found
+     * @return true if enemyplayer's deck is 0 or if enemy health is 0
+     */
     public boolean isWinner(){
-        return getNextPlayer().getHealth() <= 0;
+        return (getNextPlayer().getHealth() <= 0 || getNextPlayer().getDeck().isEmpty());
     }
 }

@@ -1,15 +1,27 @@
 package com.avatarduel.component;
 import java.util.*;
 
+/**
+ * Player represents the Player of the game
+ * @see Deck
+ * @see IHandCard
+ * @see BoardCard
+ * @see SkillCard
+ */
 public class Player{
     private String name;
     private int health;
     private Deck deck;
-    private List<IHandCard> hand; //Ini harus IHandCard karna method play adanya di IHandCard
-    private List<BoardCard> board; // Ini juga harus BoardCard biar bisa pake dekorator
-    private List<SkillCard> skillBoard; // Kalo perlu Cardnya, pake method getCardInstance() ya
+    private List<IHandCard> hand; 
+    private List<BoardCard> board;
+    private List<SkillCard> skillBoard;
     private int maxWater, currentWater, maxEarth, currentEarth, maxFire, currentFire, maxAir, currentAir, maxEnergy, currentEnergy;
 
+    /**
+     * Creates a new Player and initializes their hand, board, skillboard, and element powers
+     * @param name Name of the player
+     * @param health Health of the player
+     */
     public Player(String name, int health)
     {
         this.name = name;
@@ -29,15 +41,33 @@ public class Player{
         }
     }
 
-    /**Setter Getter name*/
+    /**
+     * Sets the name of the player
+     * @param name new player name
+     */
     public void setName(String name){this.name = name; }
+    /**
+     * Gets the name of the player
+     * @return player name
+     */
     public String getName() {return this.name;}
 
-    /**Setter Getter health*/
+    /**
+     * Sets the health of the player
+     * @param health new player health
+     */
     public void setHealth(int health){ this.health = health; }
+    /**
+     * Gets the current health of the player
+     * @return current health
+     */
     public int getHealth(){ return this.health; }
 
-    /**Setter Getter max element*/
+    /**
+     * Sets the max element of the player
+     * @param element element to be set
+     * @param val new max value
+     */
     public void setMaxElement(String element, int val ){
         switch(element){
             case ("FIRE"):
@@ -58,7 +88,12 @@ public class Player{
             default:
                 System.out.println("No Match");
 		}
-	}
+    }
+    /**
+     * Gets the max element of the designated element
+     * @param element element to get
+     * @return corresponding element's max value
+     */
     public int getMaxElement(String element){
         switch(element){
             case ("FIRE"):
@@ -81,7 +116,11 @@ public class Player{
 		}
 	}
 
-    /**Setter Getter current element*/
+    /**
+     * Sets current element power value
+     * @param element element to set
+     * @param val new current power value
+     */
     public void setCurrentElement(String element, int val ){
         switch(element){
             case ("FIRE"):
@@ -102,7 +141,12 @@ public class Player{
             default:
                 System.out.println("No Match");
 		}
-	}
+    }
+    /**
+     * Gets current element power value
+     * @param element element to get
+     * @return corresponding current element power value
+     */
     public int getCurrentElement(String element){
         switch(element){
             case ("FIRE"):
@@ -125,57 +169,52 @@ public class Player{
 		}
 	}
 
-	/**Getter hand*/
+	/**
+     * Returns the player's hand
+     */
     public List<IHandCard> getHand() {return this.hand;}
+    /**
+     * Returns the player's hand card at a specific index
+     * @param idx designated index
+     * @return Card at index idx in hand
+     */
     public IHandCard getHandAt(int idx) {return hand.get(idx);}
 
-    /**Board getter*/
+    /**
+     * Returns the player's board
+     * @return List of BoardCard
+     */
     public List<BoardCard> getBoard(){ return board; }
+    /**
+     * Returns the player's card in board at a specific index
+     * @param idx designated index
+     * @return BoardCard in board index idx
+     */
     public BoardCard getBoardCardAt(int idx){ return board.get(idx); }
 
-    /**Skill Board getter*/
+    /**
+     * Returns the player's skill board
+     * @return List of SkillCard
+     */
     public List<SkillCard> getSkillBoard(){ return skillBoard; }
+    /**
+     * Returns the player's card at a specific index in their skill board
+     * @param idx
+     * @return SkillCard in board index idx
+     */
     public SkillCard getSkillBoardCardAt(int idx){return skillBoard.get(idx);}
 
-    /**Getter Dexk*/
+    /**
+     * Getter Deck
+     * @return player's deck
+     */
     public Deck getDeck(){
         return this.deck;
     }
 
-//    /**Deck Manipulation*/
-//    public Stack<Card> getDeck(){
-//        return this.deck;
-//    }
-//    public <T extends Card> void addCardsToDeck(List<T> l){
-//        this.deck.addAll(l);
-//	}
-//    public void shuffleDeck(){
-//        Collections.shuffle(this.deck);
-//	}
-//    public <T extends Card> void addCard(T c){
-//        this.deck.push(c);
-//	}
-//    public <T extends Card> void addSpecificCard(List<T> l, int id){
-//        T c = l.stream()
-//            .filter(i -> i.getId() == id)
-//            .findAny()
-//            .orElse(null);
-//        if (c != null){
-//            this.addCard(c);
-//		}
-//	}
-//    public <T extends Card> void addRandomCards(List<T> l, int quantity){
-//        List<T> l1 = l;
-//        int count = 0;
-//        while (count != quantity){
-//            Collections.shuffle(l1);
-//            Card c = l1.get(0);
-//            this.addCard(c);
-//            count++;
-//		}
-//    }
-
-    /**Hand manipulation*/
+    /**
+     * Draws a card from the deck and adds it to the hand
+     */
     public void draw(){
         //pop card dari deck
         Card top = deck.getDeck().remove(0);
@@ -183,17 +222,28 @@ public class Player{
         // TODO, kasih exception kalo factory = null
         hand.add(factory.createHandCard(top, this)); // tambahkan IHandCard yang dibuat factory ke hand
     }
+    /**
+     * Changes all cards in hand from revealed to closed and vice versa
+     */
     public void flipHand(){
         for (IHandCard card : hand){
             card.flip();
         }
     }
+
+    /**
+     * Removes a card in hand at index idx
+     * @param idx index of card in hand to discard
+     */
     public void removeHandCard(int idx){
         // membuang kartu skill yang ada di tangan
         hand.remove(idx);
     }
 
-    /**Board manipulation*/
+    /**
+     * Removes a skill card in board at index idx
+     * @param idx index of skill card in board to remove
+     */
     public void removeBoardSkill(int idx){
         //membuang kartu skill di board;
         SkillCard card = skillBoard.get(idx);
@@ -204,11 +254,18 @@ public class Player{
             }
         }
     }
+
+    /**
+     * Changes a card in board in index to idx to attack position from defense position and vice versa
+     * @param idx index of card to rotate
+     */
     public void rotate(int idx){
         board.get(idx).rotate();
     }
 
-    /**Reset energy*/
+    /**
+     * Resets user current power to their max value
+     */
     public void reset(){
         this.currentWater = this.maxWater;
         this.currentEarth = this.maxEarth;
@@ -220,9 +277,12 @@ public class Player{
         }
     }
 
-    /**Action*/
-    // Menerima indeks kartu tangan yang dipilih dan apakah character di summon pada posisi attack
-    // Menambahkan CharacterBoardCard ke indeks null pertama di board
+    /**
+     * Takes index of character card in hand to play and whether it is summoned in attack position or defense position.
+     * Adds the card to the first empty slot in board
+     * @param idx index of card in hand to summon
+     * @param attack true if summon in attack position false otherwise
+     */
     public void playCharacterCard(int idx, boolean attack){
     
         CharacterHandCard card = (CharacterHandCard) hand.get(idx);
@@ -235,7 +295,13 @@ public class Player{
             System.out.println(getName() + " summons " + card.getCardInstance().getName());
         }
     }
-    // Menerima indeks kartu tangan yang dipilih dan BoardCard yang dipilih untuk diberi skill
+    
+    /**
+     * Takes the index of skill card in hand and the target of the effect.
+     * Puts the card into the skill board and apply effect to target
+     * @param idx target of skill card in hand
+     * @param target target of skill
+     */
     public void playSkillCard(int idx, BoardCard target){
 
         SkillCard card = (SkillCard) hand.get(idx).getCardInstance();
@@ -255,14 +321,24 @@ public class Player{
             System.out.println(getName() + " plays " + card.getName());
         }
     }
+
+    /**
+     * Takes the index of land card in hand and plays it
+     * @param idx index of land card in hand
+     */
     public void playLandCard(int idx){
         LandHandCard card = (LandHandCard) hand.remove(idx);
         HandCardPlayer.playCard(card);
         System.out.println(getName() + " summons " + card.getCardInstance().getName());
     }
 
-    // Menerima index character yang ingin dipakai menyerang, Player musuh, dan index target serangan
-    // Karna attack penyerang pasti lebih besar dari attack/defense musuh kartu musuh pasti hancur
+    /**
+     * Takes the index of the attacking card in board, the enemy player, and the attacked card's index in board
+     * Destroys the enemy card and deals damage to enemy if enemy card is in attack position or attacker has power up
+     * @param idx index of attacking card in board
+     * @param enemy enemy player
+     * @param enemyidx index of attacked card in board
+     */
     public void attack(int idx, Player enemy, int enemyidx){
         boolean isAttackPos = enemy.getBoardCardAt(enemyidx).getAttackPos();
         int attackingVal = getBoardCardAt(idx).getPositionValue();
@@ -278,6 +354,11 @@ public class Player{
         enemy.getBoardCardAt(enemyidx).destroy();
 	}
 
+    /**
+     * Takes the index of attacking card in board and deals damage to enemy player directly
+     * @param idx index of attacking card
+     * @param enemy enemy player
+     */
     public void attack(int idx, Player enemy){
         int attackingVal = board.get(idx).getPositionValue();
         int enemyHealth = enemy.getHealth() - attackingVal;

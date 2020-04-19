@@ -1,10 +1,21 @@
-// File : SkillHandCardFactory.java
-// Menerima skill card dan menentukan Factory mana yang akan digunakan
-
 package com.avatarduel.component;
 
+/**
+ * SkillHandCardFactory is a factory method that returns Specific SkillCardFactories
+ * @see HandCard
+ * @see AuraHandCardFactory
+ * @see DestroyHandCardFactory
+ * @see PowerUpHandCardFactory
+ * @see SkillCard
+ */
 public class SkillHandCardFactory {
 
+    /**
+     * Takes a SkillCard and checks the effect of said SkillCard.
+     * Returns a factory corresponding to the effect of the SkillCard
+     * @param card SkillCard to convert
+     * @return HandCard corresponding to the SkillCard inputted
+     */
     public static HandCard getSkillFactory(SkillCard card){
         HandCard retval = null;
 

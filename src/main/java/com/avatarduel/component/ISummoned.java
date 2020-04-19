@@ -1,16 +1,24 @@
-// File : ISummoned.java
-// Handles the behaviour of Summoned Cards
 package com.avatarduel.component;
 
+/**
+ * ISummoned is the interface for cards that gets summoned
+ */
 public interface ISummoned {
 
-    // mengubah posisi karakter dari menyerang jadi bertahan, atau sebaliknya
+    /**
+     * Changes card from attack position to defense position and vice versa
+     */
     void rotate();
 
-    // bila dalam posisi menyerang, mengembalikan attack.
-    // bila dalam posisi bertahan, mengembalikan defense
-    // Tambahkan juga perubahan status dari skill card aura jika ada
+    /**
+     * Returns attack if is in attack position, defense if in defense
+     * @return attack value if in attack position, defense value otherwise
+     */
     int getPositionValue();
 
+    /**
+     * Returns the summoned character this class represents
+     * @return
+     */
     Card getCardInstance();
 }

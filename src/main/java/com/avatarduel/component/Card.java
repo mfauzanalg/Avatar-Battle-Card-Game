@@ -1,8 +1,11 @@
-//File : Card.java
-// Menyimpan informasi umum kartu
-
 package com.avatarduel.component;
 
+/**
+ * The card class stores basic info that all cards have
+ * @see CharacterCard
+ * @see SkillCard
+ * @see LandCard
+ */
 public class Card {
     private String type;
     private int id;
@@ -12,6 +15,9 @@ public class Card {
     private String imagepath;
     private String place;
 
+    /**
+     * Creates a blank card
+     */
     public Card(){
         this.type = "";
         this.id = NULL_ID;
@@ -22,6 +28,15 @@ public class Card {
         this.imagepath = "src/main/resources/com/avatarduel/card/image/blank.png";
     }
 
+    /**
+     * Creates a card and stores it's information
+     * @param _type The card's type, character card, skill card, or land card
+     * @param _id The id of the card
+     * @param _name The card's name
+     * @param ele The card's element
+     * @param desc The card's description
+     * @param path The path to where the card's image is stored
+     */
     public Card(String _type, int _id, String _name, String ele, String desc, String path){
         type = _type;
         id = _id;
@@ -40,30 +55,58 @@ public class Card {
         this.place = place;
     }
 
+    /**
+     * Returns the type of the card, can be either character, skill, or land
+     * @return type of the card
+     */
     public String getType(){
         return type;
     }
 
+    /**
+     * Returns the id of the card
+     * @return Card's id
+     */
     public int getId(){
         return id;
     }
 
+    /**
+     * Returns the name of the card
+     * @return Card's name
+     */
     public String getName(){
         return name;
     }
 
+    /**
+     * Returns the element of the card
+     * @return Card's element
+     */
     public String getElement(){
         return element;
     }
 
+    /**
+     * Return's the card's description
+     * @return Card's description
+     */
     public String getDescription(){
         return description;
     }
 
+    /**
+     * Return's the card's imagepath
+     * @return Card's imagepath
+     */
     public String getImagePath(){
         return imagepath;
     }
 
+    /**
+     * Sets the card's imagepath
+     * @param path new imagepath
+     */
     public void setImagepath(String path){
         this.imagepath = path;
     }
