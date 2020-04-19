@@ -21,7 +21,7 @@ public class CharacterCard extends Card {
     
     /**
      * Creates a character card and stores their information
-     * @param id Card's id
+     * @param _id Card's id
      * @param _name Card's name
      * @param ele Card's element
      * @param desc Card's description

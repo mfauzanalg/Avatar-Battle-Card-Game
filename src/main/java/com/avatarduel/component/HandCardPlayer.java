@@ -62,8 +62,8 @@ public class HandCardPlayer {
     /**
      * Takes a DestroyHandCard and target of DestroyHandCard's effect
      * Decreases the player's Power according to the cards element and destroys the target
-     * @param card
-     * @param target
+     * @param card DestroyHandCard being played
+     * @param target BoardCard to destroy
      */
     public static void playCard(DestroyHandCard card, BoardCard target){
         decreaseUserPower(card);
@@ -72,7 +72,7 @@ public class HandCardPlayer {
 
     /**
      * Takes a LandHand Card and adds the player's max and currentelement according to the card's element
-     * @param card
+     * @param card LandHandCard being played
      */
     public static void playCard(LandHandCard card){
         String element = card.getCardInstance().getElement();

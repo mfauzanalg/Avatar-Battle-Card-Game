@@ -13,8 +13,8 @@ public class PowerUpHandCard implements IHandCard {
 
     /**
      * Creates a new PowerUpHandCard with the PowerUpSkillCard that is added to the player's hand as card, and said player as the owner
-     * @param card The PowerUpSkillCard that will be added to the player's hand
-     * @param _target The Player that owns the PowerUpSkillCard
+     * @param pow The PowerUpSkillCard that will be added to the player's hand
+     * @param _owner The Player that owns the PowerUpSkillCard
      */
     public PowerUpHandCard(PowerUpSkillCard pow, Player _owner){
         power = pow;

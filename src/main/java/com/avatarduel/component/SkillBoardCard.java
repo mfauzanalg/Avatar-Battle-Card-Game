@@ -17,8 +17,8 @@ abstract public class SkillBoardCard extends BoardCard {
      * Creates a new SkillBoardCard with the user of the SkillCard as the owner, the selected card in the board as target, and the SkillCard played as card.
      * Adds SkillCard to target's list of skills
      * @param owner The player that played the SkillCard
-     * @param _target The BoardCard selected as the target of the SkillCard
-     * @param card The SkillCard that was played
+     * @param target The BoardCard selected as the target of the SkillCard
+     * @param _card The SkillCard that was played
      */
     public SkillBoardCard(Player owner, BoardCard target, SkillCard _card){
         super(owner);

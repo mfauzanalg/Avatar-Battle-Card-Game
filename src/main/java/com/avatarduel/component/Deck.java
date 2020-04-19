@@ -12,7 +12,7 @@ public class Deck {
         this.deck  = new ArrayList<Card>();
     }
 
-    /**Getter Initializer Deck*/
+    //Getter Initializer Deck
     public List<Card> getDeck(){
         return deck;
     }
@@ -35,7 +35,7 @@ public class Deck {
         }
     }
 
-    /**Deck Manipulation*/
+    //Deck Manipulation
     public <T extends Card> void addCardsToDeck(List<T> l){
         this.deck.addAll(l);
     }
