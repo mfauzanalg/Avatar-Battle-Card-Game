@@ -73,4 +73,8 @@ abstract public class SkillBoardCard extends BoardCard {
     public void removeSkill(SkillCard card){
         target.removeSkill(card);
     }
+
+    public void setCanAttack(boolean canAttack){ target.setCanAttack(canAttack);}
+
+    public boolean getCanAttack(){return target.getCanAttack();}
 }

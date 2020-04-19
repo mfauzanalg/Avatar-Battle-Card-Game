@@ -12,6 +12,7 @@ public class SummonedCharacter extends BoardCard {
     protected int defenseLost;
     protected boolean attackPos;
     protected boolean isPoweredUp;
+    protected boolean canAttack;
 
     public SummonedCharacter(Player owner, CharacterCard m, boolean attack){
         super(owner);
@@ -39,7 +40,8 @@ public class SummonedCharacter extends BoardCard {
     }
 
     public void rotate(){
-        attackPos = !attackPos;
+        boolean temp = attackPos;
+        attackPos = !temp;
     }
 
     public boolean getPowerUp(){
@@ -65,7 +67,15 @@ public class SummonedCharacter extends BoardCard {
     public List<SkillCard> getSkills(){
         return skills;
     }
-    
+
+    public void setCanAttack(boolean canAttack) {
+        this.canAttack = canAttack;
+    }
+
+    public boolean getCanAttack(){
+        return this.canAttack;
+    }
+
     public void destroy(){
         // Remove this card from board
         // Plan : Decorator akan dipanggil destroynya lalu akan memanggil destroy BoardCard yang mereka wrap
