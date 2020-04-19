@@ -41,6 +41,8 @@ abstract public class SkillBoardCard extends BoardCard {
         int sidx = this.owner.getSkillBoard().indexOf(this.getSkillCardInstance());
         this.owner.getSkillBoard().set(sidx, NullCardHandler.getNullSkillCard());
         target.removeSkill(this.getSkillCardInstance());
+        int cidx = target.owner.getBoard().indexOf(this);
+        target.owner.getBoard().set(cidx, target);
         target.destroy();
     }
 

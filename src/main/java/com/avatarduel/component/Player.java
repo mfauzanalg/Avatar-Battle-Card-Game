@@ -223,7 +223,7 @@ public class Player{
     public void playCharacterCard(int idx, boolean attack){
     
         CharacterHandCard card = (CharacterHandCard) hand.get(idx);
-        if (HandCardPlayer.validatePlay(card)){
+        if (!HandCardPlayer.validatePlay(card)){
             System.out.println("You don't have enough power to summon " + card.getCardInstance().getName());
         }
         else{
@@ -236,7 +236,7 @@ public class Player{
     public void playSkillCard(int idx, BoardCard target){
 
         SkillCard card = (SkillCard) hand.get(idx).getCardInstance();
-        if (HandCardPlayer.validatePlay(hand.get(idx))){
+        if (!HandCardPlayer.validatePlay(hand.get(idx))){
             System.out.println("You don't have enough power to play " + card.getName());
         }
         else {
@@ -261,17 +261,17 @@ public class Player{
     // Menerima index character yang ingin dipakai menyerang, Player musuh, dan index target serangan
     // Karna attack penyerang pasti lebih besar dari attack/defense musuh kartu musuh pasti hancur
     public void attack(int idx, Player enemy, int enemyidx){
-        boolean isAttackPos = enemy.getBoard().get(enemyidx).getAttackPos();
-        int attackingVal = board.get(idx).getPositionValue();
-        int attackedVal = enemy.getBoard().get(enemyidx).getPositionValue();
-        enemy.getBoard().get(enemyidx).destroy();
-        if (isAttackPos || board.get(idx).getPowerUp()) {
+        boolean isAttackPos = enemy.getBoardCardAt(enemyidx).getAttackPos();
+        int attackingVal = getBoardCardAt(idx).getPositionValue();
+        int attackedVal = enemy.getBoardCardAt(enemyidx).getPositionValue();
+        if (isAttackPos || getBoardCardAt(idx).getPowerUp()) {
             int enemyHealth = enemy.getHealth() - attackingVal + attackedVal;
             if (enemyHealth < 0){
                 enemyHealth = 0;
             } 
             enemy.setHealth(enemyHealth);
         }
+        enemy.getBoardCardAt(enemyidx).destroy();
 	}
 
     public void attack(int idx, Player enemy){
