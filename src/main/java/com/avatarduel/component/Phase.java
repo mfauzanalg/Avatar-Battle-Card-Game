@@ -16,6 +16,11 @@ public class Phase {
     private Player player_two;
     private Player currentPlayer;
     private String currentPhase;
+    private boolean useLand; //udah pake land card ato belom
+
+    public void setUseLand(boolean useLand){ this.useLand = useLand;}
+
+    public boolean getUseLand(){return this.useLand;}
 
     public Player getCurrentPlayer(){
         return this.currentPlayer;
@@ -62,6 +67,7 @@ public class Phase {
     }
 
     public void drawPhase(){
+        setUseLand(false);
         currentPlayer = getNextPlayer();
         currentPhase = DRAW_PHASE;
         System.out.println(currentPlayer.getName() + "'s Turn");
@@ -146,6 +152,7 @@ public class Phase {
         }
         else {
             currentPlayer.playLandCard(idx);
+            setUseLand(true);
         }
     }
 

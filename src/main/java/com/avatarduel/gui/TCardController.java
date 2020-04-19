@@ -205,10 +205,11 @@ public class TCardController {
             String type = Card.cardClick1.getType();
             Player curPlayer = LayoutController.gamePhase.getCurrentPlayer();
             String curPhase = LayoutController.gamePhase.getCurrentPhase();
+            boolean useLand = LayoutController.gamePhase.getUseLand();
             Card.clickIdx = this.indeks;
 
             if (place.equals("hand") && this.cardOwn.equals(curPlayer) && "main".equals(curPhase)){
-                if (type.equals("land")) {actionBox = "HandLandAct.fxml"; }
+                if (type.equals("land") && (!useLand)) {actionBox = "HandLandAct.fxml"; }
                 else if (type.equals("character")) {actionBox = "HandCharAct.fxml";}
                 else if (type.equals("skill")) {actionBox = "HandSkillAct.fxml";}
                 loadScene(actionBox);
