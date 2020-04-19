@@ -116,7 +116,7 @@ public class Phase {
     }
 
     // Menerima index skill card di tangan dan index target skill
-    public void playSkillCard(int cidx, int tidx){
+    public void playSkillCard(int cidx, int tidx, boolean targetsEnemyCard){
         if (currentPhase != MAIN_PHASE){
             System.out.println("You can only play cards during the Main Phase");
             // Throw error here?
@@ -128,7 +128,7 @@ public class Phase {
         else {
             SkillCard card = (SkillCard) currentPlayer.getHandAt(cidx).getCardInstance();
             BoardCard target;
-            if (card.getEffect().equals(SkillCard.SKILL_DESTROY)){
+            if (card.getEffect().equals(SkillCard.SKILL_DESTROY) || targetsEnemyCard){
                 target = getNextPlayer().getBoardCardAt(tidx);
             }
             else {
