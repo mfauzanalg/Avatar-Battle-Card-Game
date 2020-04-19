@@ -62,7 +62,7 @@ JavaFx
 │                 │  ├─ Hahn.png\
 │                 │  ├─ Hakoda.png\
 │                 │  ├─ Hama.png\
-│                 │  ├─ Haru.png
+│                 │  ├─ Haru.png\
 │                 │  ├─ Huu.png\
 │                 │  ├─ Iio.png\
 │                 │  ├─ Iroh.png\
@@ -94,7 +94,7 @@ JavaFx
 │                 │  ├─ Toph.png\
 │                 │  ├─ Ty Lee.png\
 │                 │  ├─ UnaVaatu.png\
-│                 │  ├─ Vaatu.png
+│                 │  ├─ Vaatu.png\
 │                 │  ├─ Wan.png\
 │                 │  ├─ Water Lion Turtle.png\
 │                 │  ├─ Yangchen.png\
