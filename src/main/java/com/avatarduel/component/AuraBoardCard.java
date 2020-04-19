@@ -26,8 +26,8 @@ public class AuraBoardCard extends SkillBoardCard {
 
     public void destroy(){
         // remove the card from player's board
-        int sidx = this.owner.getSkillBoard().indexOf(this.getCardInstance());
-        this.owner.getSkillBoard().set(sidx, null);
+        int sidx = this.owner.getSkillBoard().indexOf(this.getSkillCardInstance());
+        this.owner.getSkillBoard().set(sidx, NullCardHandler.getNullSkillCard());
         target.destroy();
     }
 }

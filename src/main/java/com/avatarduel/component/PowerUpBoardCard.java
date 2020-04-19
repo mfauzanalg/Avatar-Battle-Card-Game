@@ -19,8 +19,4 @@ public class PowerUpBoardCard extends SkillBoardCard {
     public int getDefenseValue(){
         return target.getDefenseValue();
     }
-
-    public void destroy(){
-        // Remove card from player's board
-    }
 }

@@ -184,4 +184,10 @@ public class Phase {
         int idx = rand.nextInt(9);
         currentPlayer.removeHandCard(idx);
     }
+
+    // Ketika player ingin membuang skill yang ada di board
+    // Menerima index letak kartu tersebut lalu di remove
+    public void removeBoardSkill(int idx){
+
+    }
 }

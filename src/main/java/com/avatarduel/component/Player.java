@@ -196,7 +196,8 @@ public class Player{
     /**Board manipulation*/
     public void removeBoardSkill(int idx){
         //membuang kartu skill di board;
-        SkillCard card = skillBoard.remove(idx);
+        SkillCard card = skillBoard.get(idx);
+        skillBoard.set(idx, NullCardHandler.getNullSkillCard());
         for (BoardCard chara : board){
             if (chara.getSkills().contains(card)){
                 chara.removeSkill(card);
