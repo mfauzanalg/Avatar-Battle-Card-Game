@@ -178,6 +178,9 @@ public class Player{
     /**Hand manipulation*/
     public void draw(){
         //pop card dari deck
+        if (deck.getDeck().size() == 0){
+            return;
+        }
         Card top = deck.getDeck().remove(0);
         HandCard factory = HandCardFactory.getFactory(top); // Gunakan factory method untuk menentukan factory yang akan digunakan
         // TODO, kasih exception kalo factory = null

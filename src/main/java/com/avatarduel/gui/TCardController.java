@@ -208,19 +208,29 @@ public class TCardController {
 
     public void showAction(){
         try{
-            if(this.card.getId() > 0){
-                resetPane();
-                String actionBox = null;
-                String place = this.place;
-                String type = Card.cardClick1.getType();
-                Player curPlayer = LayoutController.gamePhase.getCurrentPlayer();
-                String curPhase = LayoutController.gamePhase.getCurrentPhase();
-                boolean useLand = LayoutController.gamePhase.getUseLand();
-                Card.clickIdx = this.indeks;
-                Card.cardOwner = this.owner;
+            if(this.card.getId()<= 0){
+                return;
+            }
+            resetPane();
+            String actionBox = null;
+            String place = this.place;
+            String type = Card.cardClick1.getType();
+            Player curPlayer = LayoutController.gamePhase.getCurrentPlayer();
+            String curPhase = LayoutController.gamePhase.getCurrentPhase();
+            boolean useLand = LayoutController.gamePhase.getUseLand();
+            Card.clickIdx = this.indeks;
+            Card.cardOwner = this.owner;
+            System.out.println("punya siapa hayoo: " + Card.cardOwner);
 
-                if (LayoutController.wantAttack || LayoutController.wantSkill){
-                    loadScene("TargetThis.fxml");
+            if (LayoutController.wantAttack || LayoutController.wantSkill){
+                loadScene("TargetThis.fxml");
+            }
+            else if ("main".equals(curPhase)){
+                if (place.equals("hand") && this.cardOwn.equals(curPlayer)){
+                    if (type.equals("land") && (!useLand)) {actionBox = "HandLandAct.fxml"; }
+                    else if (type.equals("character")) {actionBox = "HandCharAct.fxml";}
+                    else if (type.equals("skill")) {actionBox = "HandSkillAct.fxml"; selectedPane();}
+                    loadScene(actionBox);
                 }
                 else if ("main".equals(curPhase)){
                     if (place.equals("hand") && this.cardOwn.equals(curPlayer)){
