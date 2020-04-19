@@ -3,6 +3,11 @@ package com.avatarduel.gui;
 import com.avatarduel.component.Card;
 import javafx.fxml.FXML;
 
+/**
+ * RotateCardController serves as a controller for RotateCard.fxml scene builder
+ * RotateCard shows a window that is shown when a player wins the game
+ */
+
 public class SkillAreaController {
     @FXML private TCardController s1Controller;
     @FXML private TCardController s2Controller;
@@ -10,6 +15,13 @@ public class SkillAreaController {
     @FXML private TCardController s4Controller;
     @FXML private TCardController s5Controller;
     @FXML private TCardController s6Controller;
+
+    /**
+     * Function handle the start game button
+     * @param card contains card that will be rotated
+     * @param p contains position of the card
+     * @param x
+     */
 
     public void loadCard(Card card, int x, int p){
 //        card.setIdx(x);
@@ -23,6 +35,10 @@ public class SkillAreaController {
             case 5: s6Controller.loadCard(card,5, p, "skill"); break;
         }
     }
+
+    /**
+     * Function to reset the bordercard
+     */
 
     public void resetBorder() {
         s1Controller.resetPane();
