@@ -28,11 +28,21 @@ abstract public class SkillBoardCard extends BoardCard {
         return target.getCardInstance();
     }
 
+    public SkillCard getSkillCardInstance(){
+        return card;
+    }
+
     public void rotate(){
         target.rotate();
     }
 
-    abstract public void destroy();
+    public void destroy(){
+        // remove the card from player's board
+        int sidx = this.owner.getSkillBoard().indexOf(this.getSkillCardInstance());
+        this.owner.getSkillBoard().set(sidx, NullCardHandler.getNullSkillCard());
+        target.removeSkill(this.getSkillCardInstance());
+        target.destroy();
+    }
 
     public boolean getPowerUp(){
         return target.getPowerUp();
