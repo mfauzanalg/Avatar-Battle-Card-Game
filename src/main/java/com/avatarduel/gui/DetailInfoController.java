@@ -25,6 +25,11 @@ public class DetailInfoController {
     private String waterPath = "src/main/resources/img/Elements/Water.png";
     private String blankPath = "src/main/resources/com/avatarduel/card/image/blank.png";
 
+    public void loadPict (String path, ImageView container){
+        File file = new File (path);
+        Image image = new Image(file.toURI().toString());
+        container.setImage(image);
+    }
 
     public String setElmtPict(String elmt){
         if (elmt.equals("ENERGY")){ return energyPath; }
@@ -35,18 +40,12 @@ public class DetailInfoController {
     }
 
     public void showLandCard(Card card){
-//        detailElmt.setText(card.getElement());
-        File file = new File (setElmtPict(card.getElement()));
-        Image image = new Image(file.toURI().toString());
-        elmtPict.setImage(image);
+        loadPict(setElmtPict(card.getElement()), elmtPict);
         detailStat.setText("This is " + card.getElement() + " Land Card");
     }
 
     public void showCharCard(CharacterCard card){
-//        detailElmt.setText(card.getElement());
-        File file = new File (setElmtPict(card.getElement()));
-        Image image = new Image(file.toURI().toString());
-        elmtPict.setImage(image);
+        loadPict(setElmtPict(card.getElement()), elmtPict);
         detailStat.setText("Atk/Def/Pow " + space + card.getAttack() + "/ " + card.getDefense() + "/" + card.getPower());
     }
 
@@ -64,7 +63,6 @@ public class DetailInfoController {
     }
 
     public void showAuraCard(AuraSkillCard card){
-//        detailElmt.setText(card.getElement());
         File file = new File (setElmtPict(card.getElement()));
         Image image = new Image(file.toURI().toString());
         elmtPict.setImage(image);
@@ -87,17 +85,19 @@ public class DetailInfoController {
         detailStat.setText("Pow : " + card.getPower());
     }
 
+    public void showCard(BoardCard card){
+        CharacterCard cardInstance =  (CharacterCard) card.getCardInstance();
+        if (cardInstance.getId() > 0){
+
+        }
+    }
 
     public void showCard(Card card){
         if (card.getId() != 0) {
-            File file = new File(card.getImagePath());
-            Image image = new Image(file.toURI().toString());
-            detailImage.setImage(image);
+            loadPict(card.getImagePath(), detailImage);
             detailDesc.setText(card.getDescription());
             detailName.setText(card.getName());
-            File file2 = new File(blankPath);
-            Image image2 = new Image(file2.toURI().toString());
-            elmtPict.setImage(image2);
+            loadPict(blankPath, elmtPict);
 
             String type = card.getType();
             if (type.equals("land")) {

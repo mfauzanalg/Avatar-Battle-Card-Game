@@ -100,7 +100,7 @@ public class Phase {
         }
         currentPlayer.flipHand();
         currentPlayer.reset();
-        currentPlayer = getNextPlayer();
+//        currentPlayer = getNextPlayer();
     }
 
     public void summonCharacter(int idx, boolean isAttackPosition){

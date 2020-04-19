@@ -10,7 +10,7 @@ public class HandSkillActController {
     @FXML private Button confirmButton;
 
     public void onClick(MouseEvent mouseEvent) {
-        LayoutController.gamePhase.playSkillCard(Card.clickIdx, 0);
+        LayoutController.gamePhase.playSkillCard(Card.clickIdx, 0, false);
         Stage stage = (Stage) confirmButton.getScene().getWindow();
         stage.close();
     }

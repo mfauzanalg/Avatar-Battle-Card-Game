@@ -24,14 +24,14 @@ public class CharAreaController {
         }
     }
 
-    public void loadCard(BoardCard card, int x, int p){
+    public void loadBoard(BoardCard card, int x, int p){
         switch (x){
-            case 0: c1Controller.loadCard(card,0, p, "character"); break;
-            case 1: c2Controller.loadCard(card,1, p, "character"); break;
-            case 2: c3Controller.loadCard(card,2, p, "character"); break;
-            case 3: c4Controller.loadCard(card,3, p, "character"); break;
-            case 4: c5Controller.loadCard(card,4, p, "character"); break;
-            case 5: c6Controller.loadCard(card,5, p, "character"); break;
+            case 0: c1Controller.loadBoard(card,0, p, "character"); break;
+            case 1: c2Controller.loadBoard(card,1, p, "character"); break;
+            case 2: c3Controller.loadBoard(card,2, p, "character"); break;
+            case 3: c4Controller.loadBoard(card,3, p, "character"); break;
+            case 4: c5Controller.loadBoard(card,4, p, "character"); break;
+            case 5: c6Controller.loadBoard(card,5, p, "character"); break;
         }
     }
 

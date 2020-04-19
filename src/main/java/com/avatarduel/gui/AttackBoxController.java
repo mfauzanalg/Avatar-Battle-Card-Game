@@ -10,8 +10,8 @@ public class AttackBoxController {
     @FXML private Button confirmB;
 
     public void onClick(MouseEvent mouseEvent) {
-//        LayoutController.gamePhase.attackCharacter(Card.clickIdx, 0);
-        LayoutController.gamePhase.attackPlayer(Card.clickIdx);
+        LayoutController.gamePhase.attackCharacter(Card.clickIdx, 0);
+//        LayoutController.gamePhase.attackPlayer(Card.clickIdx);
         Stage stage = (Stage) confirmB.getScene().getWindow();
         stage.close();
     }
