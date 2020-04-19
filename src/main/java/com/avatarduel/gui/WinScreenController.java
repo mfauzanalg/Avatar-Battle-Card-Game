@@ -13,6 +13,7 @@ import java.util.ResourceBundle;
 public class WinScreenController implements Initializable {
     @FXML private Text text;
     @FXML private Button yeayButton;
+    @FXML private Text winner;
 
     public void onClick(MouseEvent mouseEvent) {
         LayoutController.finishGame = true;
@@ -23,5 +24,6 @@ public class WinScreenController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         text.setText("GAME OVER");
+        winner.setText(LayoutController.winner.getName() + " WIN");
     }
 }

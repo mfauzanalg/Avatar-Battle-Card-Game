@@ -2,7 +2,12 @@
 package com.avatarduel.component;
 
 import com.avatarduel.gui.LayoutController;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.Random;
 import java.util.List;
 
@@ -64,7 +69,7 @@ public class Phase {
      * Initializes the game.
      * Sets current phase to draw phase and each player draws 7 cards from the top of their deck
      */
-    public void initialize(){
+    public void initialize() throws IOException {
         currentPhase = DRAW_PHASE;
         for (int i = 0; i < 7; i++){
             player_one.draw();
@@ -86,7 +91,7 @@ public class Phase {
      * Moves to the next phase.
      * The phase order is Draw Phase, Main Phase, Battle Phase, End Phase, Repeat
      */
-    public void nextPhase(){
+    public void nextPhase() throws IOException {
         switch(currentPhase){
             case DRAW_PHASE :
                 mainPhase();
@@ -104,17 +109,39 @@ public class Phase {
     }
 
     /**
+     * load new Scene in new Window
+     * @param fxml target fxml
+     */
+    public void loadScene (String fxml) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource(fxml));
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setTitle("");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    /**
      * Resets useLand and sets the current player to the next player.
      * And then said player draws a card from their deck
      */
-    public void drawPhase(){
+    public void drawPhase() throws IOException {
         setUseLand(false);
         currentPlayer = getNextPlayer();
         currentPhase = DRAW_PHASE;
-        System.out.println(currentPlayer.getName() + "'s Turn");
-        System.out.println("Draw Phase");
-        System.out.println(currentPlayer.getName() + " draws a card");
-        currentPlayer.draw();
+
+        if (getCurrentPlayer().getDeck().getDeck().size() == 0){
+            currentPhase = MATCH_END;
+            System.out.println(getNextPlayer().getName() + "won");
+            LayoutController.finishGame = true;
+            LayoutController.winner = getNextPlayer();
+            loadScene("DrawInfo.fxml");
+        }else{
+            System.out.println(currentPlayer.getName() + "'s Turn");
+            System.out.println("Draw Phase");
+            System.out.println(currentPlayer.getName() + " draws a card");
+            currentPlayer.draw();
+        }
     }
 
     /**
@@ -168,10 +195,6 @@ public class Phase {
         }
         currentPlayer.flipHand();
         currentPlayer.reset();
-        if (isWinner()){
-            currentPhase = MATCH_END;
-            System.out.println(currentPlayer.getName() + " won!");
-        }
     }
 
     /**
@@ -271,6 +294,8 @@ public class Phase {
             if (isWinner()){
                 currentPhase = MATCH_END;
                 System.out.println(currentPlayer.getName() + " won!");
+                LayoutController.finishGame = true;
+                LayoutController.winner = currentPlayer;
             }
         }
     }
@@ -289,6 +314,8 @@ public class Phase {
             if (isWinner()){
                 currentPhase = MATCH_END;
                 System.out.println(currentPlayer.getName() + " won!");
+                LayoutController.finishGame = true;
+                LayoutController.winner = currentPlayer;
             }
         }       
     }
@@ -315,6 +342,6 @@ public class Phase {
      * @return true if enemyplayer's deck is 0 or if enemy health is 0
      */
     public boolean isWinner(){
-        return (getNextPlayer().getHealth() <= 0 || getNextPlayer().getDeck().getDeck().isEmpty());
+        return (getNextPlayer().getHealth() <= 0);
     }
 }

@@ -5,7 +5,7 @@ import java.util.*;
 
 public class Deck {
     public static final int MAX_DECK = 60;
-    public static final int MIN_DECK = 40;
+    public static final int MIN_DECK = 0;
     private List<Card> deck;
 
     public Deck(){
