@@ -58,17 +58,15 @@ public class TCardController {
     private String hiddenPath = "src/main/resources/img/back.png";
 
     /**
-     * Function reset pane
+     * Function to reset pane to black again
      */
-
     void resetPane(){
         mainPane.setStyle("-fx-border-color: black; -fx-border-width: 1");
     }
 
     /**
-     * Function select pane
+     * Function change color of selected pane
      */
-
     void selectedPane(){
         mainPane.setStyle("-fx-border-color: #c74646; -fx-border-width: 3");
     }
@@ -106,7 +104,6 @@ public class TCardController {
      * @param container contain image of the card
      * @param path contains the path of the card
      */
-
     public void loadPict (String path, ImageView container){
         File file = new File (path);
         Image image = new Image(file.toURI().toString());
@@ -117,10 +114,9 @@ public class TCardController {
      * Function initialize load
      * @param card contains card
      * @param x contains index of the card
-     * @param p contains position of the card
+     * @param p contains owner of the card
      * @param place contains place of the card
      */
-
     public void initialLoad(Card card, int x, int p, String place){
         this.card = card;
         this.indeks = x;
@@ -136,10 +132,9 @@ public class TCardController {
      * Function initialize load
      * @param card contains card
      * @param x contains index of the card
-     * @param p contains position of the card
+     * @param p contains owner of the card
      * @param place contains place of the card
      */
-
     public void loadBoard(BoardCard card, int x, int p, String place){
         initialLoad(card.getCardInstance(), x, p, place);
         this.atk = card.getAttackValue();
@@ -164,10 +159,9 @@ public class TCardController {
      * Function initialize load
      * @param card contains card
      * @param x contains index of the card
-     * @param p contains position of the card
+     * @param p contains owner of the card
      * @param place contains place of the card
      */
-
     public void loadCard(Card card, int x, int p, String place){
         initialLoad(card, x, p, place);
         this.atk = 0;
@@ -199,7 +193,6 @@ public class TCardController {
      * Function to load land card
      * @param card contain the card
      */
-
     public void loadLandCard(Card card){
         loadPict(setElmtPict(card.getElement()), elmtPict);
         attrib.setText("this is " + card.getElement() + " Land Card");
@@ -209,7 +202,6 @@ public class TCardController {
      * Function to load character card
      * @param card contain the character card
      */
-
     public void loadCharCard(CharacterCard card){
         loadPict(setElmtPict(card.getElement()), elmtPict);
         attrib.setText("Atk/Def/Pow \n" + card.getAttack() + "/ " + card.getDefense() + "/" + card.getPower());
@@ -221,7 +213,6 @@ public class TCardController {
      * Function to load skill card
      * @param card contain the skill card
      */
-
     public void loadSkillCard(SkillCard card){
         String eff = card.getEffect();
         if (eff.equals("aura")){
@@ -239,7 +230,6 @@ public class TCardController {
      * Function to load aura card
      * @param card contain the aura card
      */
-
     public void loadAuraCard(AuraSkillCard card){
         loadPict(setElmtPict(card.getElement()), elmtPict);
         attrib.setText("Atk/Def/Pow \n" + card.getAttack() + "/ " + card.getDefense() + "/" + card.getPower());
@@ -251,7 +241,6 @@ public class TCardController {
      * Function to load destroy card
      * @param card contain the destroy card
      */
-
     public void loadDestroyCard(DestroySkillCard card){
         loadPict(setElmtPict(card.getElement()), elmtPict);
         attrib.setText("This is Destroy Card Pow : " + card.getPower());
@@ -261,7 +250,6 @@ public class TCardController {
      * Function to load power up card
      * @param card contain the power up card
      */
-
     public void loadPowerUpCard(PowerUpSkillCard card){
         loadPict(setElmtPict(card.getElement()), elmtPict);
         attrib.setText("This is Destroy Card Pow : " + card.getPower());
@@ -271,7 +259,6 @@ public class TCardController {
      * Function handle the hover
      * @param mouseEvent is function to invoke the methods that is needed when the button is clicked
      */
-
     public void hover(MouseEvent mouseEvent) {
         Card newCard = this.card;
         int newAtk = this.atk;
@@ -287,7 +274,6 @@ public class TCardController {
      * Function handle button
      * @param mouseEvent is function to invoke the methods that is needed when the button is clicked
      */
-
     public void click(MouseEvent mouseEvent) {
         Card.cardClick1 = this.card;
         showAction();
@@ -296,7 +282,6 @@ public class TCardController {
     /**
      * Function to rotate card
      */
-
     public void rotateCard(boolean toDefPost){
         if (toDefPost){
             RotateTransition rotateTransition = new RotateTransition(Duration.seconds(1), mainPane);
@@ -313,7 +298,6 @@ public class TCardController {
     /**
      * Function to show actions
      */
-
     public void showAction(){
         try{
             if(this.card.getId()<= 0){

@@ -32,7 +32,6 @@ public class WindowController {
      * Function handle the start game button
      * @param actionEvent is function to invoke the methods that is needed when the button is clicked
      */
-
     public void startGameButton(javafx.event.ActionEvent actionEvent) throws IOException {
         AvatarDuel.P1 = new Player(player1.getText(), 80);
         AvatarDuel.P2 = new Player(player2.getText(), 80);

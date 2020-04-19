@@ -11,7 +11,6 @@ import javafx.stage.Stage;
  * TargetThisController serves as a controller for TargetThis.fxml scene builder
  * TargetThis shows a window that is shown when a player wins the game
  */
-
 public class TargetThisController {
     @FXML private Button confirmButton;
 
@@ -19,7 +18,6 @@ public class TargetThisController {
      * Function handle the start game button
      * @param mouseEvent is function to invoke the methods that is needed when the button is clicked
      */
-
     public void onClick(MouseEvent mouseEvent) {
         if (LayoutController.wantAttack){
             Card.trg = Card.clickIdx;

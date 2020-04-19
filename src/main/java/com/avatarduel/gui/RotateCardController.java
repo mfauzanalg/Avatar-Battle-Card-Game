@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 /**
  * RotateCardController serves as a controller for RotateCard.fxml scene builder
- * RotateCard shows a window that is shown when a player wins the game
+ * RotateCard shows a window that is shown when a player want to rotate a card
  */
 
 public class RotateCardController {
@@ -18,7 +18,6 @@ public class RotateCardController {
      * Function handle the start game button
      * @param mouseEvent is function to invoke the methods that is needed when the button is clicked
      */
-
     public void onClicked(MouseEvent mouseEvent) {
         LayoutController.gamePhase.changeCardPosition(Card.clickIdx);
         System.out.println(Card.clickIdx);

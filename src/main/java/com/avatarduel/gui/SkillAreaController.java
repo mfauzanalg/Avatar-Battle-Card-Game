@@ -7,7 +7,6 @@ import javafx.fxml.FXML;
  * RotateCardController serves as a controller for RotateCard.fxml scene builder
  * RotateCard shows a window that is shown when a player wins the game
  */
-
 public class SkillAreaController {
     @FXML private TCardController s1Controller;
     @FXML private TCardController s2Controller;
@@ -19,10 +18,9 @@ public class SkillAreaController {
     /**
      * Function handle the start game button
      * @param card contains card that will be rotated
-     * @param p contains position of the card
-     * @param x
+     * @param p contains owner of the card
+     * @param x is index of the card
      */
-
     public void loadCard(Card card, int x, int p){
 //        card.setIdx(x);
         card.setPlace("skill");
@@ -39,7 +37,6 @@ public class SkillAreaController {
     /**
      * Function to reset the bordercard
      */
-
     public void resetBorder() {
         s1Controller.resetPane();
         s2Controller.resetPane();

@@ -39,7 +39,6 @@ public class WinScreenController implements Initializable {
      * @param location contains the path where the image path of the card is stored
      * @param resources contains resources needed
      */
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         text.setText("GAME OVER");
