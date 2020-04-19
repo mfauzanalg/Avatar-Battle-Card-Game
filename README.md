@@ -18,9 +18,9 @@ JavaFx
 ![Image2](./screenshots/capture2.png)
 
 ## Sturcture
-├─ .settings
-│  └─ org.eclipse.buildship.core.prefs
-├─ .vs
+├─ .settings\
+│  └─ org.eclipse.buildship.core.prefs\
+├─ .vs\
 │  ├─ Tubes 2
 │  │  └─ v16
 │  │     └─ .suo
