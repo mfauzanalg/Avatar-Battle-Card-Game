@@ -100,7 +100,6 @@ public class Phase {
         }
         currentPlayer.flipHand();
         currentPlayer.reset();
-//        currentPlayer = getNextPlayer();
     }
 
     public void summonCharacter(int idx, boolean isAttackPosition){
@@ -136,9 +135,6 @@ public class Phase {
             else {
                 target = currentPlayer.getBoardCardAt(tidx);
             }
-
-            System.out.println(target);
-
             currentPlayer.playSkillCard(cidx, target);
         }
     }
@@ -167,6 +163,12 @@ public class Phase {
         if (currentPhase != BATTLE_PHASE){
             System.out.println("You can only attack during the Battle Phase");
             // Throw error here?
+        }
+        else if (currentPlayer.getBoardCardAt(cidx).getPositionValue() <= getNextPlayer().getBoardCardAt(tidx).getPositionValue()){
+            System.out.println("You can only attack enemies with lower stats than your character's");
+        }
+        else if (getNextPlayer().getBoardCardAt(tidx) == NullCardHandler.getNullBoardCard()){
+            System.out.println("Please select a target");
         }
         else {
             currentPlayer.attack(cidx, getNextPlayer(), tidx);
