@@ -11,6 +11,7 @@ public class Phase {
     public static final String MAIN_PHASE = "main";
     public static final String BATTLE_PHASE = "battle";
     public static final String END_PHASE = "end";
+    public static final String MATCH_END = "shadow realm";
     private Player player_one;
     private Player player_two;
     private Player currentPlayer;
@@ -166,6 +167,10 @@ public class Phase {
         }
         else {
             currentPlayer.attack(cidx, getNextPlayer(), tidx);
+            if (isWinner()){
+                currentPhase = MATCH_END;
+                System.out.println(currentPlayer.getName() + " won!");
+            }
         }
     }
 
@@ -176,6 +181,10 @@ public class Phase {
         }
         else {
             currentPlayer.attack(cidx, getNextPlayer());
+            if (isWinner()){
+                currentPhase = MATCH_END;
+                System.out.println(currentPlayer.getName() + " won!");
+            }
         }       
     }
 
@@ -188,6 +197,10 @@ public class Phase {
     // Ketika player ingin membuang skill yang ada di board
     // Menerima index letak kartu tersebut lalu di remove
     public void removeBoardSkill(int idx){
+        currentPlayer.removeBoardSkill(idx);
+    }
 
+    public boolean isWinner(){
+        return getNextPlayer().getHealth() <= 0;
     }
 }
