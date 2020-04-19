@@ -183,11 +183,18 @@ public class TCardController {
         showAction();
     }
 
-    public void rotateCard(){
-        RotateTransition rotateTransition = new RotateTransition(Duration.seconds(0.1), mainPane);
-        rotateTransition.setFromAngle(0);
-        rotateTransition.setToAngle(90);
-        rotateTransition.play();
+    public void rotateCard(boolean toDefPost){
+        if (toDefPost){
+            RotateTransition rotateTransition = new RotateTransition(Duration.seconds(1), mainPane);
+            rotateTransition.setToAngle(90);
+            rotateTransition.play();
+        }
+        else{
+            RotateTransition rotateTransition = new RotateTransition(Duration.seconds(1), mainPane);
+            rotateTransition.setToAngle(0);
+            rotateTransition.play();
+        }
+
     }
 
     public void showAction(){

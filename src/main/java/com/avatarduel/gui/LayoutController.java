@@ -197,9 +197,10 @@ public class LayoutController implements Initializable{
             for (int i = 0; i < AvatarDuel.P1.getBoard().size(); i++){
                 charArea1Controller.loadBoard(AvatarDuel.P1.getBoard().get(i), i, 1);
                 if (!AvatarDuel.P1.getBoard().get(i).getAttackPos()){
-                    charArea1Controller.rotateCard(i);
+                    charArea1Controller.rotateCard(i, true);
+                } else {
+                    charArea1Controller.rotateCard(i, false);
                 }
-                if (i == 0) System.out.println("ATK sekarang :" + AvatarDuel.P1.getBoard().get(i).getAttackValue());
             }
         }
         else{
@@ -207,7 +208,9 @@ public class LayoutController implements Initializable{
             for (int i = 0; i < AvatarDuel.P2.getBoard().size(); i++){
                 charArea2Controller.loadBoard(AvatarDuel.P2.getBoard().get(i), i, 2);
                 if (!AvatarDuel.P2.getBoard().get(i).getAttackPos()){
-                    charArea2Controller.rotateCard(i);
+                    charArea2Controller.rotateCard(i, true);
+                }else{
+                    charArea2Controller.rotateCard(i, false);
                 }
             }
         }
