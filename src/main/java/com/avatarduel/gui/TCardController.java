@@ -208,6 +208,9 @@ public class TCardController {
 
     public void showAction(){
         try{
+            if(this.card.getId()<= 0){
+                return;
+            }
             resetPane();
             String actionBox = null;
             String place = this.place;
