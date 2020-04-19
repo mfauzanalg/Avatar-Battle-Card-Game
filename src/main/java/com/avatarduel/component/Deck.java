@@ -55,8 +55,8 @@ public class Deck {
     //Deck Manipulation
 
     /**
-     * Add cards from a List of <T extends Card> to the Deck
-     * @param l List of <T>
+     * Add cards from a List of T extends Card to the Deck
+     * @param l List of T
      * @param <T> A class that extends Card
      */
     public <T extends Card> void addCardsToDeck(List<T> l){
@@ -81,7 +81,7 @@ public class Deck {
 
     /**
      * Add a specific card to the Deck based on the id
-     * @param l List of <T>
+     * @param l List of T
      * @param id The card's id that want to be added
      * @param <T> A class that extends Card
      */
@@ -96,8 +96,8 @@ public class Deck {
     }
 
     /**
-     * Add random cards from a List of <T> to the Deck
-     * @param l List of <T>
+     * Add random cards from a List of T to the Deck
+     * @param l List of T
      * @param quantity The amount of cards that want to be added
      * @param <T> A class that extends Card
      */
