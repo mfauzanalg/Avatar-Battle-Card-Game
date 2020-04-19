@@ -12,6 +12,7 @@ public class SummonedCharacter extends BoardCard {
     protected int defenseLost;
     protected boolean attackPos;
     protected boolean isPoweredUp;
+    protected boolean canAttack;
 
     public SummonedCharacter(Player owner, CharacterCard m, boolean attack){
         super(owner);
@@ -20,6 +21,7 @@ public class SummonedCharacter extends BoardCard {
         isPoweredUp = false;
         attackLost = 0;
         defenseLost = 0;
+        canAttack = false;
     }
 
     public int getAttackValue(){
@@ -65,6 +67,10 @@ public class SummonedCharacter extends BoardCard {
     public List<SkillCard> getSkills(){
         return skills;
     }
+
+    public void setCanAttack(boolean val){ canAttack = val;}
+
+    public boolean getCanAttack(){ return canAttack;}
     
     public void destroy(){
         // Remove this card from board

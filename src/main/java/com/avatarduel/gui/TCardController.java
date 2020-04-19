@@ -33,6 +33,8 @@ public class TCardController {
     private Player cardOwn;
     private int atk;
     private int def;
+    private boolean attackPos;
+    private boolean canAttack;
 
     private String energyPath = "src/main/resources/img/Elements/Energy.png";
     private String airPath = "src/main/resources/img/Elements/Air.png";
@@ -80,6 +82,8 @@ public class TCardController {
         initialLoad(card.getCardInstance(), x, p, place);
         this.atk = card.getAttackValue();
         this.def = card.getDefenseValue();
+        this.attackPos = card.getAttackPos();
+        this.canAttack = card.getCanAttack();
 
         name.setText("");
         loadPict(blankPath, elmtPict);
@@ -212,7 +216,7 @@ public class TCardController {
             else if (place.equals("character") && this.cardOwn.equals(curPlayer) && "main".equals(curPhase)){
                 loadScene("RotateCard.fxml");
             }
-            else if (place.equals("character") && this.cardOwn.equals(curPlayer) && "battle".equals(curPhase)){
+            else if (place.equals("character") && this.cardOwn.equals(curPlayer) && "battle".equals(curPhase) && this.attackPos && this.canAttack){
                 loadScene("AttackBox.fxml");
             }
         } catch (IOException e){

@@ -40,5 +40,9 @@ abstract public class BoardCard implements ISummoned, IDestructible {
 
     abstract public List<SkillCard> getSkills();
 
+    abstract public void setCanAttack(boolean val);
+
+    abstract public boolean getCanAttack();
+
     abstract public void removeSkill(SkillCard skill);
 }
