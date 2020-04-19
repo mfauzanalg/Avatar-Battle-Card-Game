@@ -334,6 +334,8 @@ public class LayoutController implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         updateInfo();
+        resetOneHand(AvatarDuel.P1);
+        resetOneHand(AvatarDuel.P2);
         panelP1Controller.setPanel(AvatarDuel.P1);
         panelP2Controller.setPanel(AvatarDuel.P2);
         gamePhase = new Phase(AvatarDuel.P1, AvatarDuel.P2);
