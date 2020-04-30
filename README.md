@@ -1,4 +1,4 @@
-# IF2210 Project Kelompok 9 K01
+# Avatar Battle Card
 
 ## Prerequisite
 Java 8,
